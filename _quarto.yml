@@ -1,29 +1,42 @@
 project:
   type: website
 
+
 website:
   title: "Undergraduate Physics Lecture Notes"
   navbar:
-    left:
-      - text: Home
-        href: index.qmd
-      - text: Courses
-        menu:
-          - text: Special Relativity
-            href: courses/special-relativity/index.qmd
     right:
       - icon: github
         href: https://github.com/vitenti-physics/undergrad
+  sidebar:
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - section: "Courses"
+          contents:
+            - section: "Vector Calculus"
+              contents: 
+                - text: "Overview"
+                  href: courses/vector-calculus/index.qmd
+                - text: "Vector Spaces Products and Maps"
+                  href: courses/vector-calculus/vector-spaces.qmd
+            - section: "Special Relativity"
+              contents: 
+                - text: "Overview"
+                  href: courses/special-relativity/index.qmd
+                - text: "Basic Concepts"
+                  href: courses/special-relativity/basic-concepts.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     toc: true
-    toc-depth: 3
-    number-sections: true
+    grid:
+      body-width: 1200px
 
 reference-location: margin
 citation-location: margin
 authors:
   - Sandro Vitenti
 jupyter: python3
+license: CC BY-NC-SA 4.0

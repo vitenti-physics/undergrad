@@ -1,0 +1,24 @@
+---
+title: "Vector Calculus Overview"
+---
+
+# Overview
+
+This module introduces the mathematical framework of **vector calculus**, essential for understanding physics in three or more dimensions. It covers fundamental concepts, operations, and applications frequently used across physics courses, especially electromagnetism and mechanics.
+
+## Contents
+
+- **Vector Spaces:** Definitions, linear independence, and the structure of spaces where vectors live.
+- **Inner Product:** Properties of the dot product, including the Kronecker delta notation.
+- **Vector Product:** Cross product, exterior product, and their properties.
+- **Triple Products:** Relations involving scalar and vector triple products.
+- **Euclidean Space:** Cartesian coordinates and tangent vectors.
+- **Differential Calculus:** Gradient, divergence, curl, and higher-order derivatives.
+- **Integral Calculus:** Line, surface, and volume integrals.
+- **Curvilinear Coordinates:** Basis vectors, differential operators, and orthogonal coordinate systems.
+- **Dirac Delta:** Introduction and properties of the delta distribution.
+- **Vector Field Decomposition:** Techniques to break down vector fields into simpler components.
+
+This course aims to build a solid foundation for applying these mathematical tools throughout your physics studies.
+
+{{< include /_footer.qmd >}}

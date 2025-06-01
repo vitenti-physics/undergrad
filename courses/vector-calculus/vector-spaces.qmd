@@ -1,0 +1,267 @@
+---
+title: Vector Spaces Products and Maps
+format: html
+---
+
+## Vector Spaces
+
+Vector spaces are used in physics to represent a wide variety of quantities. For example, in Newtonian mechanics, we use vector spaces to represent positions in space, velocities, and displacements. It is worth noting that these three physical quantities have distinct natures, which is reflected in the meaning of the operations we can perform with them. For instance, velocity vectors can be added or subtracted when we want to represent velocities in different inertial reference frames. Similarly, position vectors can be added when we change the origin of a coordinate system. However, there is no natural meaning to the sum of a position vector and a velocity vector, even though such a sum is mathematically well-defined.\footnote{In this case, we would naturally encounter a units issue, which is another indication that we are dealing with different spaces.} This highlights that when working with vector analysis, we are typically dealing with several different vector spaces. This becomes more evident when working with curvilinear coordinates, as we will see later.
+
+To make our discussion more rigorous, we begin by defining vector spaces. In our treatment, we will restrict ourselves to real vector spaces, meaning our vector spaces are defined over the field of real numbers $\mathbb{R}$. In practice, this means we can multiply our vectors by real numbers. However, before defining vector spaces, we introduce some basic mathematical concepts that will be useful throughout this exposition. These concepts may seem overly formal and unnecessary for understanding the subject, but it is important for students to have these definitions available for reference to clarify the meaning of other expressions used in this exposition.
+
+::: {#def-cartprod}
+### Cartesian Product
+Given two sets $A$ and $B$, the Cartesian product is simply the set of ordered pairs defined as:
+$$A \times B \equiv \{(a, b) \mid a \in A \text{ and } b \in B\}.$$
+:::
+
+::: {#def-func}
+### Function Between Sets
+Let $A$ and $B$ be two sets. We denote a function $f$ with domain $A$ and codomain $B$ as:
+$$f: A \to B.$$
+We use the notation $f(a) \in B$ to denote the value of the function $f$ when applied to an element $a \in A$. It is important to note that some functions are denoted differently. For example, the addition of real numbers, $+: \mathbb{R} \times \mathbb{R} \to \mathbb{R}$, is represented as $a + b \in \mathbb{R}$ for $a, b \in \mathbb{R}$. In these cases, we often refer to such functions as operators.
+:::
+
+In @def-func, we saw that we use different notation for some functions, such as the addition of two real numbers. Furthermore, some functions are denoted even more compactly. For example, the multiplication of two real numbers is typically denoted by the mere juxtaposition of two numbers. That is, when we write $ab$ where $a, b \in \mathbb{R}$, we are compactly representing the application of the multiplication function to two real numbers.
+
+Finally, we can define the concept of a real vector space:
+
+::: {#def-vecspace}
+### Real Vector Space
+
+A vector space over the real numbers $\mathbb{R}$ is given by a set $\mathbb{V}$ and two operations: scalar multiplication and vector addition. The elements of $\mathbb{V}$ are denoted with an arrow above the symbol, i.e., $\vec{v} \in \mathbb{V}$. The operations are defined as:
+$$\cdot: \mathbb{R} \times \mathbb{V} \to \mathbb{V}, \quad +: \mathbb{V} \times \mathbb{V} \to \mathbb{V}.$$
+The addition operation $+$ satisfies the following properties (where $\vec{v}, \vec{u}, \vec{w} \in \mathbb{V}$):
+
+1. **Associativity**: $(\vec{v} + \vec{u}) + \vec{w} = \vec{v} + (\vec{u} + \vec{w})$.
+2. **Commutativity**: $\vec{v} + \vec{u} = \vec{u} + \vec{v}$.
+3. **Existence of the additive identity**: $\vec{v} + \vec{0} = \vec{v}$.
+4. **Existence of the additive inverse**: $\vec{v} + (-\vec{v}) = \vec{0}$, where $-\vec{v} \in \mathbb{V}$.
+
+The scalar multiplication operation satisfies (where $\vec{v}, \vec{u} \in \mathbb{V}$ and $a, b \in \mathbb{R}$):
+
+1. **Compatibility with real multiplication**: $a(b\vec{v}) = (ab)\vec{v}$.
+2. **Existence of the multiplicative identity**: $1\vec{v} = \vec{v}$.
+3. **Distributivity over vector addition**: $a(\vec{v} + \vec{u}) = a\vec{v} + a\vec{u}$.
+4. **Distributivity over scalar addition**: $(a + b)\vec{v} = a\vec{v} + b\vec{v}$.
+:::
+
+An obvious first example of a real vector space is the set of real numbers $\mathbb{R}$ itself, whose elements we call scalars. It is easy to verify that this set satisfies all the properties described above. We can use this fact to construct more complex vector spaces. Consider the Cartesian product of two real spaces, $\mathbb{R}^2 \equiv \mathbb{R} \times \mathbb{R}$. Now, we can **define** the addition of two elements of $\mathbb{R}^2$ and scalar multiplication by a real number as:
+\begin{align}
+(a, b) + (c, d) &\equiv (a + c, b + d), \quad a, b, c, d \in \mathbb{R}, \\
+a(b, c) &\equiv (ab, ac), \quad a, b, c \in \mathbb{R}.
+\end{align}
+It is straightforward to verify that all properties of @def-vecspace are automatically satisfied. It is interesting to note exactly what we are doing: by defining addition and scalar multiplication as above, we are using the concepts of addition and multiplication of real numbers to define addition and multiplication in more complex sets, in this case $\mathbb{R}^2$. In other words, the set of ordered pairs of real numbers forms a vector space once we define the operations above. Naturally, we can make the same definitions for $\mathbb{R}^3 \equiv \mathbb{R} \times \mathbb{R} \times \mathbb{R}$. Henceforth, we will always use these definitions of addition and scalar multiplication when dealing with spaces $\mathbb{R}^n \equiv \mathbb{R} \times \mathbb{R} \times \dots \times \mathbb{R}$.
+
+## Linear Independence
+
+To highlight the difference between $\mathbb{R}^2$ and $\mathbb{R}^3$, we introduce a new definition:
+
+**Definition (Linear Independence):** A set of vectors $\vec{v}_i$, $i \in \{1, 2, \dots, n\}$, is said to be linearly independent if their linear combination is zero if and only if all coefficients are zero, i.e.,
+$$\sum_{i=1}^n a^i \vec{v}_i = 0 \text{ if and only if } a^i = 0 \text{ for all } i \in \{1, 2, \dots, n\}.$$
+
+In practical terms, a set of vectors is linearly independent if none of the vectors can be written as a linear combination of the others. That is, when they are **not** linearly independent, their combination may be zero even if some coefficients are non-zero (say $a^1 \neq 0$), so:
+\begin{equation}
+\vec{v}_1 = -\frac{1}{a^1} \sum_{i=2}^n a^i \vec{v}_i.
+\end{equation}
+
+**Definition (Basis):** A set of vectors forms a basis if they are linearly independent and any element of $\mathbb{V}$ can be written as a linear combination of them. The number of vectors in the basis denotes the dimension of $\mathbb{V}$.
+
+It is easy to verify that the vectors $\vec{e}_1 \equiv (1, 0, 0)$, $\vec{e}_2 \equiv (0, 1, 0)$, and $\vec{e}_3 \equiv (0, 0, 1)$ form a basis for $\mathbb{R}^3$. Thus, any vector in this space can be written as a linear combination of these vectors, i.e.,
+\begin{equation}
+\vec{v} = \sum_{i=1}^n v^i \vec{e}_i.
+\end{equation}
+
+From a physics perspective, we are interested in using mathematical concepts to represent concrete elements found in nature. Our real-world experience shows that we need three coordinates to specify a point in space. If we calculate the three coordinates of an object relative to an origin and then the coordinates of the origin relative to another reference point, the position of the object relative to the other reference point is given by the simple sum of the coordinates. This example shows that we can map the concept of position in space to elements of $\mathbb{R}^3$, and moreover, the operations defined in this space have physical meaning. In this sense, it is important to understand what we do when we apply physical modeling: we are seeking mathematical objects that can be mapped to physical quantities and whose operations correspond to elements of the physical world. In the example above, points in $\mathbb{R}^3$ are mapped to coordinate positions in the real world, and the addition of two vectors corresponds to a change in the coordinate origin.
+
+In this chapter, we will focus on three-dimensional vector spaces, which is the arena where electromagnetism will be developed in this course.
+
+## Exercise Vector Space
+
+1. Show that $\mathbb{R}^2$ and $\mathbb{R}^3$ are vector spaces of dimension two and three, respectively.
+
+
+## Inner Product
+
+The inner product is defined as a function on a vector space that is used to calculate magnitudes and angles between vectors. The mathematical definition is as follows:
+
+::: {#def-innerprod}
+### Inner Product
+Given a vector space $\mathbb{V}$, we define the inner product as the map:
+$$\cdot: \mathbb{V} \times \mathbb{V} \to \mathbb{R}.$$
+It satisfies the following properties (where $\vec{v}, \vec{u}, \vec{w} \in \mathbb{V}$):
+
+1. **Symmetry**: $\vec{v} \cdot \vec{w} = \vec{w} \cdot \vec{v}$.
+2. **Linearity on the left**: $(\vec{v} + \vec{u}) \cdot \vec{w} = \vec{v} \cdot \vec{w} + \vec{u} \cdot \vec{w}$.
+3. **Positivity**: $\vec{v} \cdot \vec{v} \geq 0$, and equality holds if and only if $\vec{v} = \vec{0}$.
+
+It is worth noting that left linearity, combined with symmetry, implies right linearity. In other words, this product is bilinear. Finally, given an inner product, we define the norm or magnitude of a vector as:
+\begin{equation}
+|\vec{v}| \equiv \sqrt{\vec{v} \cdot \vec{v}},
+\end{equation}
+where the positivity property ensures that the square root is always well-defined.
+:::
+
+In general, there are numerous possible choices for inner products. To see this, note that linearity implies that the inner product of any two vectors is:
+$$\vec{v} \cdot \vec{u} = \left( \sum_{i=1}^3 v^i \vec{e}_i \right) \cdot \left( \sum_{j=1}^3 u^j \vec{e}_j \right) = \sum_{i,j=1}^3 v^i u^j \vec{e}_i \cdot \vec{e}_j.$$
+Thus, we can compute the inner product between any two vectors if we know the inner products between the basis elements. To determine this, we need to define the six quantities $\vec{e}_i \cdot \vec{e}_j$. Note that, in general, there would be nine combinations of $i$ and $j$, but symmetry provides three equations:
+\begin{equation}
+\vec{e}_2 \cdot \vec{e}_1 = \vec{e}_1 \cdot \vec{e}_2, \quad \vec{e}_3 \cdot \vec{e}_1 = \vec{e}_1 \cdot \vec{e}_3, \quad \vec{e}_3 \cdot \vec{e}_2 = \vec{e}_2 \cdot \vec{e}_3.
+\end{equation}
+Apart from the positivity condition,[^1] we have complete freedom to choose these six quantities.
+
+[^1]: This condition imposes constraints on the signs and inequalities between the terms but does not introduce additional equations and thus does not reduce the dimensionality of the problem.
+
+## Kronecker Delta
+
+In our treatment, we assume the space is flat, and in this case, the inner product that reproduces the familiar Euclidean geometry is given by $\vec{e}_i \cdot \vec{e}_j = \delta_{ij}$, where we introduce the Kronecker delta:
+\begin{equation}
+\delta_{ij} \equiv \begin{cases} 
+1 & \text{if } i = j, \\
+0 & \text{if } i \neq j.
+\end{cases}
+\end{equation}
+In these notes, the inner product will always be the Euclidean inner product defined above.
+
+To understand the geometric meaning of this product, we start by calculating the magnitude of a vector:
+\begin{equation}
+|\vec{v}| = \sqrt{(v^1)^2 + (v^2)^2 + (v^3)^2},
+\end{equation}
+which is simply the Euclidean norm we are familiar with. We can now implicitly define the angle $\theta$ between two vectors as:
+\begin{equation}
+\vec{v} \cdot \vec{u} = |\vec{v}| |\vec{u}| \cos \theta.
+\end{equation}
+To verify that this definition aligns with the usual Euclidean geometry, consider the inner product between the vector $\vec{v} = a^1 \vec{e}_1 + a^2 \vec{e}_2$ and the vector $\vec{u} = \vec{e}_1$, i.e.,
+\begin{equation}
+\vec{v} \cdot \vec{u} = \left( a^1 \vec{e}_1 + a^2 \vec{e}_2 \right) \cdot \vec{e}_1 = a^1 = |\vec{v}| |\vec{u}| \frac{a^1}{\sqrt{(a^1)^2 + (a^2)^2}} \implies \cos \theta = \frac{a^1}{\sqrt{(a^1)^2 + (a^2)^2}}.
+\end{equation}
+In this example, the cosine of the angle between the vectors is exactly the adjacent side over the hypotenuse.
+
+In general, the inner product defined above can be written as:
+$$
+\vec{v} \cdot \vec{u} = \left( \sum_{i=1}^3 v^i \vec{e}_i \right) \cdot \left( \sum_{j=1}^3 u^j \vec{e}_j \right) = \sum_{i,j=1}^3 v^i u^j \vec{e}_i \cdot \vec{e}_j = \sum_{i,j=1}^3 v^i u^j \delta_{ij} = \sum_{i=1}^3 v^i u^i.
+$${#eq-prodint}
+Note that in the last equality, we used the fact that $\delta_{ij} = 0$ for $i \neq j$ to eliminate one summation. Finally, we say that two vectors $\vec{v}$ and $\vec{u}$ are orthogonal if $\vec{v} \cdot \vec{u} = 0$.
+
+Using the norm of a vector, we define the associated unit vector as:
+\begin{equation}
+\hat{v} \equiv \frac{\vec{v}}{|\vec{v}|}.
+\end{equation}
+
+## Exercises Inner Product
+
+1. Show that left linearity and symmetry imply right linearity.
+2. Write out the summations in @eq-prodint explicitly and show that the presence of the Kronecker delta can be used to eliminate one summation.
+
+## Exterior Product {#sec-eprod}
+
+The vector analysis developed so far pertains to objects representing points and directions in space. However, other concepts may be necessary to describe physical phenomena, namely planes and volumes. To describe a plane, we need two directions in space, meaning there is only one plane defined by two vectors that are not collinear.[^2] A volume, on the other hand, requires three vectors that are not coplanar to be defined. The concept needed to define planes and volumes is the tensor product. In this exposition, we provide a simplified discussion to build the reader’s intuition. Loosely speaking, the tensor product of a space $\mathbb{V}$ with itself, $\mathbb{V} \otimes \mathbb{V}$, is also a vector space (in the sense of @def-vecspace) formed by the basis vectors $\vec{e}_i \otimes \vec{e}_j$, $i, j \in \{1, 2, 3\}$, meaning it is a vector space of dimension nine. However, to describe planes and volumes, we want to exclude cases with collinear vectors. To do so, we restrict ourselves to the antisymmetric subspace of $\mathbb{V} \otimes \mathbb{V}$, as the antisymmetric product of two collinear vectors is always zero.
+
+[^2]: Collinear vectors are those that correspond to a simple scalar multiple, i.e., if $\vec{v}$ and $\vec{u}$ are collinear, there exists a real number $a \neq 0$ such that $\vec{v} = a \vec{u}$.
+
+::: {#def-exteriorprod}
+### Exterior Product
+The basis of this antisymmetric second-order tensor space is defined as:
+$$\vec{e}_i \wedge \vec{e}_j \in \mathbb{V} \wedge \mathbb{V}, \quad \vec{e}_i \wedge \vec{e}_j = \left( \vec{e}_i \otimes \vec{e}_j - \vec{e}_j \otimes \vec{e}_i \right).$${#eq-exteriorbasis}
+:::
+
+We denote vectors in the space $\mathbb{V} \wedge \mathbb{V}$ as bivectors. In this definition, we use the exterior product, but we will not delve into the mathematical details required for its formal definition. The important properties in our context are:
+$$\begin{aligned}
+\vec{v} \wedge \vec{u} &= -\vec{u} \wedge \vec{v}, \quad (\vec{v} + \vec{u}) \wedge \vec{w} = \vec{v} \wedge \vec{w} + \vec{u} \wedge \vec{w}, \quad (a \vec{v}) \wedge \vec{u} = a (\vec{v} \wedge \vec{u}), \\
+\left( \vec{v} \wedge \vec{u} \right) \wedge \vec{w} &= \vec{v} \wedge \left( \vec{u} \wedge \vec{w} \right), \quad \vec{v}, \vec{u}, \vec{w} \in \mathbb{V}, \ a \in \mathbb{R}.
+\end{aligned}$${#eq-exteriorprops}
+It is easy to verify that this space is three-dimensional, meaning there are only three non-zero basis vectors: $\vec{e}_1 \wedge \vec{e}_2$, $\vec{e}_1 \wedge \vec{e}_3$, and $\vec{e}_2 \wedge \vec{e}_3$. Due to this coincidence—that the dimension of the antisymmetric tensor space in three dimensions is also three—J. Willard Gibbs introduced the concept of the vector product in his vector analysis textbook. The idea is to create a linear, bijective map (an isomorphism) between the space $\mathbb{V} \wedge \mathbb{V}$ and the original vector space $\mathbb{V}$. To do this, note that there is only one vector orthogonal to the plane $\vec{e}_1 \wedge \vec{e}_2$ (i.e., a vector orthogonal to both vectors used to construct the plane), namely $\vec{e}_3$.
+
+## Vector Product
+
+To define our map, we can set $\vec{e}_1 \wedge \vec{e}_2 \to \vec{e}_3$. However, note that planes can have different signs (e.g., $\vec{e}_1 \wedge \vec{e}_2 = -\vec{e}_2 \wedge \vec{e}_1$). Thus, to determine the map, we need to choose the signs of the planes mapped to vectors. Here, we follow the standard “right-hand rule” convention.[^2] We choose the sign according to the position of the thumb of the right hand when the first vector of the product is aligned with the palm and the second with the fingertips, i.e., we define the linear map $V: \mathbb{V} \wedge \mathbb{V} \to \mathbb{V}$ as:
+$$V(\vec{e}_1 \wedge \vec{e}_2) = \vec{e}_3, \quad V(\vec{e}_3 \wedge \vec{e}_1) = \vec{e}_2, \quad V(\vec{e}_2 \wedge \vec{e}_3) = \vec{e}_1.$${#eq-vecprod}
+Let us now explicitly calculate the exterior product of two vectors and compute its map to the space $\mathbb{V}$:
+$$\begin{aligned}
+\vec{v} \wedge \vec{u} &= \left( \sum_{i=1}^3 v^i \vec{e}_i \right) \wedge \left( \sum_{j=1}^3 u^j \vec{e}_j \right), \\
+&= \left( v^1 u^2 - v^2 u^1 \right) \vec{e}_1 \wedge \vec{e}_2 - \left( v^1 u^3 - v^3 u^1 \right) \vec{e}_3 \wedge \vec{e}_1 + \left( v^2 u^3 - v^3 u^2 \right) \vec{e}_2 \wedge \vec{e}_3.
+\end{aligned}$${#eq-wedprod}
+Finally, we define the vector product by applying our isomorphism $V$ to this product:
+$$\vec{v} \times \vec{u} \equiv V(\vec{v} \wedge \vec{u}) = \left( v^2 u^3 - v^3 u^2 \right) \vec{e}_1 - \left( v^1 u^3 - v^3 u^1 \right) \vec{e}_2 + \left( v^1 u^2 - v^2 u^1 \right) \vec{e}_3.$${#eq-vprod}
+To simplify vector product calculations, we can compute the product of basis vectors and establish a general rule:
+$$\vec{e}_i \times \vec{e}_j = \sum_{k=1}^3 \epsilon_{ijk} \vec{e}_k.$${#eq-levicivita}
+The antisymmetry of the vector product shows that the term $\epsilon_{ijk}$, called the Levi-Civita symbol, must be antisymmetric in its first two indices: $\epsilon_{ijk} = -\epsilon_{jik}$. Moreover, examining @eq-vecprod, we see that this symbol is also antisymmetric in the last two indices, i.e., $\epsilon_{ijk} = -\epsilon_{ikj}$, and that $\epsilon_{123} = 1$. Using the Levi-Civita symbol, we can write @eq-vprod more compactly:
+$$\vec{v} \times \vec{u} = \left( \sum_{i=1}^3 v^i \vec{e}_i \right) \times \left( \sum_{j=1}^3 u^j \vec{e}_j \right) = \sum_{i,j,k=1}^3 \epsilon_{ijk} v^i u^j \vec{e}_k.$${#eq-vpe}
+Not only is this form more compact, but it is also much more convenient for computing more complex products, as we will see later.
+
+From a geometric perspective, we can understand the meaning of this product by calculating the vector product between the vector $\vec{v} = \vec{e}_1$ and the vector $\vec{u} = a^1 \vec{e}_1 + a^2 \vec{e}_2$:
+$$\vec{v} \times \vec{u} = a^2 \vec{e}_3 = |\vec{v}| |\vec{u}| \frac{a^2}{\sqrt{(a^1)^2 + (a^2)^2}} \vec{e}_3 = |\vec{v}| |\vec{u}| \sin \theta \vec{e}_3.$${#eq-vprodgeom}
+In other words, the vector product of two vectors results in a vector orthogonal to the plane formed by the two vectors, with a magnitude equal to the area of the parallelogram they form. This makes it clear that the result of a vector product does not have the same physical meaning as an ordinary vector. In our construction, the vector product is actually an antisymmetric tensor product used to represent planes (hence, its magnitude is associated with areas, not lengths). However, in three dimensions, it has the same dimensionality as the original vector space, allowing us to map between these spaces.
+
+The case of volumes is even simpler. Following the previous logic, we want the composition of three non-coplanar vectors, which corresponds to the antisymmetric tensor product $\mathbb{V} \wedge \mathbb{V} \wedge \mathbb{V}$, called the space of trivectors. The only basis vector in this space is $\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3$; any other combination is either zero or proportional to this vector due to antisymmetry. This shows that this space is one-dimensional. For this reason, we can map this space to $\mathbb{R}$ using the map $\Upsilon: \mathbb{V} \wedge \mathbb{V} \wedge \mathbb{V} \to \mathbb{R}$, defined by $\Upsilon(\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3) = 1$. Like the linear map $V$ used for the vector product, this map also depends on an arbitrary choice of sign. Moreover, the map $\Upsilon$ can be understood as computing the “magnitude” of this trivector, which represents the volume of the parallelepiped formed by the vectors.
+
+In Gibbs’ vector analysis, instead of using the exterior product, the vector product is directly defined as a map $\times: \mathbb{V} \times \mathbb{V} \to \mathbb{V}$. However, these vectors do not behave the same as vectors in $\mathbb{V}$ under spatial inversions, i.e., $\vec{e}_i \to -\vec{e}_i$. It is easy to see that the vector resulting from a vector product does not change sign in this case. For this reason, such vectors are called pseudovectors. This reveals a disadvantage of Gibbs’ analysis: it avoids introducing tensors and the exterior product but requires distinguishing between different types of vectors, which can lead to confusion in more extensive calculations. Similarly, instead of introducing the space of trivectors, we use the map $\Upsilon$ to map these elements to scalars (i.e., $\mathbb{R}$). Here, we encounter the same complication as with the vector product: the scalars resulting from $\Upsilon$ do not behave like ordinary elements of $\mathbb{R}$ under spatial inversion, as they change sign and are thus called pseudoscalars.
+
+## Exercises Vector Product
+
+1. Show that the exterior product of two vectors $\vec{v}$ and $a \vec{v}$ is zero.
+2. Explicitly compute @eq-wedprod.
+3. Explicitly compute @eq-vpe.
+4. Show that the exterior product of three vectors $\vec{v} \wedge \vec{u} \wedge \vec{w}$ is proportional to $\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3$.
+
+
+## Relation to the Exterior Product {#sec-trip}
+
+As discussed in the @def-exteriorprod, the exterior product can be used to define mathematical objects that describe planes and volumes. Naturally, $\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3$ is a first example of a triple product. However, we need to relate this quantity to the tools available, namely the vector product and inner product. Using the definition of the map $V$ given in @eq-vecprod, it is straightforward to see that there is a relation between this map and $\Upsilon$, i.e.,
+$$\begin{aligned}
+\vec{e}_1 \cdot V(\vec{e}_2 \wedge \vec{e}_3) &= \Upsilon(\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3), \\
+\vec{e}_2 \cdot V(\vec{e}_3 \wedge \vec{e}_1) &= \Upsilon(\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3), \\
+\vec{e}_3 \cdot V(\vec{e}_1 \wedge \vec{e}_2) &= \Upsilon(\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3).
+\end{aligned}$${#eq-vu-relations}
+In fact, it is not difficult to show that, in general,
+$$\vec{e}_i \cdot V(\vec{e}_j \wedge \vec{e}_k) = \vec{e}_i \cdot (\vec{e}_j \times \vec{e}_k) = \Upsilon(\vec{e}_i \wedge \vec{e}_j \wedge \vec{e}_k) = \epsilon_{ijk}.$${#eq-VandU}
+With this result, it is also easy to see that
+$$\vec{e}_i \wedge \vec{e}_j \wedge \vec{e}_k = \epsilon_{ijk} \vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3.$${#eq-trieps}
+Using the linearity of the maps $V$ and $\Upsilon$ and the definition of the vector product in @eq-vprod, we have
+$$\vec{v} \cdot (\vec{u} \times \vec{w}) = \Upsilon(\vec{v} \wedge \vec{u} \wedge \vec{w}).$${#eq-VandUv}
+This shows that the triple product, where we first compute the vector product of $\vec{u}$ and $\vec{w}$ and then take the inner product of the result with $\vec{v}$, is equivalent to computing the trivector formed by these vectors and then taking its magnitude, resulting in the volume of the parallelepiped they form.
+
+The second triple product we can consider is the composition of two vector products, i.e.,
+$$(\vec{e}_i \times \vec{e}_j) \times \vec{e}_k = V\left( V\left( \vec{e}_i \wedge \vec{e}_j \right) \wedge \vec{e}_k \right),$$
+where we rewrite the vector product in terms of the exterior product on the right-hand side. Using the map in @eq-vecprod, it is straightforward to compute this product for a specific choice of basis elements, for example,
+$$\begin{aligned}
+V\left( V\left( \vec{e}_1 \wedge \vec{e}_2 \right) \wedge \vec{e}_1 \right) &= V\left( \vec{e}_3 \wedge \vec{e}_1 \right) = +\vec{e}_2, \\
+V\left( V\left( \vec{e}_1 \wedge \vec{e}_2 \right) \wedge \vec{e}_2 \right) &= V\left( \vec{e}_3 \wedge \vec{e}_2 \right) = -\vec{e}_1, \\
+V\left( V\left( \vec{e}_1 \wedge \vec{e}_2 \right) \wedge \vec{e}_3 \right) &= V\left( \vec{e}_3 \wedge \vec{e}_3 \right) = \vec{0}.
+\end{aligned}$${#eq-triple-vecprod-examples}
+We can also use the result in @eq-levicivita in terms of the Levi-Civita symbol to compute the same product. After a tedious process, we can show that all such products can be represented by
+$$(\vec{e}_i \times \vec{e}_j) \times \vec{e}_k = V\left( V\left( \vec{e}_i \wedge \vec{e}_j \right) \wedge \vec{e}_k \right) = \left( \vec{e}_k \cdot \vec{e}_i \right) \vec{e}_j - \left( \vec{e}_k \cdot \vec{e}_j \right) \vec{e}_i.$${#eq-TT}
+Using the linearity of all products involved, it follows naturally that
+$$\left( \vec{v} \times \vec{u} \right) \times \vec{w} = V\left( V\left( \vec{v} \wedge \vec{u} \right) \wedge \vec{w} \right) = \left( \vec{w} \cdot \vec{v} \right) \vec{u} - \left( \vec{w} \cdot \vec{u} \right) \vec{v}.$${#eq-vprod2}
+With these rules, we can compute any product involving three or more terms.
+
+Another useful rule for the upcoming sections comes from applying the inverse of $V$, defined in @eq-vecprod, i.e.,
+$$V^{-1}(\vec{e}_3) = \vec{e}_1 \wedge \vec{e}_2, \quad V^{-1}(\vec{e}_2) = \vec{e}_3 \wedge \vec{e}_1, \quad V^{-1}(\vec{e}_1) = \vec{e}_2 \wedge \vec{e}_3.$${#eq-v-inverse}
+It is evident that the exterior product of $V^{-1}(\vec{e}_i)$ with $\vec{e}_j$ is zero if $i \neq j$, and it is straightforward to show that it equals $\vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3$ if $i = j$. Thus, we have
+$$V^{-1}(\vec{e}_i) \wedge \vec{e}_j = \vec{e}_1 \wedge \vec{e}_2 \wedge \vec{e}_3 \ \delta_{ij}, \quad \Upsilon\left[ V^{-1}(\vec{e}_i) \wedge \vec{e}_j \right] = \delta_{ij}.$${#eq-v-inverse-wedge}
+In terms of vectors, we can easily compute that
+$$\Upsilon\left[ V^{-1}(\vec{v}) \wedge \vec{u} \right] = \vec{v} \cdot \vec{u}.$${#eq-UVm1}
+
+When working in a vector space with both an exterior product and an inner product, it is natural to extend the inner product to compute not only the product between two vectors but also the product between a vector and a bivector or trivector. A possible definition, compatible with the antisymmetry of the exterior product, is
+$$\begin{aligned}
+\vec{w} \cdot (\vec{v} \wedge \vec{u}) &= \left( \vec{w} \cdot \vec{v} \right) \vec{u} - \left( \vec{w} \cdot \vec{u} \right) \vec{v}, \\
+\vec{w} \cdot (\vec{v} \wedge \vec{u} \wedge \vec{k}) &= \left( \vec{w} \cdot \vec{v} \right) \vec{u} \wedge \vec{k} - \left( \vec{w} \cdot \vec{u} \right) \vec{v} \wedge \vec{k} + \left( \vec{w} \cdot \vec{k} \right) \vec{v} \wedge \vec{u}.
+\end{aligned}$${#eq-inner-bivector-trivector}
+In words, the inner product of a vector with a bivector or trivector is the sum of the inner products of the vector with each constituent vector of the bivector or trivector, with the sign given by $(-1)^n$, where $n$ is the number of vectors to the left of the vector being multiplied. Since any exterior product of more than three vectors in a three-dimensional vector space is zero, we can write
+$$\vec{k} \wedge \vec{v} \wedge \vec{u} \wedge \vec{w} = 0.$${#eq-four-wedge-zero}
+Taking the inner product of the above expression with the vector $\vec{l}$, we obtain
+$$\left( \vec{l} \cdot \vec{k} \right) \vec{v} \wedge \vec{u} \wedge \vec{w} - \left( \vec{l} \cdot \vec{v} \right) \vec{k} \wedge \vec{u} \wedge \vec{w} + \left( \vec{l} \cdot \vec{u} \right) \vec{k} \wedge \vec{v} \wedge \vec{w} - \left( \vec{l} \cdot \vec{w} \right) \vec{k} \wedge \vec{v} \wedge \vec{u} = 0.$${#eq-intdet}
+The result above can also be obtained directly through a long and tedious process by explicitly writing all vectors in terms of the basis $\vec{e}_i$.
+
+Note that @eq-vprod2 also shows the relation between the map $V$ and the inner product between vectors and bivectors or trivectors, i.e.,
+$$V\left( V\left( \vec{v} \wedge \vec{u} \right) \wedge \vec{w} \right) = \vec{w} \cdot (\vec{v} \wedge \vec{u}).$${#eq-v-inner-bivector}
+Thus, similar to @eq-VandU, the exterior product has an intimate relation with the map $V$. This arises because there exists a transformation between vectors, bivectors, and trivectors called the Hodge star map, and both $V$ and $\Upsilon$ are related to the action of this map when applied to bivectors and trivectors, respectively.
+
+## Exercises Triple Product
+
+1. Show that @eq-VandU and @eq-TT are true.
+2. Starting from @eq-VandU, prove that @eq-VandUv is valid.
+3. Using @eq-TT, prove that @eq-vprod2 is valid.
+
+
+{{< include /_footer.qmd >}}
