@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>basic-concepts – Undergraduate Physics Lecture Notes</title>
+<title>Vector Calculus Overview – Undergraduate Physics Lecture Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/basic-concepts.html">Basic Concepts</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/vector-calculus/index.html">Vector Calculus</a></li><li class="breadcrumb-item"><a href="../../courses/vector-calculus/index.html">Overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -127,16 +127,16 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Vector Calculus</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/vector-calculus/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../courses/vector-calculus/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -150,13 +150,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Special Relativity</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../courses/special-relativity/index.html" class="sidebar-item-text sidebar-link">
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/special-relativity/basic-concepts.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../courses/special-relativity/basic-concepts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Concepts</span></a>
   </div>
 </li>
@@ -178,14 +178,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/basic-concepts.html">Basic Concepts</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/vector-calculus/index.html">Vector Calculus</a></li><li class="breadcrumb-item"><a href="../../courses/vector-calculus/index.html">Overview</a></li></ol></nav>
 <div class="quarto-title">
+<h1 class="title">Vector Calculus Overview</h1>
 </div>
 
 
@@ -208,8 +218,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>This module introduces the mathematical framework of <strong>vector calculus</strong>, essential for understanding physics in three or more dimensions. It covers fundamental concepts, operations, and applications frequently used across physics courses, especially electromagnetism and mechanics.</p>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<ul>
+<li><strong>Vector Spaces:</strong> Definitions, linear independence, and the structure of spaces where vectors live.</li>
+<li><strong>Inner Product:</strong> Properties of the dot product, including the Kronecker delta notation.</li>
+<li><strong>Vector Product:</strong> Cross product, exterior product, and their properties.</li>
+<li><strong>Triple Products:</strong> Relations involving scalar and vector triple products.</li>
+<li><strong>Euclidean Space:</strong> Cartesian coordinates and tangent vectors.</li>
+<li><strong>Differential Calculus:</strong> Gradient, divergence, curl, and higher-order derivatives.</li>
+<li><strong>Integral Calculus:</strong> Line, surface, and volume integrals.</li>
+<li><strong>Curvilinear Coordinates:</strong> Basis vectors, differential operators, and orthogonal coordinate systems.</li>
+<li><strong>Dirac Delta:</strong> Introduction and properties of the delta distribution.</li>
+<li><strong>Vector Field Decomposition:</strong> Techniques to break down vector fields into simpler components.</li>
+</ul>
+<p>This course aims to build a solid foundation for applying these mathematical tools throughout your physics studies.</p>
+<hr>
+<p>Feel free to create issues, ask questions, or suggest improvements in the <a href="https://github.com/vitenti-physics/undergrad">GitHub repository</a>.</p>
 
 
+</section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
