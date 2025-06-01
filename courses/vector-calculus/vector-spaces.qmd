@@ -189,6 +189,14 @@ The antisymmetry of the vector product shows that the term $\epsilon_{ijk}$, cal
 $$\vec{v} \times \vec{u} = \left( \sum_{i=1}^3 v^i \vec{e}_i \right) \times \left( \sum_{j=1}^3 u^j \vec{e}_j \right) = \sum_{i,j,k=1}^3 \epsilon_{ijk} v^i u^j \vec{e}_k.$${#eq-vpe}
 Not only is this form more compact, but it is also much more convenient for computing more complex products, as we will see later.
 
+For completeness we provide the following definition:
+
+::: {#def-levicivita}
+### Levi-Civita Symbol
+
+The Levi-Civita symbol is defined the complete antisymmetric tensor $\epsilon_{ijk}$ such that $\epsilon_{123} = 1$.
+:::
+
 From a geometric perspective, we can understand the meaning of this product by calculating the vector product between the vector $\vec{v} = \vec{e}_1$ and the vector $\vec{u} = a^1 \vec{e}_1 + a^2 \vec{e}_2$:
 $$\vec{v} \times \vec{u} = a^2 \vec{e}_3 = |\vec{v}| |\vec{u}| \frac{a^2}{\sqrt{(a^1)^2 + (a^2)^2}} \vec{e}_3 = |\vec{v}| |\vec{u}| \sin \theta \vec{e}_3.$${#eq-vprodgeom}
 In other words, the vector product of two vectors results in a vector orthogonal to the plane formed by the two vectors, with a magnitude equal to the area of the parallelogram they form. This makes it clear that the result of a vector product does not have the same physical meaning as an ordinary vector. In our construction, the vector product is actually an antisymmetric tensor product used to represent planes (hence, its magnitude is associated with areas, not lengths). However, in three dimensions, it has the same dimensionality as the original vector space, allowing us to map between these spaces.

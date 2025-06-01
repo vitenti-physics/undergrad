@@ -1,20 +1,70 @@
 ---
 title: "Undergraduate Physics Lecture Notes"
-format: html
 ---
 
-# Undergraduate Physics Lecture Notes
+## Welcome to Undergraduate Physics Lecture Notes
 
-This site hosts the lecture notes for undergraduate physics courses taught by Sandro Vitenti.
+This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged.
 
 ## Available Courses
 
-- [Special Relativity](courses/special-relativity/index.qmd)
+Explore the following courses, each with notes and exercises:
 
-## License
+- **[Vector Calculus](vector-calculus.html)**: Covers vector spaces, inner products, vector products, and triple products, with applications to physics. 
+- **[Special Relativity](special-relativity.html)**: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics.
 
-Content is released under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+## About the Project
 
----
+These notes are developed as an open-source project to provide accessible, high-quality resources for physics students. The content is hosted on [GitHub](https://github.com/vitenti-physics/undergrad), where you can:
 
-Feedback and contributions are welcome through [GitHub](https://github.com/vitenti-physics/undergrad).
+- Access the source files (written in Quarto).
+- Report errors or ask questions.
+- Suggest improvements or new topics.
+- Contribute directly by submitting pull requests.
+
+The notes are released under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/), allowing non-commercial use, remixing, and distribution with attribution to the original author by linking back to this site.
+
+## How to Contribute {#contribute}
+
+We welcome feedback, questions, and contributions from students, educators, and physics enthusiasts. Whether you spot a typo, have a question, or want to add a new section, you can get involved through our [GitHub repository](https://github.com/vitenti-physics/undergrad). Below are quick tips to get started.
+
+### Creating a GitHub Issue
+
+If you find an error, have a question, or want to suggest an improvement, create a GitHub issue:
+
+1. **Go to the Repository**: Visit [github.com/vitenti-physics/undergrad](https://github.com/vitenti-physics/undergrad).
+2. **Navigate to Issues**: Click the "Issues" tab near the top of the page.
+3. **Create a New Issue**: Click the green "New issue" button.
+4. **Fill in Details**:
+   - **Title**: Write a clear, concise title (e.g., "Typo in Vector Product Equation").
+   - **Description**: Provide details, such as the section (e.g., [Vector Product](courses/vector-calculus/vector-spaces.html#sec-eprod)), the issue, and any suggestions. For questions, include context (e.g., "I don’t understand why the Levi-Civita symbol is antisymmetric").
+   - **Labels** (optional): Add labels like "bug," "question," or "enhancement" if prompted.
+5. **Submit**: Click "Submit new issue" to post it. You’ll be notified of responses.
+
+### Suggesting Improvements or Contributing Content
+
+To propose changes (e.g., fixing equations, adding examples), you can submit a pull request:
+
+1. **Fork the Repository**: On the [GitHub repo](https://github.com/vitenti-physics/undergrad), click "Fork" to create a copy under your account.
+2. **Clone Your Fork**: Download your fork to your computer using:
+
+```bash
+   git clone https://github.com/your-username/undergrad.git
+```
+
+3. **Edit Files**: Modify the Quarto files (e.g., vector_calculus.qmd) using a text editor. 
+   - For example, fix a typo in [Vector Product](courses/vector-calculus/vector-spaces.html#sec-eprod).
+4. **Commit Changes**: Save your changes and commit:
+
+```bash
+    git add .
+    git commit -m "Fix typo in vector product section"
+
+    Push to GitHub: Upload your changes:
+    bash
+
+    git push origin main
+``` 
+
+5. **Create a Pull Request**: Go to your fork on GitHub, click "Contribute," and select "Open pull request." 
+   - Describe your changes and submit.
