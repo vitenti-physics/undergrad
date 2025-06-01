@@ -1,0 +1,7 @@
+website:
+  sidebar:
+    style: "docked"
+    title: "Special Relativity"
+    contents:
+      - index.qmd
+      - basic-concepts.qmd

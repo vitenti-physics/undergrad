@@ -21,3 +21,9 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
+
+reference-location: margin
+citation-location: margin
+authors:
+  - Sandro Vitenti
+jupyter: python3
