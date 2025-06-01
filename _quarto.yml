@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Undergraduate Physics Lecture Notes"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Courses
+        menu:
+          - text: Special Relativity
+            href: courses/special-relativity/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/vitenti-physics/undergrad
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
