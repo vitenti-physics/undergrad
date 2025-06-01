@@ -1,0 +1,20 @@
+---
+title: "Undergraduate Physics Lecture Notes"
+format: html
+---
+
+# Undergraduate Physics Lecture Notes
+
+This site hosts the lecture notes for undergraduate physics courses taught by Sandro Vitenti.
+
+## Available Courses
+
+- [Special Relativity](courses/special-relativity/index.qmd)
+
+## License
+
+Content is released under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+---
+
+Feedback and contributions are welcome through [GitHub](https://github.com/vitenti-physics/undergrad).
