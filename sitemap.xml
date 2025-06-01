@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/index.html</loc>
-    <lastmod>2025-06-01T14:31:23.718Z</lastmod>
+    <lastmod>2025-06-01T14:34:55.606Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/index.html</loc>
+    <lastmod>2025-06-01T14:34:55.606Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/basic-concepts.html</loc>
-    <lastmod>2025-06-01T14:31:23.718Z</lastmod>
+    <lastmod>2025-06-01T14:34:55.606Z</lastmod>
   </url>
 </urlset>
