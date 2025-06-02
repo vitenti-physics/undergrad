@@ -8,6 +8,7 @@ website:
     right:
       - icon: github
         href: https://github.com/vitenti-physics/undergrad
+  google-analytics: "G-R4D0BX334F"
   sidebar:
       style: "docked"
       collapse-level: 2
@@ -15,13 +16,13 @@ website:
         - section: "Courses"
           contents:
             - section: "Vector Calculus"
-              contents: 
+              contents:
                 - text: "Overview"
                   href: courses/vector-calculus/index.qmd
                 - text: "Vector Spaces Products and Maps"
                   href: courses/vector-calculus/vector-spaces.qmd
             - section: "Special Relativity"
-              contents: 
+              contents:
                 - text: "Overview"
                   href: courses/special-relativity/index.qmd
                 - text: "Basic Concepts"
