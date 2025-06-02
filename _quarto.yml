@@ -8,7 +8,13 @@ website:
     right:
       - icon: github
         href: https://github.com/vitenti-physics/undergrad
-  google-analytics: "G-R4D0BX334F"
+  cookie-consent:
+    type: express
+    style: headline
+    palette: dark
+  google-analytics:
+    tracking-id: "G-R4D0BX334F"
+    anonymize-ip: true  
   sidebar:
       style: "docked"
       collapse-level: 2
@@ -30,7 +36,9 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: flatly
+      dark: darkly      
     toc: true
     grid:
       body-width: 1200px
