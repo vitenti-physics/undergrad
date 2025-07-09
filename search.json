@@ -196,7 +196,7 @@
     "href": "courses/special-relativity/galilean-relativity.html#galilean-relativity",
     "title": "Galilean Relativity",
     "section": "Galilean Relativity",
-    "text": "Galilean Relativity\nIn Galilean relativity, space is modeled as a three-dimensional Euclidean vector space:\n\\[\n\\mathbb{E}^3 = (\\mathbb{R}^3, +, \\cdot)\n\\]\nThis structure defines:\n\nA vector space: closed under vector addition and scalar multiplication.\nAn inner product \\((\\cdot)\\): allows us to define angles and lengths.\n\nLet \\(\\vec{x}, \\vec{y} \\in \\mathbb{E}^3\\). Then:\n\nAddition: \\(\\vec{x} + \\vec{y} \\in \\mathbb{E}^3\\)\nScalar multiplication: \\(a \\vec{x} \\in \\mathbb{E}^3\\), for \\(a \\in \\mathbb{R}\\)\nDistance between points is given by:\n\\[\n|\\vec{x} - \\vec{y}| = \\sqrt{(\\vec{x} - \\vec{y}) \\cdot (\\vec{x} - \\vec{y})}\n\\]\nwhich defines a norm, and hence a metric.\n\n\nCoordinates in \\(\\mathbb{E}^3\\)\nWe represent vectors in Cartesian coordinates:\n\\[\n\\vec{x} = (x^1, x^2, x^3)\n\\]\nEach component \\(x^i\\) corresponds to the projection of \\(\\vec{x}\\) onto the corresponding basis vector \\(\\vec{e}^i\\). These components carry physical meaning: they represent distances measured along fixed spatial directions from the origin.\nTo simplify visualization, we consider a 2-dimensional slice, \\(\\mathbb{E}^2\\), where:\n\\[\n\\vec{x} = (x^1, x^2)\n\\]\nBelow, we illustrate a vector \\(\\vec{x}\\) in \\(\\mathbb{E}^2\\), decomposed into its components.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 4))\n\ndraw_euclidean_2d(ax, title=r\"$\\mathbb{E}^2$\")\ndraw_vector_2d(ax, (1.0, 0.2), label=\"x\", color=\"blue\", components=True)\n\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: In this diagram, \\(\\vec{x}\\) is shown along with its projections onto the \\(x^1\\) and \\(x^2\\) axes. The dashed lines and gray arrows indicate the coordinate decomposition that defines the Cartesian components.",
+    "text": "Galilean Relativity\nIn Galilean relativity, space is modeled as a three-dimensional Euclidean vector space1:\n1 Euclidean space\\[\n\\mathbb{E}^3 = (\\mathbb{R}^3, +, \\cdot)\n\\]\nThis structure defines:\n\nA vector space: closed under vector addition and scalar multiplication.\nAn inner product \\((\\cdot)\\): allows us to define angles and lengths.\n\nLet \\(\\vec{x}, \\vec{y} \\in \\mathbb{E}^3\\). Then:\n\nAddition: \\(\\vec{x} + \\vec{y} \\in \\mathbb{E}^3\\)\nScalar multiplication: \\(a \\vec{x} \\in \\mathbb{E}^3\\), for \\(a \\in \\mathbb{R}\\)\nDistance between points is given by:\n\\[\n|\\vec{x} - \\vec{y}| = \\sqrt{(\\vec{x} - \\vec{y}) \\cdot (\\vec{x} - \\vec{y})}\n\\]\nwhich defines a norm, and hence a metric.\n\n\nCoordinates in \\(\\mathbb{E}^3\\)\nWe represent vectors in Cartesian coordinates:\n\\[\n\\vec{x} = (x^1, x^2, x^3)\n\\]\nEach component \\(x^i\\) corresponds to the projection of \\(\\vec{x}\\) onto the corresponding basis vector \\(\\vec{e}^i\\). These components carry physical meaning: they represent distances measured along fixed spatial directions from the origin.\nTo simplify visualization, we consider a 2-dimensional slice, \\(\\mathbb{E}^2\\), where:\n\\[\n\\vec{x} = (x^1, x^2)\n\\]\nBelow, we illustrate a vector \\(\\vec{x}\\) in \\(\\mathbb{E}^2\\), decomposed into its components.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 4))\n\ndraw_euclidean_2d(ax, title=r\"$\\mathbb{E}^2$\")\ndraw_vector_2d(ax, (1.0, 0.2), label=\"x\", color=\"blue\", components=True)\n\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: In this diagram, \\(\\vec{x}\\) is shown along with its projections onto the \\(x^1\\) and \\(x^2\\) axes. The dashed lines and gray arrows indicate the coordinate decomposition that defines the Cartesian components.",
     "crumbs": [
       "Courses",
       "Special Relativity",
@@ -250,65 +250,6 @@
       "Special Relativity",
       "Galilean Relativity"
     ]
-  },
-  {
-    "objectID": "courses/vector-calculus/index.html",
-    "href": "courses/vector-calculus/index.html",
-    "title": "Vector Calculus Overview",
-    "section": "",
-    "text": "This module introduces the mathematical framework of vector calculus, essential for understanding physics in three or more dimensions. It covers fundamental concepts, operations, and applications frequently used across physics courses, especially electromagnetism and mechanics.\n\n\n\nVector Spaces: Definitions, linear independence, and the structure of spaces where vectors live.\nInner Product: Properties of the dot product, including the Kronecker delta notation.\nVector Product: Cross product, exterior product, and their properties.\nTriple Products: Relations involving scalar and vector triple products.\nEuclidean Space: Cartesian coordinates and tangent vectors.\nDifferential Calculus: Gradient, divergence, curl, and higher-order derivatives.\nIntegral Calculus: Line, surface, and volume integrals.\nCurvilinear Coordinates: Basis vectors, differential operators, and orthogonal coordinate systems.\nDirac Delta: Introduction and properties of the delta distribution.\nVector Field Decomposition: Techniques to break down vector fields into simpler components.\n\nThis course aims to build a solid foundation for applying these mathematical tools throughout your physics studies.\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
-    "crumbs": [
-      "Courses",
-      "Vector Calculus",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "courses/vector-calculus/index.html#contents",
-    "href": "courses/vector-calculus/index.html#contents",
-    "title": "Vector Calculus Overview",
-    "section": "",
-    "text": "Vector Spaces: Definitions, linear independence, and the structure of spaces where vectors live.\nInner Product: Properties of the dot product, including the Kronecker delta notation.\nVector Product: Cross product, exterior product, and their properties.\nTriple Products: Relations involving scalar and vector triple products.\nEuclidean Space: Cartesian coordinates and tangent vectors.\nDifferential Calculus: Gradient, divergence, curl, and higher-order derivatives.\nIntegral Calculus: Line, surface, and volume integrals.\nCurvilinear Coordinates: Basis vectors, differential operators, and orthogonal coordinate systems.\nDirac Delta: Introduction and properties of the delta distribution.\nVector Field Decomposition: Techniques to break down vector fields into simpler components.\n\nThis course aims to build a solid foundation for applying these mathematical tools throughout your physics studies.\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
-    "crumbs": [
-      "Courses",
-      "Vector Calculus",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "",
-    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged."
-  },
-  {
-    "objectID": "index.html#welcome-to-undergraduate-physics-lecture-notes",
-    "href": "index.html#welcome-to-undergraduate-physics-lecture-notes",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "",
-    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged."
-  },
-  {
-    "objectID": "index.html#available-courses",
-    "href": "index.html#available-courses",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "Available Courses",
-    "text": "Available Courses\nExplore the following courses, each with notes and exercises:\n\nVector Calculus: Covers vector spaces, inner products, vector products, and triple products, with applications to physics.\nSpecial Relativity: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics."
-  },
-  {
-    "objectID": "index.html#about-the-project",
-    "href": "index.html#about-the-project",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "About the Project",
-    "text": "About the Project\nThese notes are developed as an open-source project to provide accessible, high-quality resources for physics students. The content is hosted on GitHub, where you can:\n\nAccess the source files (written in Quarto).\nReport errors or ask questions.\nSuggest improvements or new topics.\nContribute directly by submitting pull requests.\n\nThe notes are released under the CC BY-NC-SA 4.0 license, allowing non-commercial use, remixing, and distribution with attribution to the original author by linking back to this site."
-  },
-  {
-    "objectID": "index.html#contribute",
-    "href": "index.html#contribute",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "How to Contribute",
-    "text": "How to Contribute\nWe welcome feedback, questions, and contributions from students, educators, and physics enthusiasts. Whether you spot a typo, have a question, or want to add a new section, you can get involved through our GitHub repository. Below are quick tips to get started.\n\nCreating a GitHub Issue\nIf you find an error, have a question, or want to suggest an improvement, create a GitHub issue:\n\nGo to the Repository: Visit github.com/vitenti-physics/undergrad.\nNavigate to Issues: Click the “Issues” tab near the top of the page.\nCreate a New Issue: Click the green “New issue” button.\nFill in Details:\n\nTitle: Write a clear, concise title (e.g., “Typo in Vector Product Equation”).\nDescription: Provide details, such as the section (e.g., Vector Product), the issue, and any suggestions. For questions, include context (e.g., “I don’t understand why the Levi-Civita symbol is antisymmetric”).\nLabels (optional): Add labels like “bug,” “question,” or “enhancement” if prompted.\n\nSubmit: Click “Submit new issue” to post it. You’ll be notified of responses.\n\n\n\nSuggesting Improvements or Contributing Content\nTo propose changes (e.g., fixing equations, adding examples), you can submit a pull request:\n\nFork the Repository: On the GitHub repo, click “Fork” to create a copy under your account.\nClone Your Fork: Download your fork to your computer using:\n\n   git clone https://github.com/your-username/undergrad.git\n\nEdit Files: Modify the Quarto files (e.g., vector_calculus.qmd) using a text editor.\n\nFor example, fix a typo in Vector Product.\n\nCommit Changes: Save your changes and commit:\n\n    git add .\n    git commit -m \"Fix typo in vector product section\"\n\n    Push to GitHub: Upload your changes:\n    bash\n\n    git push origin main\n\nCreate a Pull Request: Go to your fork on GitHub, click “Contribute,” and select “Open pull request.”\n\nDescribe your changes and submit."
   },
   {
     "objectID": "courses/vector-calculus/vector-spaces.html",
@@ -479,18 +420,70 @@
     ]
   },
   {
-    "objectID": "courses/special-relativity/basic-concepts.html",
-    "href": "courses/special-relativity/basic-concepts.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Undergraduate Physics Lecture Notes",
     "section": "",
-    "text": "ReuseCC BY-NC-SA 4.0"
+    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged."
+  },
+  {
+    "objectID": "index.html#welcome-to-undergraduate-physics-lecture-notes",
+    "href": "index.html#welcome-to-undergraduate-physics-lecture-notes",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "",
+    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged."
+  },
+  {
+    "objectID": "index.html#available-courses",
+    "href": "index.html#available-courses",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "Available Courses",
+    "text": "Available Courses\nExplore the following courses, each with notes and exercises:\n\nVector Calculus: Covers vector spaces, inner products, vector products, and triple products, with applications to physics.\nSpecial Relativity: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics."
+  },
+  {
+    "objectID": "index.html#about-the-project",
+    "href": "index.html#about-the-project",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "About the Project",
+    "text": "About the Project\nThese notes are developed as an open-source project to provide accessible, high-quality resources for physics students. The content is hosted on GitHub, where you can:\n\nAccess the source files (written in Quarto).\nReport errors or ask questions.\nSuggest improvements or new topics.\nContribute directly by submitting pull requests.\n\nThe notes are released under the CC BY-NC-SA 4.0 license, allowing non-commercial use, remixing, and distribution with attribution to the original author by linking back to this site."
+  },
+  {
+    "objectID": "index.html#contribute",
+    "href": "index.html#contribute",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "How to Contribute",
+    "text": "How to Contribute\nWe welcome feedback, questions, and contributions from students, educators, and physics enthusiasts. Whether you spot a typo, have a question, or want to add a new section, you can get involved through our GitHub repository. Below are quick tips to get started.\n\nCreating a GitHub Issue\nIf you find an error, have a question, or want to suggest an improvement, create a GitHub issue:\n\nGo to the Repository: Visit github.com/vitenti-physics/undergrad.\nNavigate to Issues: Click the “Issues” tab near the top of the page.\nCreate a New Issue: Click the green “New issue” button.\nFill in Details:\n\nTitle: Write a clear, concise title (e.g., “Typo in Vector Product Equation”).\nDescription: Provide details, such as the section (e.g., Vector Product), the issue, and any suggestions. For questions, include context (e.g., “I don’t understand why the Levi-Civita symbol is antisymmetric”).\nLabels (optional): Add labels like “bug,” “question,” or “enhancement” if prompted.\n\nSubmit: Click “Submit new issue” to post it. You’ll be notified of responses.\n\n\n\nSuggesting Improvements or Contributing Content\nTo propose changes (e.g., fixing equations, adding examples), you can submit a pull request:\n\nFork the Repository: On the GitHub repo, click “Fork” to create a copy under your account.\nClone Your Fork: Download your fork to your computer using:\n\n   git clone https://github.com/your-username/undergrad.git\n\nEdit Files: Modify the Quarto files (e.g., vector_calculus.qmd) using a text editor.\n\nFor example, fix a typo in Vector Product.\n\nCommit Changes: Save your changes and commit:\n\n    git add .\n    git commit -m \"Fix typo in vector product section\"\n\n    Push to GitHub: Upload your changes:\n    bash\n\n    git push origin main\n\nCreate a Pull Request: Go to your fork on GitHub, click “Contribute,” and select “Open pull request.”\n\nDescribe your changes and submit."
+  },
+  {
+    "objectID": "courses/vector-calculus/index.html",
+    "href": "courses/vector-calculus/index.html",
+    "title": "Vector Calculus Overview",
+    "section": "",
+    "text": "This module introduces the mathematical framework of vector calculus, essential for understanding physics in three or more dimensions. It covers fundamental concepts, operations, and applications frequently used across physics courses, especially electromagnetism and mechanics.\n\n\n\nVector Spaces: Definitions, linear independence, and the structure of spaces where vectors live.\nInner Product: Properties of the dot product, including the Kronecker delta notation.\nVector Product: Cross product, exterior product, and their properties.\nTriple Products: Relations involving scalar and vector triple products.\nEuclidean Space: Cartesian coordinates and tangent vectors.\nDifferential Calculus: Gradient, divergence, curl, and higher-order derivatives.\nIntegral Calculus: Line, surface, and volume integrals.\nCurvilinear Coordinates: Basis vectors, differential operators, and orthogonal coordinate systems.\nDirac Delta: Introduction and properties of the delta distribution.\nVector Field Decomposition: Techniques to break down vector fields into simpler components.\n\nThis course aims to build a solid foundation for applying these mathematical tools throughout your physics studies.\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "crumbs": [
+      "Courses",
+      "Vector Calculus",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "courses/vector-calculus/index.html#contents",
+    "href": "courses/vector-calculus/index.html#contents",
+    "title": "Vector Calculus Overview",
+    "section": "",
+    "text": "Vector Spaces: Definitions, linear independence, and the structure of spaces where vectors live.\nInner Product: Properties of the dot product, including the Kronecker delta notation.\nVector Product: Cross product, exterior product, and their properties.\nTriple Products: Relations involving scalar and vector triple products.\nEuclidean Space: Cartesian coordinates and tangent vectors.\nDifferential Calculus: Gradient, divergence, curl, and higher-order derivatives.\nIntegral Calculus: Line, surface, and volume integrals.\nCurvilinear Coordinates: Basis vectors, differential operators, and orthogonal coordinate systems.\nDirac Delta: Introduction and properties of the delta distribution.\nVector Field Decomposition: Techniques to break down vector fields into simpler components.\n\nThis course aims to build a solid foundation for applying these mathematical tools throughout your physics studies.\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "crumbs": [
+      "Courses",
+      "Vector Calculus",
+      "Overview"
+    ]
   },
   {
     "objectID": "courses/special-relativity/index.html",
     "href": "courses/special-relativity/index.html",
     "title": "Special Relativity",
     "section": "",
-    "text": "Welcome to the Special Relativity course lecture notes by Sandro Vitenti.\n\n\n\nBasic Concepts\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "text": "Welcome to the Special Relativity course lecture notes by Sandro Vitenti.\n\n\n\nGalilean Relativity\nSpacetime Algebra\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
     "crumbs": [
       "Courses",
       "Special Relativity",
@@ -502,7 +495,7 @@
     "href": "courses/special-relativity/index.html#course-outline",
     "title": "Special Relativity",
     "section": "",
-    "text": "Basic Concepts\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "text": "Galilean Relativity\nSpacetime Algebra\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
     "crumbs": [
       "Courses",
       "Special Relativity",
