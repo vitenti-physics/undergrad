@@ -1,0 +1,23 @@
+
+::: {.hidden}
+
+```{python}
+# | echo: false
+import sys
+
+sys.path.append("../../..")
+sys.path.append("../..")
+sys.path.append("..")
+
+from drawing_functions import draw_euclidean_2d, draw_vector_2d
+import matplotlib.pyplot as plt
+
+```
+
+$$
+\newcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dD}{\mathrm{D}}
+$$
+
+:::

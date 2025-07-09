@@ -1,2 +1,4 @@
 /.quarto/
 .vscode
+_site
+__pycache__
