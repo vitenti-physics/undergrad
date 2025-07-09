@@ -3,6 +3,8 @@ title: Vector Spaces Products and Maps
 format: html
 ---
 
+{{< include /_functions.qmd >}}
+
 ## Vector Spaces
 
 Vector spaces are used in physics to represent a wide variety of quantities. For example, in Newtonian mechanics, we use vector spaces to represent positions in space, velocities, and displacements. It is worth noting that these three physical quantities have distinct natures, which is reflected in the meaning of the operations we can perform with them. For instance, velocity vectors can be added or subtracted when we want to represent velocities in different inertial reference frames. Similarly, position vectors can be added when we change the origin of a coordinate system. However, there is no natural meaning to the sum of a position vector and a velocity vector, even though such a sum is mathematically well-defined.\footnote{In this case, we would naturally encounter a units issue, which is another indication that we are dealing with different spaces.} This highlights that when working with vector analysis, we are typically dealing with several different vector spaces. This becomes more evident when working with curvilinear coordinates, as we will see later.

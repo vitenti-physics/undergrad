@@ -3,6 +3,8 @@ title: "Clifford Algebra and Spacetime Geometry"
 date: "2025-07-07"
 ---
 
+{{< include /_functions.qmd >}}
+
 This document summarizes key aspects of the Clifford algebra $\mathrm{Cl}(1,3)$, which encodes the geometric structure of Minkowski spacetime. We outline its basis, multivector structure, products, and important identities. The geometric algebra approach provides an algebraic description of spacetime, encompassing Lorentz transformations and reference frames.
 
 ## Clifford Algebra of Spacetime
