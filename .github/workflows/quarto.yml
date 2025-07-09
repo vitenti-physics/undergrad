@@ -23,8 +23,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tinytex: true 
-      - name: Setup Python
-        uses: actions/setup-python@v3
+      - name: Install dependencies
+        uses: actions/setup-python@v4
+      - run: pip install jupyter
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/publish@v2
         with:
