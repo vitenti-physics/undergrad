@@ -31,8 +31,10 @@ website:
               contents:
                 - text: "Overview"
                   href: courses/special-relativity/index.qmd
-                - text: "Basic Concepts"
-                  href: courses/special-relativity/basic-concepts.qmd
+                - text: "Galilean Relativity"
+                  href: courses/special-relativity/galilean-relativity.qmd
+                - text: "Spacetime Algebra"
+                  href: courses/special-relativity/spacetime-algebra.qmd
 
 format:
   html:

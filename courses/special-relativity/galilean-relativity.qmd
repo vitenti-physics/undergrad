@@ -1,0 +1,51 @@
+---
+title: "Galilean Relativity"
+format: html
+---
+
+# Galilean Relativity
+
+In Galilean relativity, the stage/environment is described by Euclidean space.
+$$
+\mathbb{E}^3 = (\mathbb{R}^3, +, \cdot) \quad \text{Inner product → Vector space}
+$$
+
+- Addition  
+- Scalar multiplication
+
+Let $\vec{y}, \vec{x} \in \mathbb{E}^3$, then $\vec{x} + \vec{y} \in \mathbb{E}^3$.
+
+We measure distances as:
+
+$$
+|\vec{x} - \vec{y}| = \sqrt{(\vec{x} - \vec{y}) \cdot (\vec{x} - \vec{y})}
+\quad \text{→ Norm → Metric}
+$$
+
+Coordinates in $\mathbb{E}^3$ are given by:
+$$
+x^i = (x^1, x^2, x^3) \quad \text{Cartesian coordinates}
+$$
+
+In these coordinates, the components have immediate physical meaning:  
+$x^1$ = distance projected onto $x^1$ from the origin. **Physics!**
+
+```{python}
+# | code-fold: true
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+ax.arrow(0, 0, 1, 0, head_width=0.05, length_includes_head=True, color="blue")
+ax.arrow(0, 0, 0.3, 1, head_width=0.05, length_includes_head=True, color="red")
+
+ax.text(1.05, 0, r'$x^1$', fontsize=14, verticalalignment='center')
+ax.text(0.3, 1.05, r'$x^t$', fontsize=14, horizontalalignment='left')
+
+ax.set_xlim(-0.2, 1.2)
+ax.set_ylim(-0.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+plt.show()
+```
+
+
