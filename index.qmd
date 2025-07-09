@@ -10,8 +10,8 @@ This website hosts lecture notes for undergraduate physics courses taught by San
 
 Explore the following courses, each with notes and exercises:
 
-- **[Vector Calculus](vector-calculus.html)**: Covers vector spaces, inner products, vector products, and triple products, with applications to physics. 
-- **[Special Relativity](special-relativity.html)**: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics.
+- **[Vector Calculus](courses/vector-calculus/)**: Covers vector spaces, inner products, vector products, and triple products, with applications to physics. 
+- **[Special Relativity](courses/special-relativity/)**: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics.
 
 ## About the Project
 

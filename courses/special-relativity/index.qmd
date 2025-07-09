@@ -9,6 +9,7 @@ Welcome to the Special Relativity course lecture notes by Sandro Vitenti.
 
 ## Course Outline
 
-- [Basic Concepts](basic-concepts.qmd)
+- [Galilean Relativity](galilean-relativity.html)
+- [Spacetime Algebra](spacetime-algebra.html)
 
 {{< include /_footer.qmd >}}

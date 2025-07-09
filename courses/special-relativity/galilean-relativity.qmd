@@ -7,7 +7,9 @@ format: html
 
 ## Galilean Relativity
 
-In Galilean relativity, space is modeled as a three-dimensional Euclidean vector space:
+In Galilean relativity, space is modeled as a three-dimensional Euclidean vector space[^1]:
+
+[^1]: [Euclidean space](/courses/vector-calculus/vector-spaces.html#sec-euclid)
 
 $$
 \mathbb{E}^3 = (\mathbb{R}^3, +, \cdot)
