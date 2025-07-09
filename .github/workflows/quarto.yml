@@ -25,7 +25,7 @@ jobs:
           tinytex: true 
       - name: Install dependencies
         uses: actions/setup-python@v4
-      - run: pip install jupyter
+      - run: pip install jupyter matplotlib
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/publish@v2
         with:
