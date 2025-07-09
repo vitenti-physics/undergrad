@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Special Relativity – Undergraduate Physics Lecture Notes</title>
+<title>Galilean Relativity – Undergraduate Physics Lecture Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -101,10 +136,39 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -300,7 +364,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/galilean-relativity.html">Galilean Relativity</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -355,13 +419,13 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/special-relativity/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../courses/special-relativity/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/special-relativity/galilean-relativity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../courses/special-relativity/galilean-relativity.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Galilean Relativity</span></a>
   </div>
 </li>
@@ -385,20 +449,35 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#special-relativity" id="toc-special-relativity" class="nav-link active" data-scroll-target="#special-relativity">Special Relativity</a>
+  <li><a href="#galilean-relativity" id="toc-galilean-relativity" class="nav-link active" data-scroll-target="#galilean-relativity">Galilean Relativity</a>
   <ul class="collapse">
-  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course Outline</a></li>
+  <li><a href="#coordinates-in-mathbbe3" id="toc-coordinates-in-mathbbe3" class="nav-link" data-scroll-target="#coordinates-in-mathbbe3">Coordinates in <span class="math inline">\(\mathbb{E}^3\)</span></a></li>
   </ul></li>
+  <li><a href="#time" id="toc-time" class="nav-link" data-scroll-target="#time">Time</a>
+  <ul class="collapse">
+  <li><a href="#two-roles-of-time" id="toc-two-roles-of-time" class="nav-link" data-scroll-target="#two-roles-of-time">Two Roles of Time</a></li>
+  </ul></li>
+  <li><a href="#what-does-it-mean-for-a-point-to-stay-in-the-same-place" id="toc-what-does-it-mean-for-a-point-to-stay-in-the-same-place" class="nav-link" data-scroll-target="#what-does-it-mean-for-a-point-to-stay-in-the-same-place">What Does It Mean for a Point to Stay in the Same Place?</a>
+  <ul class="collapse">
+  <li><a href="#the-identity-map-trivial-frame" id="toc-the-identity-map-trivial-frame" class="nav-link" data-scroll-target="#the-identity-map-trivial-frame">The Identity Map (Trivial Frame)</a></li>
+  <li><a href="#maps-must-reflect-physical-expectations" id="toc-maps-must-reflect-physical-expectations" class="nav-link" data-scroll-target="#maps-must-reflect-physical-expectations">Maps Must Reflect Physical Expectations</a></li>
+  </ul></li>
+  <li><a href="#describing-motion-the-law-of-dynamics" id="toc-describing-motion-the-law-of-dynamics" class="nav-link" data-scroll-target="#describing-motion-the-law-of-dynamics">Describing Motion: The Law of Dynamics</a>
+  <ul class="collapse">
+  <li><a href="#consistency-of-vector-operations" id="toc-consistency-of-vector-operations" class="nav-link" data-scroll-target="#consistency-of-vector-operations">Consistency of Vector Operations</a></li>
+  <li><a href="#what-if-we-could-not-adopt-the-identity-map" id="toc-what-if-we-could-not-adopt-the-identity-map" class="nav-link" data-scroll-target="#what-if-we-could-not-adopt-the-identity-map">What if We Could Not Adopt the Identity Map?</a></li>
+  </ul></li>
+  <li><a href="#other-symmetries" id="toc-other-symmetries" class="nav-link" data-scroll-target="#other-symmetries">Other Symmetries</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Overview</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/galilean-relativity.html">Galilean Relativity</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Special Relativity</h1>
+<h1 class="title">Galilean Relativity</h1>
 </div>
 
 
@@ -421,19 +500,236 @@ cookieconsent.run({
 </header>
 
 
-<section id="special-relativity" class="level1">
-<h1>Special Relativity</h1>
-<p>Welcome to the Special Relativity course lecture notes by Sandro Vitenti.</p>
-<section id="course-outline" class="level2">
-<h2 class="anchored" data-anchor-id="course-outline">Course Outline</h2>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dD}{\mathrm{D}}
+\]</span></p>
+</div>
+<section id="galilean-relativity" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="galilean-relativity">Galilean Relativity</h2>
+<p>In Galilean relativity, space is modeled as a three-dimensional Euclidean vector space:</p>
+<p><span class="math display">\[
+\mathbb{E}^3 = (\mathbb{R}^3, +, \cdot)
+\]</span></p>
+<p>This structure defines:</p>
 <ul>
-<li><a href="../../courses/special-relativity/basic-concepts.html">Basic Concepts</a></li>
+<li>A vector space: closed under vector addition and scalar multiplication.</li>
+<li>An inner product <span class="math inline">\((\cdot)\)</span>: allows us to define angles and lengths.</li>
 </ul>
-<hr>
-<p>Feel free to create issues, ask questions, or suggest improvements in the <a href="https://github.com/vitenti-physics/undergrad">GitHub repository</a>.</p>
-
-
+<p>Let <span class="math inline">\(\vec{x}, \vec{y} \in \mathbb{E}^3\)</span>. Then:</p>
+<ul>
+<li><p>Addition: <span class="math inline">\(\vec{x} + \vec{y} \in \mathbb{E}^3\)</span></p></li>
+<li><p>Scalar multiplication: <span class="math inline">\(a \vec{x} \in \mathbb{E}^3\)</span>, for <span class="math inline">\(a \in \mathbb{R}\)</span></p></li>
+<li><p>Distance between points is given by:</p>
+<p><span class="math display">\[
+|\vec{x} - \vec{y}| = \sqrt{(\vec{x} - \vec{y}) \cdot (\vec{x} - \vec{y})}
+\]</span></p>
+<p>which defines a norm, and hence a metric.</p></li>
+</ul>
+<section id="coordinates-in-mathbbe3" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="coordinates-in-mathbbe3">Coordinates in <span class="math inline">\(\mathbb{E}^3\)</span></h3>
+<p>We represent vectors in Cartesian coordinates:</p>
+<p><span class="math display">\[
+\vec{x} = (x^1, x^2, x^3)
+\]</span></p>
+<p>Each component <span class="math inline">\(x^i\)</span> corresponds to the projection of <span class="math inline">\(\vec{x}\)</span> onto the corresponding basis vector <span class="math inline">\(\vec{e}^i\)</span>. These components carry physical meaning: they represent distances measured along fixed spatial directions from the origin.</p>
+<p>To simplify visualization, we consider a 2-dimensional slice, <span class="math inline">\(\mathbb{E}^2\)</span>, where:</p>
+<p><span class="math display">\[
+\vec{x} = (x^1, x^2)
+\]</span></p>
+<p>Below, we illustrate a vector <span class="math inline">\(\vec{x}\)</span> in <span class="math inline">\(\mathbb{E}^2\)</span>, decomposed into its components.</p>
+<div id="cell-fig-euclidean-2d" class="cell page-columns page-full" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" data-cap-location="margin"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>draw_euclidean_2d(ax, title<span class="op">=</span><span class="vs">r"</span><span class="dv">$\m</span><span class="vs">athbb{E}</span><span class="dv">^</span><span class="vs">2</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>draw_vector_2d(ax, (<span class="fl">1.0</span>, <span class="fl">0.2</span>), label<span class="op">=</span><span class="st">"x"</span>, color<span class="op">=</span><span class="st">"blue"</span>, components<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-euclidean-2d" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-euclidean-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="galilean-relativity_files/figure-html/fig-euclidean-2d-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-euclidean-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: In this diagram, <span class="math inline">\(\vec{x}\)</span> is shown along with its projections onto the <span class="math inline">\(x^1\)</span> and <span class="math inline">\(x^2\)</span> axes. The dashed lines and gray arrows indicate the coordinate decomposition that defines the Cartesian components.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section id="time" class="level2">
+<h2 class="anchored" data-anchor-id="time">Time</h2>
+<p>So far, we’ve discussed a single static space, like a snapshot of the world frozen at a particular instant. In such a snapshot, distances and directions are described by a Euclidean space, <span class="math inline">\(\mathbb{E}^2\)</span> or <span class="math inline">\(\mathbb{E}^3\)</span>.</p>
+<p>But time enters physics through measurement: We don’t just measure <em>where</em> things are, we also measure <em>when</em>.</p>
+<section id="two-roles-of-time" class="level3">
+<h3 class="anchored" data-anchor-id="two-roles-of-time">Two Roles of Time</h3>
+<p>Time appears in two distinct but related ways:</p>
+<ol type="1">
+<li><p>Simultaneity: We want to compare the positions of multiple objects at the same instant. For example: “Two cars are 10 meters apart at 12:00.”</p></li>
+<li><p>Change: We want to track how the position of something evolves over time. For example: “This car was at <span class="math inline">\(\vec{x}_0\)</span> at 12:00 and at <span class="math inline">\(\vec{x}_1\)</span> at 12:05.”</p></li>
+</ol>
+<p>This second case introduces a subtle question:</p>
+</section>
+</section>
+<section id="what-does-it-mean-for-a-point-to-stay-in-the-same-place" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-it-mean-for-a-point-to-stay-in-the-same-place">What Does It Mean for a Point to Stay in the Same Place?</h2>
+<p>To say something “moved” from <span class="math inline">\(\vec{x}_0\)</span> to <span class="math inline">\(\vec{x}_1\)</span>, we must assume:</p>
+<blockquote class="blockquote">
+<p>“The point that was at <span class="math inline">\(\vec{x}_0\)</span> at time <span class="math inline">\(t_0\)</span> is the same place as the one at <span class="math inline">\(\vec{x}_1\)</span> at time <span class="math inline">\(t_1\)</span>.”</p>
+</blockquote>
+<p>But how do we decide that?</p>
+<p>Each snapshot in time is a separate space, like <span class="math inline">\(\mathbb{E}^2_{t_0}\)</span> and <span class="math inline">\(\mathbb{E}^2_{t_1}\)</span>. To describe motion, we must define a rule that identifies points across these spaces.</p>
+<p>Let’s visualize this idea:</p>
+<div id="65d49771" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>draw_euclidean_2d(ax1, title<span class="op">=</span><span class="vs">r"</span><span class="dv">$\m</span><span class="vs">athbb{E}</span><span class="dv">^</span><span class="vs">2_{t_0}</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>draw_euclidean_2d(ax2, title<span class="op">=</span><span class="vs">r"</span><span class="dv">$\m</span><span class="vs">athbb{E}</span><span class="dv">^</span><span class="vs">2_{t_1}</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>draw_vector_2d(ax1, (<span class="fl">0.5</span>, <span class="fl">0.2</span>), label<span class="op">=</span><span class="vs">r"x_0"</span>, color<span class="op">=</span><span class="st">"blue"</span>, components<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>draw_vector_2d(ax2, (<span class="fl">0.5</span>, <span class="fl">0.4</span>), label<span class="op">=</span><span class="vs">r"x_1"</span>, color<span class="op">=</span><span class="st">"blue"</span>, components<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="galilean-relativity_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Each figure is a full space at a fixed time: a spatial snapshot. But motion requires more than snapshots: it requires a way to track points across time.</p>
+<section id="the-identity-map-trivial-frame" class="level3">
+<h3 class="anchored" data-anchor-id="the-identity-map-trivial-frame">The Identity Map (Trivial Frame)</h3>
+<p>To describe motion, we need to track spatial points across time: we must decide what it means for a point at time <span class="math inline">\(t_0\)</span> to be “the same place” as a point at time <span class="math inline">\(t_1\)</span>.</p>
+<p>Let’s consider a simple scenario:</p>
+<blockquote class="blockquote">
+<p>An observer is in a room and chooses a particular corner to serve as the origin of their coordinate system. From this origin, they align three fixed axes, say, along the edges of the room, and assign coordinates to every point based on measured distances along these axes.</p>
+</blockquote>
+<p>Now suppose this same observer makes two measurements, at times <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span>, using the same reference system: the same corner, the same directions, and the same notion of distance. Then, the observer naturally identifies the “same point in space” at both times by matching coordinates: <span class="math display">\[
+\vec{x}_1 = \vec{x}_0
+\]</span></p>
+<p>This defines the so-called identity map (or trivial identification): <span class="math display">\[
+\phi: \mathbb{E}^2_{t_0} \to \mathbb{E}^2_{t_1}, \qquad \phi(\vec{x}_0) = \vec{x}_0
+\]</span></p>
+<p>Under this rule, an object is said to remain at rest if its coordinates do not change with time. However, this identification is not absolute, it is tied to the specific reference system used by the observer.</p>
+<p>This distinction is key:</p>
+<ul>
+<li>The first part of our discussion (assigning coordinates) requires physical references: like walls, corners, rulers; to define positions at a single instant.</li>
+<li>The second part (relating points across time) defines the reference frame: the rule we use to track positions through time.</li>
+</ul>
+<p>In practice, when we draw diagrams in <span class="math inline">\(\mathbb{E}^2\)</span>, we often implicitly assume this trivial map, we imagine the reference objects do not move over time. This allows us to focus on how other objects evolve relative to the fixed background.</p>
+<p>But this is only one possibility. More general mappings reflect different frames of reference, for example, frames moving with constant velocity (Galilean boosts). We’ll return to this idea soon.</p>
+</section>
+<section id="maps-must-reflect-physical-expectations" class="level3">
+<h3 class="anchored" data-anchor-id="maps-must-reflect-physical-expectations">Maps Must Reflect Physical Expectations</h3>
+<p>Once we allow more general observers or motion, we must impose some physical conditions on the maps we use between spatial snapshots.</p>
+<p>These come from our experience with the physical world, and how we expect objects to move and interact:</p>
+<ol type="1">
+<li><p>Points must not collide: If two distinct points at time <span class="math inline">\(t_0\)</span> map to the same point at <span class="math inline">\(t_1\)</span>, we cannot distinguish their identities anymore. This contradicts the idea that particles have individual, continuous paths.</p></li>
+<li><p>No points should appear or vanish: Every point at <span class="math inline">\(t_1\)</span> must correspond to a point at <span class="math inline">\(t_0\)</span>. Otherwise, matter could appear from nothing or disappear entirely.</p></li>
+</ol>
+<p>From these we conclude:</p>
+<blockquote class="blockquote">
+<p>The map <span class="math inline">\(\phi: \mathbb{E}^2_{t_0} \to \mathbb{E}^2_{t_1}\)</span> must be bijective (one-to-one and onto).</p>
+</blockquote>
+<p>Furthermore, based on how real objects move, without teleportation or discontinuous jumps, we also expect:</p>
+<blockquote class="blockquote">
+<p>The map should be smooth: small changes in position at <span class="math inline">\(t_0\)</span> lead to small changes at <span class="math inline">\(t_1\)</span>.</p>
+</blockquote>
+<p>This leads us to model <span class="math inline">\(\phi\)</span> as a diffeomorphism, a smooth, invertible map with a smooth inverse.</p>
+<p>But again: This isn’t a mathematical requirement: it’s a physical modeling assumption based on the continuity of motion observed in nature.</p>
+</section>
+</section>
+<section id="describing-motion-the-law-of-dynamics" class="level2">
+<h2 class="anchored" data-anchor-id="describing-motion-the-law-of-dynamics">Describing Motion: The Law of Dynamics</h2>
+<p>Before we can speak of forces or equations of motion, we must clarify what it means for an object to move, and how we can measure that change.</p>
+<p>In practice, what we have is a sequence of observations: the position of a particle at different instants of time. Each of these measurements belongs to a copy of space, say <span class="math inline">\(\mathbb{E}^3_t\)</span>, at time <span class="math inline">\(t\)</span>. But to compare them, to say how much the object moved, or how fast it changed direction, we must first decide how to identify points across time.</p>
+<p>This is not automatic. It involves a modeling choice, which we made earlier by introducing a map between spatial snapshots. This map tells us which points at different times are considered “the same” from the observer’s perspective. Only then does the notion of displacement make sense.</p>
+<p>Once we can compare positions across time, we can take differences, and eventually define the acceleration: <span class="math display">\[
+\ddot{\vec{x}}(t) = \lim_{\delta t \to 0} \frac{\vec{x}(t + \delta t) + \vec{x}(t - \delta t) - 2\vec{x}(t)}{\delta t^2},
+\]</span> where the dot indicates derivatives with respect to time.</p>
+<p>Only after setting up this structure, coordinates, maps, and vector space operations, does it become meaningful to introduce Newton’s second law: <span class="math display">\[
+\vec{F} = m \ddot{\vec{x}}
+\]</span> This equation is not the starting point, but rather the culmination of a chain of ideas rooted in observation: we measure position, define displacement and acceleration, and from there, assign a force. Historically, this came from empirical regularities, but here we are unpacking what it means to write such an equation and what assumptions it relies on.</p>
+<p>Ultimately, Newton’s law reflects not just an observed pattern, but a whole framework of measurement, a way of tracking objects through space and time using a coherent mathematical model.</p>
+<section id="consistency-of-vector-operations" class="level3">
+<h3 class="anchored" data-anchor-id="consistency-of-vector-operations">Consistency of Vector Operations</h3>
+<p>To define acceleration, we use the second derivative: <span class="math display">\[
+\ddot{\vec{x}}(t) = \lim_{\delta t \to 0} \frac{ \vec{x}(t+\delta t) + \vec{x}(t-\delta t) - 2\vec{x}(t) }{\delta t^2}
+\]</span> At first glance, this seems like a purely mathematical operation. But for this expression to make sense, we must be able to add and subtract vectors that come from different spaces: <span class="math inline">\(\vec{x}(t+\delta t) \in \mathbb{E}^3_{t+\delta t}\)</span>, <span class="math inline">\(\vec{x}(t-\delta t) \in \mathbb{E}^3_{t-\delta t}\)</span>, and <span class="math inline">\(\vec{x}(t) \in \mathbb{E}^3_t\)</span>.</p>
+<p>To do this, we need a rule that tells us how to bring all these vectors into the same vector space so that arithmetic operations are well-defined. This is precisely what our map <span class="math inline">\(\phi\)</span> does, it tells us how to identify points and vectors between spaces at different times.</p>
+<p>When we adopt the trivial map (identity), we are assuming that: <span class="math display">\[
+\vec{x}(t+\delta t) \in \mathbb{E}^3_{t+\delta t} \quad \text{is mapped to} \quad \mathbb{E}^3_t \quad \text{via} \quad \phi^{-1},
+\]</span> and likewise for <span class="math inline">\(\vec{x}(t-\delta t)\)</span>. With this identification, all three vectors are interpreted as elements of <span class="math inline">\(\mathbb{E}^3_t\)</span>, and the derivative is now well defined.</p>
+<p>This idea, that to differentiate vectors we must decide how to compare them at different points, is not just a technicality. It is the seed of a deep mathematical concept known as parallel transport, a central idea in differential geometry. There, we study more general rules for transporting vectors across curved spaces, where no global trivial identification exists.</p>
+<p>In our case, we are working in flat Euclidean space with a chosen frame, so the identity map suffices. But it’s important to recognize that even here, the notion of transporting vectors is already present, though implicitly. And it is this structure that allows us to go from a sequence of positions to the definition of motion and dynamics.</p>
+</section>
+<section id="what-if-we-could-not-adopt-the-identity-map" class="level3">
+<h3 class="anchored" data-anchor-id="what-if-we-could-not-adopt-the-identity-map">What if We Could Not Adopt the Identity Map?</h3>
+<p>So far, we have implicitly assumed that vectors at different times can be directly compared using the identity map. But what if this were not the case? What if comparing vectors at different times required a more general rule?</p>
+<p>Let’s define a map <span class="math inline">\(T_{t_1, t_2}\)</span> that takes a vector from the space at time <span class="math inline">\(t_1\)</span>, denoted <span class="math inline">\(\mathbb{E}^3_{t_1}\)</span>, to the space at time <span class="math inline">\(t_2\)</span>, <span class="math inline">\(\mathbb{E}^3_{t_2}\)</span>. A simple example of such a map is: <span class="math display">\[
+T_{t_1, t_2} \vec{x} = \vec{x} + \vec{v}(t_2) - \vec{v}(t_1),
+\]</span> where <span class="math inline">\(\vec{v}(t)\)</span> is some vector-valued function of time. This is actually a special case of a more general concept called a <em>diffeomorphism</em>, but this simple form is enough for our discussion.</p>
+<p>Now, let’s see how this affects how we define the second derivative. We can write: <span class="math display">\[
+\frac{\dD^2 \vec{x}}{\dD t^2} = \lim_{\delta t \to 0} \frac{T_{t+\delta t, t} \vec{x}(t + \delta t) + T_{t-\delta t, t} \vec{x}(t - \delta t) - 2 \vec{x}(t)}{\delta t^2}.
+\]</span></p>
+<p>To evaluate this, we expand both transported terms using a Taylor series. For small <span class="math inline">\(\delta t\)</span>, we get: <span class="math display">\[
+\begin{aligned}
+T_{t+\delta t, t} \vec{x}(t + \delta t) &amp;= \vec{x}(t + \delta t) + \vec{v}(t) - \vec{v}(t + \delta t) \\
+&amp;= \vec{x}(t + \delta t) - \dot{\vec{v}}(t)\delta t - \tfrac{1}{2} \ddot{\vec{v}}(t)\delta t^2 + O(\delta t^3), \\
+T_{t-\delta t, t} \vec{x}(t - \delta t) &amp;= \vec{x}(t - \delta t) + \vec{v}(t) - \vec{v}(t - \delta t) \\
+&amp;= \vec{x}(t - \delta t) + \dot{\vec{v}}(t)\delta t - \tfrac{1}{2} \ddot{\vec{v}}(t)\delta t^2 + O(\delta t^3).
+\end{aligned}
+\]</span></p>
+<p>Now plugging these into the expression for the second derivative: <span class="math display">\[
+\frac{\dD^2 \vec{x}}{\dD t^2} = \lim_{\delta t \to 0} \frac{\vec{x}(t + \delta t) + \vec{x}(t - \delta t) - 2\vec{x}(t) - \ddot{\vec{v}}(t)\delta t^2}{\delta t^2}.
+\]</span></p>
+<p>The limit gives: <span class="math display">\[
+\frac{\dD^2 \vec{x}}{\dD t^2} = \ddot{\vec{x}}(t) - \ddot{\vec{v}}(t).
+\]</span></p>
+<p>This result shows that under the transport map, the second derivative of the position depends not only on the usual acceleration <span class="math inline">\(\ddot{\vec{x}}\)</span>, but also on how the map varies with time — specifically, on <span class="math inline">\(\ddot{\vec{v}}\)</span>. Thus, even if the particle remains at the same coordinates, the computed derivative may differ under a different map.</p>
+<p>This implies that, unless <span class="math inline">\(\ddot{\vec{v}} = 0\)</span>, the measured acceleration and force will depend on the choice of transport map. In practice, classical mechanics traditionally adopts a physical coordinate system — typically the lab frame — and uses the identity map, which corresponds to <span class="math inline">\(\ddot{\vec{v}} = 0\)</span>. The empirical laws of motion are formulated in this context. However, the calculation above shows that this choice is not unique: we can equally use any other transport map with <span class="math inline">\(\ddot{\vec{v}} = 0\)</span>, and the resulting forces and accelerations will be unchanged. In other words, if a set of physical laws holds for one such map, it will hold for all of them. This invariance under transformations with constant relative velocity is the content of Galilean relativity.</p>
+<p>Now here’s the key physical point: classical mechanics is grounded on the empirical observation that the motion of a system is fully determined by its initial position and velocity. If we prepare a system twice with the same position and velocity, we observe the same trajectory. If we change the velocity while keeping the position fixed, the resulting motion changes. This is not a modeling assumption — it is a physical fact. Therefore, the equations of motion must involve second-order time derivatives: the state of the system is defined by both position and velocity.</p>
+<p>This second-order structure has an important implication. In our expression for the transformed second derivative, only the term <span class="math inline">\(\ddot{\vec{v}}(t)\)</span> from the transport map affects the result. Hence, if we restrict ourselves to maps for which <span class="math inline">\(\ddot{\vec{v}}(t) = 0\)</span>, all such maps yield the same equations of motion. The physical laws are thus invariant under transformations between frames in relative uniform motion — that is, Galilean relativity arises as a direct consequence of the second-order nature of dynamics.</p>
+<p>Moreover, this structure reveals a further symmetry: even if we begin in a non-inertial frame (i.e., one with <span class="math inline">\(\ddot{\vec{v}}(t) \ne 0\)</span>), we can still transform to any other frame that differs by a constant velocity (<span class="math inline">\(\ddot{\vec{v}} = 0\)</span>) without changing the form of the equations governing that non-inertial frame. So even in accelerated frames, there remains an internal symmetry among all frames connected by uniform motion.</p>
+<p>In summary:</p>
+<ul>
+<li>The second-order nature of dynamics implies that all frames related by constant-velocity transformations describe the same physics.</li>
+<li>This defines a symmetry of the laws of motion.</li>
+<li>That symmetry persists even in non-inertial frames: we can still shift to another frame with constant relative velocity without altering our description of the observed phenomena.</li>
+</ul>
+<p>Here is an improved and expanded version of your section, with clearer structure, smoother language, and more precise statements — while preserving your original intent:</p>
+</section>
+</section>
+<section id="other-symmetries" class="level2">
+<h2 class="anchored" data-anchor-id="other-symmetries">Other Symmetries</h2>
+<p>Changing the reference frame is not the only symmetry present in classical mechanics. The equations of motion exhibit additional symmetries that are both empirically observed and reflected in the mathematical structure of the theory.</p>
+<p>First, we observe that the outcome of a mechanical experiment does not depend on where it is performed. That is, if we repeat the same setup at a different location in space, we obtain the same results. This is spatial translation symmetry. Similarly, the results of the experiment do not depend on the orientation of the coordinate system: rotating the entire setup in space leaves the physics unchanged. This is rotational symmetry. Both of these are geometric symmetries of the Euclidean space we assume, they are built into the invariance of the spatial metric under translations and rotations.</p>
+<p>Second, we observe that repeating an experiment at a different time, today, tomorrow, or next year, yields the same results, provided external conditions remain the same. This is time translation symmetry.</p>
+<p>These symmetries, spatial translations, spatial rotations, and time translations, are empirical facts that are encoded in the structure of Newtonian mechanics. When combined with the invariance under changes of inertial reference frame (i.e., transformations with constant relative velocity), they form the full symmetry group of Galilean relativity.</p>
+<p>In summary:</p>
+<ul>
+<li>Rotational symmetry: physics does not depend on orientation.</li>
+<li>Spatial translation symmetry: physics does not depend on position.</li>
+<li>Time translation symmetry: physics does not depend on absolute time.</li>
+<li>Inertial frame symmetry: physics is the same in all frames moving at constant velocity relative to one another.</li>
+</ul>
+<p>These symmetries not only reflect experimental observations but also constrain the form of the allowed physical laws. They play a central role in the formulation of conservation laws and the structure of classical dynamics.</p>
+
+
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></section></div></main> <!-- /main -->
