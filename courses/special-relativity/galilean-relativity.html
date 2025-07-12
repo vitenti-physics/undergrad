@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-95256f8979d947822c31d596167433e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-24ffd44e91f1d14ec0340963720ec9f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-95256f8979d947822c31d596167433e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f292503d83141fddc766af97a37e4739.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-2fa97a7673f3d40924fb3441706c9860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-f292503d83141fddc766af97a37e4739.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -468,6 +468,10 @@ window.Quarto = {
   <li><a href="#what-if-we-could-not-adopt-the-identity-map" id="toc-what-if-we-could-not-adopt-the-identity-map" class="nav-link" data-scroll-target="#what-if-we-could-not-adopt-the-identity-map">What if We Could Not Adopt the Identity Map?</a></li>
   </ul></li>
   <li><a href="#other-symmetries" id="toc-other-symmetries" class="nav-link" data-scroll-target="#other-symmetries">Other Symmetries</a></li>
+  <li><a href="#field-transformations-and-the-role-of-the-map" id="toc-field-transformations-and-the-role-of-the-map" class="nav-link" data-scroll-target="#field-transformations-and-the-role-of-the-map">Field Transformations and the Role of the Map</a>
+  <ul class="collapse">
+  <li><a href="#what-happens-to-the-equations-of-motion" id="toc-what-happens-to-the-equations-of-motion" class="nav-link" data-scroll-target="#what-happens-to-the-equations-of-motion">What Happens to the Equations of Motion?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -505,6 +509,7 @@ window.Quarto = {
 \newcommand{\vec}[1]{\mathbf{#1}}
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\dD}{\mathrm{D}}
+\newcommand{\e}{\mathsf{e}}
 \]</span></p>
 </div>
 <section id="galilean-relativity" class="level2 page-columns page-full">
@@ -588,7 +593,7 @@ Figure&nbsp;1: In this diagram, <span class="math inline">\(\vec{x}\)</span> is 
 <p>But how do we decide that?</p>
 <p>Each snapshot in time is a separate space, like <span class="math inline">\(\mathbb{E}^2_{t_0}\)</span> and <span class="math inline">\(\mathbb{E}^2_{t_1}\)</span>. To describe motion, we must define a rule that identifies points across these spaces.</p>
 <p>Let’s visualize this idea:</p>
-<div id="0eeb7d07" class="cell" data-execution_count="3">
+<div id="04d71b88" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
@@ -728,8 +733,63 @@ T_{t-\delta t, t} \vec{x}(t - \delta t) &amp;= \vec{x}(t - \delta t) + \vec{v}(t
 <li>Inertial frame symmetry: physics is the same in all frames moving at constant velocity relative to one another.</li>
 </ul>
 <p>These symmetries not only reflect experimental observations but also constrain the form of the allowed physical laws. They play a central role in the formulation of conservation laws and the structure of classical dynamics.</p>
+</section>
+<section id="field-transformations-and-the-role-of-the-map" class="level2">
+<h2 class="anchored" data-anchor-id="field-transformations-and-the-role-of-the-map">Field Transformations and the Role of the Map</h2>
+<p>Let us now examine how the structures we have built so far apply to fields and their dynamics.</p>
+<p>Operationally, a field is something we measure in space at a given instant of time. That is, at each fixed time <span class="math inline">\(t\)</span>, we measure a quantity defined over the corresponding three-dimensional Euclidean space <span class="math inline">\(\mathbb{E}^3_t\)</span>. Therefore, we do not have a single function <span class="math inline">\(\phi(t, \vec{x})\)</span> defined on <span class="math inline">\(\mathbb{R} \times \mathbb{E}^3_{t_0}\)</span>, but rather a family of functions: <span class="math display">\[
+\phi: t \in \mathbb{R} \mapsto \phi_t \in \text{Func}(\mathbb{E}^3_t, \mathbb{R}),
+\]</span> where each <span class="math inline">\(\phi_t\)</span> assigns values to points in the corresponding spatial slice <span class="math inline">\(\mathbb{E}^3_t\)</span>. In this formulation, the field is a map from time to spatial functions, not a function of both time and space in a fixed space.</p>
+<p>To write a global expression like <span class="math inline">\(\phi(t, \vec{x})\)</span>, we must first introduce a rule that identifies “the same point” across different spatial slices <span class="math inline">\(\mathbb{E}^3_t\)</span>. This is the role of the maps <span class="math display">\[
+T_{t_0,t}: \mathbb{E}^3_{t_0} \to \mathbb{E}^3_t,
+\]</span> which define how we track a fixed spatial point through time. Once such maps are chosen, we can represent the field as a function in the fixed space <span class="math inline">\(\mathbb{E}^3_{t_0}\)</span> via: <span class="math display">\[
+\phi(t, \vec{x}) \equiv \phi_t(T_{t_0,t}(\vec{x})),
+\quad \text{with } \vec{x} \in \mathbb{E}^3_{t_0}.
+\]</span> This global description depends on the chosen identification map <span class="math inline">\(T_{t_0,t}\)</span>, reflecting a modeling assumption about how space is related across time.</p>
+<p>This structure becomes essential when describing field evolution, as it determines how we compare field values at different times. It encodes our implicit definition of “the same spatial point at different times”: a notion that becomes nontrivial when changing reference frames.</p>
+<p>For instance, consider a frame moving with constant velocity <span class="math inline">\(\vec{v}_0\)</span>. In this case, we define the map: <span class="math display">\[
+T_{t_0,t}(\vec{x}) = \vec{x} + \vec{v}_0(t - t_0).
+\]</span> This corresponds to tracking a point that moves rigidly with velocity <span class="math inline">\(\vec{v}_0\)</span>. Then, assuming <span class="math inline">\(t_0 = 0\)</span> for convenience, the field seen from this moving frame is expressed as: <span class="math display">\[
+\phi(t, \vec{x}) = \phi_t(\vec{x} + \vec{v}_0 t).
+\]</span></p>
+<section id="what-happens-to-the-equations-of-motion" class="level3">
+<h3 class="anchored" data-anchor-id="what-happens-to-the-equations-of-motion">What Happens to the Equations of Motion?</h3>
+<p>Once we choose a reference frame, i.e., a coordinate system and an identification map <span class="math inline">\(T_{t_0,t}\)</span>, we can design experiments that probe the dynamics of a field. For instance, we may repeatedly measure the field <span class="math inline">\(\phi\)</span> at different points and times, in such a way that we can compare values across spatial slices. Within this operational setting, we may discover that the field obeys a certain dynamical law.</p>
+<p>Suppose, after performing such measurements in a given frame <span class="math inline">\(S\)</span>, we determine that the field satisfies the wave equation: <span class="math display">\[
+\left( -\frac{1}{c^2} \frac{\partial^2}{\partial t^2} + \nabla^2 \right) \phi(t, \vec{x}) = 0.
+\]</span> This equation, which appears in the context of Maxwell’s equations in Lorenz gauge, is taken as a model for the field’s dynamics in that frame.</p>
+<p>We could now repeat the entire set of experiments in a different frame <span class="math inline">\(S'\)</span>, defined by a different choice of coordinates and identification maps, for instance, one related to the original frame by a constant relative velocity <span class="math inline">\(\vec{v}_0\)</span>. From our previous analysis of particle mechanics, we know that Newton’s laws retain their form under such Galilean changes of frame. This leads us to expect that the dynamical laws for fields, being part of physical reality, should also be invariant under such transformations.</p>
+<p>Let us test this expectation explicitly.</p>
+<p>In the new frame <span class="math inline">\(S'\)</span>, we identify points using the map: <span class="math display">\[
+T_{0,t}(\vec{x}) = \vec{x} + \vec{v}_0 t.
+\]</span> So the field as seen in <span class="math inline">\(S'\)</span> is given by: <span class="math display">\[
+\phi'(t, \vec{x}) \equiv \phi(t, \vec{x} + \vec{v}_0 t),
+\]</span> which corresponds to observing the same field using the new coordinates.</p>
+<p>Computing the time derivative in this frame: <span class="math display">\[
+\frac{\partial \phi'}{\partial t}
+= \frac{\partial}{\partial t} \phi(t, \vec{x} + \vec{v}_0 t)
+= \frac{\partial \phi}{\partial t} + \vec{v}_0 \cdot \nabla \phi,
+\]</span> and <span class="math display">\[
+\frac{\partial^2 \phi'}{\partial t^2}
+= \frac{\partial^2 \phi}{\partial t^2}
++ 2 (\vec{v}_0 \cdot \nabla) \frac{\partial \phi}{\partial t}
++ (\vec{v}_0 \cdot \nabla)^2 \phi.
+\]</span></p>
+<p>Substituting into the wave equation yields: <span class="math display">\[
+\left[ -\frac{1}{c^2} \left( \frac{\partial}{\partial t} + \vec{v}_0 \cdot \nabla \right)^2 + \nabla^2 \right] \phi'(t, \vec{x}) = 0.
+\]</span> This is not the same operator as in the original frame, and hence the field no longer satisfies the same wave equation in the transformed coordinates unless <span class="math inline">\(\vec{v}_0 = 0\)</span>. The transformation deforms the structure of the equation.</p>
+<p>Therefore:</p>
+<blockquote class="blockquote">
+<p>The form of Maxwell’s equations is not preserved under Galilean transformations.</p>
+</blockquote>
+<p>This result was historically problematic: unlike Newtonian mechanics, electromagnetism did not exhibit Galilean invariance. The resolution came with Einstein’s formulation of special relativity, in which the maps between inertial frames are given by Lorentz transformations. These maps preserve the wave operator: <span class="math display">\[
+\square = -\frac{1}{c^2} \frac{\partial^2}{\partial t^2} + \nabla^2,
+\]</span> ensuring that Maxwell’s equations hold in all inertial frames. Thus, special relativity restores the principle of relativity at the level of field dynamics.</p>
+<hr>
+<p>This concludes our first module. We’ve built from physical intuition a precise mathematical structure: spaces, maps, vectors, derivatives, that allows us to formulate and interpret physical laws. We’ve seen that consistency of operations across time depends on how we relate points in space, and how this structure is already implicit in the description of dynamics. Finally, we’ve learned that even the transformation properties of space and time are constrained by the physical laws we wish to preserve.</p>
 
 
+</section>
 </section>
 
 
