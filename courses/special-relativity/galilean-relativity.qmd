@@ -284,3 +284,93 @@ In summary:
 * Inertial frame symmetry: physics is the same in all frames moving at constant velocity relative to one another.
 
 These symmetries not only reflect experimental observations but also constrain the form of the allowed physical laws. They play a central role in the formulation of conservation laws and the structure of classical dynamics.
+
+## Field Transformations and the Role of the Map
+
+Let us now examine how the structures we have built so far apply to fields and their dynamics.
+
+Operationally, a field is something we measure in space at a given instant of time. That is, at each fixed time $t$, we measure a quantity defined over the corresponding three-dimensional Euclidean space $\mathbb{E}^3_t$. Therefore, we do not have a single function $\phi(t, \vec{x})$ defined on $\mathbb{R} \times \mathbb{E}^3_{t_0}$, but rather a family of functions:
+$$
+\phi: t \in \mathbb{R} \mapsto \phi_t \in \text{Func}(\mathbb{E}^3_t, \mathbb{R}),
+$$
+where each $\phi_t$ assigns values to points in the corresponding spatial slice $\mathbb{E}^3_t$. In this formulation, the field is a map from time to spatial functions, not a function of both time and space in a fixed space.
+
+To write a global expression like $\phi(t, \vec{x})$, we must first introduce a rule that identifies "the same point" across different spatial slices $\mathbb{E}^3_t$. This is the role of the maps
+$$
+T_{t_0,t}: \mathbb{E}^3_{t_0} \to \mathbb{E}^3_t,
+$$
+which define how we track a fixed spatial point through time. Once such maps are chosen, we can represent the field as a function in the fixed space $\mathbb{E}^3_{t_0}$ via:
+$$
+\phi(t, \vec{x}) \equiv \phi_t(T_{t_0,t}(\vec{x})),
+\quad \text{with } \vec{x} \in \mathbb{E}^3_{t_0}.
+$$
+This global description depends on the chosen identification map $T_{t_0,t}$, reflecting a modeling assumption about how space is related across time.
+
+This structure becomes essential when describing field evolution, as it determines how we compare field values at different times. It encodes our implicit definition of "the same spatial point at different times": a notion that becomes nontrivial when changing reference frames.
+
+For instance, consider a frame moving with constant velocity $\vec{v}_0$. In this case, we define the map:
+$$
+T_{t_0,t}(\vec{x}) = \vec{x} + \vec{v}_0(t - t_0).
+$$
+This corresponds to tracking a point that moves rigidly with velocity $\vec{v}_0$. Then, assuming $t_0 = 0$ for convenience, the field seen from this moving frame is expressed as:
+$$
+\phi(t, \vec{x}) = \phi_t(\vec{x} + \vec{v}_0 t).
+$$
+
+### What Happens to the Equations of Motion?
+
+Once we choose a reference frame, i.e., a coordinate system and an identification map $T_{t_0,t}$, we can design experiments that probe the dynamics of a field. For instance, we may repeatedly measure the field $\phi$ at different points and times, in such a way that we can compare values across spatial slices. Within this operational setting, we may discover that the field obeys a certain dynamical law.
+
+Suppose, after performing such measurements in a given frame $S$, we determine that the field satisfies the wave equation:
+$$
+\left( -\frac{1}{c^2} \frac{\partial^2}{\partial t^2} + \nabla^2 \right) \phi(t, \vec{x}) = 0.
+$$
+This equation, which appears in the context of Maxwell’s equations in Lorenz gauge, is taken as a model for the field's dynamics in that frame.
+
+We could now repeat the entire set of experiments in a different frame $S'$, defined by a different choice of coordinates and identification maps, for instance, one related to the original frame by a constant relative velocity $\vec{v}_0$. From our previous analysis of particle mechanics, we know that Newton’s laws retain their form under such Galilean changes of frame. This leads us to expect that the dynamical laws for fields, being part of physical reality, should also be invariant under such transformations.
+
+Let us test this expectation explicitly.
+
+In the new frame $S'$, we identify points using the map:
+$$
+T_{0,t}(\vec{x}) = \vec{x} + \vec{v}_0 t.
+$$
+So the field as seen in $S'$ is given by:
+$$
+\phi'(t, \vec{x}) \equiv \phi(t, \vec{x} + \vec{v}_0 t),
+$$
+which corresponds to observing the same field using the new coordinates.
+
+Computing the time derivative in this frame:
+$$
+\frac{\partial \phi'}{\partial t}
+= \frac{\partial}{\partial t} \phi(t, \vec{x} + \vec{v}_0 t)
+= \frac{\partial \phi}{\partial t} + \vec{v}_0 \cdot \nabla \phi,
+$$
+and
+$$
+\frac{\partial^2 \phi'}{\partial t^2}
+= \frac{\partial^2 \phi}{\partial t^2}
++ 2 (\vec{v}_0 \cdot \nabla) \frac{\partial \phi}{\partial t}
++ (\vec{v}_0 \cdot \nabla)^2 \phi.
+$$
+
+Substituting into the wave equation yields:
+$$
+\left[ -\frac{1}{c^2} \left( \frac{\partial}{\partial t} + \vec{v}_0 \cdot \nabla \right)^2 + \nabla^2 \right] \phi'(t, \vec{x}) = 0.
+$$
+This is not the same operator as in the original frame, and hence the field no longer satisfies the same wave equation in the transformed coordinates unless $\vec{v}_0 = 0$. The transformation deforms the structure of the equation.
+
+Therefore:
+
+> The form of Maxwell's equations is not preserved under Galilean transformations.
+
+This result was historically problematic: unlike Newtonian mechanics, electromagnetism did not exhibit Galilean invariance. The resolution came with Einstein’s formulation of special relativity, in which the maps between inertial frames are given by Lorentz transformations. These maps preserve the wave operator:
+$$
+\square = -\frac{1}{c^2} \frac{\partial^2}{\partial t^2} + \nabla^2,
+$$
+ensuring that Maxwell’s equations hold in all inertial frames. Thus, special relativity restores the principle of relativity at the level of field dynamics.
+
+---
+
+This concludes our first module. We’ve built from physical intuition a precise mathematical structure: spaces, maps, vectors, derivatives, that allows us to formulate and interpret physical laws. We’ve seen that consistency of operations across time depends on how we relate points in space, and how this structure is already implicit in the description of dynamics. Finally, we’ve learned that even the transformation properties of space and time are constrained by the physical laws we wish to preserve.
