@@ -6,6 +6,7 @@ This repository contains comprehensive lecture notes for undergraduate physics c
 
 - Includes Markdown notes with embedded LaTeX equations
 - Designed for use with [Quarto](https://quarto.org/) for easy rendering and publishing
+- Published online at [Undergrad Pages](https://vitenti-physics.github.io/undergrad/)
 
 ## License
 
