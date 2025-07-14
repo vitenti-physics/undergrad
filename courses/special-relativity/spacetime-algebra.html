@@ -436,9 +436,15 @@ window.Quarto = {
   <li><a href="#lorentz-transformations-with-rotors" id="toc-lorentz-transformations-with-rotors" class="nav-link" data-scroll-target="#lorentz-transformations-with-rotors">Lorentz Transformations with Rotors</a></li>
   <li><a href="#spinors-and-lorentz-rotations" id="toc-spinors-and-lorentz-rotations" class="nav-link" data-scroll-target="#spinors-and-lorentz-rotations">Spinors and Lorentz Rotations</a></li>
   </ul></li>
-  <li><a href="#reference-frames-and-4-velocity" id="toc-reference-frames-and-4-velocity" class="nav-link" data-scroll-target="#reference-frames-and-4-velocity">Reference Frames and 4-Velocity</a></li>
+  <li><a href="#reference-frames-and-4-velocity" id="toc-reference-frames-and-4-velocity" class="nav-link" data-scroll-target="#reference-frames-and-4-velocity">Reference Frames and 4-Velocity</a>
+  <ul class="collapse">
   <li><a href="#trajectories-and-decomposition" id="toc-trajectories-and-decomposition" class="nav-link" data-scroll-target="#trajectories-and-decomposition">Trajectories and Decomposition</a></li>
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
+  </ul></li>
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#basic-comprehension" id="toc-basic-comprehension" class="nav-link" data-scroll-target="#basic-comprehension">Basic Comprehension</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -679,7 +685,7 @@ F = \frac{1}{2} F_{\mu\nu} \e^\mu \wedge \e^\nu,
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>To deepen your understanding of <span class="math inline">\(\mathrm{Cl}(1,3)\)</span>, work through these exercises:</p>
+<p>To improve your understanding of <span class="math inline">\(\mathrm{Cl}(1,3)\)</span>, work through these exercises:</p>
 <ol type="1">
 <li><p>Squares of Basis Bivectors<br>
 Compute the square of the following bivectors and classify each as timelike, spacelike, or lightlike:</p>
@@ -796,48 +802,62 @@ R(2\pi) = \cos(\pi) + B \sin(\pi) = -1 = -R(0),
 \]</span> indicating that a full <span class="math inline">\(4\pi\)</span> rotation is needed to return to the identity: <span class="math display">\[
 R(4\pi) = 1.
 \]</span></p>
-<p>This is the hallmark of spin-1/2 behavior. Spinors arise naturally in the even subalgebra of <span class="math inline">\(\mathrm{Cl}(1,3)\)</span>, forming the group <span class="math inline">\(\mathrm{Spin}(1,3)\)</span>, which is a double cover of the Lorentz group <span class="math inline">\(\mathrm{SO}(1,3)\)</span>. The same rotor <span class="math inline">\(R\)</span> that acts on vectors as: <span class="math display">\[
+<p>This is the hallmark of spin-1/2 behavior. Spinors arise naturally in the even subalgebra of <span class="math inline">\(\mathrm{Cl}(1,3)\)</span>, forming the group <span class="math inline">\(\mathrm{Spin}(1,3)\)</span>, which is a double cover of the Lorentz group <span class="math inline">\(\mathrm{SO}(1,3).\)</span> The same rotor <span class="math inline">\(R\)</span> that acts on vectors as: <span class="math display">\[
 u \mapsto R u R^\mathrm{T},
 \]</span> acts on spinors <span class="math inline">\(\psi\)</span> (e.g., four-component complex vectors) as: <span class="math display">\[
 \psi \mapsto R \psi.
-\]</span></p>
+\]</span> Note, however, that this approach would require introducing a matrix representation of the algebra. While this is a common route, it is not strictly necessary. Instead, we can represent the “vector” <span class="math inline">\(\psi\)</span> directly as an element of <span class="math inline">\(\mathrm{Cl}(1,3)\)</span>, more precisely, as an even multivector.</p>
 <p>The pseudoscalar <span class="math inline">\(I = \e_0 \e_1 \e_2 \e_3\)</span> anticommutes with all vectors and satisfies <span class="math inline">\(I^2 = -1\)</span>, playing a role analogous to the complex unit <span class="math inline">\(i\)</span> in the Dirac algebra. In the spinor representation, it appears in constructions involving <span class="math inline">\(\gamma^5\)</span> and chirality.</p>
 </section>
 </section>
 <section id="reference-frames-and-4-velocity" class="level2">
 <h2 class="anchored" data-anchor-id="reference-frames-and-4-velocity">Reference Frames and 4-Velocity</h2>
-<p>An observer’s 4-velocity is <span class="math inline">\(W^\mu = (1, 0, 0, 0)\)</span>, or <span class="math inline">\(W = \e_0\)</span>, with <span class="math inline">\(W^2 = -1\)</span>. A particle’s 4-velocity is: <span class="math display">\[
-U^\mu = \left( \gamma, \gamma \frac{v^1}{c}, \gamma \frac{v^2}{c}, \gamma \frac{v^3}{c} \right), \quad \gamma = (1 - v^2/c^2)^{-1/2},
-\]</span> so <span class="math inline">\(U = U^\mu \e_\mu\)</span>, with: <span class="math display">\[
-U^2 = -\gamma^2 (1 - v^2/c^2) = -1, \quad U \cdot W = -\gamma.
+<p>An observer’s 4-velocity is <span class="math inline">\(w^\mu = (1, 0, 0, 0)\)</span>, or <span class="math inline">\(w = \e_0\)</span>, with <span class="math inline">\(w^2 = -1\)</span>. A particle’s 4-velocity is: <span class="math display">\[
+u^\mu = \left( \gamma, \gamma \frac{v^1}{c}, \gamma \frac{v^2}{c}, \gamma \frac{v^3}{c} \right), \quad \gamma = (1 - v^2/c^2)^{-1/2},
+\]</span> so <span class="math inline">\(u = u^\mu \e_\mu\)</span>, with: <span class="math display">\[
+u^2 = -\gamma^2 (1 - v^2/c^2) = -1, \quad u \cdot w = -\gamma.
+\]</span></p>
+<section id="trajectories-and-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="trajectories-and-decomposition">Trajectories and Decomposition</h3>
+<p>A spacetime trajectory is: <span class="math display">\[
+x = x^\mu \e_\mu = x^0 \e_0 + x^i \e_i, \quad x \cdot w = -x^0.
+\]</span> The spatial projection orthogonal to <span class="math inline">\(w = \e_0\)</span>: <span class="math display">\[
+x_\perp = \frac{x + w x w}{2} = x^i \e_i,
+\]</span> since: <span class="math display">\[
+w x w = -x^0 \e_0 + x^i \e_i, \quad x + w x w = 2 x^i \e_i.
 \]</span></p>
 </section>
-<section id="trajectories-and-decomposition" class="level2">
-<h2 class="anchored" data-anchor-id="trajectories-and-decomposition">Trajectories and Decomposition</h2>
-<p>A spacetime trajectory is: <span class="math display">\[
-x = x^\mu \e_\mu = x^0 \e_0 + x^i \e_i, \quad x \cdot W = -x^0.
-\]</span> The spatial projection orthogonal to <span class="math inline">\(W = \e_0\)</span>: <span class="math display">\[
-x_\perp = \frac{x + W x W}{2} = x^i \e_i,
-\]</span> since: <span class="math display">\[
-W x W = -x^0 \e_0 + x^i \e_i, \quad x + W x W = 2 x^i \e_i.
-\]</span></p>
 </section>
 <section id="exercises-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercises-1">Exercises</h2>
+<section id="basic-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="basic-comprehension">Basic Comprehension</h3>
 <ol type="1">
-<li>Show <span class="math inline">\(U^2 = -1\)</span>, <span class="math inline">\(W^2 = -1\)</span> for <span class="math inline">\(U = U^\mu \e_\mu\)</span>, <span class="math inline">\(W = \e_0\)</span>.</li>
-<li>Compute <span class="math inline">\(x_\perp = \frac{x + W x W}{2}\)</span> for <span class="math inline">\(x = x^0 \e_0 + x^1 \e_1\)</span>.</li>
-<li>Show <span class="math inline">\(W U W = -U\)</span>, and verify <span class="math inline">\((W U)^2 = -U W U\)</span>.</li>
-<li>Compute <span class="math inline">\(\e^{\omega W U}\)</span> to third order in <span class="math inline">\(\omega\)</span>.</li>
-<li>Verify <span class="math inline">\((\e^{\omega W U})^\mathrm{T} = \e^{-\omega U W}\)</span>.</li>
-<li>Show <span class="math inline">\((R U R^\mathrm{T})^2 = -1\)</span>.</li>
-<li>Verify <span class="math inline">\(R(\theta) = \cos(\theta/2) + \e_1 \e_2 \sin(\theta/2)\)</span>, and <span class="math inline">\(R(2\pi) = -R(0)\)</span>.</li>
-<li>Show <span class="math inline">\((R U)^\mathrm{T} \neq U^\mathrm{T} R^\mathrm{T}\)</span>, explain why <span class="math inline">\(R U R^\mathrm{T}\)</span>.</li>
-<li>Show <span class="math inline">\(x \cdot W = -x^0\)</span>.</li>
-<li>Show <span class="math inline">\(\e^{\omega W U} U = U \cosh(\omega) + W \sinh(\omega)\)</span>.</li>
+<li><p>Show that for <span class="math inline">\(u = u^\mu \e_\mu\)</span>, we have <span class="math inline">\(u^2 = -1\)</span> and <span class="math inline">\(u \cdot w = -\gamma\)</span> for <span class="math inline">\(w = \e_0\)</span>.</p></li>
+<li><p>Compute the spatial projection <span class="math inline">\(x_\perp = \frac{x + w x w}{2}\)</span> for <span class="math inline">\(x = x^0 \e_0 + x^1 \e_1\)</span>, and check that <span class="math inline">\(x_\perp \cdot w = 0\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(B = \e^2 \wedge \e^3\)</span>. Compute <span class="math inline">\(B^2\)</span> and verify the closed form of <span class="math inline">\(e^{\theta B}\)</span>.</p></li>
+<li><p>Prove that for any bivector <span class="math inline">\(B\)</span> and scalar <span class="math inline">\(\alpha\)</span>, we have: <span class="math display">\[
+\left(e^{\alpha B}\right)^\mathrm{T} = e^{-\alpha B}.
+\]</span></p></li>
+<li><p>Let <span class="math inline">\(R = e^{\theta B/2}\)</span> for a bivector <span class="math inline">\(B\)</span> with <span class="math inline">\(B^2 = -1\)</span>. Show that <span class="math inline">\(R^\mathrm{T} = R^{-1}\)</span>.</p></li>
+</ol>
+</section>
+<section id="applications" class="level3">
+<h3 class="anchored" data-anchor-id="applications">Applications</h3>
+<ol start="6" type="1">
+<li><p>Show that the action <span class="math inline">\(u \mapsto R u R^\mathrm{T}\)</span> preserves the norm: <span class="math inline">\((R u R^\mathrm{T})^2 = u^2\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(B = \e^0 \wedge \e^1\)</span> and <span class="math inline">\(R = e^{\eta B / 2}\)</span> with rapidity <span class="math inline">\(\eta\)</span>. Compute <span class="math inline">\(R \e^0 R^\mathrm{T}\)</span> and interpret the result as a Lorentz boost along the <span class="math inline">\(x^1\)</span> direction.</p></li>
+<li><p>Verify explicitly that a full <span class="math inline">\(2\pi\)</span> rotation gives <span class="math inline">\(R = -1\)</span> for <span class="math inline">\(B = \e^1 \wedge \e^2\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(x = x^0 \e_0 + x^1 \e_1\)</span> and <span class="math inline">\(w = \e_0\)</span>. Show that the time component of <span class="math inline">\(x\)</span> is recovered by: <span class="math display">\[
+t = -x \cdot w.
+\]</span></p></li>
+<li><p>Let <span class="math inline">\(B = \e^1 \wedge \e^2\)</span>. Compute <span class="math inline">\(R = \cos(\theta/2) + B \sin(\theta/2)\)</span> and then compute <span class="math inline">\(R^2\)</span>. What is the result? Why does this make sense?</p></li>
+<li><p>Show that the pseudoscalar <span class="math inline">\(I = \e_0 \e_1 \e_2 \e_3\)</span> anticommutes with all vectors: <span class="math inline">\(I \e^\mu = -\e^\mu I\)</span>, and deduce that it also anticommutes with all bivectors.</p></li>
+<li><p>Let <span class="math inline">\(x = x^\mu \e_\mu\)</span> and <span class="math inline">\(w = \e_0\)</span>. Show that <span class="math inline">\(x = -t w + x_\perp\)</span>, where <span class="math inline">\(t = -x \cdot w\)</span> and <span class="math inline">\(x_\perp = \frac{x + w x w}{2}\)</span>.</p></li>
 </ol>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></section></div></main> <!-- /main -->
