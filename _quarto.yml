@@ -27,6 +27,10 @@ website:
                   href: courses/vector-calculus/index.qmd
                 - text: "Vector Spaces Products and Maps"
                   href: courses/vector-calculus/vector-spaces.qmd
+            - section: "Mathematical Physics"
+              contents:
+                - text: "Overview"
+                  href: courses/mathematical-physics/index.qmd
             - section: "Special Relativity"
               contents:
                 - text: "Overview"

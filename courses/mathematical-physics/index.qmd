@@ -1,0 +1,16 @@
+---
+title: "Mathematical Physics"
+format: html
+---
+
+# Special Relativity
+
+Welcome to the Mathematical Physics course lecture notes by Sandro Vitenti.
+Currently we only have lists of exercises.
+
+## Course Outline
+
+- [Green Functions](green-functions.qmd)
+- [Time Dependent Green Functions](time-dependent-green-functions.qmd)
+
+{{< include /_footer.qmd >}}
