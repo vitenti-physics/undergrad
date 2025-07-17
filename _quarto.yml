@@ -31,6 +31,12 @@ website:
               contents:
                 - text: "Overview"
                   href: courses/mathematical-physics/index.qmd
+                - text: "Dirac Delta"
+                  href: courses/mathematical-physics/dirac-delta.qmd
+                - text: "Green Functions"
+                  href: courses/mathematical-physics/green-functions.qmd
+                - text: "Time Dependent Green Functions"
+                  href: courses/mathematical-physics/time-dependent-green-functions.qmd
             - section: "Special Relativity"
               contents:
                 - text: "Overview"
