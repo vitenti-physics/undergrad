@@ -14,18 +14,22 @@ The Dirac delta distribution is a central object in mathematical physics. Althou
    p_\sigma(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-x^2 / (2\sigma^2)},
    $$
    where $\sigma > 0$ is the standard deviation.
+
    1. Show that $p_\sigma(x)$ is normalized:
       $$
       \int_{-\infty}^{\infty} p_\sigma(x)\,\mathrm{d}x = 1.
       $$
+   
    2. Compute the expected values of odd powers of $x$:
       $$
       \left\langle x^{2n+1} \right\rangle = \int_{-\infty}^{\infty} x^{2n+1} p_\sigma(x)\,\mathrm{d}x.
       $$
+   
    3. Compute the expected values of even powers of $x$:
       $$
       \left\langle x^{2n} \right\rangle = \int_{-\infty}^{\infty} x^{2n} p_\sigma(x)\,\mathrm{d}x.
       $$
+   
    4. Use the results above to show:
       $$
       \int_{-\infty}^{\infty} f(x) p_\sigma(x)\,\mathrm{d}x =

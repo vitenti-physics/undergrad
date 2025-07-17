@@ -3,13 +3,13 @@ title: "Mathematical Physics"
 format: html
 ---
 
-# Special Relativity
+# Mathematical Physics
 
-Welcome to the Mathematical Physics course lecture notes by Sandro Vitenti.
-Currently we only have lists of exercises.
+These are the lecture notes and exercise lists for the Mathematical Physics course by Sandro Vitenti. The material is organized by topic, and currently focuses on core concepts such as the Dirac delta distribution, Green’s functions, and time-dependent operators. The content is under development; most sections contain only exercises for now.
 
 ## Course Outline
 
+- [Dirac Delta](dirac-delta.qmd)
 - [Green Functions](green-functions.qmd)
 - [Time Dependent Green Functions](time-dependent-green-functions.qmd)
 
