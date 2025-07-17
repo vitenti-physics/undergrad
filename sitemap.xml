@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/time-dependent-green-functions.html</loc>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/green-functions.html</loc>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
+  </url>
+  <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/vector-spaces.html</loc>
-    <lastmod>2025-07-14T17:51:43.473Z</lastmod>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/galilean-relativity.html</loc>
-    <lastmod>2025-07-14T17:51:43.472Z</lastmod>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/index.html</loc>
-    <lastmod>2025-07-14T17:51:43.472Z</lastmod>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/index.html</loc>
-    <lastmod>2025-07-14T17:51:43.473Z</lastmod>
+    <lastmod>2025-07-17T14:52:59.941Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/spacetime-algebra.html</loc>
-    <lastmod>2025-07-14T17:51:43.472Z</lastmod>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/index.html</loc>
-    <lastmod>2025-07-14T17:51:43.472Z</lastmod>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/index.html</loc>
+    <lastmod>2025-07-17T14:52:59.940Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/dirac-delta.html</loc>
+    <lastmod>2025-07-17T14:52:59.939Z</lastmod>
   </url>
 </urlset>

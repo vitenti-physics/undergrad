@@ -1,5 +1,77 @@
 [
   {
+    "objectID": "courses/mathematical-physics/time-dependent-green-functions.html",
+    "href": "courses/mathematical-physics/time-dependent-green-functions.html",
+    "title": "Time Dependent Green Functions",
+    "section": "",
+    "text": "Time Dependent Green Functions\n\n\n\n\nReuseCC BY-NC-SA 4.0",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Time Dependent Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html",
+    "href": "courses/mathematical-physics/green-functions.html",
+    "title": "Green Functions",
+    "section": "",
+    "text": "\\[\n\\newcommand{\\vec}[1]{\\mathbf{#1}}\n\\newcommand{\\dd}{\\mathrm{d}}\n\\newcommand{\\dD}{\\mathrm{D}}\n\\newcommand{\\e}{\\mathsf{e}}\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#greens-functions-in-one-dimension",
+    "href": "courses/mathematical-physics/green-functions.html#greens-functions-in-one-dimension",
+    "title": "Green Functions",
+    "section": "Green’s Functions in One Dimension",
+    "text": "Green’s Functions in One Dimension\nGreen’s functions provide a powerful and general method for solving linear differential equations with prescribed boundary conditions. The core idea is to express the solution as a convolution between a Green’s function and a source term. This method is particularly useful in both ordinary and partial differential equations, especially in physics and engineering contexts where fundamental solutions or propagators are central tools.\nThe exercises and derivations that follow develop the concept of Green’s functions from basic examples in one dimension, building toward general properties such as symmetry, boundary behavior, and their role in solving inhomogeneous equations. These one-dimensional constructions are then extended to higher dimensions, where the Green’s functions become essential in solving the Poisson and Laplace equations.\nThe step-by-step approach mirrors the structure used in previous sections, especially those on the Dirac delta distribution, highlighting how distributions and fundamental solutions are interconnected. This transition from delta sequences to Green’s functions reveals the deeper structure behind linear differential operators and their inverses.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#exercises",
+    "href": "courses/mathematical-physics/green-functions.html#exercises",
+    "title": "Green Functions",
+    "section": "Exercises",
+    "text": "Exercises\n\nThe inverse of the derivative of a function \\(f(x)\\) for \\(x \\in (a, b)\\), with \\(f(a) = 0 = f(b)\\), can be written as: \\[\nf(x) = \\int_{a}^{x}f'(y)\\,\\mathrm{d}y, \\qquad\nf(x) = \\frac{\\mathrm{d}}{\\mathrm{d}x} \\int_{a}^{x}f(y)\\,\\mathrm{d}y.\n\\]\n\nShow how to rewrite these expressions using the Heaviside step function \\(\\theta(x)\\): \\[\n\\theta(x) = \\begin{cases}\n0, & x &lt; 0, \\\\\n1, & x \\geq 0.\n\\end{cases}\n\\] That is, \\(\\theta(x)\\) acts as the Green’s function for the first derivative: \\[\n\\frac{\\mathrm{d}}{\\mathrm{d}x} \\int_{a}^{b} \\theta(x-y)f(y)\\,\\mathrm{d}y = f(x).\n\\]\nCompute \\[\nG(x-y) \\equiv \\int_{a}^{x}\\theta(z-y)\\,\\mathrm{d}z,\\qquad y \\in (a, b).\n\\] and show that \\(G(x)\\) is the Green’s function for the second derivative: \\[\n\\frac{\\mathrm{d}^2}{\\mathrm{d}x^2} \\int_{a}^{b} G(x - y) f(y)\\,\\mathrm{d}y = f(x).\n\\]\nProve the inverse relation: \\[\nf(x) = \\int_{a}^{b} G(x - y) \\frac{\\mathrm{d}^2}{\\mathrm{d}y^2}f(y)\\,\\mathrm{d}y.\n\\]\nExpress \\(G(x, y)\\) in terms of \\(\\sigma(x, y) = |x - y|\\).\n\nOne-dimensional Green’s functions:\n\nDerive Green’s identities for the operator \\(\\hat{L} = -\\dfrac{\\mathrm{d}^2}{\\mathrm{d}x^2}\\) on the interval \\((a, b)\\), assuming \\(f(a) = 0 = f(b)\\). Obtain the simple identity \\[\n\\frac{\\mathrm{d}}{\\mathrm{d}x} \\left(\\phi \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x}\\right) =\n\\frac{\\mathrm{d}\\phi}{\\mathrm{d}x} \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x} +\n\\phi \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}.\n\\]\nUsing the previous result, show that the Green’s function is: \\[\nG(x - y) = \\frac{|x - y|}{2} + \\alpha(x - y) + \\beta.\n\\]\nDetermine \\(\\alpha\\) and \\(\\beta\\) by imposing the boundary conditions \\(G(x - y) = 0\\) at \\(x = a\\) and \\(x = b\\) for fixed \\(y \\in (a, b)\\).\nUse the Green’s function to solve \\(-\\dfrac{\\mathrm{d}^2}{\\mathrm{d}x^2}f(x) = 1\\) on \\((a, b)\\) and show that \\[\nf(x) = -\\frac{1}{2}(x - a)(x - b).\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#greens-functions-in-multiple-dimensions",
+    "href": "courses/mathematical-physics/green-functions.html#greens-functions-in-multiple-dimensions",
+    "title": "Green Functions",
+    "section": "Green’s Functions in Multiple Dimensions",
+    "text": "Green’s Functions in Multiple Dimensions\nThe concepts developed in one dimension generalize naturally to higher dimensions, where Green’s functions play a central role in solving elliptic partial differential equations such as the Poisson and Laplace equations. In multiple dimensions, the Green’s function depends on the spatial distance between points and reflects the geometry of the underlying space.\nThis section explores how the Laplacian operator behaves under these generalizations, how to regularize singular Green’s functions, and how Green’s identities lead to integral representations of solutions. These results form the basis for classical potential theory and have applications in fields ranging from electrostatics to quantum mechanics.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#exercises-1",
+    "href": "courses/mathematical-physics/green-functions.html#exercises-1",
+    "title": "Green Functions",
+    "section": "Exercises",
+    "text": "Exercises\n\nThe Green’s function for the second derivative in one dimension is proportional to the distance \\(\\sigma(x, y) = |x - y|\\). In three dimensions, define: \\[\n\\sigma(\\vec{x}, \\vec{y}) = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2},\n\\] where \\(\\vec{x} = (x_1, x_2, x_3)\\) and \\(\\vec{y} = (y_1, y_2, y_3)\\).\n\nShow that the Laplacian in \\(\\mathbb{R}^3\\), \\[\n\\vec{\\nabla}^2 = \\frac{\\partial^2}{\\partial x_1^2} + \\frac{\\partial^2}{\\partial x_2^2} + \\frac{\\partial^2}{\\partial x_3^2},\n\\] satisfies: \\[\n\\vec{\\nabla}^2 \\left(\\frac{1}{\\sigma(\\vec{x}, \\vec{y})}\\right) = 0 \\quad \\text{for } \\vec{x} \\neq \\vec{y}.\n\\]\nRegularize the Green’s function by introducing \\(\\varepsilon &gt; 0\\): \\[\nG_\\varepsilon(\\vec{x}, \\vec{y}) =\n-\\frac{1}{4\\pi} \\frac{1}{\\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2 + \\varepsilon^2}}.\n\\] Show that: \\[\n\\lim_{\\varepsilon \\to 0} \\int_{\\mathbb{R}^3} \\vec{\\nabla}^2 G_\\varepsilon(\\vec{x}, \\vec{y})\\,\\mathrm{d}^3\\vec{x} = 1.\n\\]\n\nDerive Green’s identities for the Laplacian.\n\nDerive the following Green’s identities: \\[\n\\oint_{\\partial\\Omega} \\phi\\,\\vec{\\nabla}\\psi \\cdot \\mathrm{d}\\vec{S}\n= \\int_{\\Omega} \\left(\\vec{\\nabla}\\phi \\cdot \\vec{\\nabla}\\psi + \\phi\\,\\vec{\\nabla}^2\\psi\\right)\\,\\mathrm{d}^3\\vec{x},\n\\] \\[\n\\oint_{\\partial\\Omega} (\\phi\\,\\vec{\\nabla}\\psi - \\psi\\,\\vec{\\nabla}\\phi) \\cdot \\mathrm{d}\\vec{S}\n= \\int_{\\Omega} \\left(\\phi\\,\\vec{\\nabla}^2\\psi - \\psi\\,\\vec{\\nabla}^2\\phi\\right)\\,\\mathrm{d}^3\\vec{x},\n\\] where \\(\\Omega\\) is a volume bounded by the surface \\(\\partial\\Omega\\).\nShow how to use the second Green’s identity together with the Green’s function for the Laplacian to obtain the solution to the Poisson equation.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
     "objectID": "courses/vector-calculus/vector-spaces.html",
     "href": "courses/vector-calculus/vector-spaces.html",
     "title": "Vector Spaces Products and Maps",
@@ -500,6 +572,66 @@
       "Courses",
       "Vector Calculus",
       "Overview"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/index.html",
+    "href": "courses/mathematical-physics/index.html",
+    "title": "Mathematical Physics",
+    "section": "",
+    "text": "These are the lecture notes and exercise lists for the Mathematical Physics course by Sandro Vitenti. The material is organized by topic, and currently focuses on core concepts such as the Dirac delta distribution, Green’s functions, and time-dependent operators. The content is under development; most sections contain only exercises for now.\n\n\n\nDirac Delta\nGreen Functions\nTime Dependent Green Functions\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/index.html#course-outline",
+    "href": "courses/mathematical-physics/index.html#course-outline",
+    "title": "Mathematical Physics",
+    "section": "",
+    "text": "Dirac Delta\nGreen Functions\nTime Dependent Green Functions\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/dirac-delta.html",
+    "href": "courses/mathematical-physics/dirac-delta.html",
+    "title": "Dirac Delta",
+    "section": "",
+    "text": "The Dirac delta distribution is a central object in mathematical physics. Although not a function in the classical sense, it can be rigorously defined as the limit of a sequence of well-behaved functions. One common construction uses the normal (Gaussian) distribution with vanishing variance. In this section, we explore this limiting process and use it to derive properties of the delta distribution.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Dirac Delta"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/dirac-delta.html#dirac-delta",
+    "href": "courses/mathematical-physics/dirac-delta.html#dirac-delta",
+    "title": "Dirac Delta",
+    "section": "",
+    "text": "The Dirac delta distribution is a central object in mathematical physics. Although not a function in the classical sense, it can be rigorously defined as the limit of a sequence of well-behaved functions. One common construction uses the normal (Gaussian) distribution with vanishing variance. In this section, we explore this limiting process and use it to derive properties of the delta distribution.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Dirac Delta"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/dirac-delta.html#exercises",
+    "href": "courses/mathematical-physics/dirac-delta.html#exercises",
+    "title": "Dirac Delta",
+    "section": "Exercises",
+    "text": "Exercises\n\nConsider the normal distribution: \\[\np_\\sigma(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-x^2 / (2\\sigma^2)},\n\\] where \\(\\sigma &gt; 0\\) is the standard deviation.\n\nShow that \\(p_\\sigma(x)\\) is normalized: \\[\n\\int_{-\\infty}^{\\infty} p_\\sigma(x)\\,\\mathrm{d}x = 1.\n\\]\nCompute the expected values of odd powers of \\(x\\): \\[\n\\left\\langle x^{2n+1} \\right\\rangle = \\int_{-\\infty}^{\\infty} x^{2n+1} p_\\sigma(x)\\,\\mathrm{d}x.\n\\]\nCompute the expected values of even powers of \\(x\\): \\[\n\\left\\langle x^{2n} \\right\\rangle = \\int_{-\\infty}^{\\infty} x^{2n} p_\\sigma(x)\\,\\mathrm{d}x.\n\\]\nUse the results above to show: \\[\n\\int_{-\\infty}^{\\infty} f(x) p_\\sigma(x)\\,\\mathrm{d}x =\nf(0) + \\frac{\\sigma^2}{2} f''(0) + \\frac{\\sigma^4}{8} f^{(4)}(0) + \\cdots,\n\\] where derivatives are with respect to \\(x\\). Conclude that the limit \\(\\sigma \\to 0\\) yields the Dirac delta: \\[\n\\lim_{\\sigma \\to 0} p_\\sigma(x) = \\delta(x).\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Dirac Delta"
     ]
   }
 ]
