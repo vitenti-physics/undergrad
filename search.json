@@ -4,7 +4,19 @@
     "href": "courses/mathematical-physics/time-dependent-green-functions.html",
     "title": "Time Dependent Green Functions",
     "section": "",
-    "text": "Time Dependent Green Functions\n\n\n\n\nReuseCC BY-NC-SA 4.0",
+    "text": "\\[\n\\newcommand{\\vec}[1]{\\mathbf{#1}}\n\\newcommand{\\dd}{\\mathrm{d}}\n\\newcommand{\\dD}{\\mathrm{D}}\n\\newcommand{\\e}{\\mathsf{e}}\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Time Dependent Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/time-dependent-green-functions.html#exercises",
+    "href": "courses/mathematical-physics/time-dependent-green-functions.html#exercises",
+    "title": "Time Dependent Green Functions",
+    "section": "Exercises",
+    "text": "Exercises\nThese exercises guide the student through the derivation and interpretation of the Green’s function associated with the wave (D’Alembert) equation in flat spacetime. They are structured to gradually build the solution, emphasizing the role of Fourier analysis, singularities, and causal structure.\n\nWrite the D’Alembert (wave) equation for a scalar field \\(\\phi(t, \\vec{x})\\) in Minkowski spacetime: \\[\n\\Box \\phi(t, \\vec{x}) = \\left(-\\frac{1}{c^2}\\frac{\\partial^2}{\\partial t^2} + \\nabla^2 \\right)\\phi(t, \\vec{x}) = S(t, \\vec{x}),\n\\] where \\(S(t, \\vec{x})\\) is a source term.\nDefine the Green’s function \\(G(t, \\vec{x}; t', \\vec{x}')\\) as the solution to: \\[\n\\Box G(t, \\vec{x}; t', \\vec{x}') = \\delta(t - t') \\delta^{3}(\\vec{x} - \\vec{x}'),\n\\] and discuss its physical interpretation, including boundary/causality conditions (retarded, advanced).\nWrite the spatial Fourier transform of the Green’s function: \\[\nG(t - t', \\vec{x} - \\vec{x}') = \\int \\frac{d^3k\\dd w}{(\\sqrt{2\\pi})^4} \\, e^{iw c(t-t')+i \\vec{k} \\cdot (\\vec{x} - \\vec{x}')} \\tilde{G}(w, \\vec{k}),\n\\] and insert it into the wave equation to obtain the equation for \\(\\tilde{G}(w, \\vec{k})\\).\nShow that inserting the Fourier ansatz into the wave equation leads to an algebraic equation for \\(\\tilde{G}(w, \\vec{k})\\), and solve it: \\[\n\\tilde{G}(w, \\vec{k}) = \\frac{1}{(\\sqrt{2\\pi})^4}\\frac{1}{w^2 - k^2},\n\\] where \\(k = |\\vec{k}|\\). Discuss the location of singularities in the complex \\(w\\)-plane and the ambiguity in the inversion.\nWrite the inverse Fourier transform expression for the Green’s function: \\[\nG(t - t', \\vec{x} - \\vec{x}') = \\int \\frac{d^3k\\dd w}{(2\\pi)^4} \\, \\frac{e^{iw c(t-t') + i \\vec{k} \\cdot (\\vec{x} - \\vec{x}')}}{w^2 - k^2}.\n\\]\nAnalyze the singular behavior of the integrand. Discuss how the pole structure of the integrand demands a prescription to define the integral and how different choices correspond to different Green’s functions: retarded and advanced.\nSeparate the integral into:\n\n\nthe \\(w\\)-integral (time dependence),\n\n\nthe \\(\\vec{k}\\)-integral (spatial dependence),\n\n\nand discuss the physical role of each part in building the full solution.\nSolve the \\(w\\)-integral using contour integration for the retarded Green’s function by choosing a contour that ensures \\(G(t &lt; t') = 0\\). Discuss the deformation of the contour, the residue calculation, and the emergence of the Heaviside function \\(\\Theta(t - t')\\).\nUsing the result from the \\(w\\)-integral, compute the remaining \\(\\vec{k}\\)-integral and show that in three spatial dimensions: \\[\nG_{\\text{ret}}(t - t', \\vec{x} - \\vec{x}') = \\frac{\\delta(t - t' - |\\vec{x} - \\vec{x}'|/c)}{4\\pi |\\vec{x} - \\vec{x}'|}.\n\\]\nDiscuss the physical interpretation of this result:\n\n\n\nWhy is the support of the Green’s function constrained to the light cone?\n\n\nHow does this reflect causality in relativistic field theory?\n\n\nHow would this structure differ in other dimensions or if boundary conditions were imposed?",
     "crumbs": [
       "Courses",
       "Mathematical Physics",

@@ -101,6 +101,35 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -420,7 +449,7 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#time-dependent-green-functions" id="toc-time-dependent-green-functions" class="nav-link active" data-scroll-target="#time-dependent-green-functions">Time Dependent Green Functions</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -453,8 +482,61 @@ cookieconsent.run({
 </header>
 
 
-<section id="time-dependent-green-functions" class="level1">
-<h1>Time Dependent Green Functions</h1>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dD}{\mathrm{D}}
+\newcommand{\e}{\mathsf{e}}
+\]</span></p>
+</div>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>These exercises guide the student through the derivation and interpretation of the Green’s function associated with the wave (D’Alembert) equation in flat spacetime. They are structured to gradually build the solution, emphasizing the role of Fourier analysis, singularities, and causal structure.</p>
+<ol type="1">
+<li><p>Write the D’Alembert (wave) equation for a scalar field <span class="math inline">\(\phi(t, \vec{x})\)</span> in Minkowski spacetime: <span class="math display">\[
+\Box \phi(t, \vec{x}) = \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2} + \nabla^2 \right)\phi(t, \vec{x}) = S(t, \vec{x}),
+\]</span> where <span class="math inline">\(S(t, \vec{x})\)</span> is a source term.</p></li>
+<li><p>Define the Green’s function <span class="math inline">\(G(t, \vec{x}; t', \vec{x}')\)</span> as the solution to: <span class="math display">\[
+\Box G(t, \vec{x}; t', \vec{x}') = \delta(t - t') \delta^{3}(\vec{x} - \vec{x}'),
+\]</span> and discuss its physical interpretation, including boundary/causality conditions (retarded, advanced).</p></li>
+<li><p>Write the spatial Fourier transform of the Green’s function: <span class="math display">\[
+G(t - t', \vec{x} - \vec{x}') = \int \frac{d^3k\dd w}{(\sqrt{2\pi})^4} \, e^{iw c(t-t')+i \vec{k} \cdot (\vec{x} - \vec{x}')} \tilde{G}(w, \vec{k}),
+\]</span> and insert it into the wave equation to obtain the equation for <span class="math inline">\(\tilde{G}(w, \vec{k})\)</span>.</p></li>
+<li><p>Show that inserting the Fourier ansatz into the wave equation leads to an algebraic equation for <span class="math inline">\(\tilde{G}(w, \vec{k})\)</span>, and solve it: <span class="math display">\[
+\tilde{G}(w, \vec{k}) = \frac{1}{(\sqrt{2\pi})^4}\frac{1}{w^2 - k^2},
+\]</span> where <span class="math inline">\(k = |\vec{k}|\)</span>. Discuss the location of singularities in the complex <span class="math inline">\(w\)</span>-plane and the ambiguity in the inversion.</p></li>
+<li><p>Write the inverse Fourier transform expression for the Green’s function: <span class="math display">\[
+G(t - t', \vec{x} - \vec{x}') = \int \frac{d^3k\dd w}{(2\pi)^4} \, \frac{e^{iw c(t-t') + i \vec{k} \cdot (\vec{x} - \vec{x}')}}{w^2 - k^2}.
+\]</span></p></li>
+<li><p>Analyze the singular behavior of the integrand. Discuss how the pole structure of the integrand demands a prescription to define the integral and how different choices correspond to different Green’s functions: retarded and advanced.</p></li>
+<li><p>Separate the integral into:</p>
+<ul>
+<li><ol type="a">
+<li>the <span class="math inline">\(w\)</span>-integral (time dependence),</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>the <span class="math inline">\(\vec{k}\)</span>-integral (spatial dependence),</li>
+</ol></li>
+</ul>
+<p>and discuss the physical role of each part in building the full solution.</p></li>
+<li><p>Solve the <span class="math inline">\(w\)</span>-integral using contour integration for the <strong>retarded</strong> Green’s function by choosing a contour that ensures <span class="math inline">\(G(t &lt; t') = 0\)</span>. Discuss the deformation of the contour, the residue calculation, and the emergence of the Heaviside function <span class="math inline">\(\Theta(t - t')\)</span>.</p></li>
+<li><p>Using the result from the <span class="math inline">\(w\)</span>-integral, compute the remaining <span class="math inline">\(\vec{k}\)</span>-integral and show that in three spatial dimensions: <span class="math display">\[
+G_{\text{ret}}(t - t', \vec{x} - \vec{x}') = \frac{\delta(t - t' - |\vec{x} - \vec{x}'|/c)}{4\pi |\vec{x} - \vec{x}'|}.
+\]</span></p></li>
+<li><p>Discuss the physical interpretation of this result:</p></li>
+</ol>
+<ul>
+<li><ol type="a">
+<li>Why is the support of the Green’s function constrained to the light cone?</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>How does this reflect causality in relativistic field theory?</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li>How would this structure differ in other dimensions or if boundary conditions were imposed?</li>
+</ol></li>
+</ul>
 
 
 </section>
