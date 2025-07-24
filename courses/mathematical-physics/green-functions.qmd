@@ -49,23 +49,45 @@ The step-by-step approach mirrors the structure used in previous sections, espec
    
    4. Express $G(x, y)$ in terms of $\sigma(x, y) = |x - y|$.
 
-2. One-dimensional Green’s functions:
-   
-   1. Derive Green's identities for the operator $\hat{L} = -\dfrac{\mathrm{d}^2}{\mathrm{d}x^2}$ on the interval $(a, b)$, assuming $f(a) = 0 = f(b)$. Obtain the simple identity
+2. One-dimensional Green’s functions. Derive Green’s identities for the operator $\hat{L} = -\dfrac{\mathrm{d}^2}{\mathrm{d}x^2}$ on the interval $(a, b)$, assuming $\phi(a) = \phi(b) = 0$.
+
+   1. Start by verifying the product rule:
       $$
       \frac{\mathrm{d}}{\mathrm{d}x} \left(\phi \frac{\mathrm{d}\psi}{\mathrm{d}x}\right) =
       \frac{\mathrm{d}\phi}{\mathrm{d}x} \frac{\mathrm{d}\psi}{\mathrm{d}x} +
       \phi \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}.
       $$
+
+   2. Integrate both sides over $(a, b)$ and use the boundary condition $\phi(a) = \phi(b) = 0$ to show:
+      $$
+      \int_a^b \phi(x) \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}(x)\,\mathrm{d}x =
+      - \int_a^b \frac{\mathrm{d}\phi}{\mathrm{d}x}(x) \frac{\mathrm{d}\psi}{\mathrm{d}x}(x)\,\mathrm{d}x.
+      $$
+      This is Green's first identity.
    
-   2. Using the previous result, show that the Green’s function is:
+   3. Swap $\phi$ and $\psi$, perform the same computation, and subtract the two identities to obtain Green's second identity:
+      $$
+      \int_a^b \left[\phi(x) \frac{\mathrm{d}^2\psi}{\mathrm{d}x^2}(x) -
+      \psi(x) \frac{\mathrm{d}^2\phi}{\mathrm{d}x^2}(x)\right]\,\mathrm{d}x = 0.
+      $$
+
+   4. Now assume $\psi(x) = G(x, y)$ is the Green's function for the operator, and let $\phi(x)$ be a given function. Use the identity above to obtain the formal solution of the equation
+      $$
+      - \frac{\mathrm{d}^2}{\mathrm{d}x^2} f(x) = s(x)
+      $$
+      in terms of the Green's function:
+      $$
+      f(x) = \int_a^b G(x, y) s(y)\, \mathrm{d}y.
+      $$
+   
+   5. Using the previous result, show that the Green’s function is:
       $$
       G(x - y) = \frac{|x - y|}{2} + \alpha(x - y) + \beta.
       $$
    
-   3. Determine $\alpha$ and $\beta$ by imposing the boundary conditions $G(x - y) = 0$ at $x = a$ and $x = b$ for fixed $y \in (a, b)$.
+   6. Determine $\alpha$ and $\beta$ by imposing the boundary conditions $G(x - y) = 0$ at $x = a$ and $x = b$ for fixed $y \in (a, b)$.
    
-   4. Use the Green’s function to solve $-\dfrac{\mathrm{d}^2}{\mathrm{d}x^2}f(x) = 1$ on $(a, b)$ and show that
+   7. Use the Green’s function to solve $-\dfrac{\mathrm{d}^2}{\mathrm{d}x^2}f(x) = 1$ on $(a, b)$ and show that
       $$
       f(x) = -\frac{1}{2}(x - a)(x - b).
       $$
