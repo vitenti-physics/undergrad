@@ -21,6 +21,12 @@ website:
       contents:
         - section: "Courses"
           contents:
+            - section: "Introduction to Physics (portuguese)"
+              contents:
+                - text: "Overview"
+                  href: courses/introduction-to-physics/index.qmd
+                - text: "Physics and Mathematics"
+                  href: courses/introduction-to-physics/physics-math.qmd
             - section: "Vector Calculus"
               contents:
                 - text: "Overview"

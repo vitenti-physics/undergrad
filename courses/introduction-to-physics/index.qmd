@@ -1,0 +1,14 @@
+---
+title: "Introduction to Physics"
+format: html
+---
+
+# Introduction to Physics
+
+These are the lecture notes and exercise lists for the Introduction to Physics (Estrutura da Matéria) course. This course introduces the basics of physics, including classical mechanics, quantum mechanics, electrodynamics and relativity. The content is under development. This course material is in portuguese.
+
+## Course Outline
+
+- [A Física como Linguagem Matemática](physics-math.qmd)
+
+{{< include /_footer.qmd >}}

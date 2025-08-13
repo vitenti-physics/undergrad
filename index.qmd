@@ -4,7 +4,7 @@ title: "Undergraduate Physics Lecture Notes"
 
 ## Welcome to Undergraduate Physics Lecture Notes
 
-This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged.
+This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical derivations, and practical examples. The content is open source, and contributions from the community are encouraged.
 
 ## Available Courses
 
