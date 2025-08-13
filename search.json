@@ -1,86 +1,121 @@
 [
   {
-    "objectID": "courses/mathematical-physics/time-dependent-green-functions.html",
-    "href": "courses/mathematical-physics/time-dependent-green-functions.html",
-    "title": "Time Dependent Green Functions",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Undergraduate Physics Lecture Notes",
     "section": "",
-    "text": "\\[\n\\newcommand{\\vec}[1]{\\mathbf{#1}}\n\\newcommand{\\dd}{\\mathrm{d}}\n\\newcommand{\\dD}{\\mathrm{D}}\n\\newcommand{\\e}{\\mathsf{e}}\n\\]",
-    "crumbs": [
-      "Courses",
-      "Mathematical Physics",
-      "Time Dependent Green Functions"
-    ]
+    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical derivations, and practical examples. The content is open source, and contributions from the community are encouraged."
   },
   {
-    "objectID": "courses/mathematical-physics/time-dependent-green-functions.html#exercises",
-    "href": "courses/mathematical-physics/time-dependent-green-functions.html#exercises",
-    "title": "Time Dependent Green Functions",
-    "section": "Exercises",
-    "text": "Exercises\nThese exercises guide the student through the derivation and interpretation of the Green’s function associated with the wave (D’Alembert) equation in flat spacetime. They are structured to gradually build the solution, emphasizing the role of Fourier analysis, singularities, and causal structure.\n\nWrite the D’Alembert (wave) equation for a scalar field \\(\\phi(t, \\vec{x})\\) in Minkowski spacetime: \\[\n\\Box \\phi(t, \\vec{x}) = \\left(-\\frac{1}{c^2}\\frac{\\partial^2}{\\partial t^2} + \\nabla^2 \\right)\\phi(t, \\vec{x}) = S(t, \\vec{x}),\n\\] where \\(S(t, \\vec{x})\\) is a source term.\nDefine the Green’s function \\(G(t, \\vec{x}; t', \\vec{x}')\\) as the solution to: \\[\n\\Box G(t, \\vec{x}; t', \\vec{x}') = \\delta(t - t') \\delta^{3}(\\vec{x} - \\vec{x}'),\n\\] and discuss its physical interpretation, including boundary/causality conditions (retarded, advanced).\nWrite the spatial Fourier transform of the Green’s function: \\[\nG(t - t', \\vec{x} - \\vec{x}') = \\int \\frac{d^3k\\dd w}{(\\sqrt{2\\pi})^4} \\, e^{iw c(t-t')+i \\vec{k} \\cdot (\\vec{x} - \\vec{x}')} \\tilde{G}(w, \\vec{k}),\n\\] and insert it into the wave equation to obtain the equation for \\(\\tilde{G}(w, \\vec{k})\\).\nShow that inserting the Fourier ansatz into the wave equation leads to an algebraic equation for \\(\\tilde{G}(w, \\vec{k})\\), and solve it: \\[\n\\tilde{G}(w, \\vec{k}) = \\frac{1}{(\\sqrt{2\\pi})^4}\\frac{1}{w^2 - k^2},\n\\] where \\(k = |\\vec{k}|\\). Discuss the location of singularities in the complex \\(w\\)-plane and the ambiguity in the inversion.\nWrite the inverse Fourier transform expression for the Green’s function: \\[\nG(t - t', \\vec{x} - \\vec{x}') = \\int \\frac{d^3k\\dd w}{(2\\pi)^4} \\, \\frac{e^{iw c(t-t') + i \\vec{k} \\cdot (\\vec{x} - \\vec{x}')}}{w^2 - k^2}.\n\\]\nAnalyze the singular behavior of the integrand. Discuss how the pole structure of the integrand demands a prescription to define the integral and how different choices correspond to different Green’s functions: retarded and advanced.\nSeparate the integral into:\n\n\nthe \\(w\\)-integral (time dependence),\n\n\nthe \\(\\vec{k}\\)-integral (spatial dependence),\n\n\nand discuss the physical role of each part in building the full solution.\nSolve the \\(w\\)-integral using contour integration for the retarded Green’s function by choosing a contour that ensures \\(G(t &lt; t') = 0\\). Discuss the deformation of the contour, the residue calculation, and the emergence of the Heaviside function \\(\\Theta(t - t')\\).\nUsing the result from the \\(w\\)-integral, compute the remaining \\(\\vec{k}\\)-integral and show that in three spatial dimensions: \\[\nG_{\\text{ret}}(t - t', \\vec{x} - \\vec{x}') = \\frac{\\delta(t - t' - |\\vec{x} - \\vec{x}'|/c)}{4\\pi |\\vec{x} - \\vec{x}'|}.\n\\]\nDiscuss the physical interpretation of this result:\n\n\n\nWhy is the support of the Green’s function constrained to the light cone?\n\n\nHow does this reflect causality in relativistic field theory?\n\n\nHow would this structure differ in other dimensions or if boundary conditions were imposed?",
-    "crumbs": [
-      "Courses",
-      "Mathematical Physics",
-      "Time Dependent Green Functions"
-    ]
-  },
-  {
-    "objectID": "courses/mathematical-physics/green-functions.html",
-    "href": "courses/mathematical-physics/green-functions.html",
-    "title": "Green Functions",
+    "objectID": "index.html#welcome-to-undergraduate-physics-lecture-notes",
+    "href": "index.html#welcome-to-undergraduate-physics-lecture-notes",
+    "title": "Undergraduate Physics Lecture Notes",
     "section": "",
-    "text": "\\[\n\\newcommand{\\vec}[1]{\\mathbf{#1}}\n\\newcommand{\\dd}{\\mathrm{d}}\n\\newcommand{\\dD}{\\mathrm{D}}\n\\newcommand{\\e}{\\mathsf{e}}\n\\]",
+    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical derivations, and practical examples. The content is open source, and contributions from the community are encouraged."
+  },
+  {
+    "objectID": "index.html#available-courses",
+    "href": "index.html#available-courses",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "Available Courses",
+    "text": "Available Courses\nExplore the following courses, each with notes and exercises:\n\nVector Calculus: Covers vector spaces, inner products, vector products, and triple products, with applications to physics.\nSpecial Relativity: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics."
+  },
+  {
+    "objectID": "index.html#about-the-project",
+    "href": "index.html#about-the-project",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "About the Project",
+    "text": "About the Project\nThese notes are developed as an open-source project to provide accessible, high-quality resources for physics students. The content is hosted on GitHub, where you can:\n\nAccess the source files (written in Quarto).\nReport errors or ask questions.\nSuggest improvements or new topics.\nContribute directly by submitting pull requests.\n\nThe notes are released under the CC BY-NC-SA 4.0 license, allowing non-commercial use, remixing, and distribution with attribution to the original author by linking back to this site."
+  },
+  {
+    "objectID": "index.html#contribute",
+    "href": "index.html#contribute",
+    "title": "Undergraduate Physics Lecture Notes",
+    "section": "How to Contribute",
+    "text": "How to Contribute\nWe welcome feedback, questions, and contributions from students, educators, and physics enthusiasts. Whether you spot a typo, have a question, or want to add a new section, you can get involved through our GitHub repository. Below are quick tips to get started.\n\nCreating a GitHub Issue\nIf you find an error, have a question, or want to suggest an improvement, create a GitHub issue:\n\nGo to the Repository: Visit github.com/vitenti-physics/undergrad.\nNavigate to Issues: Click the “Issues” tab near the top of the page.\nCreate a New Issue: Click the green “New issue” button.\nFill in Details:\n\nTitle: Write a clear, concise title (e.g., “Typo in Vector Product Equation”).\nDescription: Provide details, such as the section (e.g., Vector Product), the issue, and any suggestions. For questions, include context (e.g., “I don’t understand why the Levi-Civita symbol is antisymmetric”).\nLabels (optional): Add labels like “bug,” “question,” or “enhancement” if prompted.\n\nSubmit: Click “Submit new issue” to post it. You’ll be notified of responses.\n\n\n\nSuggesting Improvements or Contributing Content\nTo propose changes (e.g., fixing equations, adding examples), you can submit a pull request:\n\nFork the Repository: On the GitHub repo, click “Fork” to create a copy under your account.\nClone Your Fork: Download your fork to your computer using:\n\n   git clone https://github.com/your-username/undergrad.git\n\nEdit Files: Modify the Quarto files (e.g., vector_calculus.qmd) using a text editor.\n\nFor example, fix a typo in Vector Product.\n\nCommit Changes: Save your changes and commit:\n\n    git add .\n    git commit -m \"Fix typo in vector product section\"\n\n    Push to GitHub: Upload your changes:\n    bash\n\n    git push origin main\n\nCreate a Pull Request: Go to your fork on GitHub, click “Contribute,” and select “Open pull request.”\n\nDescribe your changes and submit."
+  },
+  {
+    "objectID": "courses/mathematical-physics/index.html",
+    "href": "courses/mathematical-physics/index.html",
+    "title": "Mathematical Physics",
+    "section": "",
+    "text": "These are the lecture notes and exercise lists for the Mathematical Physics course by Sandro Vitenti. The material is organized by topic, and currently focuses on core concepts such as the Dirac delta distribution, Green’s functions, and time-dependent operators. The content is under development; most sections contain only exercises for now.\n\n\n\nDirac Delta\nGreen Functions\nTime Dependent Green Functions\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
     "crumbs": [
       "Courses",
       "Mathematical Physics",
-      "Green Functions"
+      "Overview"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/green-functions.html#greens-functions-in-one-dimension",
-    "href": "courses/mathematical-physics/green-functions.html#greens-functions-in-one-dimension",
-    "title": "Green Functions",
-    "section": "Green’s Functions in One Dimension",
-    "text": "Green’s Functions in One Dimension\nGreen’s functions provide a powerful and general method for solving linear differential equations with prescribed boundary conditions. The core idea is to express the solution as a convolution between a Green’s function and a source term. This method is particularly useful in both ordinary and partial differential equations, especially in physics and engineering contexts where fundamental solutions or propagators are central tools.\nThe exercises and derivations that follow develop the concept of Green’s functions from basic examples in one dimension, building toward general properties such as symmetry, boundary behavior, and their role in solving inhomogeneous equations. These one-dimensional constructions are then extended to higher dimensions, where the Green’s functions become essential in solving the Poisson and Laplace equations.\nThe step-by-step approach mirrors the structure used in previous sections, especially those on the Dirac delta distribution, highlighting how distributions and fundamental solutions are interconnected. This transition from delta sequences to Green’s functions reveals the deeper structure behind linear differential operators and their inverses.",
+    "objectID": "courses/mathematical-physics/index.html#course-outline",
+    "href": "courses/mathematical-physics/index.html#course-outline",
+    "title": "Mathematical Physics",
+    "section": "",
+    "text": "Dirac Delta\nGreen Functions\nTime Dependent Green Functions\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
     "crumbs": [
       "Courses",
       "Mathematical Physics",
-      "Green Functions"
+      "Overview"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/green-functions.html#exercises",
-    "href": "courses/mathematical-physics/green-functions.html#exercises",
-    "title": "Green Functions",
+    "objectID": "courses/mathematical-physics/dirac-delta.html",
+    "href": "courses/mathematical-physics/dirac-delta.html",
+    "title": "Dirac Delta",
+    "section": "",
+    "text": "The Dirac delta distribution is a central object in mathematical physics. Although not a function in the classical sense, it can be rigorously defined as the limit of a sequence of well-behaved functions. One common construction uses the normal (Gaussian) distribution with vanishing variance. In this section, we explore this limiting process and use it to derive properties of the delta distribution.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Dirac Delta"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/dirac-delta.html#dirac-delta",
+    "href": "courses/mathematical-physics/dirac-delta.html#dirac-delta",
+    "title": "Dirac Delta",
+    "section": "",
+    "text": "The Dirac delta distribution is a central object in mathematical physics. Although not a function in the classical sense, it can be rigorously defined as the limit of a sequence of well-behaved functions. One common construction uses the normal (Gaussian) distribution with vanishing variance. In this section, we explore this limiting process and use it to derive properties of the delta distribution.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Dirac Delta"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/dirac-delta.html#exercises",
+    "href": "courses/mathematical-physics/dirac-delta.html#exercises",
+    "title": "Dirac Delta",
     "section": "Exercises",
-    "text": "Exercises\n\nThe inverse of the derivative of a function \\(f(x)\\) for \\(x \\in (a, b)\\), with \\(f(a) = 0 = f(b)\\), can be written as: \\[\nf(x) = \\int_{a}^{x}f'(y)\\,\\mathrm{d}y, \\qquad\nf(x) = \\frac{\\mathrm{d}}{\\mathrm{d}x} \\int_{a}^{x}f(y)\\,\\mathrm{d}y.\n\\]\n\nShow how to rewrite these expressions using the Heaviside step function \\(\\theta(x)\\): \\[\n\\theta(x) = \\begin{cases}\n0, & x &lt; 0, \\\\\n1, & x \\geq 0.\n\\end{cases}\n\\] That is, \\(\\theta(x)\\) acts as the Green’s function for the first derivative: \\[\n\\frac{\\mathrm{d}}{\\mathrm{d}x} \\int_{a}^{b} \\theta(x-y)f(y)\\,\\mathrm{d}y = f(x).\n\\]\nCompute \\[\nG(x-y) \\equiv \\int_{a}^{x}\\theta(z-y)\\,\\mathrm{d}z,\\qquad y \\in (a, b).\n\\] and show that \\(G(x)\\) is the Green’s function for the second derivative: \\[\n\\frac{\\mathrm{d}^2}{\\mathrm{d}x^2} \\int_{a}^{b} G(x - y) f(y)\\,\\mathrm{d}y = f(x).\n\\]\nProve the inverse relation: \\[\nf(x) = \\int_{a}^{b} G(x - y) \\frac{\\mathrm{d}^2}{\\mathrm{d}y^2}f(y)\\,\\mathrm{d}y.\n\\]\nExpress \\(G(x, y)\\) in terms of \\(\\sigma(x, y) = |x - y|\\).\n\nOne-dimensional Green’s functions. Derive Green’s identities for the operator \\(\\hat{L} = -\\dfrac{\\mathrm{d}^2}{\\mathrm{d}x^2}\\) on the interval \\((a, b)\\), assuming \\(\\phi(a) = \\phi(b) = 0\\).\n\nStart by verifying the product rule: \\[\n\\frac{\\mathrm{d}}{\\mathrm{d}x} \\left(\\phi \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x}\\right) =\n\\frac{\\mathrm{d}\\phi}{\\mathrm{d}x} \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x} +\n\\phi \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}.\n\\]\nIntegrate both sides over \\((a, b)\\) and use the boundary condition \\(\\phi(a) = \\phi(b) = 0\\) to show: \\[\n\\int_a^b \\phi(x) \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}(x)\\,\\mathrm{d}x =\n- \\int_a^b \\frac{\\mathrm{d}\\phi}{\\mathrm{d}x}(x) \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x}(x)\\,\\mathrm{d}x.\n\\] This is Green’s first identity.\nSwap \\(\\phi\\) and \\(\\psi\\), perform the same computation, and subtract the two identities to obtain Green’s second identity: \\[\n\\int_a^b \\left[\\phi(x) \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}(x) -\n\\psi(x) \\frac{\\mathrm{d}^2\\phi}{\\mathrm{d}x^2}(x)\\right]\\,\\mathrm{d}x = 0.\n\\]\nNow assume \\(\\psi(x) = G(x, y)\\) is the Green’s function for the operator, and let \\(\\phi(x)\\) be a given function. Use the identity above to obtain the formal solution of the equation \\[\n- \\frac{\\mathrm{d}^2}{\\mathrm{d}x^2} f(x) = s(x)\n\\] in terms of the Green’s function: \\[\nf(x) = \\int_a^b G(x, y) s(y)\\, \\mathrm{d}y.\n\\]\nUsing the previous result, show that the Green’s function is: \\[\nG(x - y) = \\frac{|x - y|}{2} + \\alpha(x - y) + \\beta.\n\\]\nDetermine \\(\\alpha\\) and \\(\\beta\\) by imposing the boundary conditions \\(G(x - y) = 0\\) at \\(x = a\\) and \\(x = b\\) for fixed \\(y \\in (a, b)\\).\nUse the Green’s function to solve \\(-\\dfrac{\\mathrm{d}^2}{\\mathrm{d}x^2}f(x) = 1\\) on \\((a, b)\\) and show that \\[\nf(x) = -\\frac{1}{2}(x - a)(x - b).\n\\]",
+    "text": "Exercises\n\nConsider the normal distribution: \\[\np_\\sigma(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-x^2 / (2\\sigma^2)},\n\\] where \\(\\sigma &gt; 0\\) is the standard deviation.\n\nShow that \\(p_\\sigma(x)\\) is normalized: \\[\n\\int_{-\\infty}^{\\infty} p_\\sigma(x)\\,\\mathrm{d}x = 1.\n\\]\nCompute the expected values of odd powers of \\(x\\): \\[\n\\left\\langle x^{2n+1} \\right\\rangle = \\int_{-\\infty}^{\\infty} x^{2n+1} p_\\sigma(x)\\,\\mathrm{d}x.\n\\]\nCompute the expected values of even powers of \\(x\\): \\[\n\\left\\langle x^{2n} \\right\\rangle = \\int_{-\\infty}^{\\infty} x^{2n} p_\\sigma(x)\\,\\mathrm{d}x.\n\\]\nUse the results above to show: \\[\n\\int_{-\\infty}^{\\infty} f(x) p_\\sigma(x)\\,\\mathrm{d}x =\nf(0) + \\frac{\\sigma^2}{2} f''(0) + \\frac{\\sigma^4}{8} f^{(4)}(0) + \\cdots,\n\\] where derivatives are with respect to \\(x\\). Conclude that the limit \\(\\sigma \\to 0\\) yields the Dirac delta: \\[\n\\lim_{\\sigma \\to 0} p_\\sigma(x) = \\delta(x).\n\\]",
     "crumbs": [
       "Courses",
       "Mathematical Physics",
-      "Green Functions"
+      "Dirac Delta"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/green-functions.html#greens-functions-in-multiple-dimensions",
-    "href": "courses/mathematical-physics/green-functions.html#greens-functions-in-multiple-dimensions",
-    "title": "Green Functions",
-    "section": "Green’s Functions in Multiple Dimensions",
-    "text": "Green’s Functions in Multiple Dimensions\nThe concepts developed in one dimension generalize naturally to higher dimensions, where Green’s functions play a central role in solving elliptic partial differential equations such as the Poisson and Laplace equations. In multiple dimensions, the Green’s function depends on the spatial distance between points and reflects the geometry of the underlying space.\nThis section explores how the Laplacian operator behaves under these generalizations, how to regularize singular Green’s functions, and how Green’s identities lead to integral representations of solutions. These results form the basis for classical potential theory and have applications in fields ranging from electrostatics to quantum mechanics.",
+    "objectID": "courses/introduction-to-physics/index.html",
+    "href": "courses/introduction-to-physics/index.html",
+    "title": "Introduction to Physics",
+    "section": "",
+    "text": "These are the lecture notes and exercise lists for the Introduction to Physics (Estrutura da Matéria) course. This course introduces the basics of physics, including classical mechanics, quantum mechanics, electrodynamics and relativity. The content is under development. This course material is in portuguese.\n\n\n\nA Física como Linguagem Matemática\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
     "crumbs": [
       "Courses",
-      "Mathematical Physics",
-      "Green Functions"
+      "Introduction to Physics (portuguese)",
+      "Overview"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/green-functions.html#exercises-1",
-    "href": "courses/mathematical-physics/green-functions.html#exercises-1",
-    "title": "Green Functions",
-    "section": "Exercises",
-    "text": "Exercises\n\nThe Green’s function for the second derivative in one dimension is proportional to the distance \\(\\sigma(x, y) = |x - y|\\). In three dimensions, define: \\[\n\\sigma(\\vec{x}, \\vec{y}) = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2},\n\\] where \\(\\vec{x} = (x_1, x_2, x_3)\\) and \\(\\vec{y} = (y_1, y_2, y_3)\\).\n\nShow that the Laplacian in \\(\\mathbb{R}^3\\), \\[\n\\vec{\\nabla}^2 = \\frac{\\partial^2}{\\partial x_1^2} + \\frac{\\partial^2}{\\partial x_2^2} + \\frac{\\partial^2}{\\partial x_3^2},\n\\] satisfies: \\[\n\\vec{\\nabla}^2 \\left(\\frac{1}{\\sigma(\\vec{x}, \\vec{y})}\\right) = 0 \\quad \\text{for } \\vec{x} \\neq \\vec{y}.\n\\]\nRegularize the Green’s function by introducing \\(\\varepsilon &gt; 0\\): \\[\nG_\\varepsilon(\\vec{x}, \\vec{y}) =\n-\\frac{1}{4\\pi} \\frac{1}{\\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2 + \\varepsilon^2}}.\n\\] Show that: \\[\n\\lim_{\\varepsilon \\to 0} \\int_{\\mathbb{R}^3} \\vec{\\nabla}^2 G_\\varepsilon(\\vec{x}, \\vec{y})\\,\\mathrm{d}^3\\vec{x} = 1.\n\\]\n\nDerive Green’s identities for the Laplacian.\n\nDerive the following Green’s identities: \\[\n\\oint_{\\partial\\Omega} \\phi\\,\\vec{\\nabla}\\psi \\cdot \\mathrm{d}\\vec{S}\n= \\int_{\\Omega} \\left(\\vec{\\nabla}\\phi \\cdot \\vec{\\nabla}\\psi + \\phi\\,\\vec{\\nabla}^2\\psi\\right)\\,\\mathrm{d}^3\\vec{x},\n\\] \\[\n\\oint_{\\partial\\Omega} (\\phi\\,\\vec{\\nabla}\\psi - \\psi\\,\\vec{\\nabla}\\phi) \\cdot \\mathrm{d}\\vec{S}\n= \\int_{\\Omega} \\left(\\phi\\,\\vec{\\nabla}^2\\psi - \\psi\\,\\vec{\\nabla}^2\\phi\\right)\\,\\mathrm{d}^3\\vec{x},\n\\] where \\(\\Omega\\) is a volume bounded by the surface \\(\\partial\\Omega\\).\nShow how to use the second Green’s identity together with the Green’s function for the Laplacian to obtain the solution to the Poisson equation.",
+    "objectID": "courses/introduction-to-physics/index.html#course-outline",
+    "href": "courses/introduction-to-physics/index.html#course-outline",
+    "title": "Introduction to Physics",
+    "section": "",
+    "text": "A Física como Linguagem Matemática\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
     "crumbs": [
       "Courses",
-      "Mathematical Physics",
-      "Green Functions"
+      "Introduction to Physics (portuguese)",
+      "Overview"
     ]
   },
   {
@@ -336,65 +371,6 @@
     ]
   },
   {
-    "objectID": "courses/special-relativity/index.html",
-    "href": "courses/special-relativity/index.html",
-    "title": "Special Relativity",
-    "section": "",
-    "text": "Welcome to the Special Relativity course lecture notes by Sandro Vitenti.\n\n\n\nGalilean Relativity\nSpacetime Algebra\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
-    "crumbs": [
-      "Courses",
-      "Special Relativity",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "courses/special-relativity/index.html#course-outline",
-    "href": "courses/special-relativity/index.html#course-outline",
-    "title": "Special Relativity",
-    "section": "",
-    "text": "Galilean Relativity\nSpacetime Algebra\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
-    "crumbs": [
-      "Courses",
-      "Special Relativity",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "",
-    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged."
-  },
-  {
-    "objectID": "index.html#welcome-to-undergraduate-physics-lecture-notes",
-    "href": "index.html#welcome-to-undergraduate-physics-lecture-notes",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "",
-    "text": "This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical rigor, and practical examples. The content is open source, and contributions from the community are encouraged."
-  },
-  {
-    "objectID": "index.html#available-courses",
-    "href": "index.html#available-courses",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "Available Courses",
-    "text": "Available Courses\nExplore the following courses, each with notes and exercises:\n\nVector Calculus: Covers vector spaces, inner products, vector products, and triple products, with applications to physics.\nSpecial Relativity: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics."
-  },
-  {
-    "objectID": "index.html#about-the-project",
-    "href": "index.html#about-the-project",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "About the Project",
-    "text": "About the Project\nThese notes are developed as an open-source project to provide accessible, high-quality resources for physics students. The content is hosted on GitHub, where you can:\n\nAccess the source files (written in Quarto).\nReport errors or ask questions.\nSuggest improvements or new topics.\nContribute directly by submitting pull requests.\n\nThe notes are released under the CC BY-NC-SA 4.0 license, allowing non-commercial use, remixing, and distribution with attribution to the original author by linking back to this site."
-  },
-  {
-    "objectID": "index.html#contribute",
-    "href": "index.html#contribute",
-    "title": "Undergraduate Physics Lecture Notes",
-    "section": "How to Contribute",
-    "text": "How to Contribute\nWe welcome feedback, questions, and contributions from students, educators, and physics enthusiasts. Whether you spot a typo, have a question, or want to add a new section, you can get involved through our GitHub repository. Below are quick tips to get started.\n\nCreating a GitHub Issue\nIf you find an error, have a question, or want to suggest an improvement, create a GitHub issue:\n\nGo to the Repository: Visit github.com/vitenti-physics/undergrad.\nNavigate to Issues: Click the “Issues” tab near the top of the page.\nCreate a New Issue: Click the green “New issue” button.\nFill in Details:\n\nTitle: Write a clear, concise title (e.g., “Typo in Vector Product Equation”).\nDescription: Provide details, such as the section (e.g., Vector Product), the issue, and any suggestions. For questions, include context (e.g., “I don’t understand why the Levi-Civita symbol is antisymmetric”).\nLabels (optional): Add labels like “bug,” “question,” or “enhancement” if prompted.\n\nSubmit: Click “Submit new issue” to post it. You’ll be notified of responses.\n\n\n\nSuggesting Improvements or Contributing Content\nTo propose changes (e.g., fixing equations, adding examples), you can submit a pull request:\n\nFork the Repository: On the GitHub repo, click “Fork” to create a copy under your account.\nClone Your Fork: Download your fork to your computer using:\n\n   git clone https://github.com/your-username/undergrad.git\n\nEdit Files: Modify the Quarto files (e.g., vector_calculus.qmd) using a text editor.\n\nFor example, fix a typo in Vector Product.\n\nCommit Changes: Save your changes and commit:\n\n    git add .\n    git commit -m \"Fix typo in vector product section\"\n\n    Push to GitHub: Upload your changes:\n    bash\n\n    git push origin main\n\nCreate a Pull Request: Go to your fork on GitHub, click “Contribute,” and select “Open pull request.”\n\nDescribe your changes and submit."
-  },
-  {
     "objectID": "courses/special-relativity/spacetime-algebra.html",
     "href": "courses/special-relativity/spacetime-algebra.html",
     "title": "Clifford Algebra and Spacetime Geometry",
@@ -563,6 +539,30 @@
     ]
   },
   {
+    "objectID": "courses/special-relativity/index.html",
+    "href": "courses/special-relativity/index.html",
+    "title": "Special Relativity",
+    "section": "",
+    "text": "Welcome to the Special Relativity course lecture notes by Sandro Vitenti.\n\n\n\nGalilean Relativity\nSpacetime Algebra\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "crumbs": [
+      "Courses",
+      "Special Relativity",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "courses/special-relativity/index.html#course-outline",
+    "href": "courses/special-relativity/index.html#course-outline",
+    "title": "Special Relativity",
+    "section": "",
+    "text": "Galilean Relativity\nSpacetime Algebra\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "crumbs": [
+      "Courses",
+      "Special Relativity",
+      "Overview"
+    ]
+  },
+  {
     "objectID": "courses/vector-calculus/index.html",
     "href": "courses/vector-calculus/index.html",
     "title": "Vector Calculus Overview",
@@ -587,63 +587,183 @@
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/index.html",
-    "href": "courses/mathematical-physics/index.html",
-    "title": "Mathematical Physics",
+    "objectID": "courses/introduction-to-physics/physics-math.html",
+    "href": "courses/introduction-to-physics/physics-math.html",
+    "title": "A Física como Linguagem Matemática",
     "section": "",
-    "text": "These are the lecture notes and exercise lists for the Mathematical Physics course by Sandro Vitenti. The material is organized by topic, and currently focuses on core concepts such as the Dirac delta distribution, Green’s functions, and time-dependent operators. The content is under development; most sections contain only exercises for now.\n\n\n\nDirac Delta\nGreen Functions\nTime Dependent Green Functions\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "text": "Podemos imaginar o espaço como o palco onde todos os fenômenos físicos se desenrolam. Mas surge uma pergunta fundamental: o que exatamente significa dizer a posição de algo?\nQuando falamos em posição, estamos descrevendo uma forma de relacionar dois pontos: o ponto que queremos localizar e um ponto de referência fixo, chamado origem. Para estabelecer essa relação, usamos coordenadas – números que indicam “quão longe” e “em que direção” estamos em relação à origem.\nNo caso mais simples, consideramos o espaço como uma linha reta e medimos distâncias diretas entre os pontos. Cada posição pode então ser associada a um único número que representa a distância até a origem (número cuja natureza matemática ainda vamos explorar).",
     "crumbs": [
       "Courses",
-      "Mathematical Physics",
-      "Overview"
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/index.html#course-outline",
-    "href": "courses/mathematical-physics/index.html#course-outline",
-    "title": "Mathematical Physics",
+    "objectID": "courses/introduction-to-physics/physics-math.html#o-espaço-onde-a-física-acontece",
+    "href": "courses/introduction-to-physics/physics-math.html#o-espaço-onde-a-física-acontece",
+    "title": "A Física como Linguagem Matemática",
     "section": "",
-    "text": "Dirac Delta\nGreen Functions\nTime Dependent Green Functions\n\n\nFeel free to create issues, ask questions, or suggest improvements in the GitHub repository.",
+    "text": "Podemos imaginar o espaço como o palco onde todos os fenômenos físicos se desenrolam. Mas surge uma pergunta fundamental: o que exatamente significa dizer a posição de algo?\nQuando falamos em posição, estamos descrevendo uma forma de relacionar dois pontos: o ponto que queremos localizar e um ponto de referência fixo, chamado origem. Para estabelecer essa relação, usamos coordenadas – números que indicam “quão longe” e “em que direção” estamos em relação à origem.\nNo caso mais simples, consideramos o espaço como uma linha reta e medimos distâncias diretas entre os pontos. Cada posição pode então ser associada a um único número que representa a distância até a origem (número cuja natureza matemática ainda vamos explorar).",
     "crumbs": [
       "Courses",
-      "Mathematical Physics",
-      "Overview"
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/dirac-delta.html",
-    "href": "courses/mathematical-physics/dirac-delta.html",
-    "title": "Dirac Delta",
-    "section": "",
-    "text": "The Dirac delta distribution is a central object in mathematical physics. Although not a function in the classical sense, it can be rigorously defined as the limit of a sequence of well-behaved functions. One common construction uses the normal (Gaussian) distribution with vanishing variance. In this section, we explore this limiting process and use it to derive properties of the delta distribution.",
+    "objectID": "courses/introduction-to-physics/physics-math.html#como-medimos-distâncias",
+    "href": "courses/introduction-to-physics/physics-math.html#como-medimos-distâncias",
+    "title": "A Física como Linguagem Matemática",
+    "section": "Como medimos distâncias",
+    "text": "Como medimos distâncias\nPara atribuir um número a uma distância, precisamos de um padrão: podemos imaginar um segmento-padrão, nossa unidade de comprimento, e contar quantos desses segmentos “cabem” entre dois pontos. É esse processo que define o número usado para representar a distância.\nSe quisermos medir com mais precisão, basta escolher um segmento-padrão menor, permitindo contar frações menores do caminho entre os pontos.\n\nPergunta fundamental\nSerá que existe uma unidade mínima, indivisível, que sirva para medir tudo? Se essa unidade existisse, nosso modelo do espaço seria discreto, formado por “blocos” indivisíveis, em vez de um continuum.",
     "crumbs": [
       "Courses",
-      "Mathematical Physics",
-      "Dirac Delta"
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/dirac-delta.html#dirac-delta",
-    "href": "courses/mathematical-physics/dirac-delta.html#dirac-delta",
-    "title": "Dirac Delta",
-    "section": "",
-    "text": "The Dirac delta distribution is a central object in mathematical physics. Although not a function in the classical sense, it can be rigorously defined as the limit of a sequence of well-behaved functions. One common construction uses the normal (Gaussian) distribution with vanishing variance. In this section, we explore this limiting process and use it to derive properties of the delta distribution.",
+    "objectID": "courses/introduction-to-physics/physics-math.html#pitágoras-contra-o-discreto",
+    "href": "courses/introduction-to-physics/physics-math.html#pitágoras-contra-o-discreto",
+    "title": "A Física como Linguagem Matemática",
+    "section": "Pitágoras contra o discreto",
+    "text": "Pitágoras contra o discreto\nPensemos no Teorema de Pitágoras: \\[\nc^2 = a^2 + b^2\n\\]\nSe tomarmos \\(a = b = 1\\) (em unidades do segmento-padrão), então: \\[\nc = \\sqrt{2}\n\\]\nO problema é que:\n\\[\n\\sqrt{2} \\notin \\mathbb{Q}\n\\]\nou seja, não pode ser escrito como uma fração \\(\\frac{p}{q}\\) com \\(p, q \\in \\mathbb{Z}\\) e \\(q \\neq 0\\).\nIsso implica que, se existisse uma unidade mínima fixa, não conseguiríamos manter o Teorema de Pitágoras exatamente válido.\nConclusão provisória: ou o espaço não é discreto, ou o teorema é apenas uma aproximação de uma estrutura mais fundamental.",
     "crumbs": [
       "Courses",
-      "Mathematical Physics",
-      "Dirac Delta"
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
     ]
   },
   {
-    "objectID": "courses/mathematical-physics/dirac-delta.html#exercises",
-    "href": "courses/mathematical-physics/dirac-delta.html#exercises",
-    "title": "Dirac Delta",
+    "objectID": "courses/introduction-to-physics/physics-math.html#hipótese-da-física-clássica",
+    "href": "courses/introduction-to-physics/physics-math.html#hipótese-da-física-clássica",
+    "title": "A Física como Linguagem Matemática",
+    "section": "Hipótese da física clássica",
+    "text": "Hipótese da física clássica\nNa física clássica, adotamos a hipótese de que o espaço é contínuo. Isso significa que, em princípio, podemos medir distâncias arbitrariamente pequenas, sem um limite mínimo definido.\nEmbora não saibamos exatamente por que isso ocorre, modelamos as posições assumindo implicitamente que qualquer distância, por menor que seja, pode ser medida. Vale ressaltar que não há uma prova empírica definitiva de que o espaço é contínuo. Essa continuidade é uma das hipóteses fundamentais que adotamos, e dela derivam diversas consequências importantes para outras teorias, como a teoria de campos, a mecânica quântica e a relatividade.\nDessa forma, cada posição pode ser representada por um número real, que pode ser racional ou irracional.",
+    "crumbs": [
+      "Courses",
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
+    ]
+  },
+  {
+    "objectID": "courses/introduction-to-physics/physics-math.html#conjuntos-numéricos",
+    "href": "courses/introduction-to-physics/physics-math.html#conjuntos-numéricos",
+    "title": "A Física como Linguagem Matemática",
+    "section": "Conjuntos numéricos",
+    "text": "Conjuntos numéricos\nPara organizar as ideias, temos os seguintes conjuntos numéricos:\n\n\\(\\mathbb{N}\\) — números naturais: \\(0, 1, 2, 3, \\dots\\)\n\n\\(\\mathbb{Z}\\) — números inteiros: \\(\\dots, -2, -1, 0, 1, 2, \\dots\\)\n\n\\(\\mathbb{Q}\\) — números racionais: frações da forma \\(\\frac{p}{q}\\), com \\(p, q \\in \\mathbb{Z}\\) e \\(q \\neq 0\\)\n\nNúmeros irracionais: não podem ser escritos como fração (exemplos: \\(\\sqrt{2}\\), \\(\\pi\\), \\(e\\), …)\n\n\\(\\mathbb{R}\\) — números reais: a união dos racionais e irracionais, ou seja, \\(\\mathbb{Q} \\cup\\) (irracionais)",
+    "crumbs": [
+      "Courses",
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
+    ]
+  },
+  {
+    "objectID": "courses/introduction-to-physics/physics-math.html#o-paradoxo-de-zenão-e-as-séries-infinitas",
+    "href": "courses/introduction-to-physics/physics-math.html#o-paradoxo-de-zenão-e-as-séries-infinitas",
+    "title": "A Física como Linguagem Matemática",
+    "section": "O paradoxo de Zenão e as séries infinitas",
+    "text": "O paradoxo de Zenão e as séries infinitas\nImagine que queremos andar de um ponto A até um ponto B separados por \\(1\\) metro.\n\n\\(1^\\circ\\) passo: metade do caminho, ou seja, \\(\\frac{1}{2}\\) m.\n\\(2^\\circ\\) passo: metade do que resta, \\(\\frac{1}{4}\\) m.\n\\(3^\\circ\\) passo: metade novamente, \\(\\frac{1}{8}\\) m… e assim por diante.\n\nPodemos expressar essa sequência usando o símbolo de somatório: \\[\nd = \\sum_{n=1}^\\infty \\frac{1}{2^n}.\n\\]\n\nResolvendo a soma\nComeçamos com: \\[\nd = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\dots\n\\]\nMultiplicando ambos os lados por \\(\\frac{1}{2}\\): \\[\n\\frac{d}{2} = \\frac{1}{4} + \\frac{1}{8} + \\dots\n\\]\nSubtraindo as duas expressões: \\[\nd - \\frac{d}{2} = \\frac{1}{2},\n\\] \\[\n\\frac{d}{2} = \\frac{1}{2},\n\\] \\[\nd = 1.\n\\]\nOu seja, somando infinitos pedaços cada vez menores, obtemos um comprimento finito.\nMais do que isso: além do Teorema de Pitágoras, esse resultado mostra que as distâncias podem ser compostas por somas infinitas de números racionais. Isso reforça que nosso modelo de espaço contínuo precisa ser representado por números reais, que incluem tanto os racionais quanto os irracionais.\n\n\nConclusão\nO modelo contínuo do espaço nos leva naturalmente ao uso dos números reais \\(\\mathbb{R}\\), que incluem tanto racionais quanto irracionais, e nos permite trabalhar com distâncias expressas como somas infinitas.\nNa física, essa suposição de continuidade está tão enraizada que aparece mesmo nos problemas mais simples, mas também levanta questões profundas: será que, em escalas muito pequenas, o espaço é realmente contínuo?\nSeu texto está claro e bem estruturado, introduzindo cardinalidade, dimensão e o produto cartesiano de forma didática. Para maior fluidez e didática, sugiro pequenas melhorias para evitar repetições, dar mais coesão e explicitar conceitos técnicos (como “pares ordenados”) de forma simples.\nAqui vai uma versão revisada, mantendo seu conteúdo e estilo, com sugestões para explicitar pontos e melhorar a conexão entre as ideias:",
+    "crumbs": [
+      "Courses",
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
+    ]
+  },
+  {
+    "objectID": "courses/introduction-to-physics/physics-math.html#dimensões-do-espaço",
+    "href": "courses/introduction-to-physics/physics-math.html#dimensões-do-espaço",
+    "title": "A Física como Linguagem Matemática",
+    "section": "Dimensões do espaço",
+    "text": "Dimensões do espaço\nQuando pensamos no “tamanho” do espaço, a primeira coisa que vem à mente é quantos pontos ele contém. Por exemplo, o conjunto dos números inteiros \\(\\mathbb{Z}\\) é infinito, mas é um infinito contável: podemos listar seus elementos um a um, ou seja, existe uma forma de associar cada inteiro a um número natural de forma unívoca.\nJá o conjunto dos números reais \\(\\mathbb{R}\\) é infinito incontável: há muito mais números reais do que inteiros, a ponto de não ser possível associar cada real a um inteiro de forma unívoca.\nAssim, nosso espaço, modelado pelos números reais, inclui uma infinidade incontável de pontos.\nMas o número de pontos não é a única forma de medir o “tamanho” do espaço. Existe um conceito diferente e fundamental: a dimensão.\nNossa experiência mostra que, para localizar um ponto no espaço, usamos três números, as coordenadas \\(x\\), \\(y\\) e \\(z\\), que indicam a posição em três direções mutuamente perpendiculares. Escolhemos uma origem e três direções que formam ângulos retos (\\(90^\\circ\\)) entre si, e medimos distâncias ao longo dessas direções usando números reais, como discutimos antes. Ou seja, primeiro andamos em uma direção \\(x\\), depois em outra \\(y\\) e, por fim, em outra \\(z\\), até chegar ao ponto desejado. O interessante é que sempre conseguimos alcançar qualquer ponto usando esse procedimento, e a ordem dos passos não altera o resultado.\nEsses três números são suficientes para identificar qualquer ponto do espaço físico que conhecemos.\n\nProduto cartesiano\nPara descrever matematicamente esse conjunto de pontos, usamos o conceito de produto cartesiano.\nComeçamos com: \\[\n\\mathbb{R} \\times \\mathbb{R} \\equiv \\{(x, y) \\mid x, y \\in \\mathbb{R}\\},\n\\] ou seja, o conjunto de pares ordenados: elementos formados por dois números reais em uma ordem definida (importante porque \\((x,y)\\) geralmente não é o mesmo que \\((y,x)\\)).\nEsse novo conjunto é chamado de \\(\\mathbb{R}^2\\).\nAgora, aplicando novamente o produto cartesiano, construímos o conjunto tridimensional de pontos do espaço: \\[\n\\mathbb{R}^2 \\times \\mathbb{R} \\equiv \\{((x, y), z) \\mid (x, y) \\in \\mathbb{R}^2, z \\in \\mathbb{R}\\}.\n\\] Porém, o elemento \\(((x, y), z)\\) é matematicamente equivalente ao triplo ordenado \\((x, y, z)\\), e por isso escrevemos: \\[\n\\mathbb{R}^3 \\equiv \\{(x, y, z) \\mid x, y, z \\in \\mathbb{R}\\}.\n\\]\nEssa construção não é apenas formal, ela reflete a nossa própria forma de localizar pontos no espaço.\n\n\nOperações no produto cartesiano\nAlém disso, podemos definir operações nesse conjunto usando as operações já conhecidas dos números reais. Por exemplo, ao dizer que andamos primeiro na direção \\(x\\) e depois na direção \\(y\\), estamos compondo os pontos \\((x, 0)\\) e \\((0, y)\\) para obter o ponto \\((x, y)\\).\nEssa composição é chamada de adição e é definida como: \\[\n(x, y) + (x', y') = (x + x', y + y'),\n\\] ou seja, somamos as componentes separadamente, estendendo o conceito de soma dos números reais para os pares ordenados e, por analogia, para trios ordenados também.\nNote que, como a ordem da soma das componentes não altera o resultado, o mesmo acontece com os pares ou trios ordenados — isso reflete a nossa experiência física e a propriedade comutativa da adição.\nOutra operação importante é a multiplicação por um número real (escalar). Se multiplicarmos as coordenadas do ponto por um número real \\(k\\), obtemos: \\[\nk (x, y) = (kx, ky),\n\\] ou seja, multiplicamos cada componente separadamente, estendendo o conceito de produto dos números reais para os pares ordenados. Analogamente, para o espaço tridimensional: \\[\nk (x, y, z) = (kx, ky, kz).\n\\] Essa operação permite ampliar ou reduzir as distâncias, mantendo a direção das coordenadas proporcional.",
+    "crumbs": [
+      "Courses",
+      "Introduction to Physics (portuguese)",
+      "Physics and Mathematics"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/time-dependent-green-functions.html",
+    "href": "courses/mathematical-physics/time-dependent-green-functions.html",
+    "title": "Time Dependent Green Functions",
+    "section": "",
+    "text": "\\[\n\\newcommand{\\vec}[1]{\\mathbf{#1}}\n\\newcommand{\\dd}{\\mathrm{d}}\n\\newcommand{\\dD}{\\mathrm{D}}\n\\newcommand{\\e}{\\mathsf{e}}\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Time Dependent Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/time-dependent-green-functions.html#exercises",
+    "href": "courses/mathematical-physics/time-dependent-green-functions.html#exercises",
+    "title": "Time Dependent Green Functions",
     "section": "Exercises",
-    "text": "Exercises\n\nConsider the normal distribution: \\[\np_\\sigma(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-x^2 / (2\\sigma^2)},\n\\] where \\(\\sigma &gt; 0\\) is the standard deviation.\n\nShow that \\(p_\\sigma(x)\\) is normalized: \\[\n\\int_{-\\infty}^{\\infty} p_\\sigma(x)\\,\\mathrm{d}x = 1.\n\\]\nCompute the expected values of odd powers of \\(x\\): \\[\n\\left\\langle x^{2n+1} \\right\\rangle = \\int_{-\\infty}^{\\infty} x^{2n+1} p_\\sigma(x)\\,\\mathrm{d}x.\n\\]\nCompute the expected values of even powers of \\(x\\): \\[\n\\left\\langle x^{2n} \\right\\rangle = \\int_{-\\infty}^{\\infty} x^{2n} p_\\sigma(x)\\,\\mathrm{d}x.\n\\]\nUse the results above to show: \\[\n\\int_{-\\infty}^{\\infty} f(x) p_\\sigma(x)\\,\\mathrm{d}x =\nf(0) + \\frac{\\sigma^2}{2} f''(0) + \\frac{\\sigma^4}{8} f^{(4)}(0) + \\cdots,\n\\] where derivatives are with respect to \\(x\\). Conclude that the limit \\(\\sigma \\to 0\\) yields the Dirac delta: \\[\n\\lim_{\\sigma \\to 0} p_\\sigma(x) = \\delta(x).\n\\]",
+    "text": "Exercises\nThese exercises guide the student through the derivation and interpretation of the Green’s function associated with the wave (D’Alembert) equation in flat spacetime. They are structured to gradually build the solution, emphasizing the role of Fourier analysis, singularities, and causal structure.\n\nWrite the D’Alembert (wave) equation for a scalar field \\(\\phi(t, \\vec{x})\\) in Minkowski spacetime: \\[\n\\Box \\phi(t, \\vec{x}) = \\left(-\\frac{1}{c^2}\\frac{\\partial^2}{\\partial t^2} + \\nabla^2 \\right)\\phi(t, \\vec{x}) = S(t, \\vec{x}),\n\\] where \\(S(t, \\vec{x})\\) is a source term.\nDefine the Green’s function \\(G(t, \\vec{x}; t', \\vec{x}')\\) as the solution to: \\[\n\\Box G(t, \\vec{x}; t', \\vec{x}') = \\delta(t - t') \\delta^{3}(\\vec{x} - \\vec{x}'),\n\\] and discuss its physical interpretation, including boundary/causality conditions (retarded, advanced).\nWrite the spatial Fourier transform of the Green’s function: \\[\nG(t - t', \\vec{x} - \\vec{x}') = \\int \\frac{d^3k\\dd w}{(\\sqrt{2\\pi})^4} \\, e^{iw c(t-t')+i \\vec{k} \\cdot (\\vec{x} - \\vec{x}')} \\tilde{G}(w, \\vec{k}),\n\\] and insert it into the wave equation to obtain the equation for \\(\\tilde{G}(w, \\vec{k})\\).\nShow that inserting the Fourier ansatz into the wave equation leads to an algebraic equation for \\(\\tilde{G}(w, \\vec{k})\\), and solve it: \\[\n\\tilde{G}(w, \\vec{k}) = \\frac{1}{(\\sqrt{2\\pi})^4}\\frac{1}{w^2 - k^2},\n\\] where \\(k = |\\vec{k}|\\). Discuss the location of singularities in the complex \\(w\\)-plane and the ambiguity in the inversion.\nWrite the inverse Fourier transform expression for the Green’s function: \\[\nG(t - t', \\vec{x} - \\vec{x}') = \\int \\frac{d^3k\\dd w}{(2\\pi)^4} \\, \\frac{e^{iw c(t-t') + i \\vec{k} \\cdot (\\vec{x} - \\vec{x}')}}{w^2 - k^2}.\n\\]\nAnalyze the singular behavior of the integrand. Discuss how the pole structure of the integrand demands a prescription to define the integral and how different choices correspond to different Green’s functions: retarded and advanced.\nSeparate the integral into:\n\n\nthe \\(w\\)-integral (time dependence),\n\n\nthe \\(\\vec{k}\\)-integral (spatial dependence),\n\n\nand discuss the physical role of each part in building the full solution.\nSolve the \\(w\\)-integral using contour integration for the retarded Green’s function by choosing a contour that ensures \\(G(t &lt; t') = 0\\). Discuss the deformation of the contour, the residue calculation, and the emergence of the Heaviside function \\(\\Theta(t - t')\\).\nUsing the result from the \\(w\\)-integral, compute the remaining \\(\\vec{k}\\)-integral and show that in three spatial dimensions: \\[\nG_{\\text{ret}}(t - t', \\vec{x} - \\vec{x}') = \\frac{\\delta(t - t' - |\\vec{x} - \\vec{x}'|/c)}{4\\pi |\\vec{x} - \\vec{x}'|}.\n\\]\nDiscuss the physical interpretation of this result:\n\n\n\nWhy is the support of the Green’s function constrained to the light cone?\n\n\nHow does this reflect causality in relativistic field theory?\n\n\nHow would this structure differ in other dimensions or if boundary conditions were imposed?",
     "crumbs": [
       "Courses",
       "Mathematical Physics",
-      "Dirac Delta"
+      "Time Dependent Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html",
+    "href": "courses/mathematical-physics/green-functions.html",
+    "title": "Green Functions",
+    "section": "",
+    "text": "\\[\n\\newcommand{\\vec}[1]{\\mathbf{#1}}\n\\newcommand{\\dd}{\\mathrm{d}}\n\\newcommand{\\dD}{\\mathrm{D}}\n\\newcommand{\\e}{\\mathsf{e}}\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#greens-functions-in-one-dimension",
+    "href": "courses/mathematical-physics/green-functions.html#greens-functions-in-one-dimension",
+    "title": "Green Functions",
+    "section": "Green’s Functions in One Dimension",
+    "text": "Green’s Functions in One Dimension\nGreen’s functions provide a powerful and general method for solving linear differential equations with prescribed boundary conditions. The core idea is to express the solution as a convolution between a Green’s function and a source term. This method is particularly useful in both ordinary and partial differential equations, especially in physics and engineering contexts where fundamental solutions or propagators are central tools.\nThe exercises and derivations that follow develop the concept of Green’s functions from basic examples in one dimension, building toward general properties such as symmetry, boundary behavior, and their role in solving inhomogeneous equations. These one-dimensional constructions are then extended to higher dimensions, where the Green’s functions become essential in solving the Poisson and Laplace equations.\nThe step-by-step approach mirrors the structure used in previous sections, especially those on the Dirac delta distribution, highlighting how distributions and fundamental solutions are interconnected. This transition from delta sequences to Green’s functions reveals the deeper structure behind linear differential operators and their inverses.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#exercises",
+    "href": "courses/mathematical-physics/green-functions.html#exercises",
+    "title": "Green Functions",
+    "section": "Exercises",
+    "text": "Exercises\n\nThe inverse of the derivative of a function \\(f(x)\\) for \\(x \\in (a, b)\\), with \\(f(a) = 0 = f(b)\\), can be written as: \\[\nf(x) = \\int_{a}^{x}f'(y)\\,\\mathrm{d}y, \\qquad\nf(x) = \\frac{\\mathrm{d}}{\\mathrm{d}x} \\int_{a}^{x}f(y)\\,\\mathrm{d}y.\n\\]\n\nShow how to rewrite these expressions using the Heaviside step function \\(\\theta(x)\\): \\[\n\\theta(x) = \\begin{cases}\n0, & x &lt; 0, \\\\\n1, & x \\geq 0.\n\\end{cases}\n\\] That is, \\(\\theta(x)\\) acts as the Green’s function for the first derivative: \\[\n\\frac{\\mathrm{d}}{\\mathrm{d}x} \\int_{a}^{b} \\theta(x-y)f(y)\\,\\mathrm{d}y = f(x).\n\\]\nCompute \\[\nG(x-y) \\equiv \\int_{a}^{x}\\theta(z-y)\\,\\mathrm{d}z,\\qquad y \\in (a, b).\n\\] and show that \\(G(x)\\) is the Green’s function for the second derivative: \\[\n\\frac{\\mathrm{d}^2}{\\mathrm{d}x^2} \\int_{a}^{b} G(x - y) f(y)\\,\\mathrm{d}y = f(x).\n\\]\nProve the inverse relation: \\[\nf(x) = \\int_{a}^{b} G(x - y) \\frac{\\mathrm{d}^2}{\\mathrm{d}y^2}f(y)\\,\\mathrm{d}y.\n\\]\nExpress \\(G(x, y)\\) in terms of \\(\\sigma(x, y) = |x - y|\\).\n\nOne-dimensional Green’s functions. Derive Green’s identities for the operator \\(\\hat{L} = -\\dfrac{\\mathrm{d}^2}{\\mathrm{d}x^2}\\) on the interval \\((a, b)\\), assuming \\(\\phi(a) = \\phi(b) = 0\\).\n\nStart by verifying the product rule: \\[\n\\frac{\\mathrm{d}}{\\mathrm{d}x} \\left(\\phi \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x}\\right) =\n\\frac{\\mathrm{d}\\phi}{\\mathrm{d}x} \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x} +\n\\phi \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}.\n\\]\nIntegrate both sides over \\((a, b)\\) and use the boundary condition \\(\\phi(a) = \\phi(b) = 0\\) to show: \\[\n\\int_a^b \\phi(x) \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}(x)\\,\\mathrm{d}x =\n- \\int_a^b \\frac{\\mathrm{d}\\phi}{\\mathrm{d}x}(x) \\frac{\\mathrm{d}\\psi}{\\mathrm{d}x}(x)\\,\\mathrm{d}x.\n\\] This is Green’s first identity.\nSwap \\(\\phi\\) and \\(\\psi\\), perform the same computation, and subtract the two identities to obtain Green’s second identity: \\[\n\\int_a^b \\left[\\phi(x) \\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}(x) -\n\\psi(x) \\frac{\\mathrm{d}^2\\phi}{\\mathrm{d}x^2}(x)\\right]\\,\\mathrm{d}x = 0.\n\\]\nNow assume \\(\\psi(x) = G(x, y)\\) is the Green’s function for the operator, and let \\(\\phi(x)\\) be a given function. Use the identity above to obtain the formal solution of the equation \\[\n- \\frac{\\mathrm{d}^2}{\\mathrm{d}x^2} f(x) = s(x)\n\\] in terms of the Green’s function: \\[\nf(x) = \\int_a^b G(x, y) s(y)\\, \\mathrm{d}y.\n\\]\nUsing the previous result, show that the Green’s function is: \\[\nG(x - y) = \\frac{|x - y|}{2} + \\alpha(x - y) + \\beta.\n\\]\nDetermine \\(\\alpha\\) and \\(\\beta\\) by imposing the boundary conditions \\(G(x - y) = 0\\) at \\(x = a\\) and \\(x = b\\) for fixed \\(y \\in (a, b)\\).\nUse the Green’s function to solve \\(-\\dfrac{\\mathrm{d}^2}{\\mathrm{d}x^2}f(x) = 1\\) on \\((a, b)\\) and show that \\[\nf(x) = -\\frac{1}{2}(x - a)(x - b).\n\\]",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#greens-functions-in-multiple-dimensions",
+    "href": "courses/mathematical-physics/green-functions.html#greens-functions-in-multiple-dimensions",
+    "title": "Green Functions",
+    "section": "Green’s Functions in Multiple Dimensions",
+    "text": "Green’s Functions in Multiple Dimensions\nThe concepts developed in one dimension generalize naturally to higher dimensions, where Green’s functions play a central role in solving elliptic partial differential equations such as the Poisson and Laplace equations. In multiple dimensions, the Green’s function depends on the spatial distance between points and reflects the geometry of the underlying space.\nThis section explores how the Laplacian operator behaves under these generalizations, how to regularize singular Green’s functions, and how Green’s identities lead to integral representations of solutions. These results form the basis for classical potential theory and have applications in fields ranging from electrostatics to quantum mechanics.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
+    ]
+  },
+  {
+    "objectID": "courses/mathematical-physics/green-functions.html#exercises-1",
+    "href": "courses/mathematical-physics/green-functions.html#exercises-1",
+    "title": "Green Functions",
+    "section": "Exercises",
+    "text": "Exercises\n\nThe Green’s function for the second derivative in one dimension is proportional to the distance \\(\\sigma(x, y) = |x - y|\\). In three dimensions, define: \\[\n\\sigma(\\vec{x}, \\vec{y}) = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2},\n\\] where \\(\\vec{x} = (x_1, x_2, x_3)\\) and \\(\\vec{y} = (y_1, y_2, y_3)\\).\n\nShow that the Laplacian in \\(\\mathbb{R}^3\\), \\[\n\\vec{\\nabla}^2 = \\frac{\\partial^2}{\\partial x_1^2} + \\frac{\\partial^2}{\\partial x_2^2} + \\frac{\\partial^2}{\\partial x_3^2},\n\\] satisfies: \\[\n\\vec{\\nabla}^2 \\left(\\frac{1}{\\sigma(\\vec{x}, \\vec{y})}\\right) = 0 \\quad \\text{for } \\vec{x} \\neq \\vec{y}.\n\\]\nRegularize the Green’s function by introducing \\(\\varepsilon &gt; 0\\): \\[\nG_\\varepsilon(\\vec{x}, \\vec{y}) =\n-\\frac{1}{4\\pi} \\frac{1}{\\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2 + \\varepsilon^2}}.\n\\] Show that: \\[\n\\lim_{\\varepsilon \\to 0} \\int_{\\mathbb{R}^3} \\vec{\\nabla}^2 G_\\varepsilon(\\vec{x}, \\vec{y})\\,\\mathrm{d}^3\\vec{x} = 1.\n\\]\n\nDerive Green’s identities for the Laplacian.\n\nDerive the following Green’s identities: \\[\n\\oint_{\\partial\\Omega} \\phi\\,\\vec{\\nabla}\\psi \\cdot \\mathrm{d}\\vec{S}\n= \\int_{\\Omega} \\left(\\vec{\\nabla}\\phi \\cdot \\vec{\\nabla}\\psi + \\phi\\,\\vec{\\nabla}^2\\psi\\right)\\,\\mathrm{d}^3\\vec{x},\n\\] \\[\n\\oint_{\\partial\\Omega} (\\phi\\,\\vec{\\nabla}\\psi - \\psi\\,\\vec{\\nabla}\\phi) \\cdot \\mathrm{d}\\vec{S}\n= \\int_{\\Omega} \\left(\\phi\\,\\vec{\\nabla}^2\\psi - \\psi\\,\\vec{\\nabla}^2\\phi\\right)\\,\\mathrm{d}^3\\vec{x},\n\\] where \\(\\Omega\\) is a volume bounded by the surface \\(\\partial\\Omega\\).\nShow how to use the second Green’s identity together with the Green’s function for the Laplacian to obtain the solution to the Poisson equation.",
+    "crumbs": [
+      "Courses",
+      "Mathematical Physics",
+      "Green Functions"
     ]
   }
 ]

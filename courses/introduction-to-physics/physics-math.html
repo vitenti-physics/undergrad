@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Special Relativity – Undergraduate Physics Lecture Notes</title>
+<title>A Física como Linguagem Matemática – Undergraduate Physics Lecture Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,6 +101,35 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -300,7 +329,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/introduction-to-physics/index.html">Introduction to Physics (portuguese)</a></li><li class="breadcrumb-item"><a href="../../courses/introduction-to-physics/physics-math.html">Physics and Mathematics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -323,13 +352,13 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction to Physics (portuguese)</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../courses/introduction-to-physics/index.html" class="sidebar-item-text sidebar-link">
@@ -338,7 +367,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/introduction-to-physics/physics-math.html" class="sidebar-item-text sidebar-link">
+  <a href="../../courses/introduction-to-physics/physics-math.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Physics and Mathematics</span></a>
   </div>
 </li>
@@ -404,16 +433,16 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Special Relativity</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/special-relativity/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../courses/special-relativity/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -443,9 +472,23 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#special-relativity" id="toc-special-relativity" class="nav-link active" data-scroll-target="#special-relativity">Special Relativity</a>
+  <li><a href="#o-espaço-onde-a-física-acontece" id="toc-o-espaço-onde-a-física-acontece" class="nav-link active" data-scroll-target="#o-espaço-onde-a-física-acontece">O espaço onde a física acontece</a></li>
+  <li><a href="#como-medimos-distâncias" id="toc-como-medimos-distâncias" class="nav-link" data-scroll-target="#como-medimos-distâncias">Como medimos distâncias</a>
   <ul class="collapse">
-  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course Outline</a></li>
+  <li><a href="#pergunta-fundamental" id="toc-pergunta-fundamental" class="nav-link" data-scroll-target="#pergunta-fundamental">Pergunta fundamental</a></li>
+  </ul></li>
+  <li><a href="#pitágoras-contra-o-discreto" id="toc-pitágoras-contra-o-discreto" class="nav-link" data-scroll-target="#pitágoras-contra-o-discreto">Pitágoras contra o discreto</a></li>
+  <li><a href="#hipótese-da-física-clássica" id="toc-hipótese-da-física-clássica" class="nav-link" data-scroll-target="#hipótese-da-física-clássica">Hipótese da física clássica</a></li>
+  <li><a href="#conjuntos-numéricos" id="toc-conjuntos-numéricos" class="nav-link" data-scroll-target="#conjuntos-numéricos">Conjuntos numéricos</a></li>
+  <li><a href="#o-paradoxo-de-zenão-e-as-séries-infinitas" id="toc-o-paradoxo-de-zenão-e-as-séries-infinitas" class="nav-link" data-scroll-target="#o-paradoxo-de-zenão-e-as-séries-infinitas">O paradoxo de Zenão e as séries infinitas</a>
+  <ul class="collapse">
+  <li><a href="#resolvendo-a-soma" id="toc-resolvendo-a-soma" class="nav-link" data-scroll-target="#resolvendo-a-soma">Resolvendo a soma</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
+  </ul></li>
+  <li><a href="#dimensões-do-espaço" id="toc-dimensões-do-espaço" class="nav-link" data-scroll-target="#dimensões-do-espaço">Dimensões do espaço</a>
+  <ul class="collapse">
+  <li><a href="#produto-cartesiano" id="toc-produto-cartesiano" class="nav-link" data-scroll-target="#produto-cartesiano">Produto cartesiano</a></li>
+  <li><a href="#operações-no-produto-cartesiano" id="toc-operações-no-produto-cartesiano" class="nav-link" data-scroll-target="#operações-no-produto-cartesiano">Operações no produto cartesiano</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -454,9 +497,9 @@ cookieconsent.run({
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Special Relativity</a></li><li class="breadcrumb-item"><a href="../../courses/special-relativity/index.html">Overview</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/introduction-to-physics/index.html">Introduction to Physics (portuguese)</a></li><li class="breadcrumb-item"><a href="../../courses/introduction-to-physics/physics-math.html">Physics and Mathematics</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Special Relativity</h1>
+<h1 class="title">A Física como Linguagem Matemática</h1>
 </div>
 
 
@@ -479,17 +522,129 @@ cookieconsent.run({
 </header>
 
 
-<section id="special-relativity" class="level1">
-<h1>Special Relativity</h1>
-<p>Welcome to the Special Relativity course lecture notes by Sandro Vitenti.</p>
-<section id="course-outline" class="level2">
-<h2 class="anchored" data-anchor-id="course-outline">Course Outline</h2>
+<section id="o-espaço-onde-a-física-acontece" class="level2">
+<h2 class="anchored" data-anchor-id="o-espaço-onde-a-física-acontece">O espaço onde a física acontece</h2>
+<p>Podemos imaginar o espaço como o palco onde todos os fenômenos físicos se desenrolam. Mas surge uma pergunta fundamental: o que exatamente significa dizer a <strong>posição</strong> de algo?</p>
+<p>Quando falamos em posição, estamos descrevendo uma forma de relacionar dois pontos: o ponto que queremos localizar e um ponto de referência fixo, chamado <strong>origem</strong>. Para estabelecer essa relação, usamos <strong>coordenadas</strong> – números que indicam “quão longe” e “em que direção” estamos em relação à origem.</p>
+<p>No caso mais simples, consideramos o espaço como uma linha reta e medimos distâncias diretas entre os pontos. Cada posição pode então ser associada a um único número que representa a distância até a origem (número cuja natureza matemática ainda vamos explorar).</p>
+</section>
+<section id="como-medimos-distâncias" class="level2">
+<h2 class="anchored" data-anchor-id="como-medimos-distâncias">Como medimos distâncias</h2>
+<p>Para atribuir um número a uma distância, precisamos de um <strong>padrão</strong>: podemos imaginar um <strong>segmento-padrão</strong>, nossa unidade de comprimento, e contar quantos desses segmentos “cabem” entre dois pontos. É esse processo que define o número usado para representar a distância.</p>
+<p>Se quisermos medir com mais precisão, basta escolher um segmento-padrão menor, permitindo contar frações menores do caminho entre os pontos.</p>
+<section id="pergunta-fundamental" class="level3">
+<h3 class="anchored" data-anchor-id="pergunta-fundamental">Pergunta fundamental</h3>
+<p>Será que existe uma unidade mínima, indivisível, que sirva para medir tudo? Se essa unidade existisse, nosso modelo do espaço seria <strong>discreto</strong>, formado por “blocos” indivisíveis, em vez de um continuum.</p>
+</section>
+</section>
+<section id="pitágoras-contra-o-discreto" class="level2">
+<h2 class="anchored" data-anchor-id="pitágoras-contra-o-discreto">Pitágoras contra o discreto</h2>
+<p>Pensemos no <strong>Teorema de Pitágoras</strong>: <span class="math display">\[
+c^2 = a^2 + b^2
+\]</span></p>
+<p>Se tomarmos <span class="math inline">\(a = b = 1\)</span> (em unidades do segmento-padrão), então: <span class="math display">\[
+c = \sqrt{2}
+\]</span></p>
+<p>O problema é que:<br>
+<span class="math display">\[
+\sqrt{2} \notin \mathbb{Q}
+\]</span><br>
+ou seja, não pode ser escrito como uma fração <span class="math inline">\(\frac{p}{q}\)</span> com <span class="math inline">\(p, q \in \mathbb{Z}\)</span> e <span class="math inline">\(q \neq 0\)</span>.</p>
+<p>Isso implica que, se existisse uma unidade mínima fixa, não conseguiríamos manter o Teorema de Pitágoras <strong>exatamente</strong> válido.</p>
+<p><strong>Conclusão provisória:</strong> ou o espaço não é discreto, ou o teorema é apenas uma aproximação de uma estrutura mais fundamental.</p>
+</section>
+<section id="hipótese-da-física-clássica" class="level2">
+<h2 class="anchored" data-anchor-id="hipótese-da-física-clássica">Hipótese da física clássica</h2>
+<p>Na física clássica, adotamos a hipótese de que o espaço é <strong>contínuo</strong>. Isso significa que, em princípio, podemos medir distâncias arbitrariamente pequenas, sem um limite mínimo definido.</p>
+<p>Embora não saibamos exatamente por que isso ocorre, modelamos as posições assumindo implicitamente que qualquer distância, por menor que seja, pode ser medida. Vale ressaltar que não há uma prova empírica definitiva de que o espaço é contínuo. Essa continuidade é uma das hipóteses fundamentais que adotamos, e dela derivam diversas consequências importantes para outras teorias, como a teoria de campos, a mecânica quântica e a relatividade.</p>
+<p>Dessa forma, cada posição pode ser representada por um número real, que pode ser racional ou irracional.</p>
+</section>
+<section id="conjuntos-numéricos" class="level2">
+<h2 class="anchored" data-anchor-id="conjuntos-numéricos">Conjuntos numéricos</h2>
+<p>Para organizar as ideias, temos os seguintes conjuntos numéricos:</p>
 <ul>
-<li><a href="galilean-relativity.html">Galilean Relativity</a></li>
-<li><a href="spacetime-algebra.html">Spacetime Algebra</a></li>
+<li><span class="math inline">\(\mathbb{N}\)</span> — números naturais: <span class="math inline">\(0, 1, 2, 3, \dots\)</span><br>
+</li>
+<li><span class="math inline">\(\mathbb{Z}\)</span> — números inteiros: <span class="math inline">\(\dots, -2, -1, 0, 1, 2, \dots\)</span><br>
+</li>
+<li><span class="math inline">\(\mathbb{Q}\)</span> — números racionais: frações da forma <span class="math inline">\(\frac{p}{q}\)</span>, com <span class="math inline">\(p, q \in \mathbb{Z}\)</span> e <span class="math inline">\(q \neq 0\)</span><br>
+</li>
+<li>Números irracionais: não podem ser escritos como fração (exemplos: <span class="math inline">\(\sqrt{2}\)</span>, <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span>, …)<br>
+</li>
+<li><span class="math inline">\(\mathbb{R}\)</span> — números reais: a união dos racionais e irracionais, ou seja, <span class="math inline">\(\mathbb{Q} \cup\)</span> (irracionais)</li>
 </ul>
-<hr>
-<p>Feel free to create issues, ask questions, or suggest improvements in the <a href="https://github.com/vitenti-physics/undergrad">GitHub repository</a>.</p>
+</section>
+<section id="o-paradoxo-de-zenão-e-as-séries-infinitas" class="level2">
+<h2 class="anchored" data-anchor-id="o-paradoxo-de-zenão-e-as-séries-infinitas">O paradoxo de Zenão e as séries infinitas</h2>
+<p>Imagine que queremos andar de um ponto A até um ponto B separados por <span class="math inline">\(1\)</span> metro.</p>
+<ul>
+<li><span class="math inline">\(1^\circ\)</span> passo: metade do caminho, ou seja, <span class="math inline">\(\frac{1}{2}\)</span> m.</li>
+<li><span class="math inline">\(2^\circ\)</span> passo: metade do que resta, <span class="math inline">\(\frac{1}{4}\)</span> m.</li>
+<li><span class="math inline">\(3^\circ\)</span> passo: metade novamente, <span class="math inline">\(\frac{1}{8}\)</span> m… e assim por diante.</li>
+</ul>
+<p>Podemos expressar essa sequência usando o símbolo de somatório: <span class="math display">\[
+d = \sum_{n=1}^\infty \frac{1}{2^n}.
+\]</span></p>
+<section id="resolvendo-a-soma" class="level3">
+<h3 class="anchored" data-anchor-id="resolvendo-a-soma">Resolvendo a soma</h3>
+<p>Começamos com: <span class="math display">\[
+d = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots
+\]</span></p>
+<p>Multiplicando ambos os lados por <span class="math inline">\(\frac{1}{2}\)</span>: <span class="math display">\[
+\frac{d}{2} = \frac{1}{4} + \frac{1}{8} + \dots
+\]</span></p>
+<p>Subtraindo as duas expressões: <span class="math display">\[
+d - \frac{d}{2} = \frac{1}{2},
+\]</span> <span class="math display">\[
+\frac{d}{2} = \frac{1}{2},
+\]</span> <span class="math display">\[
+d = 1.
+\]</span></p>
+<p>Ou seja, somando infinitos pedaços cada vez menores, obtemos um comprimento finito.</p>
+<p>Mais do que isso: além do Teorema de Pitágoras, esse resultado mostra que as distâncias podem ser compostas por somas infinitas de números racionais. Isso reforça que nosso modelo de espaço contínuo precisa ser representado por números reais, que incluem tanto os racionais quanto os irracionais.</p>
+</section>
+<section id="conclusão" class="level3">
+<h3 class="anchored" data-anchor-id="conclusão">Conclusão</h3>
+<p>O modelo contínuo do espaço nos leva naturalmente ao uso dos números reais <span class="math inline">\(\mathbb{R}\)</span>, que incluem tanto racionais quanto irracionais, e nos permite trabalhar com distâncias expressas como somas infinitas.</p>
+<p>Na física, essa suposição de continuidade está tão enraizada que aparece mesmo nos problemas mais simples, mas também levanta questões profundas: será que, em escalas muito pequenas, o espaço é realmente contínuo?</p>
+<p>Seu texto está claro e bem estruturado, introduzindo cardinalidade, dimensão e o produto cartesiano de forma didática. Para maior fluidez e didática, sugiro pequenas melhorias para evitar repetições, dar mais coesão e explicitar conceitos técnicos (como “pares ordenados”) de forma simples.</p>
+<p>Aqui vai uma versão revisada, mantendo seu conteúdo e estilo, com sugestões para explicitar pontos e melhorar a conexão entre as ideias:</p>
+</section>
+</section>
+<section id="dimensões-do-espaço" class="level2">
+<h2 class="anchored" data-anchor-id="dimensões-do-espaço">Dimensões do espaço</h2>
+<p>Quando pensamos no “tamanho” do espaço, a primeira coisa que vem à mente é quantos pontos ele contém. Por exemplo, o conjunto dos números inteiros <span class="math inline">\(\mathbb{Z}\)</span> é infinito, mas é um infinito <strong>contável</strong>: podemos listar seus elementos um a um, ou seja, existe uma forma de associar cada inteiro a um número natural de forma unívoca.</p>
+<p>Já o conjunto dos números reais <span class="math inline">\(\mathbb{R}\)</span> é infinito <strong>incontável</strong>: há muito mais números reais do que inteiros, a ponto de não ser possível associar cada real a um inteiro de forma unívoca.</p>
+<p>Assim, nosso espaço, modelado pelos números reais, inclui uma infinidade incontável de pontos.</p>
+<p>Mas o número de pontos não é a única forma de medir o “tamanho” do espaço. Existe um conceito diferente e fundamental: a <strong>dimensão</strong>.</p>
+<p>Nossa experiência mostra que, para localizar um ponto no espaço, usamos três números, as coordenadas <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> e <span class="math inline">\(z\)</span>, que indicam a posição em três direções mutuamente perpendiculares. Escolhemos uma origem e três direções que formam ângulos retos (<span class="math inline">\(90^\circ\)</span>) entre si, e medimos distâncias ao longo dessas direções usando números reais, como discutimos antes. Ou seja, primeiro andamos em uma direção <span class="math inline">\(x\)</span>, depois em outra <span class="math inline">\(y\)</span> e, por fim, em outra <span class="math inline">\(z\)</span>, até chegar ao ponto desejado. O interessante é que sempre conseguimos alcançar qualquer ponto usando esse procedimento, e a ordem dos passos não altera o resultado.</p>
+<p>Esses três números são suficientes para identificar qualquer ponto do espaço físico que conhecemos.</p>
+<section id="produto-cartesiano" class="level3">
+<h3 class="anchored" data-anchor-id="produto-cartesiano">Produto cartesiano</h3>
+<p>Para descrever matematicamente esse conjunto de pontos, usamos o conceito de <strong>produto cartesiano</strong>.<br>
+Começamos com: <span class="math display">\[
+\mathbb{R} \times \mathbb{R} \equiv \{(x, y) \mid x, y \in \mathbb{R}\},
+\]</span> ou seja, o conjunto de <strong>pares ordenados</strong>: elementos formados por dois números reais em uma ordem definida (importante porque <span class="math inline">\((x,y)\)</span> geralmente não é o mesmo que <span class="math inline">\((y,x)\)</span>).</p>
+<p>Esse novo conjunto é chamado de <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
+<p>Agora, aplicando novamente o produto cartesiano, construímos o conjunto tridimensional de pontos do espaço: <span class="math display">\[
+\mathbb{R}^2 \times \mathbb{R} \equiv \{((x, y), z) \mid (x, y) \in \mathbb{R}^2, z \in \mathbb{R}\}.
+\]</span> Porém, o elemento <span class="math inline">\(((x, y), z)\)</span> é matematicamente equivalente ao triplo ordenado <span class="math inline">\((x, y, z)\)</span>, e por isso escrevemos: <span class="math display">\[
+\mathbb{R}^3 \equiv \{(x, y, z) \mid x, y, z \in \mathbb{R}\}.
+\]</span></p>
+<p>Essa construção não é apenas formal, ela reflete a nossa própria forma de localizar pontos no espaço.</p>
+</section>
+<section id="operações-no-produto-cartesiano" class="level3">
+<h3 class="anchored" data-anchor-id="operações-no-produto-cartesiano">Operações no produto cartesiano</h3>
+<p>Além disso, podemos definir operações nesse conjunto usando as operações já conhecidas dos números reais. Por exemplo, ao dizer que andamos primeiro na direção <span class="math inline">\(x\)</span> e depois na direção <span class="math inline">\(y\)</span>, estamos compondo os pontos <span class="math inline">\((x, 0)\)</span> e <span class="math inline">\((0, y)\)</span> para obter o ponto <span class="math inline">\((x, y)\)</span>.<br>
+Essa composição é chamada de <strong>adição</strong> e é definida como: <span class="math display">\[
+(x, y) + (x', y') = (x + x', y + y'),
+\]</span> ou seja, somamos as componentes separadamente, estendendo o conceito de soma dos números reais para os pares ordenados e, por analogia, para trios ordenados também.<br>
+Note que, como a ordem da soma das componentes não altera o resultado, o mesmo acontece com os pares ou trios ordenados — isso reflete a nossa experiência física e a propriedade comutativa da adição.</p>
+<p>Outra operação importante é a multiplicação por um número real (escalar). Se multiplicarmos as coordenadas do ponto por um número real <span class="math inline">\(k\)</span>, obtemos: <span class="math display">\[
+k (x, y) = (kx, ky),
+\]</span> ou seja, multiplicamos cada componente separadamente, estendendo o conceito de produto dos números reais para os pares ordenados. Analogamente, para o espaço tridimensional: <span class="math display">\[
+k (x, y, z) = (kx, ky, kz).
+\]</span> Essa operação permite ampliar ou reduzir as distâncias, mantendo a direção das coordenadas proporcional.</p>
 
 
 </section>
