@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -133,7 +168,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -485,16 +520,28 @@ window.Quarto = {
   <li><a href="#resolvendo-a-soma" id="toc-resolvendo-a-soma" class="nav-link" data-scroll-target="#resolvendo-a-soma">Resolvendo a soma</a></li>
   <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
   </ul></li>
-  <li><a href="#dimensões-do-espaço" id="toc-dimensões-do-espaço" class="nav-link" data-scroll-target="#dimensões-do-espaço">Dimensões do espaço</a>
-  <ul class="collapse">
+  <li><a href="#dimensões-do-espaço" id="toc-dimensões-do-espaço" class="nav-link" data-scroll-target="#dimensões-do-espaço">Dimensões do espaço</a></li>
   <li><a href="#produto-cartesiano" id="toc-produto-cartesiano" class="nav-link" data-scroll-target="#produto-cartesiano">Produto cartesiano</a></li>
   <li><a href="#operações-no-produto-cartesiano" id="toc-operações-no-produto-cartesiano" class="nav-link" data-scroll-target="#operações-no-produto-cartesiano">Operações no produto cartesiano</a></li>
+  <li><a href="#espaço-vetorial" id="toc-espaço-vetorial" class="nav-link" data-scroll-target="#espaço-vetorial">Espaço Vetorial</a>
+  <ul class="collapse">
+  <li><a href="#independência-linear" id="toc-independência-linear" class="nav-link" data-scroll-target="#independência-linear">Independência Linear</a></li>
+  <li><a href="#quantos-vetores-linearmente-independentes-cabem-em-mathbbr2" id="toc-quantos-vetores-linearmente-independentes-cabem-em-mathbbr2" class="nav-link" data-scroll-target="#quantos-vetores-linearmente-independentes-cabem-em-mathbbr2">Quantos vetores linearmente independentes cabem em <span class="math inline">\(\mathbb{R}^2\)</span>?</a></li>
+  <li><a href="#exemplo-os-vetores-11-1-1-e-xy" id="toc-exemplo-os-vetores-11-1-1-e-xy" class="nav-link" data-scroll-target="#exemplo-os-vetores-11-1-1-e-xy">Exemplo: os vetores <span class="math inline">\((1,1)\)</span>, <span class="math inline">\((1,-1)\)</span> e <span class="math inline">\((x,y)\)</span></a></li>
+  <li><a href="#dimensão" id="toc-dimensão" class="nav-link" data-scroll-target="#dimensão">Dimensão</a></li>
+  </ul></li>
+  <li><a href="#funções-contínuas-definição-de-limite" id="toc-funções-contínuas-definição-de-limite" class="nav-link" data-scroll-target="#funções-contínuas-definição-de-limite">Funções Contínuas: Definição de Limite</a>
+  <ul class="collapse">
+  <li><a href="#definição-limite-por-varepsilon-e-delta" id="toc-definição-limite-por-varepsilon-e-delta" class="nav-link" data-scroll-target="#definição-limite-por-varepsilon-e-delta">Definição (Limite por <span class="math inline">\(\varepsilon\)</span> e <span class="math inline">\(\delta\)</span>)</a></li>
+  <li><a href="#como-ler-a-definição" id="toc-como-ler-a-definição" class="nav-link" data-scroll-target="#como-ler-a-definição">Como “ler” a definição</a></li>
+  <li><a href="#limite-visto-como-conjuntos" id="toc-limite-visto-como-conjuntos" class="nav-link" data-scroll-target="#limite-visto-como-conjuntos">Limite visto como conjuntos</a></li>
+  <li><a href="#exemplo-com-descontinuidade" id="toc-exemplo-com-descontinuidade" class="nav-link" data-scroll-target="#exemplo-com-descontinuidade">Exemplo com Descontinuidade</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Courses</li><li class="breadcrumb-item"><a href="../../courses/introduction-to-physics/index.html">Introduction to Physics (portuguese)</a></li><li class="breadcrumb-item"><a href="../../courses/introduction-to-physics/physics-math.html">Physics and Mathematics</a></li></ol></nav>
@@ -563,15 +610,15 @@ ou seja, não pode ser escrito como uma fração <span class="math inline">\(\fr
 <h2 class="anchored" data-anchor-id="conjuntos-numéricos">Conjuntos numéricos</h2>
 <p>Para organizar as ideias, temos os seguintes conjuntos numéricos:</p>
 <ul>
-<li><span class="math inline">\(\mathbb{N}\)</span> — números naturais: <span class="math inline">\(0, 1, 2, 3, \dots\)</span><br>
+<li><span class="math inline">\(\mathbb{N}\)</span>: números naturais: <span class="math inline">\(0, 1, 2, 3, \dots\)</span><br>
 </li>
-<li><span class="math inline">\(\mathbb{Z}\)</span> — números inteiros: <span class="math inline">\(\dots, -2, -1, 0, 1, 2, \dots\)</span><br>
+<li><span class="math inline">\(\mathbb{Z}\)</span>: números inteiros: <span class="math inline">\(\dots, -2, -1, 0, 1, 2, \dots\)</span><br>
 </li>
-<li><span class="math inline">\(\mathbb{Q}\)</span> — números racionais: frações da forma <span class="math inline">\(\frac{p}{q}\)</span>, com <span class="math inline">\(p, q \in \mathbb{Z}\)</span> e <span class="math inline">\(q \neq 0\)</span><br>
+<li><span class="math inline">\(\mathbb{Q}\)</span>: números racionais: frações da forma <span class="math inline">\(\frac{p}{q}\)</span>, com <span class="math inline">\(p, q \in \mathbb{Z}\)</span> e <span class="math inline">\(q \neq 0\)</span><br>
 </li>
 <li>Números irracionais: não podem ser escritos como fração (exemplos: <span class="math inline">\(\sqrt{2}\)</span>, <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span>, …)<br>
 </li>
-<li><span class="math inline">\(\mathbb{R}\)</span> — números reais: a união dos racionais e irracionais, ou seja, <span class="math inline">\(\mathbb{Q} \cup\)</span> (irracionais)</li>
+<li><span class="math inline">\(\mathbb{R}\)</span>: números reais: a união dos racionais e irracionais, ou seja, <span class="math inline">\(\mathbb{Q} \cup\)</span> (irracionais)</li>
 </ul>
 </section>
 <section id="o-paradoxo-de-zenão-e-as-séries-infinitas" class="level2">
@@ -619,8 +666,9 @@ d = 1.
 <p>Mas o número de pontos não é a única forma de medir o “tamanho” do espaço. Existe um conceito diferente e fundamental: a <strong>dimensão</strong>.</p>
 <p>Nossa experiência mostra que, para localizar um ponto no espaço, usamos três números, as coordenadas <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> e <span class="math inline">\(z\)</span>, que indicam a posição em três direções mutuamente perpendiculares. Escolhemos uma origem e três direções que formam ângulos retos (<span class="math inline">\(90^\circ\)</span>) entre si, e medimos distâncias ao longo dessas direções usando números reais, como discutimos antes. Ou seja, primeiro andamos em uma direção <span class="math inline">\(x\)</span>, depois em outra <span class="math inline">\(y\)</span> e, por fim, em outra <span class="math inline">\(z\)</span>, até chegar ao ponto desejado. O interessante é que sempre conseguimos alcançar qualquer ponto usando esse procedimento, e a ordem dos passos não altera o resultado.</p>
 <p>Esses três números são suficientes para identificar qualquer ponto do espaço físico que conhecemos.</p>
-<section id="produto-cartesiano" class="level3">
-<h3 class="anchored" data-anchor-id="produto-cartesiano">Produto cartesiano</h3>
+</section>
+<section id="produto-cartesiano" class="level2">
+<h2 class="anchored" data-anchor-id="produto-cartesiano">Produto cartesiano</h2>
 <p>Para descrever matematicamente esse conjunto de pontos, usamos o conceito de <strong>produto cartesiano</strong>.<br>
 Começamos com: <span class="math display">\[
 \mathbb{R} \times \mathbb{R} \equiv \{(x, y) \mid x, y \in \mathbb{R}\},
@@ -633,18 +681,468 @@ Começamos com: <span class="math display">\[
 \]</span></p>
 <p>Essa construção não é apenas formal, ela reflete a nossa própria forma de localizar pontos no espaço.</p>
 </section>
-<section id="operações-no-produto-cartesiano" class="level3">
-<h3 class="anchored" data-anchor-id="operações-no-produto-cartesiano">Operações no produto cartesiano</h3>
+<section id="operações-no-produto-cartesiano" class="level2">
+<h2 class="anchored" data-anchor-id="operações-no-produto-cartesiano">Operações no produto cartesiano</h2>
 <p>Além disso, podemos definir operações nesse conjunto usando as operações já conhecidas dos números reais. Por exemplo, ao dizer que andamos primeiro na direção <span class="math inline">\(x\)</span> e depois na direção <span class="math inline">\(y\)</span>, estamos compondo os pontos <span class="math inline">\((x, 0)\)</span> e <span class="math inline">\((0, y)\)</span> para obter o ponto <span class="math inline">\((x, y)\)</span>.<br>
 Essa composição é chamada de <strong>adição</strong> e é definida como: <span class="math display">\[
 (x, y) + (x', y') = (x + x', y + y'),
 \]</span> ou seja, somamos as componentes separadamente, estendendo o conceito de soma dos números reais para os pares ordenados e, por analogia, para trios ordenados também.<br>
-Note que, como a ordem da soma das componentes não altera o resultado, o mesmo acontece com os pares ou trios ordenados — isso reflete a nossa experiência física e a propriedade comutativa da adição.</p>
+Note que, como a ordem da soma das componentes não altera o resultado, o mesmo acontece com os pares ou trios ordenados, isso reflete a nossa experiência física e a propriedade comutativa da adição.</p>
 <p>Outra operação importante é a multiplicação por um número real (escalar). Se multiplicarmos as coordenadas do ponto por um número real <span class="math inline">\(k\)</span>, obtemos: <span class="math display">\[
 k (x, y) = (kx, ky),
 \]</span> ou seja, multiplicamos cada componente separadamente, estendendo o conceito de produto dos números reais para os pares ordenados. Analogamente, para o espaço tridimensional: <span class="math display">\[
 k (x, y, z) = (kx, ky, kz).
 \]</span> Essa operação permite ampliar ou reduzir as distâncias, mantendo a direção das coordenadas proporcional.</p>
+</section>
+<section id="espaço-vetorial" class="level2">
+<h2 class="anchored" data-anchor-id="espaço-vetorial">Espaço Vetorial</h2>
+<p>As operações definidas acima, a <strong>adição de pares ordenados</strong> e a <strong>multiplicação por escalares</strong>, são exemplos de como podemos construir uma estrutura matemática mais geral, chamada <strong>espaço vetorial</strong>.</p>
+<p>Um <strong>espaço vetorial</strong> é um conjunto de objetos (que chamaremos de <strong>vetores</strong>) sobre os quais estão definidas duas operações:</p>
+<ol type="1">
+<li><p><strong>Adição de vetores</strong>: a partir de dois vetores, obtemos um terceiro vetor do mesmo conjunto.<br>
+No caso do plano cartesiano <span class="math inline">\(\mathbb{R}^2\)</span>, essa operação é: <span class="math display">\[
+(x, y) + (x', y') = (x + x', y + y').
+\]</span></p></li>
+<li><p><strong>Multiplicação por escalar</strong>: a partir de um vetor e de um número real, obtemos um novo vetor do mesmo conjunto.<br>
+Por exemplo: <span class="math display">\[
+k(x, y) = (kx, ky), \quad k \in \mathbb{R}.
+\]</span></p></li>
+</ol>
+<p>Essas duas operações devem satisfazer certas propriedades chamadas <strong>axiomas de espaço vetorial</strong>, como:</p>
+<ul>
+<li><strong>Associatividade da adição</strong>: <span class="math inline">\((u + v) + w = u + (v + w)\)</span>.<br>
+</li>
+<li><strong>Comutatividade da adição</strong>: <span class="math inline">\(u + v = v + u\)</span>.<br>
+</li>
+<li><strong>Elemento neutro</strong>: existe um vetor <span class="math inline">\(0\)</span> tal que <span class="math inline">\(u + 0 = u\)</span>.<br>
+</li>
+<li><strong>Elemento oposto</strong>: para todo vetor <span class="math inline">\(u\)</span>, existe <span class="math inline">\(-u\)</span> tal que <span class="math inline">\(u + (-u) = 0\)</span>.<br>
+</li>
+<li><strong>Distributividade</strong>: <span class="math inline">\(k(u + v) = ku + kv\)</span> e <span class="math inline">\((k + m)u = ku + mu\)</span>.<br>
+</li>
+<li><strong>Compatibilidade</strong>: <span class="math inline">\(k(mu) = (km)u\)</span>.<br>
+</li>
+<li><strong>Unidade</strong>: <span class="math inline">\(1 \cdot u = u\)</span>.</li>
+</ul>
+<p>No caso do plano <span class="math inline">\(\mathbb{R}^2\)</span> e do espaço tridimensional <span class="math inline">\(\mathbb{R}^3\)</span>, todas essas propriedades são satisfeitas. Portanto, <span class="math inline">\((\mathbb{R}^2, +, \cdot)\)</span> e <span class="math inline">\((\mathbb{R}^3, +, \cdot)\)</span> são exemplos de espaços vetoriais sobre o conjunto dos números reais.</p>
+<p>Essa estrutura será a base para o estudo da <strong>Geometria Analítica</strong> e da <strong>Álgebra Linear</strong>, permitindo tratar vetores não apenas como “setas no espaço”, mas como objetos matemáticos com propriedades bem definidas.</p>
+<section id="independência-linear" class="level3">
+<h3 class="anchored" data-anchor-id="independência-linear">Independência Linear</h3>
+<p>No espaço vetorial, uma questão importante é entender quando um vetor pode ser obtido a partir de outros.<br>
+Para isso, introduzimos a ideia de <strong>combinação linear</strong>.</p>
+<p>Dizemos que um vetor <span class="math inline">\(v\)</span> é uma combinação linear de <span class="math inline">\(v_1\)</span> e <span class="math inline">\(v_2\)</span> se existem números reais <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> tais que <span class="math display">\[
+v = a v_1 + b v_2.
+\]</span></p>
+<p>Um caso especial é quando a <strong>combinação linear resulta no vetor nulo</strong>: <span class="math display">\[
+a v_1 + b v_2 = 0.
+\]</span> O problema é determinar para quais valores de <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> essa igualdade é possível.</p>
+<ul>
+<li>Se a única solução é <span class="math inline">\(a = b = 0\)</span>, então <span class="math inline">\(v_1\)</span> e <span class="math inline">\(v_2\)</span> são chamados <strong>linearmente independentes (L.I.)</strong>.<br>
+</li>
+<li>Se existir uma solução diferente de <span class="math inline">\(a = b = 0\)</span>, então <span class="math inline">\(v_1\)</span> e <span class="math inline">\(v_2\)</span> são <strong>linearmente dependentes (L.D.)</strong>.</li>
+</ul>
+</section>
+<section id="quantos-vetores-linearmente-independentes-cabem-em-mathbbr2" class="level3">
+<h3 class="anchored" data-anchor-id="quantos-vetores-linearmente-independentes-cabem-em-mathbbr2">Quantos vetores linearmente independentes cabem em <span class="math inline">\(\mathbb{R}^2\)</span>?</h3>
+<p>No plano <span class="math inline">\(\mathbb{R}^2\)</span>, no máximo <strong>dois vetores</strong> podem ser linearmente independentes.<br>
+Isso significa que qualquer conjunto com três ou mais vetores em <span class="math inline">\(\mathbb{R}^2\)</span> será necessariamente linearmente dependente.</p>
+</section>
+<section id="exemplo-os-vetores-11-1-1-e-xy" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-os-vetores-11-1-1-e-xy">Exemplo: os vetores <span class="math inline">\((1,1)\)</span>, <span class="math inline">\((1,-1)\)</span> e <span class="math inline">\((x,y)\)</span></h3>
+<p>Vamos analisar o conjunto <span class="math display">\[
+\{ (1,1), (1,-1), (x,y) \}.
+\]</span></p>
+<p>Se esses três vetores fossem linearmente independentes, a única solução da equação <span class="math display">\[
+a(1,1) + b(1,-1) + c(x,y) = (0,0)
+\]</span> seria <span class="math inline">\(a = b = c = 0\)</span>.</p>
+<p>Expandindo: <span class="math display">\[
+a(1,1) + b(1,-1) + c(x,y) = (a+b+cx,\, a-b+cy).
+\]</span></p>
+<p>Para que o resultado seja <span class="math inline">\((0,0)\)</span>, temos o sistema: <span class="math display">\[
+\begin{cases}
+a + b + cx = 0 \\
+a - b + cy = 0
+\end{cases}
+\]</span></p>
+<p>Esse sistema tem sempre soluções não triviais (com <span class="math inline">\(a, b, c\)</span> não todos nulos).<br>
+Portanto, os três vetores são <strong>linearmente dependentes para qualquer valor de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span></strong>.</p>
+<p>Assim, concluímos que em <span class="math inline">\(\mathbb{R}^2\)</span> só é possível ter <strong>até dois vetores linearmente independentes</strong>, o que está em acordo com a dimensão do espaço.</p>
+</section>
+<section id="dimensão" class="level3">
+<h3 class="anchored" data-anchor-id="dimensão">Dimensão</h3>
+<p>Até aqui vimos que em <span class="math inline">\(\mathbb{R}^2\)</span> só podemos ter <strong>no máximo dois vetores linearmente independentes</strong>.<br>
+Esse número máximo de vetores linearmente independentes em um espaço vetorial é chamado de sua <strong>dimensão</strong>.</p>
+<p>De forma geral:</p>
+<ul>
+<li>A <strong>dimensão</strong> de um espaço vetorial é o número de vetores em uma base, isto é, o número máximo de vetores linearmente independentes que podem existir nesse espaço.</li>
+</ul>
+<p>Por exemplo:</p>
+<ul>
+<li>Em <span class="math inline">\(\mathbb{R}^1\)</span>, apenas <strong>um vetor</strong> pode ser linearmente independente, logo <span class="math inline">\(\dim(\mathbb{R}^1) = 1\)</span>.<br>
+</li>
+<li>Em <span class="math inline">\(\mathbb{R}^2\)</span>, até <strong>dois vetores</strong> podem ser linearmente independentes, logo <span class="math inline">\(\dim(\mathbb{R}^2) = 2\)</span>.<br>
+</li>
+<li>Em <span class="math inline">\(\mathbb{R}^3\)</span>, até <strong>três vetores</strong> podem ser linearmente independentes, logo <span class="math inline">\(\dim(\mathbb{R}^3) = 3\)</span>.</li>
+</ul>
+<p>Assim, o conceito de dimensão nos permite medir, de forma matemática, <strong>quantas direções independentes existem em um espaço vetorial</strong>.</p>
+<p>Esse resultado conecta-se ao nosso objetivo inicial: compreender e medir o espaço onde a física acontece.<br>
+Vimos que, embora cada conjunto numérico (como os reais) contenha um número incontável de pontos, podemos distinguir diferentes espaços, reta, plano e espaço tridimensional, pelo número de direções independentes que eles possuem.</p>
+<p>A dimensão é, portanto, a medida fundamental que caracteriza a estrutura do espaço.</p>
+</section>
+</section>
+<section id="funções-contínuas-definição-de-limite" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="funções-contínuas-definição-de-limite">Funções Contínuas: Definição de Limite</h2>
+<p>Para compreender o que significa uma função ser <strong>contínua</strong>, precisamos primeiro introduzir o conceito de <strong>limite</strong>.<br>
+A definição rigorosa de limite usa a linguagem de <span class="math inline">\(\varepsilon\)</span> (épsilon) e <span class="math inline">\(\delta\)</span> (delta), baseada no conceito de <strong>módulo</strong>:</p>
+<p><span class="math display">\[
+|x| =
+\begin{cases}
+x, &amp; \text{se } x \geq 0, \\
+-x, &amp; \text{se } x &lt; 0.
+\end{cases}
+\]</span></p>
+<p>O módulo mede a <strong>distância</strong> de <span class="math inline">\(x\)</span> até a origem.<br>
+Assim, <span class="math inline">\(|x - p|\)</span> representa a distância entre <span class="math inline">\(x\)</span> e <span class="math inline">\(p\)</span>. Esse é um exemplo de <strong>métrica</strong>: uma forma de medir distâncias.</p>
+<section id="definição-limite-por-varepsilon-e-delta" class="level3">
+<h3 class="anchored" data-anchor-id="definição-limite-por-varepsilon-e-delta">Definição (Limite por <span class="math inline">\(\varepsilon\)</span> e <span class="math inline">\(\delta\)</span>)</h3>
+<p>Dizemos que o limite de <span class="math inline">\(f(x)\)</span> quando <span class="math inline">\(x\)</span> tende a <span class="math inline">\(p\)</span> é <span class="math inline">\(L\)</span>, e escrevemos <span class="math display">\[
+\lim_{x \to p} f(x) = L,
+\]</span> se, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>, existe um <span class="math inline">\(\delta &gt; 0\)</span> tal que <span class="math display">\[
+0 &lt; |x - p| &lt; \delta \quad \Rightarrow \quad |f(x) - L| &lt; \varepsilon.
+\]</span></p>
+</section>
+<section id="como-ler-a-definição" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="como-ler-a-definição">Como “ler” a definição</h3>
+<p>Essa definição pode parecer compacta demais em sua forma simbólica. Para entendê-la melhor, podemos transformá-la em uma <strong>receita passo a passo</strong>:</p>
+<ol type="1">
+<li><p><strong>Para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>:</strong><br>
+Escolha um valor positivo e não nulo para <span class="math inline">\(\varepsilon\)</span>. Ele representa a margem de erro que aceitamos para <span class="math inline">\(f(x)\)</span> em relação a <span class="math inline">\(L\)</span>.</p></li>
+<li><p><strong>Existe um <span class="math inline">\(\delta &gt; 0\)</span>:</strong> Dado esse <span class="math inline">\(\varepsilon\)</span>, conseguimos encontrar um <span class="math inline">\(\delta\)</span> positivo. Esse <span class="math inline">\(\delta\)</span> será a margem de proximidade de <span class="math inline">\(x\)</span> em relação a <span class="math inline">\(p\)</span>.</p></li>
+<li><p><strong>Se <span class="math inline">\(x \in \mathbb{R}\)</span> e <span class="math inline">\(0 &lt; |x - p| &lt; \delta\)</span>:</strong><br>
+Significa que escolhemos valores de <span class="math inline">\(x\)</span> suficientemente próximos de <span class="math inline">\(p\)</span>, mas diferentes de <span class="math inline">\(p\)</span>.</p></li>
+<li><p><strong>Então <span class="math inline">\(|f(x) - L| &lt; \varepsilon\)</span>:</strong><br>
+Nessas condições, o valor de <span class="math inline">\(f(x)\)</span> ficará dentro da margem de erro <span class="math inline">\(\varepsilon\)</span> em torno de <span class="math inline">\(L\)</span>.</p></li>
+</ol>
+<p>Essa estrutura mostra que o limite é, essencialmente, um <strong>jogo de aproximações</strong>:</p>
+<ul>
+<li>o <span class="math inline">\(\varepsilon\)</span> fixa o “quanto” queremos que <span class="math inline">\(f(x)\)</span> fique perto de <span class="math inline">\(L\)</span>,<br>
+</li>
+<li>o <span class="math inline">\(\delta\)</span> nos garante o “quão perto” <span class="math inline">\(x\)</span> deve estar de <span class="math inline">\(p\)</span> para que isso aconteça.</li>
+</ul>
+<p>Esse raciocínio será a base para a definição formal de <strong>continuidade</strong>.</p>
+<div id="cell-fig-eps-delta" class="cell page-columns page-full" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" data-cap-location="margin"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Função exemplo</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.sin(x)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ponto onde queremos o limite</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.pi <span class="op">/</span> <span class="dv">4</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.sin(p)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de epsilon e delta</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">0.2</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>delta <span class="op">=</span> <span class="fl">0.4</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo para plot</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> np.linspace(p <span class="op">-</span> <span class="fl">1.5</span>, p <span class="op">+</span> <span class="fl">1.5</span>, <span class="dv">400</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> f(x_vals)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico da função</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ax.plot(x_vals, y_vals, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\s</span><span class="vs">in</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Linha horizontal em L</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax.axhline(L, color<span class="op">=</span><span class="st">"black"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax.text(p <span class="op">+</span> <span class="fl">1.1</span>, L <span class="op">+</span> <span class="fl">0.02</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">L</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Faixa |f(x) - L| &lt; eps</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ax.fill_between(</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    x_vals, L <span class="op">-</span> eps, L <span class="op">+</span> eps, color<span class="op">=</span><span class="st">"gray"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="cf">|</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs">-L</span><span class="cf">|</span><span class="vs"> &lt; </span><span class="ch">\v</span><span class="vs">arepsilon</span><span class="dv">$</span><span class="vs">"</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Linha vertical em p</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>ax.axvline(p, color<span class="op">=</span><span class="st">"black"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>ax.text(p, <span class="op">-</span><span class="fl">1.1</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">p</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Faixa |x - p| &lt; delta</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>ax.axvspan(p <span class="op">-</span> delta, p <span class="op">+</span> delta, color<span class="op">=</span><span class="st">"orange"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="cf">|</span><span class="vs">x-p</span><span class="cf">|</span><span class="vs"> &lt; </span><span class="dv">\d</span><span class="vs">elta</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Destacar o ponto (p, L)</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>ax.plot(p, L, <span class="st">"ro"</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"$x$"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"$f(x)$"</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"best"</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="vs">r"Definição de limite por </span><span class="dv">$</span><span class="er">\</span><span class="vs">epsilon</span><span class="dv">$</span><span class="vs"> e </span><span class="dv">$\d</span><span class="vs">elta</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-eps-delta" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-eps-delta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="physics-math_files/figure-html/fig-eps-delta-output-1.png" width="684" height="400" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-eps-delta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Representação gráfica da definição de limite <span class="math inline">\(\lim_{x \to p} f(x) = L\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="limite-visto-como-conjuntos" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="limite-visto-como-conjuntos">Limite visto como conjuntos</h3>
+<p>Na definição de limite usamos a desigualdade <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>.<br>
+Mas esse conjunto de valores de <span class="math inline">\(f(x)\)</span> nada mais é que o <strong>intervalo aberto</strong> <span class="math display">\[
+(L-\varepsilon,\, L+\varepsilon),
+\]</span> isto é, todos os pontos de <span class="math inline">\(y\)</span> que ficam dentro de uma “faixa” em torno de <span class="math inline">\(L\)</span>.<br>
+Essa faixa é aberta porque não inclui as bordas <span class="math inline">\(L-\varepsilon\)</span> e <span class="math inline">\(L+\varepsilon\)</span>.</p>
+<section id="o-que-acontece-no-domínio" class="level4">
+<h4 class="anchored" data-anchor-id="o-que-acontece-no-domínio">O que acontece no domínio?</h4>
+<p>Se queremos que <span class="math inline">\(f(x)\)</span> caia dentro dessa faixa, precisamos escolher valores de <span class="math inline">\(x\)</span> que levem a <span class="math inline">\(f(x)\)</span> até lá.<br>
+Ou seja, olhamos para o conjunto <span class="math display">\[
+U_\varepsilon = \{x \in \mathbb{R}: |f(x)-L|&lt;\varepsilon\}.
+\]</span></p>
+<p>Esse é o conjunto dos <span class="math inline">\(x\)</span> que produzem valores de <span class="math inline">\(f(x)\)</span> dentro da faixa em <span class="math inline">\(y\)</span>.</p>
+</section>
+<section id="onde-entram-x_1-e-x_2" class="level4">
+<h4 class="anchored" data-anchor-id="onde-entram-x_1-e-x_2">Onde entram <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>?</h4>
+<p>As equações <span class="math display">\[
+f(x_1) = L - \varepsilon, \quad f(x_2) = L + \varepsilon
+\]</span> são as condições que “marcam as bordas” do intervalo em <span class="math inline">\(y\)</span>.<br>
+Os pontos <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> no domínio são justamente aqueles que fazem a função chegar exatamente nas bordas <span class="math inline">\(L-\varepsilon\)</span> e <span class="math inline">\(L+\varepsilon\)</span>.</p>
+<p>Assim, o intervalo <span class="math inline">\((x_1, x_2)\)</span> no eixo-<span class="math inline">\(x\)</span> é a região que leva a imagem da função para dentro do intervalo <span class="math inline">\((L-\varepsilon, L+\varepsilon)\)</span> no eixo-<span class="math inline">\(y\)</span>.</p>
+</section>
+<section id="como-isso-ajuda-a-escolher-delta" class="level4">
+<h4 class="anchored" data-anchor-id="como-isso-ajuda-a-escolher-delta">Como isso ajuda a escolher <span class="math inline">\(\delta\)</span>?</h4>
+<p>Ao fixar <span class="math inline">\(\varepsilon\)</span>, olhamos para a faixa aberta em <span class="math inline">\(y\)</span>: <span class="math display">\[
+(L-\varepsilon,\, L+\varepsilon).
+\]</span> No domínio, aparecem dois pontos importantes:<br>
+<span class="math display">\[
+f(x_1)=L-\varepsilon, \quad f(x_2)=L+\varepsilon.
+\]</span></p>
+<p>Esses pontos <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> marcam as “bordas” de onde <span class="math inline">\(f(x)\)</span> ainda cai dentro da faixa em <span class="math inline">\(y\)</span>.<br>
+Se o ponto <span class="math inline">\(p\)</span> está entre <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>, então qualquer <span class="math inline">\(x\)</span> dentro do intervalo <span class="math inline">\((x_1,\,x_2)\)</span> satisfaz <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>.</p>
+<p>Para garantir isso em termos de <span class="math inline">\(\delta\)</span>, basta escolher uma distância que mantenha todos os <span class="math inline">\(x\)</span> próximos de <span class="math inline">\(p\)</span> <strong>dentro desse intervalo</strong>.<br>
+Uma forma prática é tomar <span class="math display">\[
+\delta = \min\{|x_1-p|,\, |x_2-p|\}.
+\]</span></p>
+<p>Com essa escolha, o intervalo <span class="math inline">\((p-\delta,\, p+\delta)\)</span> fica inteiramente contido em <span class="math inline">\((x_1,\,x_2)\)</span>, o que garante: <span class="math display">\[
+0&lt;|x-p|&lt;\delta \quad \Rightarrow \quad |f(x)-L|&lt;\varepsilon.
+\]</span></p>
+</section>
+<section id="intuição" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="intuição">Intuição</h4>
+<ul>
+<li>O <span class="math inline">\(\varepsilon\)</span> abre um “tubo horizontal” em torno de <span class="math inline">\(L\)</span>.<br>
+</li>
+<li>Os pontos <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> marcam onde a curva da função toca as bordas desse tubo.<br>
+</li>
+<li>Escolher <span class="math inline">\(\delta = \min(|x_1-p|,|x_2-p|)\)</span> garante que, ao nos aproximarmos de <span class="math inline">\(p\)</span>, permanecemos dentro desse tubo.</li>
+</ul>
+<p>Assim, conseguimos traduzir a tolerância em <span class="math inline">\(y\)</span> (dada por <span class="math inline">\(\varepsilon\)</span>) em uma tolerância correspondente no <span class="math inline">\(x\)</span> (dada por <span class="math inline">\(\delta\)</span>).</p>
+<div id="cell-fig-eps-delta-sets" class="cell page-columns page-full" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" data-cap-location="margin"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Função exemplo</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.sin(x)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ponto do limite</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.pi <span class="op">/</span> <span class="dv">4</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.sin(p)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">0.2</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Encontrar x1 e x2 numericamente tais que f(x) = L ± eps</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando busca simples em uma malha fina em torno de p</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> np.linspace(p <span class="op">-</span> <span class="dv">2</span>, p <span class="op">+</span> <span class="dv">2</span>, <span class="dv">2000</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> f(x_vals)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Condições</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>mask_lower <span class="op">=</span> np.isclose(y_vals, L <span class="op">-</span> eps, atol<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>mask_upper <span class="op">=</span> np.isclose(y_vals, L <span class="op">+</span> eps, atol<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Aproximar x1 e x2 como os primeiros pontos que satisfazem a condição</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>x1_candidates <span class="op">=</span> x_vals[mask_lower]</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>x2_candidates <span class="op">=</span> x_vals[mask_upper]</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> x1_candidates[<span class="dv">0</span>] <span class="cf">if</span> <span class="bu">len</span>(x1_candidates) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> p <span class="op">-</span> <span class="fl">0.5</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> x2_candidates[<span class="op">-</span><span class="dv">1</span>] <span class="cf">if</span> <span class="bu">len</span>(x2_candidates) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> p <span class="op">+</span> <span class="fl">0.5</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Escolha de delta</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>delta <span class="op">=</span> <span class="bu">min</span>(<span class="bu">abs</span>(x1 <span class="op">-</span> p), <span class="bu">abs</span>(x2 <span class="op">-</span> p))</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot função</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>ax.plot(x_vals, y_vals, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\s</span><span class="vs">in</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Linhas horizontais L±eps</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>ax.axhline(L <span class="op">+</span> eps, color<span class="op">=</span><span class="st">"gray"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>ax.axhline(L <span class="op">-</span> eps, color<span class="op">=</span><span class="st">"gray"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>ax.fill_between(</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    x_vals, L <span class="op">-</span> eps, L <span class="op">+</span> eps, color<span class="op">=</span><span class="st">"gray"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="cf">|</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs">-L</span><span class="cf">|</span><span class="vs">&lt;</span><span class="ch">\v</span><span class="vs">arepsilon</span><span class="dv">$</span><span class="vs">"</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Linha vertical em p</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>ax.axvline(p, color<span class="op">=</span><span class="st">"black"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>ax.text(p, <span class="op">-</span><span class="fl">1.2</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">p</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Marcar x1, x2</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>ax.axvline(x1, color<span class="op">=</span><span class="st">"blue"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>ax.axvline(x2, color<span class="op">=</span><span class="st">"blue"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>ax.text(x1, <span class="op">-</span><span class="fl">1.0</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">x_1</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">"left"</span>, color<span class="op">=</span><span class="st">"blue"</span>)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>ax.text(x2, <span class="op">-</span><span class="fl">1.0</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">x_2</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">"left"</span>, color<span class="op">=</span><span class="st">"blue"</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Região delta em torno de p</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>ax.axvspan(p <span class="op">-</span> delta, p <span class="op">+</span> delta, color<span class="op">=</span><span class="st">"orange"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="cf">|</span><span class="vs">x-p</span><span class="cf">|</span><span class="vs">&lt;</span><span class="dv">\d</span><span class="vs">elta</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Ponto limite</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>ax.plot(p, L, <span class="st">"ro"</span>)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"$x$"</span>)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"$f(x)$"</span>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"best"</span>)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="vs">r"Escolha de </span><span class="dv">$\d</span><span class="vs">elta</span><span class="dv">$</span><span class="vs"> a partir de </span><span class="dv">$</span><span class="vs">x_1</span><span class="dv">$</span><span class="vs"> e </span><span class="dv">$</span><span class="vs">x_2</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-eps-delta-sets" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-eps-delta-sets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="physics-math_files/figure-html/fig-eps-delta-sets-output-1.png" width="684" height="377" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-eps-delta-sets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Representação gráfica da definição de limite <span class="math inline">\(\lim_{x \to p} f(x) = L\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exemplo-com-descontinuidade" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="exemplo-com-descontinuidade">Exemplo com Descontinuidade</h3>
+<p>Quando uma função apresenta uma <strong>descontinuidade</strong> em um ponto <span class="math inline">\(p\)</span>, a definição de limite <span class="math inline">\(\lim_{x \to p} f(x) = L\)</span> falha. Vejamos um exemplo concreto:</p>
+<p>Considere a função definida por partes: <span class="math display">\[
+f(x) =
+\begin{cases}
+x &amp; \text{se } x &lt; 1 \\
+2x^2 &amp; \text{se } x \geq 1
+\end{cases}
+\]</span></p>
+<p>No ponto <span class="math inline">\(x = 1\)</span>, suponha que tentamos provar que <span class="math inline">\(\lim_{x \to 1} f(x) = 2\)</span>. Escolhemos <span class="math inline">\(\varepsilon = 0.1\)</span>.</p>
+<p>Queremos encontrar <span class="math inline">\(\delta &gt; 0\)</span> tal que o conjunto: <span class="math display">\[
+\{x \in \mathbb{R} : 0 &lt; |x - 1| &lt; \delta\}
+\]</span> esteja contido no conjunto: <span class="math display">\[
+\{x \in \mathbb{R} : |f(x) - 2| &lt; 0.1\}
+\]</span></p>
+<p><strong>Análise do conjunto onde <span class="math inline">\(|f(x) - 2| &lt; 0.1\)</span>:</strong></p>
+<p>Para <span class="math inline">\(x \geq 1\)</span> (usando <span class="math inline">\(f(x) = 2x^2\)</span>): <span class="math display">\[
+|2x^2 - 2| &lt; 0.1 \Rightarrow 1.9 &lt; 2x^2 &lt; 2.1 \Rightarrow x \in (\sqrt{0.95}, \sqrt{1.05}) \approx (0.975, 1.025)
+\]</span></p>
+<p>Para <span class="math inline">\(x &lt; 1\)</span> (usando <span class="math inline">\(f(x) = x\)</span>): <span class="math display">\[
+|x - 2| &lt; 0.1 \Rightarrow x \in (1.9, 2.1)
+\]</span></p>
+<p>Portanto, o conjunto total onde <span class="math inline">\(|f(x) - 2| &lt; 0.1\)</span> é aproximadamente: <span class="math display">\[
+(0.975, 1.025) \cup (1.9, 2.1)
+\]</span></p>
+<p><strong>O problema:</strong> Qualquer intervalo <span class="math inline">\((1-\delta, 1+\delta)\)</span> com <span class="math inline">\(\delta &gt; 0\)</span> conterá pontos que <strong>não</strong> pertencem a este conjunto. Especificamente, conterá pontos em <span class="math inline">\((1-\delta, 1)\)</span> onde <span class="math inline">\(f(x) = x \approx 1\)</span>, e portanto <span class="math inline">\(|f(x) - 2| \approx 1 &gt; 0.1\)</span>.</p>
+<p>A única maneira de evitar isso seria tomar <span class="math inline">\(\delta = 0\)</span>, mas isso viola a definição de limite que exige <span class="math inline">\(\delta &gt; 0\)</span>. Esta impossibilidade de encontrar um <span class="math inline">\(\delta &gt; 0\)</span> tal que a vizinhança perfurada de <span class="math inline">\(1\)</span> esteja contida no conjunto onde <span class="math inline">\(|f(x) - 2| &lt; \varepsilon\)</span> caracteriza a <strong>não existência</strong> do limite.</p>
+<div id="cell-fig-eps-delta-sets-discontinuity" class="cell page-columns page-full" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" data-cap-location="margin"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código corrigido para plotar a função por partes (legendas em texto simples)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_piece(x):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.where(x <span class="op">&lt;</span> <span class="dv">1</span>, x, <span class="dv">2</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Domínios separados para desenhar as duas partes claramente</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>x_left <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="fl">0.999</span>, <span class="dv">400</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>x_right <span class="op">=</span> np.linspace(<span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">400</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>y_left <span class="op">=</span> f_piece(x_left)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>y_right <span class="op">=</span> f_piece(x_right)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot das duas parcelas (sem especificar cores)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>ax.plot(x_left, y_left, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs">=x, x&lt;1</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax.plot(x_right, y_right, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs">=2x</span><span class="dv">^</span><span class="vs">2, x&gt;=1</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Marcar limites laterais em x=1</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>left_limit <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># lim x-&gt;1^- f(x) = 1</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>right_limit <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># lim x-&gt;1^+ f(x) = 2</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>value_at_1 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># f(1) = 2*1^2 = 2</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Limite pela esquerda: ponto aberto em (1,1)</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax.plot(</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    x0,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    left_limit,</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">"o"</span>,</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="dv">8</span>,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    markerfacecolor<span class="op">=</span><span class="st">"none"</span>,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    markeredgewidth<span class="op">=</span><span class="fl">1.2</span>,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="er">\</span><span class="vs">lim_{x-&gt;1</span><span class="dv">^</span><span class="vs">-} f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = 1</span><span class="dv">$</span><span class="vs"> </span><span class="kw">(</span><span class="vs">aberto</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Limite pela direita: ponto aberto em (1,2)</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>ax.plot(</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    x0,</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    right_limit,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">"o"</span>,</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="dv">8</span>,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    markerfacecolor<span class="op">=</span><span class="st">"none"</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    markeredgewidth<span class="op">=</span><span class="fl">1.2</span>,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="er">\</span><span class="vs">lim_{x-&gt;1</span><span class="dv">^</span><span class="op">+</span><span class="vs">}f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = 2</span><span class="dv">$</span><span class="vs"> </span><span class="kw">(</span><span class="vs">aberto</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor da função em x=1: ponto preenchido</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>ax.plot(x0, value_at_1, marker<span class="op">=</span><span class="st">"o"</span>, markersize<span class="op">=</span><span class="dv">8</span>, label<span class="op">=</span><span class="st">"f(1)=2 (valor)"</span>)</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"$x$"</span>)</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"$f(x)$"</span>)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Função por partes com descontinuidade em x=1"</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-eps-delta-sets-discontinuity" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-eps-delta-sets-discontinuity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="physics-math_files/figure-html/fig-eps-delta-sets-discontinuity-output-1.png" width="664" height="376" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-eps-delta-sets-discontinuity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Representação gráfica da definição de limite <span class="math inline">\(\lim_{x \to p} f(x) = L\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
