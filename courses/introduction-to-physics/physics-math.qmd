@@ -106,10 +106,6 @@ O modelo contínuo do espaço nos leva naturalmente ao uso dos números reais $\
 
 Na física, essa suposição de continuidade está tão enraizada que aparece mesmo nos problemas mais simples, mas também levanta questões profundas: será que, em escalas muito pequenas, o espaço é realmente contínuo?
 
-Seu texto está claro e bem estruturado, introduzindo cardinalidade, dimensão e o produto cartesiano de forma didática. Para maior fluidez e didática, sugiro pequenas melhorias para evitar repetições, dar mais coesão e explicitar conceitos técnicos (como “pares ordenados”) de forma simples.
-
-Aqui vai uma versão revisada, mantendo seu conteúdo e estilo, com sugestões para explicitar pontos e melhorar a conexão entre as ideias:
-
 ## Dimensões do espaço
 
 Quando pensamos no “tamanho” do espaço, a primeira coisa que vem à mente é quantos pontos ele contém. Por exemplo, o conjunto dos números inteiros $\mathbb{Z}$ é infinito, mas é um infinito **contável**: podemos listar seus elementos um a um, ou seja, existe uma forma de associar cada inteiro a um número natural de forma unívoca.

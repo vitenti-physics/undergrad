@@ -264,8 +264,6 @@ In summary:
 * This defines a symmetry of the laws of motion.
 * That symmetry persists even in non-inertial frames: we can still shift to another frame with constant relative velocity without altering our description of the observed phenomena.
 
-Here is an improved and expanded version of your section, with clearer structure, smoother language, and more precise statements — while preserving your original intent:
-
 ## Other Symmetries
 
 Changing the reference frame is not the only symmetry present in classical mechanics. The equations of motion exhibit additional symmetries that are both empirically observed and reflected in the mathematical structure of the theory.
