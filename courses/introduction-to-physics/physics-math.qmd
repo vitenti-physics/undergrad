@@ -54,11 +54,11 @@ Dessa forma, cada posição pode ser representada por um número real, que pode 
 
 Para organizar as ideias, temos os seguintes conjuntos numéricos:
 
-- $\mathbb{N}$ — números naturais: $0, 1, 2, 3, \dots$  
-- $\mathbb{Z}$ — números inteiros: $\dots, -2, -1, 0, 1, 2, \dots$  
-- $\mathbb{Q}$ — números racionais: frações da forma $\frac{p}{q}$, com $p, q \in \mathbb{Z}$ e $q \neq 0$  
+- $\mathbb{N}$: números naturais: $0, 1, 2, 3, \dots$  
+- $\mathbb{Z}$: números inteiros: $\dots, -2, -1, 0, 1, 2, \dots$  
+- $\mathbb{Q}$: números racionais: frações da forma $\frac{p}{q}$, com $p, q \in \mathbb{Z}$ e $q \neq 0$  
 - Números irracionais: não podem ser escritos como fração (exemplos: $\sqrt{2}$, $\pi$, $e$, ...)  
-- $\mathbb{R}$ — números reais: a união dos racionais e irracionais, ou seja, $\mathbb{Q} \cup$ (irracionais)
+- $\mathbb{R}$: números reais: a união dos racionais e irracionais, ou seja, $\mathbb{Q} \cup$ (irracionais)
 
 ## O paradoxo de Zenão e as séries infinitas
 
@@ -108,19 +108,19 @@ Na física, essa suposição de continuidade está tão enraizada que aparece me
 
 ## Dimensões do espaço
 
-Quando pensamos no “tamanho” do espaço, a primeira coisa que vem à mente é quantos pontos ele contém. Por exemplo, o conjunto dos números inteiros $\mathbb{Z}$ é infinito, mas é um infinito **contável**: podemos listar seus elementos um a um, ou seja, existe uma forma de associar cada inteiro a um número natural de forma unívoca.
+Quando pensamos no "tamanho" do espaço, a primeira coisa que vem à mente é quantos pontos ele contém. Por exemplo, o conjunto dos números inteiros $\mathbb{Z}$ é infinito, mas é um infinito **contável**: podemos listar seus elementos um a um, ou seja, existe uma forma de associar cada inteiro a um número natural de forma unívoca.
 
 Já o conjunto dos números reais $\mathbb{R}$ é infinito **incontável**: há muito mais números reais do que inteiros, a ponto de não ser possível associar cada real a um inteiro de forma unívoca.
 
 Assim, nosso espaço, modelado pelos números reais, inclui uma infinidade incontável de pontos.
 
-Mas o número de pontos não é a única forma de medir o “tamanho” do espaço. Existe um conceito diferente e fundamental: a **dimensão**.
+Mas o número de pontos não é a única forma de medir o "tamanho" do espaço. Existe um conceito diferente e fundamental: a **dimensão**.
 
 Nossa experiência mostra que, para localizar um ponto no espaço, usamos três números, as coordenadas $x$, $y$ e $z$, que indicam a posição em três direções mutuamente perpendiculares. Escolhemos uma origem e três direções que formam ângulos retos ($90^\circ$) entre si, e medimos distâncias ao longo dessas direções usando números reais, como discutimos antes. Ou seja, primeiro andamos em uma direção $x$, depois em outra $y$ e, por fim, em outra $z$, até chegar ao ponto desejado. O interessante é que sempre conseguimos alcançar qualquer ponto usando esse procedimento, e a ordem dos passos não altera o resultado.
 
 Esses três números são suficientes para identificar qualquer ponto do espaço físico que conhecemos.
 
-### Produto cartesiano
+## Produto cartesiano
 
 Para descrever matematicamente esse conjunto de pontos, usamos o conceito de **produto cartesiano**.  
 Começamos com:
@@ -142,7 +142,7 @@ $$
 
 Essa construção não é apenas formal, ela reflete a nossa própria forma de localizar pontos no espaço.
 
-### Operações no produto cartesiano
+## Operações no produto cartesiano
 
 Além disso, podemos definir operações nesse conjunto usando as operações já conhecidas dos números reais. Por exemplo, ao dizer que andamos primeiro na direção $x$ e depois na direção $y$, estamos compondo os pontos $(x, 0)$ e $(0, y)$ para obter o ponto $(x, y)$.  
 Essa composição é chamada de **adição** e é definida como:
@@ -150,7 +150,7 @@ $$
 (x, y) + (x', y') = (x + x', y + y'),
 $$
 ou seja, somamos as componentes separadamente, estendendo o conceito de soma dos números reais para os pares ordenados e, por analogia, para trios ordenados também.  
-Note que, como a ordem da soma das componentes não altera o resultado, o mesmo acontece com os pares ou trios ordenados — isso reflete a nossa experiência física e a propriedade comutativa da adição.
+Note que, como a ordem da soma das componentes não altera o resultado, o mesmo acontece com os pares ou trios ordenados, isso reflete a nossa experiência física e a propriedade comutativa da adição.
 
 Outra operação importante é a multiplicação por um número real (escalar). Se multiplicarmos as coordenadas do ponto por um número real $k$, obtemos:
 $$
@@ -161,4 +161,475 @@ $$
 k (x, y, z) = (kx, ky, kz).
 $$
 Essa operação permite ampliar ou reduzir as distâncias, mantendo a direção das coordenadas proporcional.
+
+
+## Espaço Vetorial
+
+As operações definidas acima, a **adição de pares ordenados** e a **multiplicação por escalares**, são exemplos de como podemos construir uma estrutura matemática mais geral, chamada **espaço vetorial**.
+
+Um **espaço vetorial** é um conjunto de objetos (que chamaremos de **vetores**) sobre os quais estão definidas duas operações:
+
+1. **Adição de vetores**: a partir de dois vetores, obtemos um terceiro vetor do mesmo conjunto.  
+   No caso do plano cartesiano $\mathbb{R}^2$, essa operação é:
+   $$
+   (x, y) + (x', y') = (x + x', y + y').
+   $$
+
+2. **Multiplicação por escalar**: a partir de um vetor e de um número real, obtemos um novo vetor do mesmo conjunto.  
+   Por exemplo:
+   $$
+   k(x, y) = (kx, ky), \quad k \in \mathbb{R}.
+   $$
+
+Essas duas operações devem satisfazer certas propriedades chamadas **axiomas de espaço vetorial**, como:
+
+- **Associatividade da adição**: $(u + v) + w = u + (v + w)$.  
+- **Comutatividade da adição**: $u + v = v + u$.  
+- **Elemento neutro**: existe um vetor $0$ tal que $u + 0 = u$.  
+- **Elemento oposto**: para todo vetor $u$, existe $-u$ tal que $u + (-u) = 0$.  
+- **Distributividade**: $k(u + v) = ku + kv$ e $(k + m)u = ku + mu$.  
+- **Compatibilidade**: $k(mu) = (km)u$.  
+- **Unidade**: $1 \cdot u = u$.
+
+No caso do plano $\mathbb{R}^2$ e do espaço tridimensional $\mathbb{R}^3$, todas essas propriedades são satisfeitas. Portanto, $(\mathbb{R}^2, +, \cdot)$ e $(\mathbb{R}^3, +, \cdot)$ são exemplos de espaços vetoriais sobre o conjunto dos números reais.
+
+Essa estrutura será a base para o estudo da **Geometria Analítica** e da **Álgebra Linear**, permitindo tratar vetores não apenas como "setas no espaço", mas como objetos matemáticos com propriedades bem definidas.
+
+### Independência Linear
+
+No espaço vetorial, uma questão importante é entender quando um vetor pode ser obtido a partir de outros.  
+Para isso, introduzimos a ideia de **combinação linear**.
+
+Dizemos que um vetor $v$ é uma combinação linear de $v_1$ e $v_2$ se existem números reais $a$ e $b$ tais que
+$$
+v = a v_1 + b v_2.
+$$
+
+Um caso especial é quando a **combinação linear resulta no vetor nulo**:
+$$
+a v_1 + b v_2 = 0.
+$$
+O problema é determinar para quais valores de $a$ e $b$ essa igualdade é possível.
+
+- Se a única solução é $a = b = 0$, então $v_1$ e $v_2$ são chamados **linearmente independentes (L.I.)**.  
+- Se existir uma solução diferente de $a = b = 0$, então $v_1$ e $v_2$ são **linearmente dependentes (L.D.)**.
+
+### Quantos vetores linearmente independentes cabem em $\mathbb{R}^2$?
+
+No plano $\mathbb{R}^2$, no máximo **dois vetores** podem ser linearmente independentes.  
+Isso significa que qualquer conjunto com três ou mais vetores em $\mathbb{R}^2$ será necessariamente linearmente dependente.
+
+### Exemplo: os vetores $(1,1)$, $(1,-1)$ e $(x,y)$
+
+Vamos analisar o conjunto
+$$
+\{ (1,1), (1,-1), (x,y) \}.
+$$
+
+Se esses três vetores fossem linearmente independentes, a única solução da equação
+$$
+a(1,1) + b(1,-1) + c(x,y) = (0,0)
+$$
+seria $a = b = c = 0$.
+
+Expandindo:
+$$
+a(1,1) + b(1,-1) + c(x,y) = (a+b+cx,\, a-b+cy).
+$$
+
+Para que o resultado seja $(0,0)$, temos o sistema:
+$$
+\begin{cases}
+a + b + cx = 0 \\
+a - b + cy = 0
+\end{cases}
+$$
+
+Esse sistema tem sempre soluções não triviais (com $a, b, c$ não todos nulos).  
+Portanto, os três vetores são **linearmente dependentes para qualquer valor de $x$ e $y$**.
+
+Assim, concluímos que em $\mathbb{R}^2$ só é possível ter **até dois vetores linearmente independentes**, o que está em acordo com a dimensão do espaço.
+
+### Dimensão
+
+Até aqui vimos que em $\mathbb{R}^2$ só podemos ter **no máximo dois vetores linearmente independentes**.  
+Esse número máximo de vetores linearmente independentes em um espaço vetorial é chamado de sua **dimensão**.
+
+De forma geral:
+
+- A **dimensão** de um espaço vetorial é o número de vetores em uma base, isto é, o número máximo de vetores linearmente independentes que podem existir nesse espaço.  
+
+Por exemplo:
+
+- Em $\mathbb{R}^1$, apenas **um vetor** pode ser linearmente independente, logo $\dim(\mathbb{R}^1) = 1$.  
+- Em $\mathbb{R}^2$, até **dois vetores** podem ser linearmente independentes, logo $\dim(\mathbb{R}^2) = 2$.  
+- Em $\mathbb{R}^3$, até **três vetores** podem ser linearmente independentes, logo $\dim(\mathbb{R}^3) = 3$.
+
+Assim, o conceito de dimensão nos permite medir, de forma matemática, **quantas direções independentes existem em um espaço vetorial**.  
+
+Esse resultado conecta-se ao nosso objetivo inicial: compreender e medir o espaço onde a física acontece.  
+Vimos que, embora cada conjunto numérico (como os reais) contenha um número incontável de pontos, podemos distinguir diferentes espaços, reta, plano e espaço tridimensional, pelo número de direções independentes que eles possuem.  
+
+A dimensão é, portanto, a medida fundamental que caracteriza a estrutura do espaço.
+
+## Funções Contínuas: Definição de Limite
+
+Para compreender o que significa uma função ser **contínua**, precisamos primeiro introduzir o conceito de **limite**.  
+A definição rigorosa de limite usa a linguagem de $\varepsilon$ (épsilon) e $\delta$ (delta), baseada no conceito de **módulo**:
+
+$$
+|x| =
+\begin{cases}
+x, & \text{se } x \geq 0, \\
+-x, & \text{se } x < 0.
+\end{cases}
+$$
+
+O módulo mede a **distância** de $x$ até a origem.  
+Assim, $|x - p|$ representa a distância entre $x$ e $p$. Esse é um exemplo de **métrica**: uma forma de medir distâncias.
+
+### Definição (Limite por $\varepsilon$ e $\delta$)
+
+Dizemos que o limite de $f(x)$ quando $x$ tende a $p$ é $L$, e escrevemos
+$$
+\lim_{x \to p} f(x) = L,
+$$
+se, para todo $\varepsilon > 0$, existe um $\delta > 0$ tal que
+$$
+0 < |x - p| < \delta \quad \Rightarrow \quad |f(x) - L| < \varepsilon.
+$$
+
+### Como "ler" a definição
+
+Essa definição pode parecer compacta demais em sua forma simbólica. Para entendê-la melhor, podemos transformá-la em uma **receita passo a passo**:
+
+1. **Para todo $\varepsilon > 0$:**  
+   Escolha um valor positivo e não nulo para $\varepsilon$. Ele representa a margem de erro que aceitamos para $f(x)$ em relação a $L$.
+
+2. **Existe um $\delta > 0$:**
+   Dado esse $\varepsilon$, conseguimos encontrar um $\delta$ positivo. Esse $\delta$ será a margem de proximidade de $x$ em relação a $p$.
+
+3. **Se $x \in \mathbb{R}$ e $0 < |x - p| < \delta$:**  
+   Significa que escolhemos valores de $x$ suficientemente próximos de $p$, mas diferentes de $p$.
+
+4. **Então $|f(x) - L| < \varepsilon$:**  
+   Nessas condições, o valor de $f(x)$ ficará dentro da margem de erro $\varepsilon$ em torno de $L$.
+
+Essa estrutura mostra que o limite é, essencialmente, um **jogo de aproximações**:
+
+- o $\varepsilon$ fixa o "quanto" queremos que $f(x)$ fique perto de $L$,  
+- o $\delta$ nos garante o "quão perto" $x$ deve estar de $p$ para que isso aconteça.  
+
+Esse raciocínio será a base para a definição formal de **continuidade**.
+
+```{python}
+# | code-fold: true
+# | label: fig-eps-delta
+# | fig-cap: Representação gráfica da definição de limite $\lim_{x \to p} f(x) = L$.
+# | fig-cap-location: margin
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# Função exemplo
+def f(x):
+    return np.sin(x)
+
+
+# Ponto onde queremos o limite
+p = np.pi / 4
+L = np.sin(p)
+
+# Valores de epsilon e delta
+eps = 0.2
+delta = 0.4
+
+# Intervalo para plot
+x_vals = np.linspace(p - 1.5, p + 1.5, 400)
+y_vals = f(x_vals)
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+# Gráfico da função
+ax.plot(x_vals, y_vals, label=r"$f(x) = \sin(x)$")
+
+# Linha horizontal em L
+ax.axhline(L, color="black", linestyle="--")
+ax.text(p + 1.1, L + 0.02, r"$L$", fontsize=12)
+
+# Faixa |f(x) - L| < eps
+ax.fill_between(
+    x_vals, L - eps, L + eps, color="gray", alpha=0.3, label=r"$|f(x)-L| < \varepsilon$"
+)
+
+# Linha vertical em p
+ax.axvline(p, color="black", linestyle="--")
+ax.text(p, -1.1, r"$p$", fontsize=12, ha="center")
+
+# Faixa |x - p| < delta
+ax.axvspan(p - delta, p + delta, color="orange", alpha=0.2, label=r"$|x-p| < \delta$")
+
+# Destacar o ponto (p, L)
+ax.plot(p, L, "ro")
+
+ax.set_xlabel("$x$")
+ax.set_ylabel("$f(x)$")
+ax.legend(loc="best")
+ax.set_title(r"Definição de limite por $\epsilon$ e $\delta$")
+
+plt.show()
+```
+
+### Limite visto como conjuntos
+
+Na definição de limite usamos a desigualdade $|f(x)-L|<\varepsilon$.  
+Mas esse conjunto de valores de $f(x)$ nada mais é que o **intervalo aberto**
+$$
+(L-\varepsilon,\, L+\varepsilon),
+$$
+isto é, todos os pontos de $y$ que ficam dentro de uma “faixa” em torno de $L$.  
+Essa faixa é aberta porque não inclui as bordas $L-\varepsilon$ e $L+\varepsilon$.
+
+#### O que acontece no domínio?
+Se queremos que $f(x)$ caia dentro dessa faixa, precisamos escolher valores de $x$ que levem a $f(x)$ até lá.  
+Ou seja, olhamos para o conjunto
+$$
+U_\varepsilon = \{x \in \mathbb{R}: |f(x)-L|<\varepsilon\}.
+$$
+
+Esse é o conjunto dos $x$ que produzem valores de $f(x)$ dentro da faixa em $y$.
+
+#### Onde entram $x_1$ e $x_2$?
+As equações
+$$
+f(x_1) = L - \varepsilon, \quad f(x_2) = L + \varepsilon
+$$
+são as condições que “marcam as bordas” do intervalo em $y$.  
+Os pontos $x_1$ e $x_2$ no domínio são justamente aqueles que fazem a função chegar exatamente nas bordas $L-\varepsilon$ e $L+\varepsilon$.
+
+Assim, o intervalo $(x_1, x_2)$ no eixo-$x$ é a região que leva a imagem da função para dentro do intervalo $(L-\varepsilon, L+\varepsilon)$ no eixo-$y$.
+
+#### Como isso ajuda a escolher $\delta$?
+
+Ao fixar $\varepsilon$, olhamos para a faixa aberta em $y$:
+$$
+(L-\varepsilon,\, L+\varepsilon).
+$$
+No domínio, aparecem dois pontos importantes:  
+$$
+f(x_1)=L-\varepsilon, \quad f(x_2)=L+\varepsilon.
+$$
+
+Esses pontos $x_1$ e $x_2$ marcam as “bordas” de onde $f(x)$ ainda cai dentro da faixa em $y$.  
+Se o ponto $p$ está entre $x_1$ e $x_2$, então qualquer $x$ dentro do intervalo $(x_1,\,x_2)$ satisfaz $|f(x)-L|<\varepsilon$.
+
+Para garantir isso em termos de $\delta$, basta escolher uma distância que mantenha todos os $x$ próximos de $p$ **dentro desse intervalo**.  
+Uma forma prática é tomar
+$$
+\delta = \min\{|x_1-p|,\, |x_2-p|\}.
+$$
+
+Com essa escolha, o intervalo $(p-\delta,\, p+\delta)$ fica inteiramente contido em $(x_1,\,x_2)$, o que garante:
+$$
+0<|x-p|<\delta \quad \Rightarrow \quad |f(x)-L|<\varepsilon.
+$$
+
+#### Intuição
+
+- O $\varepsilon$ abre um “tubo horizontal” em torno de $L$.  
+- Os pontos $x_1$ e $x_2$ marcam onde a curva da função toca as bordas desse tubo.  
+- Escolher $\delta = \min(|x_1-p|,|x_2-p|)$ garante que, ao nos aproximarmos de $p$, permanecemos dentro desse tubo.  
+
+Assim, conseguimos traduzir a tolerância em $y$ (dada por $\varepsilon$) em uma tolerância correspondente no $x$ (dada por $\delta$).
+
+```{python}
+# | code-fold: true
+# | label: fig-eps-delta-sets
+# | fig-cap: Representação gráfica da definição de limite $\lim_{x \to p} f(x) = L$.
+# | fig-cap-location: margin
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# Função exemplo
+def f(x):
+    return np.sin(x)
+
+
+# Ponto do limite
+p = np.pi / 4
+L = np.sin(p)
+
+# Valores
+eps = 0.2
+
+# Encontrar x1 e x2 numericamente tais que f(x) = L ± eps
+# Usando busca simples em uma malha fina em torno de p
+x_vals = np.linspace(p - 2, p + 2, 2000)
+y_vals = f(x_vals)
+
+# Condições
+mask_lower = np.isclose(y_vals, L - eps, atol=0.01)
+mask_upper = np.isclose(y_vals, L + eps, atol=0.01)
+
+# Aproximar x1 e x2 como os primeiros pontos que satisfazem a condição
+x1_candidates = x_vals[mask_lower]
+x2_candidates = x_vals[mask_upper]
+
+x1 = x1_candidates[0] if len(x1_candidates) > 0 else p - 0.5
+x2 = x2_candidates[-1] if len(x2_candidates) > 0 else p + 0.5
+
+# Escolha de delta
+delta = min(abs(x1 - p), abs(x2 - p))
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+# Plot função
+ax.plot(x_vals, y_vals, label=r"$f(x) = \sin(x)$")
+
+# Linhas horizontais L±eps
+ax.axhline(L + eps, color="gray", linestyle="--")
+ax.axhline(L - eps, color="gray", linestyle="--")
+ax.fill_between(
+    x_vals, L - eps, L + eps, color="gray", alpha=0.2, label=r"$|f(x)-L|<\varepsilon$"
+)
+
+# Linha vertical em p
+ax.axvline(p, color="black", linestyle="--")
+ax.text(p, -1.2, r"$p$", ha="center")
+
+# Marcar x1, x2
+ax.axvline(x1, color="blue", linestyle="--")
+ax.axvline(x2, color="blue", linestyle="--")
+ax.text(x1, -1.0, r"$x_1$", ha="left", color="blue")
+ax.text(x2, -1.0, r"$x_2$", ha="left", color="blue")
+
+# Região delta em torno de p
+ax.axvspan(p - delta, p + delta, color="orange", alpha=0.3, label=r"$|x-p|<\delta$")
+
+# Ponto limite
+ax.plot(p, L, "ro")
+
+ax.set_xlabel("$x$")
+ax.set_ylabel("$f(x)$")
+ax.legend(loc="best")
+ax.set_title(r"Escolha de $\delta$ a partir de $x_1$ e $x_2$")
+
+plt.show()
+```
+
+### Exemplo com Descontinuidade
+
+Quando uma função apresenta uma **descontinuidade** em um ponto $p$, a definição de limite $\lim_{x \to p} f(x) = L$ falha. Vejamos um exemplo concreto:
+
+Considere a função definida por partes:
+$$
+f(x) = 
+\begin{cases} 
+x & \text{se } x < 1 \\
+2x^2 & \text{se } x \geq 1 
+\end{cases}
+$$
+
+No ponto $x = 1$, suponha que tentamos provar que $\lim_{x \to 1} f(x) = 2$. Escolhemos $\varepsilon = 0.1$.
+
+Queremos encontrar $\delta > 0$ tal que o conjunto:
+$$
+\{x \in \mathbb{R} : 0 < |x - 1| < \delta\}
+$$
+esteja contido no conjunto:
+$$
+\{x \in \mathbb{R} : |f(x) - 2| < 0.1\}
+$$
+
+**Análise do conjunto onde $|f(x) - 2| < 0.1$:**
+
+Para $x \geq 1$ (usando $f(x) = 2x^2$):
+$$
+|2x^2 - 2| < 0.1 \Rightarrow 1.9 < 2x^2 < 2.1 \Rightarrow x \in (\sqrt{0.95}, \sqrt{1.05}) \approx (0.975, 1.025)
+$$
+
+Para $x < 1$ (usando $f(x) = x$):
+$$
+|x - 2| < 0.1 \Rightarrow x \in (1.9, 2.1)
+$$
+
+Portanto, o conjunto total onde $|f(x) - 2| < 0.1$ é aproximadamente:
+$$
+(0.975, 1.025) \cup (1.9, 2.1)
+$$
+
+**O problema:** Qualquer intervalo $(1-\delta, 1+\delta)$ com $\delta > 0$ conterá pontos que **não** pertencem a este conjunto. Especificamente, conterá pontos em $(1-\delta, 1)$ onde $f(x) = x \approx 1$, e portanto $|f(x) - 2| \approx 1 > 0.1$.
+
+A única maneira de evitar isso seria tomar $\delta = 0$, mas isso viola a definição de limite que exige $\delta > 0$. Esta impossibilidade de encontrar um $\delta > 0$ tal que a vizinhança perfurada de $1$ esteja contida no conjunto onde $|f(x) - 2| < \varepsilon$ caracteriza a **não existência** do limite.
+
+```{python}
+# | code-fold: true
+# | label: fig-eps-delta-sets-discontinuity
+# | fig-cap: Representação gráfica da definição de limite $\lim_{x \to p} f(x) = L$.
+# | fig-cap-location: margin
+
+# Código corrigido para plotar a função por partes (legendas em texto simples)
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def f_piece(x):
+    return np.where(x < 1, x, 2 * x**2)
+
+
+# Domínios separados para desenhar as duas partes claramente
+x_left = np.linspace(0.5, 0.999, 400)
+x_right = np.linspace(1, 1.5, 400)
+
+y_left = f_piece(x_left)
+y_right = f_piece(x_right)
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+# Plot das duas parcelas (sem especificar cores)
+ax.plot(x_left, y_left, label=r"$f(x)=x, x<1$")
+ax.plot(x_right, y_right, label=r"$f(x)=2x^2, x>=1$")
+
+# Marcar limites laterais em x=1
+x0 = 1.0
+left_limit = 1.0  # lim x->1^- f(x) = 1
+right_limit = 2.0  # lim x->1^+ f(x) = 2
+value_at_1 = 2.0  # f(1) = 2*1^2 = 2
+
+# Limite pela esquerda: ponto aberto em (1,1)
+ax.plot(
+    x0,
+    left_limit,
+    marker="o",
+    markersize=8,
+    markerfacecolor="none",
+    markeredgewidth=1.2,
+    label=r"$\lim_{x->1^-} f(x) = 1$ (aberto)",
+)
+
+# Limite pela direita: ponto aberto em (1,2)
+ax.plot(
+    x0,
+    right_limit,
+    marker="o",
+    markersize=8,
+    markerfacecolor="none",
+    markeredgewidth=1.2,
+    label=r"$\lim_{x->1^+}f(x) = 2$ (aberto)",
+)
+
+# Valor da função em x=1: ponto preenchido
+ax.plot(x0, value_at_1, marker="o", markersize=8, label="f(1)=2 (valor)")
+
+ax.set_xlabel("$x$")
+ax.set_ylabel("$f(x)$")
+ax.set_title("Função por partes com descontinuidade em x=1")
+ax.legend(loc="upper left")
+ax.grid(True)
+
+plt.show()
+```
 
