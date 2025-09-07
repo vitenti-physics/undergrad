@@ -29,6 +29,8 @@ website:
                   href: courses/introduction-to-physics/physics-math.qmd
                 - text: "Determinism and Statistics"
                   href: courses/introduction-to-physics/determinism-statistics.qmd
+                - text: "Introduction to Statistical Mechanics"
+                  href: courses/introduction-to-physics/intro-stat-mechanics.qmd
             - section: "Vector Calculus"
               contents:
                 - text: "Overview"

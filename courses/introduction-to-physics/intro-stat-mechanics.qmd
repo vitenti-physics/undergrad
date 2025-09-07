@@ -1,0 +1,513 @@
+---
+title: "Leis macroscópicas emergindo do coletivo; noções de entropia."
+---
+
+{{< include /_functions.qmd >}}
+
+## O Problema Fundamental: A Impossibilidade de Acompanhar Tudo
+
+Um sistema macroscópico típico (um gás, um copo d'água) contém da ordem de $N_A \approx 10^{23}$ partículas. É impossível, e praticamente inútil, resolver as equações de movimento para cada uma delas.
+
+Surge então a questão fundamental: como leis simples e determinísticas (Leis de Newton) dão origem a comportamentos coletivos igualmente simples, mas qualitativamente diferentes (Leis da Termodinâmica)?
+
+A resposta está em mudar nossa perspectiva: de uma descrição microscópica (trajetórias individuais) para uma estatística (propriedades médias do coletivo).
+
+## A Ideia Central: O Ensemble Microcanônico
+
+### Definição Formal
+
+O Ensemble Microcanônico é a amostra estatisticamente representativa de todos os possíveis estados microscópicos de um sistema que:
+
+1.  Tem um número fixo de partículas ($N$)
+2.  Está confinado em um volume fixo ($V$)
+3.  Tem uma energia total isolada e fixa ($E$)
+
+### Postulado Fundamental
+
+Para um sistema isolado em equilíbrio, todos os microestados compatíveis com $(N, V, E)$ são igualmente prováveis.
+
+Este é um postulado de "ignorância máxima": na ausência de qualquer informação que privilegie um estado particular, atribuímos probabilidades iguais a todos os estados acessíveis.
+
+Existe uma outra forma de expressar esse postulado: se não existe qualquer informação que privilegie um estado particular, então todos os microestados compatíveis com $(N, V, E)$ são igualmente prováveis.
+
+## A Ponte entre as Escalas: Entropia e a Emergência da Seta do Tempo
+
+### Microestado vs. Macroestado
+
+-   Microestado: Descrição completa do sistema (posições e momentos de todas as partículas).  
+    Exemplo: $(\vec{x}_1, \vec{p}_1, \vec{x}_2, \vec{p}_2, \dots, \vec{x}_N, \vec{p}_N)$
+
+-   Macroestado: Descrição macroscópica (medida por instrumentos).  
+    Exemplo: Pressão ($P$), Volume ($V$), Temperatura ($T$), Energia ($E$)
+
+Ponto central: Um único macroestado (ex: "gás à temperatura $T$") pode ser realizado por um número astronômico ($\Omega$) de microestados diferentes.
+
+### A Definição de Entropia de Boltzmann
+
+$$
+S = k_B \ln \Omega.
+$$
+onde:
+
+- $S$: Entropia do macroestado
+- $k_B$: Constante de Boltzmann ($1.38 \times 10^{-23}$ J/K)
+- $\Omega$: Número de microestados compatíveis com o macroestado $(N, V, E)$
+
+Interpretação física: A entropia mede o número de maneiras pelas quais um sistema pode ser organizado microscopicamente sem alterar sua aparência macroscópica. É uma medida do número de possibilidades de arranjo interno.
+
+### A Emergência da Segunda Lei
+
+Um sistema isolado evolui naturalmente para o macroestado de maior entropia porque este é o macroestado com o maior número de microestados.
+
+É estatisticamente extremamente improvável que o sistema espontaneamente abandone um macroestado com $\Omega \approx 10^{10^{23}}$ possibilidades e vá para um com muito menos possibilidades. A seta do tempo é, portanto, uma seta probabilística.
+
+## Visualização: Microestados vs Macroestado
+
+```{python}
+# | label: fig-micro-macro
+# | fig-cap: "Ilustração conceitual da conexão entre microestados e macroestados. Um único macroestado (mesma energia E) pode ser realizado por um número enorme ($\\Omega$) de microestados diferentes."
+# | code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
+np.random.seed(42)
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 5))
+
+# Macroestado
+ax[0].add_patch(Rectangle((0, 0), 1, 1, fill=False, edgecolor="black", lw=2))
+ax[0].set_xlim(-0.1, 1.1)
+ax[0].set_ylim(-0.1, 1.1)
+ax[0].set_title("Macroestado\nSistema: N partículas, Volume V, Energia E")
+ax[0].text(
+    0.5,
+    0.5,
+    "P, T, E, S",
+    ha="center",
+    va="center",
+    fontsize=14,
+    bbox=dict(facecolor="white", alpha=0.7),
+)
+ax[0].set_xticks([])
+ax[0].set_yticks([])
+
+# Microestados
+ax[1].add_patch(Rectangle((0, 0), 1, 1, fill=False, edgecolor="black", lw=2))
+ax[1].set_xlim(-0.1, 1.1)
+ax[1].set_ylim(-0.1, 1.1)
+ax[1].set_title("Alguns Microestados Possíveis\n(Todos com mesma Energia E)")
+ax[1].set_xticks([])
+ax[1].set_yticks([])
+
+# Gerar diferentes configurações de microestados
+for i in range(4):
+    for j in range(4):
+        x_pos = np.random.rand(6) * 0.96 + 0.02
+        y_pos = np.random.rand(6) * 0.96 + 0.02
+        ax[1].scatter(x_pos, y_pos, s=30, alpha=0.7)
+
+ax[1].text(
+    2.2,
+    0.5,
+    r"$\Omega \approx 10^{23}$ microestados" + "\n" + r"$S = \mathrm{k}_B \ln\Omega$",
+    ha="left",
+    va="center",
+    fontsize=12,
+)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Simulação da Expansão Livre de um Gás
+
+```{python}
+# | label: fig-expansao-gas
+# | fig-cap: "Simulação da expansão livre de um gás, ilustrando o aumento de entropia."
+# | code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+from IPython.display import HTML
+
+# Configuração inicial
+np.random.seed(42)
+n_particles = 50
+box_size = 2.0
+initial_pos = 0.5  # Metade da caixa inicialmente ocupada
+
+# Posições iniciais (confinadas à metade esquerda)
+x_pos = np.random.rand(n_particles) * initial_pos
+y_pos = np.random.rand(n_particles) * initial_pos
+
+# Velocidades aleatórias
+vx = np.random.normal(0, 0.02, n_particles)
+vy = np.random.normal(0, 0.02, n_particles)
+
+# Configuração do plot
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.set_xlim(0, box_size)
+ax.set_ylim(0, box_size)
+ax.set_xlabel("Posição X")
+ax.set_ylabel("Posição Y")
+ax.set_title("Expansão Livre de um Gás: Aumento de Entropia")
+
+# Linha divisória inicial
+div_line = ax.axvline(initial_pos, color="red", linestyle="--", alpha=0.7)
+particles = ax.scatter(x_pos, y_pos, s=30, alpha=0.7)
+
+# Texto para mostrar o tempo
+time_text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+
+
+def update(frame):
+    global x_pos, y_pos, vx, vy
+
+    # Atualizar posições
+    x_pos += vx
+    y_pos += vy
+
+    # Colisões com as paredes
+    vx[x_pos <= 0] = np.abs(vx[x_pos <= 0])
+    vx[x_pos >= box_size] = -np.abs(vx[x_pos >= box_size])
+    vy[y_pos <= 0] = np.abs(vy[y_pos <= 0])
+    vy[y_pos >= box_size] = -np.abs(vy[y_pos >= box_size])
+
+    # Atualizar scatter plot
+    particles.set_offsets(np.c_[x_pos, y_pos])
+    time_text.set_text(f"Tempo: {frame}")
+
+    return particles, time_text
+
+
+# Criar animação
+ani = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
+plt.close(fig)  # Evita mostrar o plot estático
+
+HTML(ani.to_jshtml())
+```
+
+### Conclusão: A Emergência do Coletivo
+
+-   A Termodinâmica é a Física dos Macroestados: Leis como a Segunda Lei não são leis fundamentais no sentido newtoniano, mas leis estatísticas emergentes.
+-   Propriedades Macroscópicas como Médias: Temperatura, pressão e outras quantidades termodinâmicas são interpretadas como médias estatísticas sobre o ensemble de microestados.
+-   A Entropia como Ponte: A grandeza $S = k_B \ln \Omega$ quantifica precisamente a transição do microscópico para o macroscópico, conectando a descrição estatística às observáveis termodinâmicas.
+
+## O Ensemble Microcanônico em Detalhe
+
+### Definição Formal e Postulados
+
+O ensemble microcanônico descreve um sistema isolado em equilíbrio termodinâmico, caracterizado por:
+
+1. Número de partículas fixo: $N = \text{constante}$
+2. Volume fixo: $V = \text{constante}$  
+3. Energia fixa: $E = \text{constante}$ (com pequena incerteza $\Delta E$)
+
+### Postulado Fundamental da Mecânica Estatística
+
+Para um sistema isolado em equilíbrio, todos os microestados acessíveis são igualmente prováveis.
+
+Matematicamente, se $\Omega(E, V, N)$ é o número de microestados com energia entre $E$ e $E + \Delta E$, então a probabilidade de qualquer microestado específico é:
+
+$$P_\mu = \frac{1}{\Omega(E, V, N)}$$
+
+### A Densidade de Estados
+
+O conceito central no ensemble microcanônico é a densidade de estados $g(E)$, definida como:
+$$
+g(E) = \frac{d\Gamma}{dE}
+$$
+onde $\Gamma(E)$ é o volume do espaço de fases com energia menor que $E$.
+
+Para um sistema com $f$ graus de liberdade:
+$$
+\Gamma(E) = \int_{H(\mathbf{q},\mathbf{p}) \leq E} \dd^fq\, \dd^fp.
+$$
+
+O número de microestados na casca de energia $[E, E+\Delta E]$ é então:
+$$
+\Omega(E, V, N) = g(E) \Delta E.
+$$
+
+### Exemplo: Gás Ideal Monoatômico
+
+Para um gás ideal de $N$ partículas em 3 dimensões:
+$$
+\Omega(E, V, N) = \frac{V^N}{N! h^{3N}} \frac{(2\pi m E)^{3N/2}}{\Gamma(3N/2 + 1)} \Delta E.
+$$
+
+```{python}
+# | label: fig-density-states
+# | fig-cap: "Densidade de estados para um gás ideal com diferentes números de partículas"
+# | code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import gamma
+
+# Parâmetros
+m = 1.0  # massa
+h = 1.0  # constante de Planck (unidades naturais)
+V = 1.0  # volume
+Delta_E = 0.1  # largura da casca de energia
+
+# Energias
+E = np.linspace(0.1, 10, 1000)
+
+# Densidade de estados para diferentes N
+N_values = [1, 3, 10, 100]
+
+plt.figure(figsize=(10, 6))
+
+for N in N_values:
+    # Fator de contagem de estados
+    prefactor = (V**N) / (gamma(N + 1) * h ** (3 * N))
+    # Parte energética
+    energy_part = (2 * np.pi * m * E) ** (3 * N / 2) / gamma(3 * N / 2 + 1)
+    # Densidade de estados
+    g_E = prefactor * energy_part
+    # Número de estados na casca
+    Omega = g_E * Delta_E
+
+    plt.plot(E, Omega, label=f"N = {N}", linewidth=2)
+
+plt.xlabel("Energia E")
+plt.ylabel("Número de microestados Ω(E)")
+plt.title("Densidade de Estados para Gás Ideal")
+plt.yscale("log")
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+```
+
+### A Conexão com a Termodinâmica
+
+A ponte entre a descrição microscópica e macroscópica é feita através da entropia de Boltzmann:
+$$
+S(E, V, N) = k_B \ln \Omega(E, V, N).
+$$
+
+A partir desta definição, todas as outras propriedades termodinâmicas podem ser derivadas:
+
+1. Temperatura:
+   $$
+   \frac{1}{T} = \left(\frac{\partial S}{\partial E}\right)_{V,N}.
+   $$
+
+2. Pressão:
+   $$
+   P = T \left(\frac{\partial S}{\partial V}\right)_{E,N}.
+   $$
+
+3. Potencial Químico:
+   $$
+   \mu = -T \left(\frac{\partial S}{\partial N}\right)_{E,V}.
+   $$
+
+#### 1. Fator $V^N$: O Volume Acessível no Espaço de Configurações
+
+Este termo surge das integrais espaciais:
+$$
+\int_V d^3r_1 \int_V d^3r_2 \cdots \int_V d^3r_N = V^N
+$$
+
+Cada partícula pode estar em qualquer ponto do volume $V$, e como as partículas são independentes (gás ideal), o volume total acessível no espaço de configurações é o produto dos volumes individuais.
+
+#### 2. Fator $\frac{1}{N!}$: A Indistinguibilidade Quântica
+
+Este é um dos conceitos mais profundos e não-triviais:
+
+- Na mecânica clássica, partículas idênticas são distinguíveis em princípio (podemos "pintá-las" e acompanhar suas trajetórias).
+- Na mecânica quântica, partículas idênticas são fundamentalmente indistinguíveis.
+
+O fator $1/N!$ corrige a sobrecontagem de estados que são fisicamente indistinguíveis. Se permutamos duas partículas idênticas, não criamos um novo estado físico, apenas uma redistribuição das mesmas partículas.
+
+Sem este fator, a entropia não seria extensiva - violaria uma propriedade fundamental da termodinâmica. Este foi o insight crucial de Gibbs que resolveu o "paradoxo de Gibbs".
+
+#### 3. Fator $\frac{1}{h^{3N}}$: O Quantum do Espaço de Fases
+
+Este termo tem origem quântica profunda:
+
+- $h$ é a constante de Planck, que define a escala na qual efeitos quânticos se tornam importantes.
+- Cada par (posição, momento) ocupa um "volume" mínimo no espaço de fases devido ao princípio da incerteza:
+  $$
+  \Delta x \Delta p_x \geq \frac{\hbar}{2}
+  $$
+- O fator $h^{3N}$ normaliza o volume do espaço de fases por estado quântico. Ele garante que estamos contando estados genuinamente distintos do ponto de vista quântico.
+
+#### 4. Fator $(2\pi m E)^{3N/2}$: A "Área" da Hiperesfera de Energia
+
+Este termo vem da integral no espaço de momentos com a restrição $H = \sum \frac{p_i^2}{2m} \leq E$:
+
+Para $N$ partículas em 3 dimensões, estamos essencialmente calculando o volume de uma 3N-esfera de raio $\sqrt{2mE}$ no espaço de momentos.
+
+O volume de uma n-esfera de raio $R$ é:
+$$
+V_n(R) = \frac{\pi^{n/2}}{\Gamma(\frac{n}{2} + 1)} R^n
+$$
+
+Para $n = 3N$ e $R = \sqrt{2mE}$, obtemos:
+$$
+\text{Volume} = \frac{\pi^{3N/2}}{\Gamma(\frac{3N}{2} + 1)} (2mE)^{3N/2}
+$$
+
+#### 5. Fator $\frac{1}{\Gamma(3N/2)}$: A Correção da Casca de Energia
+
+Estamos interessados não no volume com energia $\leq E$, mas no número de estados na casca de energia $[E, E+\Delta E]$.
+
+A relação entre o volume e a área da superfície de uma n-esfera é:
+$$
+\frac{dV_n(R)}{dR} = \text{Área da superfície} = \frac{2\pi^{n/2}}{\Gamma(n/2)} R^{n-1}
+$$
+
+Para $n = 3N$:
+$$
+g(E) = \frac{d}{dE} \left[\text{Volume}\right] \propto \frac{(2\pi m E)^{3N/2 - 1/2}}{\Gamma(3N/2)} \approx \frac{(2\pi m E)^{3N/2}}{\Gamma(3N/2) E}
+$$
+
+O fator $\Gamma(3N/2)$ no denominador vem desta derivação geométrica.
+
+```{python}
+# | label: fig-hypersphere
+# | fig-cap: "Volume e área de superfície de n-esferas para diferentes dimensões"
+# | code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import gamma
+
+# Dimensões
+n_values = np.arange(1, 21)
+R = 1.0  # raio unitário
+
+# Volume e área de n-esferas
+volumes = [np.pi ** (n / 2) / gamma(n / 2 + 1) * R**n for n in n_values]
+areas = [2 * np.pi ** (n / 2) / gamma(n / 2) * R ** (n - 1) for n in n_values]
+
+plt.figure(figsize=(12, 5))
+
+# Volume vs Dimensão
+plt.subplot(1, 2, 1)
+plt.plot(n_values, volumes, "o-", label="Volume")
+plt.xlabel("Dimensão (n)")
+plt.ylabel("Volume")
+plt.title("Volume de n-esferas de raio 1")
+plt.yscale("log")
+plt.grid(True, alpha=0.3)
+
+# Área vs Dimensão
+plt.subplot(1, 2, 2)
+plt.plot(n_values, areas, "s-", color="orange", label="Área de Superfície")
+plt.xlabel("Dimensão (n)")
+plt.ylabel("Área de Superfície")
+plt.title("Área de Superfície de n-esferas de raio 1")
+plt.yscale("log")
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+# Mostrar valores para algumas dimensões
+print("Propriedades de n-esferas de raio 1:")
+for n in [1, 2, 3, 10, 20]:
+    vol = np.pi ** (n / 2) / gamma(n / 2 + 1)
+    area = 2 * np.pi ** (n / 2) / gamma(n / 2)
+    print(f"n = {n:2d}: Volume = {vol:8.4f}, Área = {area:8.4f}")
+```
+
+#### Síntese: O Significado de Cada Termo
+
+| Termo | Origem Física | Significado |
+|-------|---------------|-------------|
+| $V^N$ | Integrais espaciais | Volume acessível no espaço de configurações |
+| $\frac{1}{N!}$ | Indistinguibilidade quântica | Correção para evitar sobrecontagem de estados físicos |
+| $\frac{1}{h^{3N}}$ | Princípio da incerteza | Normalização por estado quântico no espaço de fases |
+| $(2\pi m E)^{3N/2}$ | Integral no espaço de momentos | Volume da hiperesfera de energia no espaço de momentos |
+| $\frac{1}{\Gamma(3N/2)}$ | Geometria da casca de energia | Fator de correção da derivada do volume |
+
+Esta expressão encapsula a transição da mecânica clássica para a quântica, e da descrição microscópica para a termodinâmica.
+
+## Relação entre Entropia e Energia
+
+Usando a aproximação de Stirling ($\ln N! \approx N \ln N - N$):
+$$S \approx Nk_B \left[\ln\left(\frac{V}{N}\right) + \frac{3}{2}\ln\left(\frac{4\pi m E}{3N h^2}\right) + \frac{5}{2}\right]$$
+
+A temperatura é então:
+$$
+\frac{1}{T} = \left(\frac{\partial S}{\partial E}\right)_{V,N} = \frac{3}{2}\frac{Nk_B}{E}.
+$$
+o que nos dá a famosa relação:
+$$
+E = \frac{3}{2}Nk_BT.
+$$
+
+```{python}
+# | label: fig-entropy-energy
+# | fig-cap: "Relação entre entropia e energia para um gás ideal"
+# | code-fold: true
+
+# Parâmetros
+N = 1000
+kB = 1.0
+V = 1.0
+m = 1.0
+h = 1.0
+
+# Energias
+E = np.linspace(100, 1000, 1000)
+
+# Entropia (usando fórmula aproximada)
+S = N * kB * (np.log(V / N) + 1.5 * np.log(4 * np.pi * m * E / (3 * N * h**2)) + 2.5)
+
+# Temperatura (derivada numérica)
+dE = E[1] - E[0]
+dS = np.gradient(S, dE)
+T = 1 / (dS / (N * kB))
+
+plt.figure(figsize=(12, 5))
+
+# Gráfico 1: Entropia vs Energia
+plt.subplot(1, 2, 1)
+plt.plot(E, S)
+plt.xlabel("Energia E")
+plt.ylabel("Entropia S")
+plt.title("Entropia vs Energia")
+plt.grid(True, alpha=0.3)
+
+# Gráfico 2: Energia vs Temperatura
+plt.subplot(1, 2, 2)
+plt.plot(T, E)
+plt.xlabel("Temperatura T")
+plt.ylabel("Energia E")
+plt.title("Energia vs Temperatura")
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+### Aproximação do Continuum e Correções Quânticas
+
+Para sistemas macroscópicos, $\Omega(E)$ é tão grande que podemos tratar $E$ como variável contínua. No entanto, para sistemas pequenos ou a baixas temperaturas, efeitos quânticos tornam-se importantes:
+
+1. Espaçamento entre níveis de energia: $\Delta E_\text{nível} \approx \frac{E}{N}$
+2. Condição de validade do continuum: $\Delta E \gg \Delta E_\text{nível}$
+
+### Aplicações e Limitações
+
+Aplicações:
+
+- Sistemas isolados em equilíbrio
+- Fundamentação da termodinâmica estatística
+- Estudo de sistemas com energia bem definida
+
+Limitações:
+
+- Difícil de aplicar na prática (energia fixa é rara)
+- Cálculos tornam-se complexos para sistemas interagentes
+- Não adequado para sistemas que trocam energia ou partículas
+
+O ensemble microcanônico serve como base conceitual para os ensembles canônico e grande-canônico, que são mais convenientes para aplicações práticas.
