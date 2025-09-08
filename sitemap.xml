@@ -2,50 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/index.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
+    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
   </url>
   <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/index.html</loc>
-    <lastmod>2025-08-25T12:43:03.424Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/dirac-delta.html</loc>
-    <lastmod>2025-08-25T12:43:03.424Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/index.html</loc>
-    <lastmod>2025-08-25T12:43:03.424Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/vector-spaces.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/galilean-relativity.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/spacetime-algebra.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/index.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/index.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/intro-stat-mechanics.html</loc>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/physics-math.html</loc>
-    <lastmod>2025-08-25T12:43:03.424Z</lastmod>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/galilean-relativity.html</loc>
+    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/index.html</loc>
+    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/index.html</loc>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/time-dependent-green-functions.html</loc>
-    <lastmod>2025-08-25T12:43:03.425Z</lastmod>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/dirac-delta.html</loc>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/green-functions.html</loc>
-    <lastmod>2025-08-25T12:43:03.424Z</lastmod>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/vector-spaces.html</loc>
+    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/spacetime-algebra.html</loc>
+    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/index.html</loc>
+    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/determinism-statistics.html</loc>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/index.html</loc>
+    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
   </url>
 </urlset>
