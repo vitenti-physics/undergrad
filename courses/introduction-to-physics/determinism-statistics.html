@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,18 +69,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d188125cfede012c89b24608e1ed8766.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-2d185443474496069e36a50cb534da82.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-d188125cfede012c89b24608e1ed8766.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f1f730f228fea59cddd64c57a9141f9d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-7322bf4a66b7c2c6f5ed8b3e258df8b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-f1f730f228fea59cddd64c57a9141f9d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -150,7 +151,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -337,6 +338,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Undergraduate Physics Lecture Notes</span>
     </a>
@@ -374,6 +377,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -416,6 +423,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../courses/introduction-to-physics/intro-stat-mechanics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Statistical Mechanics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../courses/introduction-to-physics/heisenberg-uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Heisenberg Uncertainty Principle</span></a>
   </div>
 </li>
       </ul>
@@ -524,12 +537,14 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#a-visão-frequentista-a-probabilidade-como-frequência-de-ocorrência" id="toc-a-visão-frequentista-a-probabilidade-como-frequência-de-ocorrência" class="nav-link" data-scroll-target="#a-visão-frequentista-a-probabilidade-como-frequência-de-ocorrência">A Visão Frequentista: A Probabilidade como Frequência de Ocorrência</a></li>
   <li><a href="#a-visão-bayesiana-a-probabilidade-como-grau-de-crença" id="toc-a-visão-bayesiana-a-probabilidade-como-grau-de-crença" class="nav-link" data-scroll-target="#a-visão-bayesiana-a-probabilidade-como-grau-de-crença">A Visão Bayesiana: A Probabilidade como Grau de Crença</a></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios">Exercícios</a></li>
   </ul></li>
   <li><a href="#distribuição-de-probabilidade-vs-probabilidade-a-importância-da-medida" id="toc-distribuição-de-probabilidade-vs-probabilidade-a-importância-da-medida" class="nav-link" data-scroll-target="#distribuição-de-probabilidade-vs-probabilidade-a-importância-da-medida">Distribuição de Probabilidade vs Probabilidade: A Importância da Medida</a>
   <ul class="collapse">
   <li><a href="#por-que-probabilidade-zero-não-significa-impossibilidade" id="toc-por-que-probabilidade-zero-não-significa-impossibilidade" class="nav-link" data-scroll-target="#por-que-probabilidade-zero-não-significa-impossibilidade">Por que probabilidade zero não significa impossibilidade?</a></li>
   <li><a href="#a-solução-densidade-de-probabilidade" id="toc-a-solução-densidade-de-probabilidade" class="nav-link" data-scroll-target="#a-solução-densidade-de-probabilidade">A Solução: Densidade de Probabilidade</a></li>
   <li><a href="#interpretação-física-crucial" id="toc-interpretação-física-crucial" class="nav-link" data-scroll-target="#interpretação-física-crucial">Interpretação Física Crucial</a></li>
+  <li><a href="#exercícios-1" id="toc-exercícios-1" class="nav-link" data-scroll-target="#exercícios-1">Exercícios</a></li>
   </ul></li>
   <li><a href="#do-estado-determinístico-à-descrição-probabilística" id="toc-do-estado-determinístico-à-descrição-probabilística" class="nav-link" data-scroll-target="#do-estado-determinístico-à-descrição-probabilística">Do Estado Determinístico à Descrição Probabilística</a>
   <ul class="collapse">
@@ -537,6 +552,7 @@ window.Quarto = {
   <li><a href="#a-quebra-prática-do-determinismo" id="toc-a-quebra-prática-do-determinismo" class="nav-link" data-scroll-target="#a-quebra-prática-do-determinismo">A Quebra Prática do Determinismo</a></li>
   <li><a href="#a-necessidade-da-descrição-probabilística" id="toc-a-necessidade-da-descrição-probabilística" class="nav-link" data-scroll-target="#a-necessidade-da-descrição-probabilística">A Necessidade da Descrição Probabilística</a></li>
   <li><a href="#evolução-temporal-da-distribuição" id="toc-evolução-temporal-da-distribuição" class="nav-link" data-scroll-target="#evolução-temporal-da-distribuição">Evolução Temporal da Distribuição</a></li>
+  <li><a href="#exercícios-2" id="toc-exercícios-2" class="nav-link" data-scroll-target="#exercícios-2">Exercícios</a></li>
   </ul></li>
   <li><a href="#exemplo-concreto-cinemática-1d-com-incertezas" id="toc-exemplo-concreto-cinemática-1d-com-incertezas" class="nav-link" data-scroll-target="#exemplo-concreto-cinemática-1d-com-incertezas">Exemplo Concreto: Cinemática 1D com Incertezas</a>
   <ul class="collapse">
@@ -545,6 +561,7 @@ window.Quarto = {
   <li><a href="#lição-fundamental" id="toc-lição-fundamental" class="nav-link" data-scroll-target="#lição-fundamental">Lição Fundamental</a></li>
   <li><a href="#exemplo-concreto-oscilador-harmônico" id="toc-exemplo-concreto-oscilador-harmônico" class="nav-link" data-scroll-target="#exemplo-concreto-oscilador-harmônico">Exemplo Concreto: Oscilador Harmônico</a></li>
   <li><a href="#implicações-fundamentais" id="toc-implicações-fundamentais" class="nav-link" data-scroll-target="#implicações-fundamentais">Implicações Fundamentais</a></li>
+  <li><a href="#exercícios-3" id="toc-exercícios-3" class="nav-link" data-scroll-target="#exercícios-3">Exercícios</a></li>
   </ul></li>
   <li><a href="#a-mecânica-quântica-e-a-natureza-intrinsecamente-probabilística-da-realidade" id="toc-a-mecânica-quântica-e-a-natureza-intrinsecamente-probabilística-da-realidade" class="nav-link" data-scroll-target="#a-mecânica-quântica-e-a-natureza-intrinsecamente-probabilística-da-realidade">A Mecânica Quântica e a Natureza Intrinsecamente Probabilística da Realidade</a>
   <ul class="collapse">
@@ -554,6 +571,7 @@ window.Quarto = {
   <li><a href="#o-papel-da-equação-de-schrödinger" id="toc-o-papel-da-equação-de-schrödinger" class="nav-link" data-scroll-target="#o-papel-da-equação-de-schrödinger">O Papel da Equação de Schrödinger</a></li>
   <li><a href="#a-relação-determinismo-estatística" id="toc-a-relação-determinismo-estatística" class="nav-link" data-scroll-target="#a-relação-determinismo-estatística">A Relação Determinismo-Estatística</a></li>
   <li><a href="#conclusão-do-micro-ao-macro-uma-única-linguagem" id="toc-conclusão-do-micro-ao-macro-uma-única-linguagem" class="nav-link" data-scroll-target="#conclusão-do-micro-ao-macro-uma-única-linguagem">Conclusão: Do Micro ao Macro, uma Única Linguagem</a></li>
+  <li><a href="#exercícios-4" id="toc-exercícios-4" class="nav-link" data-scroll-target="#exercícios-4">Exercícios</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -616,7 +634,7 @@ window.Quarto = {
 <div id="cell-fig-frequentista" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuração do experimento</span></span>
@@ -646,7 +664,7 @@ window.Quarto = {
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Convergência da frequência relativa para a probabilidade teórica"</span>)</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-frequentista" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -706,7 +724,7 @@ P(H|D) = \frac{P(D|H) \cdot P(H)}{P(D)}
 <div id="cell-fig-bayes" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados do problema</span></span>
@@ -757,7 +775,7 @@ P(H|D) = \frac{P(D|H) \cdot P(H)}{P(D)}
 <span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probabilidade a posteriori P(H|D) = </span><span class="sc">{</span>P_H_dado_D<span class="sc">:.3f}</span><span class="ss"> (</span><span class="sc">{</span>P_H_dado_D<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probabilidade a posteriori P(H|D) = </span><span class="sc">{</span>P_H_dado_D<span class="sc">:.3f}</span><span class="ss"> (</span><span class="sc">{</span>P_H_dado_D<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-bayes" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -778,6 +796,16 @@ Figure&nbsp;2: Análise Bayesiana do teste de doença
 <p>Interpretação do Resultado: Apesar do teste ter 99% de precisão, a probabilidade de realmente ter a doença após um teste positivo é de apenas 50%. Isso ocorre porque a doença é muito rara (apenas 1% da população), então mesmo com uma baixa taxa de falsos positivos (1%), o número absoluto de falsos positivos é similar ao número de verdadeiros positivos.</p>
 <p>A visão Bayesiana nos ensina que dados não falam por si só - eles só ganham significado quando interpretados à luz do conhecimento prévio existente.</p>
 </section>
+</section>
+<section id="exercícios" class="level3">
+<h3 class="anchored" data-anchor-id="exercícios">Exercícios</h3>
+<ol type="1">
+<li>Explique em palavras simples a diferença entre a interpretação frequentista e bayesiana de probabilidade.</li>
+<li>Considere o lançamento de uma moeda justa 1000 vezes. Calcule a frequência relativa de “caras” se forem observadas 510 ocorrências. Compare com a probabilidade teórica.</li>
+<li>Uma doença afeta <span class="math inline">\(2\%\)</span> da população. Um teste tem <span class="math inline">\(95\%\)</span> de acerto tanto para positivos quanto para negativos. Calcule a probabilidade de realmente estar doente dado que o teste deu positivo, usando o Teorema de Bayes.</li>
+<li>Suponha que você lance uma moeda 10 vezes e observe apenas uma vez cara. Qual seria a interpretação frequentista e bayesiana da probabilidade de sair cara?</li>
+<li>Discuta por que o enfoque bayesiano é mais adequado para eventos únicos, como a eleição de um candidato ou previsão de desastres naturais.</li>
+</ol>
 </section>
 </section>
 <section id="distribuição-de-probabilidade-vs-probabilidade-a-importância-da-medida" class="level2">
@@ -811,7 +839,7 @@ P(x = x_0) = \int_{x_0}^{x_0} \rho(x)  \dd x = 0.
 <div id="cell-fig-densidade" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -886,16 +914,16 @@ P(x = x_0) = \int_{x_0}^{x_0} \rho(x)  \dd x = 0.
 <span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probabilidade no intervalo [-1, 1]:"</span>)</span>
 <span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distribuição concentrada: </span><span class="sc">{</span>prob1<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distribuição espalhada: </span><span class="sc">{</span>prob2<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distribuição espalhada: </span><span class="sc">{</span>prob2<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>&lt;&gt;:23: SyntaxWarning: invalid escape sequence '\s'
 &lt;&gt;:24: SyntaxWarning: invalid escape sequence '\s'
 &lt;&gt;:23: SyntaxWarning: invalid escape sequence '\s'
 &lt;&gt;:24: SyntaxWarning: invalid escape sequence '\s'
-/tmp/ipykernel_2713/3023404317.py:23: SyntaxWarning: invalid escape sequence '\s'
+/tmp/ipykernel_2692/3023404317.py:23: SyntaxWarning: invalid escape sequence '\s'
   ax1.plot(x, rho1, "b-", linewidth=2, label="ρ(x) concentrada (\sigma=0.5)")
-/tmp/ipykernel_2713/3023404317.py:24: SyntaxWarning: invalid escape sequence '\s'
+/tmp/ipykernel_2692/3023404317.py:24: SyntaxWarning: invalid escape sequence '\s'
   ax1.plot(x, rho2, "r-", linewidth=2, label="ρ(x) espalhada (\sigma=1.0)")</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -927,6 +955,16 @@ Distribuição espalhada: 0.683</code></pre>
 <p>Esta transição conceitual é fundamental para a mecânica quântica, onde a função de onda <span class="math inline">\(\psi(x)\)</span> está relacionada à densidade de probabilidade por: <span class="math display">\[
 \rho(x) = |\psi(x)|^2.
 \]</span> Apesar de <span class="math inline">\(\psi(x)\)</span> poder ter valores em qualquer ponto, apenas integrais de <span class="math inline">\(|\psi(x)|^2\)</span> sobre intervalos finitos têm interpretação probabilística direta.</p>
+</section>
+<section id="exercícios-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercícios-1">Exercícios</h3>
+<ol type="1">
+<li>Explique em palavras a diferença entre probabilidade em um espaço discreto e densidade de probabilidade em um espaço contínuo.</li>
+<li>Considere uma distribuição normal <span class="math inline">\(N(0,1)\)</span>. Calcule a probabilidade de a variável estar no intervalo <span class="math inline">\([-1,1]\)</span> usando a integral da densidade. (avançado)</li>
+<li>Duas distribuições normais têm médias iguais a 0, mas desvios-padrão diferentes: <span class="math inline">\(\sigma_1 = 0.5\)</span> e <span class="math inline">\(\sigma_2 = 1.0\)</span>. Compare as probabilidades de estar no intervalo <span class="math inline">\([-1,1]\)</span>. Explique qualitativamente por que elas diferem.</li>
+<li>Por que a probabilidade de a partícula estar exatamente em <span class="math inline">\(x_0\)</span> é zero, mesmo que <span class="math inline">\(\rho(x_0)\)</span> seja grande?</li>
+<li>Em mecânica quântica, a função de onda <span class="math inline">\(\psi(x)\)</span> define a densidade de probabilidade <span class="math inline">\(\rho(x) = |\psi(x)|^2\)</span>. Discuta a importância de integrar <span class="math inline">\(\rho(x)\)</span> sobre um intervalo finito em vez de olhar para um ponto específico.</li>
+</ol>
 </section>
 </section>
 <section id="do-estado-determinístico-à-descrição-probabilística" class="level2">
@@ -962,6 +1000,15 @@ Distribuição espalhada: 0.683</code></pre>
 \rho(x, p, t) = \rho(x_0(x,p,t), p_0(x,p,t), t_0)
 \]</span> onde <span class="math inline">\((x_0(x,p,t), p_0(x,p,t))\)</span> é o estado inicial que evolui para <span class="math inline">\((x, p)\)</span> no tempo <span class="math inline">\(t\)</span> (seguindo as leis de Newton).</p>
 </section>
+<section id="exercícios-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercícios-2">Exercícios</h3>
+<ol type="1">
+<li>Explique por que, mesmo na mecânica clássica, é necessário usar uma descrição probabilística na prática.</li>
+<li>Para uma partícula em 1D com distribuição de probabilidade inicial <span class="math inline">\(\rho(x,p,0)\)</span>, descreva qualitativamente como essa distribuição evolui ao longo do tempo.</li>
+<li>Considere uma distribuição gaussiana inicial em <span class="math inline">\(x\)</span> com momento <span class="math inline">\(p\)</span> fixo. Escreva a expressão da distribuição <span class="math inline">\(\rho(x,p,t)\)</span> em função do tempo, assumindo movimento livre (sem forças).</li>
+<li>Por que conhecer apenas o estado inicial médio <span class="math inline">\((\langle x_0 \rangle, \langle p_0 \rangle)\)</span> não é suficiente para prever com precisão o comportamento de um sistema probabilístico?</li>
+</ol>
+</section>
 </section>
 <section id="exemplo-concreto-cinemática-1d-com-incertezas" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-concreto-cinemática-1d-com-incertezas">Exemplo Concreto: Cinemática 1D com Incertezas</h2>
@@ -976,7 +1023,7 @@ Distribuição espalhada: 0.683</code></pre>
 <div id="cell-fig-mru-incerteza" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros</span></span>
@@ -996,7 +1043,7 @@ Distribuição espalhada: 0.683</code></pre>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Evolução da Incerteza no Movimento Retilíneo Uniforme"</span>)</span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-mru-incerteza" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1024,7 +1071,7 @@ Figure&nbsp;4: Evolução da incerteza posicional no MRU
 <div id="cell-fig-mua-incerteza" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="op">-</span><span class="fl">9.8</span>  <span class="co"># m/s^2</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>x0_sigma <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># incerteza inicial na posição</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>v0_sigma <span class="op">=</span> <span class="fl">0.2</span>  <span class="co"># incerteza inicial na velocidade</span></span>
@@ -1055,7 +1102,7 @@ Figure&nbsp;4: Evolução da incerteza posicional no MRU
 <span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Incerteza inicial: $</span><span class="er">\</span><span class="ss">sigma_x$ = </span><span class="sc">{</span>x0_sigma<span class="sc">:.3f}</span><span class="ss"> m"</span>)</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Incerteza final (t=1s): $</span><span class="er">\</span><span class="ss">sigma_x$ = </span><span class="sc">{</span>sigma_x[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss"> m"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Incerteza final (t=1s): $</span><span class="er">\</span><span class="ss">sigma_x$ = </span><span class="sc">{</span>sigma_x[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss"> m"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>&lt;&gt;:22: SyntaxWarning: invalid escape sequence '\p'
@@ -1064,11 +1111,11 @@ Figure&nbsp;4: Evolução da incerteza posicional no MRU
 &lt;&gt;:22: SyntaxWarning: invalid escape sequence '\p'
 &lt;&gt;:31: SyntaxWarning: invalid escape sequence '\s'
 &lt;&gt;:32: SyntaxWarning: invalid escape sequence '\s'
-/tmp/ipykernel_2713/3749421272.py:22: SyntaxWarning: invalid escape sequence '\p'
+/tmp/ipykernel_2692/3749421272.py:22: SyntaxWarning: invalid escape sequence '\p'
   label="Zona de incerteza ($\pm\sigma$)",
-/tmp/ipykernel_2713/3749421272.py:31: SyntaxWarning: invalid escape sequence '\s'
+/tmp/ipykernel_2692/3749421272.py:31: SyntaxWarning: invalid escape sequence '\s'
   print(f"Incerteza inicial: $\sigma_x$ = {x0_sigma:.3f} m")
-/tmp/ipykernel_2713/3749421272.py:32: SyntaxWarning: invalid escape sequence '\s'
+/tmp/ipykernel_2692/3749421272.py:32: SyntaxWarning: invalid escape sequence '\s'
   print(f"Incerteza final (t=1s): $\sigma_x$ = {sigma_x[-1]:.3f} m")</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1106,7 +1153,7 @@ Incerteza final (t=1s): $\sigma_x$ = 0.224 m</code></pre>
 <div id="cell-fig-evolucao-espaco-fase" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> multivariate_normal</span>
@@ -1162,7 +1209,7 @@ Incerteza final (t=1s): $\sigma_x$ = 0.224 m</code></pre>
 <span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
 <span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-evolucao-espaco-fase" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1187,6 +1234,15 @@ Figure&nbsp;6: Evolução temporal de uma distribuição no espaço de fase
 </ol>
 <p>Esta transição do ponto no espaço de fase para distribuições de probabilidade marca a passagem fundamental do determinismo ideal para a descrição estatística prática que permeia toda a física moderna.</p>
 </section>
+<section id="exercícios-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercícios-3">Exercícios</h3>
+<ol type="1">
+<li>No MRU do exemplo, explique por que a largura da zona de incerteza permanece constante ao longo do tempo, enquanto no MUA ela cresce.</li>
+<li>Para o MUA, derive a expressão da incerteza <span class="math inline">\(\sigma_x(t)\)</span> considerando incertezas iniciais em <span class="math inline">\(x_0\)</span> e <span class="math inline">\(v_0\)</span> e compare com a aproximação mostrada no gráfico.</li>
+<li>No oscilador harmônico, explique por que uma distribuição gaussiana inicial permanece aproximadamente gaussiana ao longo do tempo.</li>
+<li>Discuta qualitativamente como o espalhamento da distribuição no espaço de fase muda se a constante elástica <span class="math inline">\(k\)</span> ou a massa <span class="math inline">\(m\)</span> forem alteradas.</li>
+</ol>
+</section>
 </section>
 <section id="a-mecânica-quântica-e-a-natureza-intrinsecamente-probabilística-da-realidade" class="level2">
 <h2 class="anchored" data-anchor-id="a-mecânica-quântica-e-a-natureza-intrinsecamente-probabilística-da-realidade">A Mecânica Quântica e a Natureza Intrinsecamente Probabilística da Realidade</h2>
@@ -1206,7 +1262,7 @@ Figure&nbsp;6: Evolução temporal de uma distribuição no espaço de fase
 <div id="cell-fig-funcao-onda" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros do pacote de onda gaussiano</span></span>
@@ -1240,7 +1296,7 @@ Figure&nbsp;6: Evolução temporal de uma distribuição no espaço de fase
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Função de Onda Quântica e sua Densidade de Probabilidade"</span>)</span>
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-funcao-onda" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1283,6 +1339,15 @@ Figure&nbsp;7: Partes real e imaginária, e módulo ao quadrado de um pacote de 
 <h3 class="anchored" data-anchor-id="conclusão-do-micro-ao-macro-uma-única-linguagem">Conclusão: Do Micro ao Macro, uma Única Linguagem</h3>
 <p>Da trajetória de um planeta (onde erros iniciais se amplificam) à posição de um elétron (onde a probabilidade é inerente), passando por testes médicos e previsões do tempo, encontramos uma mesma linguagem: a linguagem das probabilidades.</p>
 <p>O determinismo nos diz como as possibilidades evoluem; a estatística nos diz como lidar com qual possibilidade se realizará.</p>
+</section>
+<section id="exercícios-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercícios-4">Exercícios</h3>
+<ol type="1">
+<li>Uma função de onda normalizada satisfaz <span class="math inline">\(\int_{-\infty}^{\infty} |\psi(x)|^2 \dd x = 1\)</span>. Por que isso é necessário?</li>
+<li>Compare a densidade de probabilidade quântica <span class="math inline">\(|\psi(x)|^2\)</span> com a distribuição clássica de probabilidade <span class="math inline">\(\rho(x,p)\)</span> discutida nos exemplos anteriores.</li>
+<li>Discuta como o Princípio da Incerteza de Heisenberg limita a precisão com que podemos conhecer simultaneamente <span class="math inline">\(x\)</span> e <span class="math inline">\(p\)</span>, mesmo que a função de onda seja perfeitamente conhecida.</li>
+<li>Imagine medir a posição de um elétron repetidamente em um estado gaussiano. Qual distribuição você esperaria obter para os resultados experimentais? Explique.</li>
+</ol>
 
 
 </section>
@@ -1353,13 +1418,14 @@ Figure&nbsp;7: Partes real e imaginária, e módulo ao quadrado de um pacote de 
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

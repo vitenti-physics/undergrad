@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vitenti-physics.github.io/undergrad/index.html</loc>
-    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/intro-stat-mechanics.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
-  </url>
-  <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/physics-math.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
   </url>
   <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/galilean-relativity.html</loc>
-    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/index.html</loc>
-    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/index.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/time-dependent-green-functions.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/dirac-delta.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/green-functions.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/vector-spaces.html</loc>
-    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/spacetime-algebra.html</loc>
-    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/index.html</loc>
-    <lastmod>2025-09-08T11:24:24.351Z</lastmod>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/heisenberg-uncertainty.html</loc>
+    <lastmod>2025-09-30T16:26:59.814Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/determinism-statistics.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+    <lastmod>2025-09-30T16:26:59.814Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/time-dependent-green-functions.html</loc>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/index.html</loc>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/vector-spaces.html</loc>
+    <lastmod>2025-09-30T16:26:59.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/galilean-relativity.html</loc>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/index.html</loc>
+    <lastmod>2025-09-30T16:26:59.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/index.html</loc>
+    <lastmod>2025-09-30T16:26:59.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/special-relativity/spacetime-algebra.html</loc>
+    <lastmod>2025-09-30T16:26:59.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/vector-calculus/index.html</loc>
+    <lastmod>2025-09-30T16:26:59.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/green-functions.html</loc>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/mathematical-physics/dirac-delta.html</loc>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
   </url>
   <url>
     <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/index.html</loc>
-    <lastmod>2025-09-08T11:24:24.350Z</lastmod>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vitenti-physics.github.io/undergrad/courses/introduction-to-physics/intro-stat-mechanics.html</loc>
+    <lastmod>2025-09-30T16:26:59.815Z</lastmod>
   </url>
 </urlset>
