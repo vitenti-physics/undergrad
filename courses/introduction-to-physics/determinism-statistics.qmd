@@ -173,6 +173,14 @@ Apesar do teste ter 99% de precisão, a probabilidade de realmente ter a doença
 
 A visão Bayesiana nos ensina que dados não falam por si só - eles só ganham significado quando interpretados à luz do conhecimento prévio existente.
 
+### Exercícios
+
+1. Explique em palavras simples a diferença entre a interpretação frequentista e bayesiana de probabilidade.
+2. Considere o lançamento de uma moeda justa 1000 vezes. Calcule a frequência relativa de "caras" se forem observadas 510 ocorrências. Compare com a probabilidade teórica.
+3. Uma doença afeta $2\%$ da população. Um teste tem $95\%$ de acerto tanto para positivos quanto para negativos. Calcule a probabilidade de realmente estar doente dado que o teste deu positivo, usando o Teorema de Bayes.
+4. Suponha que você lance uma moeda 10 vezes e observe apenas uma vez cara. Qual seria a interpretação frequentista e bayesiana da probabilidade de sair cara?
+5. Discuta por que o enfoque bayesiano é mais adequado para eventos únicos, como a eleição de um candidato ou previsão de desastres naturais.
+
 ## Distribuição de Probabilidade vs Probabilidade: A Importância da Medida
 
 Até agora, trabalhamos com espaços de estados discretos (cara/coroa, doente/saudável). Mas na física, frequentemente lidamos com espaços contínuos, como a posição de uma partícula ao longo de uma linha.
@@ -303,6 +311,14 @@ $$
 $$
 Apesar de $\psi(x)$ poder ter valores em qualquer ponto, apenas integrais de $|\psi(x)|^2$ sobre intervalos finitos têm interpretação probabilística direta.
 
+### Exercícios
+
+1. Explique em palavras a diferença entre probabilidade em um espaço discreto e densidade de probabilidade em um espaço contínuo.
+2. Considere uma distribuição normal $N(0,1)$. Calcule a probabilidade de a variável estar no intervalo $[-1,1]$ usando a integral da densidade. (avançado)
+3. Duas distribuições normais têm médias iguais a 0, mas desvios-padrão diferentes: $\sigma_1 = 0.5$ e $\sigma_2 = 1.0$. Compare as probabilidades de estar no intervalo $[-1,1]$. Explique qualitativamente por que elas diferem.
+4. Por que a probabilidade de a partícula estar exatamente em $x_0$ é zero, mesmo que $\rho(x_0)$ seja grande?
+5. Em mecânica quântica, a função de onda $\psi(x)$ define a densidade de probabilidade $\rho(x) = |\psi(x)|^2$. Discuta a importância de integrar $\rho(x)$ sobre um intervalo finito em vez de olhar para um ponto específico.
+
 ## Do Estado Determinístico à Descrição Probabilística
 
 ### O Espaço de Estados e o Determinismo Clássico
@@ -343,6 +359,13 @@ $$
 \rho(x, p, t) = \rho(x_0(x,p,t), p_0(x,p,t), t_0)
 $$
 onde $(x_0(x,p,t), p_0(x,p,t))$ é o estado inicial que evolui para $(x, p)$ no tempo $t$ (seguindo as leis de Newton).
+
+### Exercícios
+
+1. Explique por que, mesmo na mecânica clássica, é necessário usar uma descrição probabilística na prática.
+2. Para uma partícula em 1D com distribuição de probabilidade inicial $\rho(x,p,0)$, descreva qualitativamente como essa distribuição evolui ao longo do tempo.
+3. Considere uma distribuição gaussiana inicial em $x$ com momento $p$ fixo. Escreva a expressão da distribuição $\rho(x,p,t)$ em função do tempo, assumindo movimento livre (sem forças).
+4. Por que conhecer apenas o estado inicial médio $(\langle x_0 \rangle, \langle p_0 \rangle)$ não é suficiente para prever com precisão o comportamento de um sistema probabilístico?
 
 ## Exemplo Concreto: Cinemática 1D com Incertezas
 
@@ -521,6 +544,13 @@ plt.show()
 
 Esta transição do ponto no espaço de fase para distribuições de probabilidade marca a passagem fundamental do determinismo ideal para a descrição estatística prática que permeia toda a física moderna.
 
+### Exercícios
+
+1. No MRU do exemplo, explique por que a largura da zona de incerteza permanece constante ao longo do tempo, enquanto no MUA ela cresce.
+2. Para o MUA, derive a expressão da incerteza $\sigma_x(t)$ considerando incertezas iniciais em $x_0$ e $v_0$ e compare com a aproximação mostrada no gráfico.
+3. No oscilador harmônico, explique por que uma distribuição gaussiana inicial permanece aproximadamente gaussiana ao longo do tempo.
+4. Discuta qualitativamente como o espalhamento da distribuição no espaço de fase muda se a constante elástica $k$ ou a massa $m$ forem alteradas.
+
 ## A Mecânica Quântica e a Natureza Intrinsecamente Probabilística da Realidade
 
 Tudo que discutimos até agora pode ser visto como uma "correção prática" ao determinismo: não sabemos medir perfeitamente, então usamos estatística. Mas a Mecânica Quântica (MQ) traz uma revolução muito mais profunda.
@@ -614,3 +644,10 @@ Ela eleva a estatística de uma ferramenta para lidar com nossa ignorância a um
 Da trajetória de um planeta (onde erros iniciais se amplificam) à posição de um elétron (onde a probabilidade é inerente), passando por testes médicos e previsões do tempo, encontramos uma mesma linguagem: a linguagem das probabilidades.
 
 O determinismo nos diz como as possibilidades evoluem; a estatística nos diz como lidar com qual possibilidade se realizará.
+
+### Exercícios
+
+1. Uma função de onda normalizada satisfaz $\int_{-\infty}^{\infty} |\psi(x)|^2 \dd x = 1$. Por que isso é necessário?
+2. Compare a densidade de probabilidade quântica $|\psi(x)|^2$ com a distribuição clássica de probabilidade $\rho(x,p)$ discutida nos exemplos anteriores.
+3. Discuta como o Princípio da Incerteza de Heisenberg limita a precisão com que podemos conhecer simultaneamente $x$ e $p$, mesmo que a função de onda seja perfeitamente conhecida.
+4. Imagine medir a posição de um elétron repetidamente em um estado gaussiano. Qual distribuição você esperaria obter para os resultados experimentais? Explique.

@@ -5,7 +5,7 @@ title: "Introdução ao Princípio da Incerteza de Heisenberg"
 
 {{< include /_functions.qmd >}}
 
-### Lei de Newton e momento
+## Lei de Newton e momento
 
 A mecânica clássica descreve o movimento de uma partícula pela segunda lei de Newton:
 $$
@@ -121,6 +121,19 @@ plt.axis("equal")
 plt.show()
 ```
 
+### Exercícios
+
+1. Mostre que a segunda lei de Newton $m \ddot{x} = F(x,t)$ é equivalente à equação $\dot{p} = F(x,t)$ usando a definição de momento linear $p = m \dot{x}$.
+2. Reescreva a equação $m \ddot{x} = F(x,t)$ como um sistema de primeira ordem em termos de $x(t)$ e $p(t)$ e explique por que isso pode ser útil para métodos numéricos.
+3. Considere um pequeno intervalo de tempo $\delta t$. Derive a expansão de Taylor de primeira ordem para $x(t+\delta t)$ e $p(t+\delta t)$ a partir das equações de primeira ordem.
+4. Uma força é dita conservativa se existe um potencial $V(x)$ tal que $F(x) = -\dd V/\dd x$. Dê dois exemplos de forças conservativas e dois exemplos de forças não conservativas.
+5. Verifique que para o Hamiltoniano $H(x,p) = \frac{p^2}{2m} + V(x)$, as equações de Hamilton
+   $$
+   \dot{x} = \frac{\partial H}{\partial p}, \qquad \dot{p} = -\frac{\partial H}{\partial x}
+   $$
+   são equivalentes às equações clássicas de movimento.
+6. Explique qualitativamente como a forma elíptica da trajetória no espaço de fases do oscilador harmônico reflete a conservação de energia.
+
 ## Álgebra e Produto Vetorial
 
 Em duas dimensões, a matriz
@@ -221,6 +234,15 @@ ax.set_title(rf"$\vec{{v}}_1^T J \vec{{v}}_2 = {area}$")
 plt.show()
 ```
 
+### Exercícios
+
+1. Verifique que, para $\vec{v}_1 = \begin{pmatrix}x_1 \\ p_1\end{pmatrix}$ e $\vec{v}_2 = \begin{pmatrix}x_2 \\ p_2\end{pmatrix}$, o produto $\vec{v}_1^T J \vec{v}_2$ é antissimétrico, ou seja, $\vec{v}_1^T J \vec{v}_2 = - \vec{v}_2^T J \vec{v}_1$.
+2. Mostre que $\vec{v}_1^T J \vec{v}_2 = 0$ se e somente se os vetores $\vec{v}_1$ e $\vec{v}_2$ forem linearmente dependentes.
+3. Para os vetores $\vec{v}_1 = \begin{pmatrix}1\\0\end{pmatrix}$ e $\vec{v}_2 = \begin{pmatrix}0\\1\end{pmatrix}$, calcule $\vec{v}_1^T J \vec{v}_2$ e interprete o resultado geometricamente.
+4. Considere as funções $f(x,p) = x^2 p$ e $g(x,p) = x p^2$. Calcule os parênteses de Poisson ${f,g}$ explicitamente.
+5. Demonstre que os parênteses de Poisson satisfazem a antissimetria: ${f,g} = -{g,f}$.
+6. Explique como a interpretação de "área orientada" do determinante $\vec{v}_1^T J \vec{v}_2$ se relaciona com a independência de funções no espaço de fase.
+
 ## Parênteses de Poisson e Mecânica Hamiltoniana
 
 A evolução temporal de uma função $f(x,p)$ que depende de posição e momento é obtida pela regra da cadeia:
@@ -319,6 +341,18 @@ plt.show()
 ```
 Note que as curvas de nível de energia, como mostrado na @fig-hamilton-flow, sinalizam os níveis de energia, enquanto o campo vetorial ilustra o fluxo no espaço de fase. As curvas de nível coincidem com as trajetórias clássicas. Essa visualização reforça a interpretação de que o Hamiltoniano atua como gerador de transformações temporais: ao calcular $\dot{f} = {f,H}$, vemos que o parêntese de Poisson com $H$ fornece a regra de evolução de qualquer observável no tempo.
 
+### Exercícios
+
+1. Mostre que a regra da cadeia aplicada a uma função $f(x(t),p(t))$ leva a $\dot{f} = \{f,H\}$ usando as equações de Hamilton.
+2. Verifique explicitamente que $\{x,p\} = 1$ e $\{p,x\} = -1$, e explique o significado físico dessas relações.
+3. Considere o Hamiltoniano $H = \frac{p^2}{2m} + \frac{1}{2}kx^2$. Calcule $\dot{x}$ e $\dot{p}$ usando parênteses de Poisson e confirme que obtém as equações de movimento do oscilador harmônico.
+4. Mostre que se $H$ não depende explicitamente do tempo, então $\dot{H} = {H,H} = 0$, garantindo a conservação da energia.
+5. Para três funções $A=x$, $B=p$, $C=H$, verifique a identidade de Jacobi:
+   $$
+   \{\{A,B\},C\} + \{\{C,A\},B\} + \{\{B,C\},A\} = 0.
+   $$
+6. Explique qualitativamente como o fluxo Hamiltoniano no espaço de fase, representado por $\vec{V} = J \begin{pmatrix} \partial H/\partial x \\ \partial H/\partial p \end{pmatrix}$, garante que as curvas de nível de energia sejam percorridas pelas trajetórias clássicas.
+
 ## Quantização
 
 O formalismo da mecânica quântica é construído promovendo as variáveis clássicas a operadores lineares sobre funções de onda. A regra de correspondência fundamental, inspirada pelos parênteses de Poisson, é:
@@ -379,6 +413,19 @@ Essa interpretação é crucial, porque mostra que os operadores não são apena
 * A ação de um operador sobre a função de onda determina a distribuição de valores possíveis de um observável.
 
 Essas definições estabelecem a base da mecânica quântica e preparam o terreno para introduzir **conceitos estatísticos**, como valor esperado, variância e, mais adiante, o princípio da incerteza de Heisenberg.
+
+### Exercícios
+
+1. Mostre que a decomposição de um produto de operadores
+   $$
+   \hat{A}\hat{B} = \frac{\hat{A}\hat{B} + \hat{B}\hat{A}}{2} + \frac{\hat{A}\hat{B} - \hat{B}\hat{A}}{2}
+   $$
+   é sempre válida, identificando explicitamente o anti-comutador e o comutador.
+2. Verifique que, na representação de posição, os operadores
+   $$
+   \hat{x}\psi(x) = x \psi(x), \quad \hat{p}\psi(x) = -i\hbar \frac{\partial}{\partial x} \psi(x)
+   $$
+   satisfazem a relação de comutação $[\hat{x},\hat{p}] = i\hbar$.
 
 ## Valor Esperado e Probabilidade
 
@@ -449,6 +496,12 @@ plt.show()
 ```
 
 Na figura, as barras laranjas representam a soma discreta das probabilidades em caixas de mesmo tamanho, enquanto a linha azul mostra a densidade contínua correspondente. À medida que aumentamos o número de caixas, a soma discreta se aproxima da integral contínua, ilustrando o limite $ \Delta x \to 0 $. O valor esperado, indicado pela linha vermelha tracejada, é a média ponderada pela probabilidade, seja na forma discreta ou contínua. Esse conceito é diretamente aplicável à mecânica quântica, onde a função de onda fornece a densidade de probabilidade e o valor esperado de um observável é obtido como integral ponderada.
+
+### Exercícios
+
+1. Calcule o valor esperado de um dado justo de seis lados e de um dado viciado, onde $P_6 = 1/2$ e os outros cinco lados têm probabilidades iguais.
+2. Divida o intervalo $[0,2]$ em $N=4$ caixas e considere uma distribuição de probabilidade $P(x_i) = x_i/(\sum_j x_j)$. Calcule o valor esperado $\langle x \rangle$ usando a soma discreta e compare com o limite contínuo.
+3. Demonstre que, para uma distribuição uniforme em $[a,b]$, o valor esperado é $\langle x \rangle = (a+b)/2$.
 
 ## Variância e Desvio Padrão
 
@@ -530,6 +583,14 @@ plt.show()
 ```
 A linha vermelha indica a média da distribuição uniforme, enquanto a região sombreada verde mostra o intervalo ±σ em torno da média. Mesmo que todos os valores tenham a mesma probabilidade, essa região fornece uma medida típica da dispersão dos valores possíveis. 
 
+### Exercícios
+
+1. Mostre que, para qualquer distribuição, $\text{Var}(x) = \langle x^2 \rangle - \langle x \rangle^2$.
+2. Calcule a variância e o desvio padrão de uma distribuição uniforme no intervalo $[2,5]$.
+3. Para uma variável discreta com valores $x_i = 1,2,3,4$ e probabilidades $P_i = 1/10, 2/10, 3/10, 4/10$, calcule o valor esperado, a variância e o desvio padrão.
+4. Demonstre que a variância é sempre não negativa e explique por que isso é consistente com a definição de dispersão.
+5. Explique qualitativamente como o desvio padrão fornece uma medida típica do "tamanho do desvio" dos valores em torno da média, usando o exemplo da distribuição uniforme em $[0,1]$.
+
 ## Desigualdade de Cauchy-Schwarz
 
 A desigualdade de Cauchy-Schwarz é uma ferramenta fundamental em álgebra linear e mecânica quântica. Ela estabelece que, para quaisquer vetores $\vec{u}$ e $\vec{v}$ em um espaço vetorial com produto interno, temos:
@@ -604,6 +665,16 @@ $$
 |\langle \psi | \phi \rangle|^2 \leq \langle \psi | \psi \rangle \, \langle \phi | \phi \rangle.
 $$
 Essa propriedade é fundamental para provar o princípio da incerteza e para várias outras desigualdades envolvendo valores esperados de operadores.
+
+### Exercícios
+
+1. Verifique a desigualdade de Cauchy-Schwarz para os vetores $\vec{u} = (3,1)$ e $\vec{v} = (1,2)$ em $\mathbb{R}^2$.
+2. Para vetores $\vec{u}, \vec{v} \in \mathbb{R}^3$, mostre que
+   $$
+   |\vec{u}\cdot \vec{v}| \leq |\vec{u}|\,|\vec{v}|
+   $$
+   usando a definição do produto interno e das normas.
+3. Prove que a igualdade em Cauchy-Schwarz ocorre se e somente se $\vec{u}$ e $\vec{v}$ são linearmente dependentes.
 
 ## Princípio da Incerteza
 
@@ -686,7 +757,7 @@ plt.quiver(
 )
 
 # Componentes real e imaginária
-plt.plot([0, anticom_real], [0, 0], "r--", label="Parte real (anticomutador)")
+plt.plot([0, anticom_real], [0, 0], "r--", label="Parte real (anti-comutador)")
 plt.plot(
     [anticom_real, anticom_real],
     [0, comm_imag],
@@ -709,3 +780,14 @@ plt.show()
 * A parte real (vermelha tracejada) corresponde ao anti-comutador, que pode variar dependendo do estado, mas não determina o limite fundamental.
 * A parte imaginária (azul tracejada) corresponde ao comutador, que define o limite mínimo ($\hbar/2$) da desigualdade de Heisenberg. Note que essa parte está sempre presente, independentemente do estado.
 
+### Exercícios
+
+1. Para operadores hermitianos $\hat{A}$ e $\hat{B}$ quaisquer, defina
+   $$
+   |f\rangle = (\hat{A}-\langle A\rangle)|\psi\rangle, \quad |g\rangle = (\hat{B}-\langle B\rangle)|\psi\rangle.
+   $$
+   Mostre que a desigualdade de Cauchy-Schwarz leva a
+   $$
+   \sigma_A^2 \sigma_B^2 \ge |\langle f|g \rangle|^2.
+   $$
+2. Explique por que o anti-comutador não diminui o limite mínimo da desigualdade de Heisenberg.

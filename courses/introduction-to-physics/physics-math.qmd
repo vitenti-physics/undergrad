@@ -10,6 +10,11 @@ Quando falamos em posição, estamos descrevendo uma forma de relacionar dois po
 
 No caso mais simples, consideramos o espaço como uma linha reta e medimos distâncias diretas entre os pontos. Cada posição pode então ser associada a um único número que representa a distância até a origem (número cuja natureza matemática ainda vamos explorar).
 
+### Exercícios
+
+1. Explique com suas próprias palavras o que significa a posição de um objeto em relação a um ponto de referência. Por que a escolha da origem é importante?
+2. Qual é a diferença entre descrever a posição de um ponto em uma linha reta e em um plano ou espaço tridimensional?
+
 ## Como medimos distâncias
 
 Para atribuir um número a uma distância, precisamos de um padrão: podemos imaginar um segmento-padrão, nossa unidade de comprimento, e contar quantos desses segmentos "cabem" entre dois pontos. É esse processo que define o número usado para representar a distância.
@@ -19,6 +24,10 @@ Se quisermos medir com mais precisão, basta escolher um segmento-padrão menor,
 ### Pergunta fundamental
 
 Será que existe uma unidade mínima, indivisível, que sirva para medir tudo? Se essa unidade existisse, nosso modelo do espaço seria discreto, formado por "blocos" indivisíveis, em vez de um continuum.
+
+### Exercícios
+
+1. Explique por que é necessário definir uma unidade de comprimento antes de medir distâncias.
 
 ## Pitágoras contra o discreto
 
@@ -42,6 +51,12 @@ Isso implica que, se existisse uma unidade mínima fixa, não conseguiríamos ma
 
 Conclusão provisória: ou o espaço não é discreto, ou o teorema é apenas uma aproximação de uma estrutura mais fundamental.
 
+### Exercícios
+
+1. Explique por que $\sqrt{2}$ não pode ser expresso como uma fração $\frac{p}{q}$ e como isso se relaciona com a ideia de um espaço discreto.
+2. Discuta o que a impossibilidade de representar exatamente certas distâncias com um segmento-padrão sugere sobre a natureza do espaço.
+3. Usando ($a = b = 1$), calcule (c) aproximando-o por frações simples, como $c \approx \frac{7}{5}$ ou $c \approx \frac{10}{7}$. Qual é o erro relativo em cada aproximação?
+
 ## Hipótese da física clássica
 
 Na física clássica, adotamos a hipótese de que o espaço é contínuo. Isso significa que, em princípio, podemos medir distâncias arbitrariamente pequenas, sem um limite mínimo definido.  
@@ -49,6 +64,11 @@ Na física clássica, adotamos a hipótese de que o espaço é contínuo. Isso s
 Embora não saibamos exatamente por que isso ocorre, modelamos as posições assumindo implicitamente que qualquer distância, por menor que seja, pode ser medida. Vale ressaltar que não há uma prova empírica definitiva de que o espaço é contínuo. Essa continuidade é uma das hipóteses fundamentais que adotamos, e dela derivam diversas consequências importantes para outras teorias, como a teoria de campos, a mecânica quântica e a relatividade.
 
 Dessa forma, cada posição pode ser representada por um número real, que pode ser racional ou irracional.
+
+### Exercícios
+
+1. Explique o que significa assumir que o espaço é contínuo na física clássica.
+2. Por que números reais são usados para representar posições no espaço contínuo?
 
 ## Conjuntos numéricos
 
@@ -59,6 +79,12 @@ Para organizar as ideias, temos os seguintes conjuntos numéricos:
 - $\mathbb{Q}$: números racionais: frações da forma $\frac{p}{q}$, com $p, q \in \mathbb{Z}$ e $q \neq 0$  
 - Números irracionais: não podem ser escritos como fração (exemplos: $\sqrt{2}$, $\pi$, $e$, ...)  
 - $\mathbb{R}$: números reais: a união dos racionais e irracionais, ou seja, $\mathbb{Q} \cup$ (irracionais)
+
+### Exercícios
+
+1. Dê exemplos de números que pertencem a cada um dos conjuntos (\mathbb{N}), (\mathbb{Z}), (\mathbb{Q}) e irracionais.
+2. Explique a relação entre os conjuntos $\mathbb{Q}$ e $\mathbb{R}$.
+3. Classifique os seguintes números nos conjuntos corretos: $0, -3, \frac{5}{2}, \sqrt{2}, \pi$.
 
 ## O paradoxo de Zenão e as séries infinitas
 
@@ -106,6 +132,12 @@ O modelo contínuo do espaço nos leva naturalmente ao uso dos números reais $\
 
 Na física, essa suposição de continuidade está tão enraizada que aparece mesmo nos problemas mais simples, mas também levanta questões profundas: será que, em escalas muito pequenas, o espaço é realmente contínuo?
 
+### Exercícios
+
+1. Explique com suas próprias palavras o paradoxo de Zenão e como a soma infinita resolve a aparente contradição.
+2. Calcule a soma da série $\sum_{n=1}^{\infty} \frac{1}{3^n}$ e interprete o resultado no contexto de uma distância percorrida em passos que diminuem a cada movimento.
+3. Por que a existência de somas infinitas de números racionais reforça a necessidade de usar números reais para modelar o espaço contínuo?
+
 ## Dimensões do espaço
 
 Quando pensamos no "tamanho" do espaço, a primeira coisa que vem à mente é quantos pontos ele contém. Por exemplo, o conjunto dos números inteiros $\mathbb{Z}$ é infinito, mas é um infinito contável: podemos listar seus elementos um a um, ou seja, existe uma forma de associar cada inteiro a um número natural de forma unívoca.
@@ -119,6 +151,11 @@ Mas o número de pontos não é a única forma de medir o "tamanho" do espaço. 
 Nossa experiência mostra que, para localizar um ponto no espaço, usamos três números, as coordenadas $x$, $y$ e $z$, que indicam a posição em três direções mutuamente perpendiculares. Escolhemos uma origem e três direções que formam ângulos retos ($90^\circ$) entre si, e medimos distâncias ao longo dessas direções usando números reais, como discutimos antes. Ou seja, primeiro andamos em uma direção $x$, depois em outra $y$ e, por fim, em outra $z$, até chegar ao ponto desejado. O interessante é que sempre conseguimos alcançar qualquer ponto usando esse procedimento, e a ordem dos passos não altera o resultado.
 
 Esses três números são suficientes para identificar qualquer ponto do espaço físico que conhecemos.
+
+### Exercícios
+
+1. Explique a diferença entre infinito contável e infinito incontável. Dê exemplos de cada caso.
+2. Por que usamos três coordenadas para localizar um ponto no espaço físico?
 
 ## Produto cartesiano
 
@@ -142,6 +179,12 @@ $$
 
 Essa construção não é apenas formal, ela reflete a nossa própria forma de localizar pontos no espaço.
 
+### Exercícios
+
+1. Explique o que é o produto cartesiano e como ele nos ajuda a construir (\mathbb{R}^2) e (\mathbb{R}^3).
+2. Liste cinco elementos quaisquer de (\mathbb{R}^2) e cinco elementos de (\mathbb{R}^3).
+3. Por que a ordem dos elementos em um par ou triplo ordenado é importante?
+
 ## Operações no produto cartesiano
 
 Além disso, podemos definir operações nesse conjunto usando as operações já conhecidas dos números reais. Por exemplo, ao dizer que andamos primeiro na direção $x$ e depois na direção $y$, estamos compondo os pontos $(x, 0)$ e $(0, y)$ para obter o ponto $(x, y)$.  
@@ -162,6 +205,11 @@ k (x, y, z) = (kx, ky, kz).
 $$
 Essa operação permite ampliar ou reduzir as distâncias, mantendo a direção das coordenadas proporcional.
 
+### Exercícios
+
+1. Explique como a adição de pares ou trios ordenados se relaciona com a soma de números reais.
+2. Calcule $(2, -1) + (3, 4)$ e $2 \cdot (1, -3, 2)$.
+3. Por que a multiplicação por um escalar mantém a direção do ponto, mas altera sua distância à origem?
 
 ## Espaço Vetorial
 
@@ -272,6 +320,14 @@ Vimos que, embora cada conjunto numérico (como os reais) contenha um número in
 
 A dimensão é, portanto, a medida fundamental que caracteriza a estrutura do espaço.
 
+### Exercícios
+
+1. Defina em suas palavras o que é um espaço vetorial e quais operações devem estar definidas nele.
+2. Verifique se os vetores $(1,0)$ e $(0,1)$ em $\mathbb{R}^2$ são linearmente independentes.
+3. Explique por que três vetores quaisquer em $\mathbb{R}^2$ são necessariamente linearmente dependentes.
+4. Determine a dimensão de $\mathbb{R}^3$ e dê um exemplo de uma base para esse espaço vetorial.
+5. Relacione o conceito de dimensão de um espaço vetorial com a ideia de direções independentes no espaço físico.
+
 ## Funções Contínuas: Definição de Limite
 
 Para compreender o que significa uma função ser contínua, precisamos primeiro introduzir o conceito de limite.  
@@ -362,14 +418,12 @@ ax.text(p + 1.1, L + 0.02, r"$L$", fontsize=12)
 ax.fill_between(
     x_vals, L - eps, L + eps, color="gray", alpha=0.3, label=r"$|f(x)-L| < \varepsilon$"
 )
-
 # Linha vertical em p
 ax.axvline(p, color="black", linestyle="--")
 ax.text(p, -1.1, r"$p$", fontsize=12, ha="center")
 
 # Faixa |x - p| < delta
 ax.axvspan(p - delta, p + delta, color="orange", alpha=0.2, label=r"$|x-p| < \delta$")
-
 # Destacar o ponto (p, L)
 ax.plot(p, L, "ro")
 
@@ -633,3 +687,18 @@ ax.grid(True)
 plt.show()
 ```
 
+### Exercícios
+
+1. Explique em palavras simples o que significa o limite $\lim_{x \to p} f(x) = L$ usando a ideia de $\varepsilon$ e $\delta$.
+2. Para $f(x) = 3x + 1$, calcule $\delta$ correspondente a $\varepsilon = 0.1$ quando $x \to 2$.
+3. Por que a escolha de $\delta = \min(|x_1 - p|, |x_2 - p|)$ garante que todos os valores de $x$ dentro de $(p-\delta, p+\delta)$ levam $f(x)$ para dentro da faixa $|f(x)-L|<\varepsilon$?
+4. Considere a função por partes
+   $$
+   f(x) =
+   \begin{cases}
+   x & \text{se } x < 1 \\
+   2x^2 & \text{se } x \ge 1
+   \end{cases}
+   $$
+   e $\varepsilon = 0.1$. Mostre que não existe $\delta > 0$ que satisfaça a definição de limite em $x=1$.
+5. Explique como a descontinuidade em $x=1$ impede a existência do limite $\lim_{x \to 1} f(x)$.
