@@ -8,61 +8,86 @@ title: "Exercícios Selecionados"
 
 ## Exercício 1: A Física como Linguagem Matemática
 
-Explique por que $\sqrt{2}$ não pode ser expresso como uma fração $\frac{p}{q}$ e como isso se relaciona com a ideia de um espaço discreto. Discuta o que a impossibilidade de representar exatamente certas distâncias com um segmento-padrão sugere sobre a natureza do espaço.
+**Contexto:** Considere o Teorema de Pitágoras aplicado a um triângulo retângulo com catetos de comprimento 1.
+
+Explique por que $\sqrt{2}$ não pode ser expresso como uma fração $\frac{p}{q}$ (demonstre por contradição ou argumente qualitativamente). Discuta como isso se relaciona com a ideia de um espaço discreto: se existisse uma unidade mínima indivisível para medir distâncias, seria possível representar exatamente a hipotenusa? O que isso sugere sobre a natureza contínua do espaço?
 
 ---
 
 ## Exercício 2: Determinismo e Estatística
 
-Explique em palavras simples a diferença entre a interpretação frequentista e bayesiana de probabilidade. Use exemplos concretos para ilustrar quando cada interpretação é mais apropriada.
+**Contexto:** Compare duas situações: (a) lançar uma moeda 1000 vezes, (b) prever se um candidato específico ganhará uma eleição.
+
+Explique a diferença entre as interpretações frequentista e bayesiana de probabilidade. Para cada situação acima, discuta qual interpretação é mais apropriada e por quê. Como cada abordagem definiria "probabilidade" em cada caso?
 
 ---
 
 ## Exercício 3: Determinismo e Estatística
 
-Explique em palavras a diferença entre probabilidade em um espaço discreto e densidade de probabilidade em um espaço contínuo. Por que a probabilidade de a partícula estar exatamente em $x_0$ é zero, mesmo que $\rho(x_0)$ seja grande?
+**Contexto:** Compare um dado de 6 faces com uma partícula que pode estar em qualquer ponto de um intervalo [0,1].
+
+Explique a diferença fundamental entre probabilidade discreta e densidade de probabilidade contínua. Por que a probabilidade de encontrar a partícula exatamente em $x_0 = 0.5$ é zero, mesmo que a densidade $\rho(0.5)$ seja alta? Como interpretamos fisicamente a densidade de probabilidade?
 
 ---
 
 ## Exercício 4: Determinismo e Estatística
 
-Explique por que, mesmo na mecânica clássica, é necessário usar uma descrição probabilística na prática. Discuta como incertezas iniciais se propagam e por que isso leva naturalmente à necessidade de descrições estatísticas.
+**Contexto:** Considere o movimento de um projétil com pequenas incertezas na velocidade inicial.
+
+Explique por que, mesmo com as leis determinísticas de Newton, precisamos de descrições probabilísticas na prática. Discuta como pequenas incertezas iniciais se amplificam ao longo do tempo e por que isso torna inevitável o uso de estatística, mesmo em sistemas clássicos. Dê exemplos de como isso se manifesta em situações reais.
 
 ---
 
 ## Exercício 5: Determinismo e Estatística
 
-Uma função de onda normalizada satisfaz $\int_{-\infty}^{\infty} |\psi(x)|^2 \dd x = 1$. Por que isso é necessário? Compare a densidade de probabilidade quântica $|\psi(x)|^2$ com a distribuição clássica de probabilidade $\rho(x,p)$ discutida nos exemplos anteriores.
+**Contexto:** Compare a descrição clássica de uma partícula no espaço de fase $(x,p)$ com a descrição quântica via função de onda $\psi(x)$.
+
+Por que uma função de onda deve satisfazer 
+$$
+\int_{-\infty}^{\infty} |\psi(x)|^2 \dd x = 1?
+$$
+Compare a densidade de probabilidade quântica $|\psi(x)|^2$ com a distribuição clássica $\rho(x,p)$. Quais são as diferenças conceituais fundamentais entre essas duas descrições probabilísticas?
 
 ---
 
 ## Exercício 6: Leis macroscópicas emergindo do coletivo
 
-Diferencie microestado e macroestado usando exemplos concretos de um gás em uma caixa. Explique o significado físico da entropia de Boltzmann $S = k_B \ln \Omega$. Por que ela cresce durante a expansão livre de um gás?
+**Contexto:** Considere um gás com $N \approx 10^{23}$ partículas em uma caixa.
+
+Diferencie microestado (posições e velocidades de todas as partículas) e macroestado (pressão, temperatura, volume). Use o exemplo concreto de expansão livre: como o número de microestados $\Omega$ muda quando o gás se expande? Explique o significado físico da entropia $S = k_B \ln \Omega$ e por que ela sempre cresce neste processo.
 
 ---
 
 ## Exercício 7: Leis macroscópicas emergindo do coletivo
 
-Imagine um gás ideal isolado com $N$ partículas e energia total $E$. Se você conhecer apenas $N$, $V$ e $E$, como calcularia a probabilidade de encontrar um subconjunto de partículas em uma região específica do volume? Discuta a relação entre "ignorância máxima" e a atribuição de probabilidades iguais aos microestados.
+**Contexto:** Um sistema isolado em equilíbrio termodinâmico.
+
+Para um gás ideal com $N$ partículas, volume $V$ e energia $E$ fixos, como você calcularia a probabilidade de encontrar exatamente $n$ partículas em uma região que ocupa $1/4$ do volume total? Explique o postulado da "ignorância máxima": por que atribuímos probabilidades iguais a todos os microestados compatíveis com $(N,V,E)$?
 
 ---
 
 ## Exercício 8: Introdução ao Princípio da Incerteza de Heisenberg
 
-Explique qualitativamente como o fluxo Hamiltoniano no espaço de fase, representado por $\vec{V} = J \begin{pmatrix} \partial H/\partial x \\ \partial H/\partial p \end{pmatrix}$, garante que as curvas de nível de energia sejam percorridas pelas trajetórias clássicas. Como isso se relaciona com a ideia de que observáveis geram transformações?
+**Contexto:** O espaço de fase $(x,p)$ e as equações de Hamilton.
+
+Descreva qualitativamente como o campo vetorial $\vec{V} = J \begin{pmatrix} \partial H/\partial x \\ \partial H/\partial p \end{pmatrix}$ determina o fluxo no espaço de fase. Por que as trajetórias seguem as curvas de energia constante? Conecte isso com a ideia de que observáveis (como $H$, $x$, $p$) geram transformações no sistema através dos parênteses de Poisson.
 
 ---
 
 ## Exercício 9: Introdução ao Princípio da Incerteza de Heisenberg
 
-Verifique que, na representação de posição, os operadores
-$$\hat{x}\psi(x) = x \psi(x), \quad \hat{p}\psi(x) = -i\hbar \frac{\partial}{\partial x} \psi(x)$$
-satisfazem a relação de comutação $[\hat{x},\hat{p}] = i\hbar$. Explique por que essa relação não-comutativa é fundamental para a mecânica quântica e como ela difere da mecânica clássica onde $\{x,p\} = 1$.
+**Contexto:** A transição da mecânica clássica para a quântica.
+
+**Parte (a):** Calcule explicitamente $[\hat{x},\hat{p}]\psi(x)$ usando as definições $\hat{x}\psi(x) = x\psi(x)$ e $\hat{p}\psi(x) = -i\hbar \frac{\partial\psi}{\partial x}$, e verifique que $[\hat{x},\hat{p}] = i\hbar$.
+
+**Parte (b):** Explique por que esta relação não-comutativa é fundamental para a mecânica quântica. Como ela difere da relação clássica $\{x,p\} = 1$ dos parênteses de Poisson? O que significa fisicamente dizer que $x$ e $p$ "não comutam"?
 
 ---
 
 ## Exercício 10: Introdução ao Princípio da Incerteza de Heisenberg
 
-Explique em palavras o significado físico da desigualdade de Heisenberg $\sigma_x \sigma_p \geq \hbar/2$. Discuta como essa limitação fundamental difere das incertezas experimentais e por que ela representa uma propriedade intrínseca da natureza, não uma limitação tecnológica. Use exemplos para ilustrar as implicações dessa desigualdade.
+**Contexto:** O significado físico fundamental da desigualdade $\sigma_x \sigma_p \geq \hbar/2$.
 
+Explique em linguagem clara o que esta desigualdade nos diz sobre a natureza da realidade. Como ela difere das incertezas experimentais (que podem, em princípio, ser reduzidas com melhores instrumentos)? Por que representa uma limitação intrínseca da natureza?
+
+**Exemplos para discutir:** (a) localização precisa de um elétron vs. seu momento, (b) por que não podemos ter trajetórias bem definidas na mecânica quântica, (c) implicações para o conceito clássico de "partícula".
