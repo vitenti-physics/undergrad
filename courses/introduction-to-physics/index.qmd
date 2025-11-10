@@ -13,5 +13,6 @@ These are the lecture notes and exercise lists for the Introduction to Physics (
 - [Determinismo e Estatística](determinism-statistics.qmd)
 - [Leis macroscópicas emergindo do coletivo; noções de entropia.](intro-stat-mechanics.qmd)
 - [Introdução ao Princípio da Incerteza de Heisenberg](heisenberg-uncertainty.qmd)
+- [Exercícios Selecionados](selected-exercises.qmd)
 
 {{< include /_footer.qmd >}}

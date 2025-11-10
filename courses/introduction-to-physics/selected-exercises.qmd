@@ -1,0 +1,68 @@
+---
+title: "Exercícios Selecionados"
+---
+
+{{< include /_functions.qmd >}}
+
+## Exercícios Selecionados - Introdução à Física
+
+## Exercício 1: A Física como Linguagem Matemática
+
+Explique por que $\sqrt{2}$ não pode ser expresso como uma fração $\frac{p}{q}$ e como isso se relaciona com a ideia de um espaço discreto. Discuta o que a impossibilidade de representar exatamente certas distâncias com um segmento-padrão sugere sobre a natureza do espaço.
+
+---
+
+## Exercício 2: Determinismo e Estatística
+
+Explique em palavras simples a diferença entre a interpretação frequentista e bayesiana de probabilidade. Use exemplos concretos para ilustrar quando cada interpretação é mais apropriada.
+
+---
+
+## Exercício 3: Determinismo e Estatística
+
+Explique em palavras a diferença entre probabilidade em um espaço discreto e densidade de probabilidade em um espaço contínuo. Por que a probabilidade de a partícula estar exatamente em $x_0$ é zero, mesmo que $\rho(x_0)$ seja grande?
+
+---
+
+## Exercício 4: Determinismo e Estatística
+
+Explique por que, mesmo na mecânica clássica, é necessário usar uma descrição probabilística na prática. Discuta como incertezas iniciais se propagam e por que isso leva naturalmente à necessidade de descrições estatísticas.
+
+---
+
+## Exercício 5: Determinismo e Estatística
+
+Uma função de onda normalizada satisfaz $\int_{-\infty}^{\infty} |\psi(x)|^2 \dd x = 1$. Por que isso é necessário? Compare a densidade de probabilidade quântica $|\psi(x)|^2$ com a distribuição clássica de probabilidade $\rho(x,p)$ discutida nos exemplos anteriores.
+
+---
+
+## Exercício 6: Leis macroscópicas emergindo do coletivo
+
+Diferencie microestado e macroestado usando exemplos concretos de um gás em uma caixa. Explique o significado físico da entropia de Boltzmann $S = k_B \ln \Omega$. Por que ela cresce durante a expansão livre de um gás?
+
+---
+
+## Exercício 7: Leis macroscópicas emergindo do coletivo
+
+Imagine um gás ideal isolado com $N$ partículas e energia total $E$. Se você conhecer apenas $N$, $V$ e $E$, como calcularia a probabilidade de encontrar um subconjunto de partículas em uma região específica do volume? Discuta a relação entre "ignorância máxima" e a atribuição de probabilidades iguais aos microestados.
+
+---
+
+## Exercício 8: Introdução ao Princípio da Incerteza de Heisenberg
+
+Explique qualitativamente como o fluxo Hamiltoniano no espaço de fase, representado por $\vec{V} = J \begin{pmatrix} \partial H/\partial x \\ \partial H/\partial p \end{pmatrix}$, garante que as curvas de nível de energia sejam percorridas pelas trajetórias clássicas. Como isso se relaciona com a ideia de que observáveis geram transformações?
+
+---
+
+## Exercício 9: Introdução ao Princípio da Incerteza de Heisenberg
+
+Verifique que, na representação de posição, os operadores
+$$\hat{x}\psi(x) = x \psi(x), \quad \hat{p}\psi(x) = -i\hbar \frac{\partial}{\partial x} \psi(x)$$
+satisfazem a relação de comutação $[\hat{x},\hat{p}] = i\hbar$. Explique por que essa relação não-comutativa é fundamental para a mecânica quântica e como ela difere da mecânica clássica onde $\{x,p\} = 1$.
+
+---
+
+## Exercício 10: Introdução ao Princípio da Incerteza de Heisenberg
+
+Explique em palavras o significado físico da desigualdade de Heisenberg $\sigma_x \sigma_p \geq \hbar/2$. Discuta como essa limitação fundamental difere das incertezas experimentais e por que ela representa uma propriedade intrínseca da natureza, não uma limitação tecnológica. Use exemplos para ilustrar as implicações dessa desigualdade.
+

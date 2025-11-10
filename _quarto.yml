@@ -33,6 +33,8 @@ website:
                   href: courses/introduction-to-physics/intro-stat-mechanics.qmd
                 - text: "Introduction to Heisenberg Uncertainty Principle"
                   href: courses/introduction-to-physics/heisenberg-uncertainty.qmd
+                - text: "Selected Exercises"
+                  href: courses/introduction-to-physics/selected-exercises.qmd
             - section: "Vector Calculus"
               contents:
                 - text: "Overview"
