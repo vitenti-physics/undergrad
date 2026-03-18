@@ -1,6 +1,5 @@
 ---
 title: "Time Dependent Green Functions"
-format: html
 ---
 
 {{< include /_functions.qmd >}}

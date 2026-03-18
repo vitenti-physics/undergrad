@@ -1,4 +1,3 @@
-```quarto
 ---
 title: "Electrodynamics"
 format: html
@@ -14,4 +13,3 @@ These are the lecture notes and problem sets for the Electrodynamics course by S
 
 {{< include /_footer.qmd >}}
 
-```

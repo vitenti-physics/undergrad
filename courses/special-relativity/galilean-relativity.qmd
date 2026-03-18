@@ -1,6 +1,5 @@
 ---
 title: "Galilean Relativity"
-format: html
 ---
 
 {{< include /_functions.qmd >}}

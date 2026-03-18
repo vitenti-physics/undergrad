@@ -1,6 +1,5 @@
 ---
 title: "Dirac Delta"
-format: html
 ---
 
 ## Dirac Delta

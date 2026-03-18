@@ -715,7 +715,7 @@ $$
 
 O produto $\langle f|g \rangle$ pode ser decomposto em comutador e anti-comutador:
 $$
-\langle f|g \rangle = \frac{1}{2} \langle \psi | {\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle} | \psi \rangle + \frac{1}{2} \langle \psi | [\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle] | \psi \rangle,
+\langle f|g \rangle = \frac{1}{2} \langle \psi | \{\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle\} | \psi \rangle + \frac{1}{2} \langle \psi | [\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle] | \psi \rangle,
 $$
 onde ${\cdot,\cdot}$ é o anti-comutador e $[\cdot,\cdot]$ é o comutador.
 

@@ -1,6 +1,5 @@
 ---
 title: "Clifford Algebra and Spacetime Geometry"
-date: "2025-07-07"
 ---
 
 {{< include /_functions.qmd >}}
