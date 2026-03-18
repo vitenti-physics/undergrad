@@ -4,6 +4,7 @@ format: html
 ---
 
 {{< include /_functions.qmd >}}
+{{< include /_macros.qmd >}}
 
 ## Galilean Relativity
 

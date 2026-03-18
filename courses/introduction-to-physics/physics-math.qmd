@@ -82,7 +82,7 @@ Para organizar as ideias, temos os seguintes conjuntos numéricos:
 
 ### Exercícios
 
-1. Dê exemplos de números que pertencem a cada um dos conjuntos (\mathbb{N}), (\mathbb{Z}), (\mathbb{Q}) e irracionais.
+1. Dê exemplos de números que pertencem a cada um dos conjuntos ($\mathbb{N}$), ($\mathbb{Z}$), ($\mathbb{Q}$) e irracionais.
 2. Explique a relação entre os conjuntos $\mathbb{Q}$ e $\mathbb{R}$.
 3. Classifique os seguintes números nos conjuntos corretos: $0, -3, \frac{5}{2}, \sqrt{2}, \pi$.
 
@@ -181,8 +181,8 @@ Essa construção não é apenas formal, ela reflete a nossa própria forma de l
 
 ### Exercícios
 
-1. Explique o que é o produto cartesiano e como ele nos ajuda a construir (\mathbb{R}^2) e (\mathbb{R}^3).
-2. Liste cinco elementos quaisquer de (\mathbb{R}^2) e cinco elementos de (\mathbb{R}^3).
+1. Explique o que é o produto cartesiano e como ele nos ajuda a construir ($\mathbb{R}^2$) e ($\mathbb{R}^3$).
+2. Liste cinco elementos quaisquer de ($\mathbb{R}^2$) e cinco elementos de ($\mathbb{R}^3$).
 3. Por que a ordem dos elementos em um par ou triplo ordenado é importante?
 
 ## Operações no produto cartesiano
@@ -381,7 +381,7 @@ Esse raciocínio será a base para a definição formal de continuidade.
 ```{python}
 # | code-fold: true
 # | label: fig-eps-delta
-# | fig-cap: Representação gráfica da definição de limite $\lim_{x \to p} f(x) = L$.
+# | fig-cap: "Representação gráfica da definição de limite $\\lim_{x \\to p} f(x) = L$."
 # | fig-cap-location: margin
 
 import numpy as np
@@ -491,7 +491,7 @@ $$
 
 #### Intuição
 
-- O $\varepsilon$ abre um “tubo horizontal” em torno de $L$.  
+- O $\varepsilon$ abre um ``tubo horizontal'' em torno de $L$.  
 - Os pontos $x_1$ e $x_2$ marcam onde a curva da função toca as bordas desse tubo.  
 - Escolher $\delta = \min(|x_1-p|,|x_2-p|)$ garante que, ao nos aproximarmos de $p$, permanecemos dentro desse tubo.  
 
@@ -500,7 +500,7 @@ Assim, conseguimos traduzir a tolerância em $y$ (dada por $\varepsilon$) em uma
 ```{python}
 # | code-fold: true
 # | label: fig-eps-delta-sets
-# | fig-cap: Representação gráfica da definição de limite $\lim_{x \to p} f(x) = L$.
+# | fig-cap: "Representação gráfica da definição de limite $\\lim_{x \\to p} f(x) = L$."
 # | fig-cap-location: margin
 
 import numpy as np
@@ -622,7 +622,7 @@ A única maneira de evitar isso seria tomar $\delta = 0$, mas isso viola a defin
 ```{python}
 # | code-fold: true
 # | label: fig-eps-delta-sets-discontinuity
-# | fig-cap: Representação gráfica da definição de limite $\lim_{x \to p} f(x) = L$.
+# | fig-cap: "Representação gráfica da definição de limite $\\lim_{x \\to p} f(x) = L$."
 # | fig-cap-location: margin
 
 # Código corrigido para plotar a função por partes (legendas em texto simples)

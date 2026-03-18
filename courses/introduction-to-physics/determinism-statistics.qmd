@@ -3,6 +3,7 @@ title: "Determinismo e Estatística"
 ---
 
 {{< include /_functions.qmd >}}
+{{< include /_macros.qmd >}}
 
 ## A Linguagem da Incerteza: O que é Estatística?
 

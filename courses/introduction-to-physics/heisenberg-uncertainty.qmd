@@ -4,6 +4,7 @@ title: "Introdução ao Princípio da Incerteza de Heisenberg"
 ---
 
 {{< include /_functions.qmd >}}
+{{< include /_macros.qmd >}}
 
 ## Lei de Newton e momento
 
@@ -299,7 +300,7 @@ onde $A$, $B$ e $C$ são funções de $x$ e $p$. Essa propriedade assegura que o
 
 A ideia central da mecânica Hamiltoniana consiste em estudar o fluxo no espaço de fase gerado pela evolução temporal do Hamiltoniano. A figura abaixo ilustra o fluxo gerado pelo Hamiltoniano do oscilador harmônico. Os vetores indicam a direção da evolução temporal:
 $$
-\vec{V} = J \pmatrix{\frac{\partial H}{\partial x} \\ \frac{\partial H}{\partial p}}
+\vec{V} = J \begin{pmatrix}\frac{\partial H}{\partial x} \\ \frac{\partial H}{\partial p}\end{pmatrix}
 $$
 
 ```{python}
@@ -403,7 +404,7 @@ Aqui, $\hat{x}$ atua multiplicando pela coordenada, enquanto $\hat{p}$ se torna 
 Um dos conceitos centrais da mecânica quântica, herdado da mecânica Hamiltoniana, é que cada observável pode ser visto como um gerador de transformações.
 
 * Na mecânica clássica, vimos que o Hamiltoniano $H$ gera a evolução temporal através do parêntese de Poisson: $\dot{f} = \{f,H\}$.
-* Em mecânica quântica, essa ideia é promovida para operadores: um operador $\hat{A}$ gera uma transformação unitária sobre estados $\ket{\psi}$ via o operador exponencial $e^{-i \epsilon \hat{A}/\hbar}$.
+* Em mecânica quântica, essa ideia é promovida para operadores: um operador $\hat{A}$ gera uma transformação unitária sobre estados $|\psi\rangle$ via o operador exponencial $e^{-i \epsilon \hat{A}/\hbar}$.
 * Por exemplo, o momento $\hat{p}$ gera translações em posição, enquanto a posição $\hat{x}$ gera translações em momento, refletindo a mesma estrutura observável $\to$ transformação que vimos no espaço de fase clássico.
 
 Essa interpretação é crucial, porque mostra que os operadores não são apenas "valores para medir", mas agentes de transformação dentro do espaço de Hilbert (que é o espaço de funções de onda). Ela estabelece a ponte para o formalismo estatístico e para a evolução temporal, e é uma das ideias centrais para entender por que a mecânica quântica difere da clássica.
@@ -552,7 +553,7 @@ Essa forma mostra que a dispersão é invariante sob deslocamentos lineares e qu
 
 ```{python}
 # | label: fig-variancia-uniforme
-# | fig-cap: "Distribuição uniforme em [0,1] mostrando média (linha vermelha) e região ±σ (sombras verdes)."
+# | fig-cap: "Distribuição uniforme em [0,1] mostrando média (linha vermelha) e região $\\pm\\sigma$ (sombras verdes)."
 # | code-fold: true
 
 import numpy as np
@@ -560,19 +561,27 @@ import matplotlib.pyplot as plt
 
 # Intervalo da distribuição uniforme
 a, b = 0, 1
-mu = (a+b)/2
-sigma = (b-a)/(2*np.sqrt(3))
+mu = (a + b) / 2
+sigma = (b - a) / (2 * np.sqrt(3))
 
 # Função de densidade
 x = np.linspace(-0.1, 1.1, 500)
-P = np.where((x >= a) & (x <= b), 1/(b-a), 0)
+P = np.where((x >= a) & (x <= b), 1 / (b - a), 0)
 
-plt.figure(figsize=(8,5))
-plt.plot(x, P, 'b-', lw=2, label='Densidade uniforme')
+plt.figure(figsize=(8, 5))
+plt.plot(x, P, "b-", lw=2, label="Densidade uniforme")
 # Média
-plt.axvline(mu, color='r', linestyle='--', label=f'Média μ={mu:.2f}')
-# Região ±σ
-plt.fill_between(x, 0, P, where=((x >= mu-sigma) & (x <= mu+sigma)), color='green', alpha=0.3, label=f'±σ ≈ {sigma:.2f}')
+plt.axvline(mu, color="r", linestyle="--", label=rf"Média $\mu={mu:.2f}$")
+# Região $\pm\sigma$
+plt.fill_between(
+    x,
+    0,
+    P,
+    where=((x >= mu - sigma) & (x <= mu + sigma)),
+    color="green",
+    alpha=0.3,
+    label=rf"$\pm\sigma \approx$ {sigma:.2f}",
+)
 
 plt.xlabel("x")
 plt.ylabel("Probabilidade")
@@ -581,7 +590,7 @@ plt.legend()
 plt.grid(alpha=0.3)
 plt.show()
 ```
-A linha vermelha indica a média da distribuição uniforme, enquanto a região sombreada verde mostra o intervalo ±σ em torno da média. Mesmo que todos os valores tenham a mesma probabilidade, essa região fornece uma medida típica da dispersão dos valores possíveis. 
+A linha vermelha indica a média da distribuição uniforme, enquanto a região sombreada verde mostra o intervalo $\pm\sigma$ em torno da média. Mesmo que todos os valores tenham a mesma probabilidade, essa região fornece uma medida típica da dispersão dos valores possíveis. 
 
 ### Exercícios
 
@@ -645,7 +654,7 @@ plt.quiver(
 
 # Ângulo
 theta = np.arccos(np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v)))
-plt.text(0.3, 0.3, f"θ ≈ {np.degrees(theta):.1f}°", fontsize=12, color="purple")
+plt.text(0.3, 0.3, rf"$\theta \approx {np.degrees(theta):.1f}^\circ$", fontsize=12, color="purple")
 
 plt.xlim(-0.5, 3)
 plt.ylim(-0.5, 3)
@@ -706,11 +715,9 @@ $$
 
 O produto $\langle f|g \rangle$ pode ser decomposto em comutador e anti-comutador:
 $$
-\langle f|g \rangle = \frac{1}{2} \langle \psi | {\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle} | \psi \rangle
-
-* \frac{1}{2} \langle \psi | [\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle] | \psi \rangle,
-  $$
-  onde ${\cdot,\cdot}$ é o anti-comutador e $[\cdot,\cdot]$ é o comutador.
+\langle f|g \rangle = \frac{1}{2} \langle \psi | {\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle} | \psi \rangle + \frac{1}{2} \langle \psi | [\hat{x}-\langle x\rangle, \hat{p}-\langle p\rangle] | \psi \rangle,
+$$
+onde ${\cdot,\cdot}$ é o anti-comutador e $[\cdot,\cdot]$ é o comutador.
 
 - O anti-comutador é hermitiano e, portanto, produz um número real.
 - O comutador é anti-hermitiano e, portanto, produz um número imaginário puro.

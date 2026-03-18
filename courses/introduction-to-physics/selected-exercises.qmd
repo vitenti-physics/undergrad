@@ -3,6 +3,7 @@ title: "Exercícios Selecionados"
 ---
 
 {{< include /_functions.qmd >}}
+{{< include /_macros.qmd >}}
 
 ## Exercícios Selecionados - Introdução à Física
 

@@ -3,6 +3,7 @@ title: "Leis macroscópicas emergindo do coletivo; noções de entropia."
 ---
 
 {{< include /_functions.qmd >}}
+{{< include /_macros.qmd >}}
 
 ## O Problema Fundamental: A Impossibilidade de Acompanhar Tudo
 
@@ -547,4 +548,4 @@ O ensemble microcanônico serve como base conceitual para os ensembles canônico
    $$
    S \approx Nk_B \left[\ln\left(\frac{V}{N}\right) + \frac{3}{2}\ln\left(\frac{4\pi m E}{3N h^2}\right) + \frac{5}{2}\right],
    $$
-   derive a expressão para a temperatura (T) e mostre que (E = \frac{3}{2} Nk_B T).
+   derive a expressão para a temperatura ($T$) e mostre que ($E = \frac{3}{2} Nk_B T$).
