@@ -59,7 +59,6 @@ website:
                   href: courses/special-relativity/galilean-relativity.qmd
                 - text: "Spacetime Algebra"
                   href: courses/special-relativity/spacetime-algebra.qmd
-
             - section: "Electrodynamics"
               contents:
                 - text: "Overview"

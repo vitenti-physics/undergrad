@@ -1,135 +1,150 @@
 ---
 title: "Geometry Review for Electrodynamics"
-format: pdf
+
+format: 
+  html:
+    page-layout: full
+    css: styles.css
+  pdf:
+    geometry: margin=2.5cm
+    documentclass: article
+format-links: [pdf]
 ---
 
-# Conventions
+{{< include _macros.qmd >}}
 
-- Signature: $(-,+,+,+)$  
+## Conventions and Notation
+
+- Signature: $(-,+,+,+)$ (convention)  
 - Greek indices: $\mu,\nu = 0,1,2,3$  
 - Einstein summation implied  
-- $c = 1$  
+- Time coordinate: $x^0 = ct$
 
 Metric:
 $$
 \eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)
 $$
 
----
+The choice of signature is a convention: one may equivalently use $(+,-,-,-)$ provided it is applied consistently. Physical predictions are independent of this choice.
 
-# Block 1 — Motivation and structure
+Instead of setting $c=1$, we define the time coordinate as $x^0 = ct$, so that all components of $x^\mu$ have dimensions of length. In this formulation,
+$$
+\dd s^2 = -c^2 \dd t^2 + \dd x^2 + \dd y^2 + \dd z^2
+$$
+which is algebraically equivalent to working in units with $c=1$. The two approaches differ only by a rescaling of the time coordinate.
+
+
+## Relativistic Framework
+
+### Motivation and Space-Time Structure
 
 - Postulates of special relativity  
 - Lorentz invariance  
 - Space-time as a unified geometric object  
 - Worldlines  
 
-Transformations:
+The postulates (constancy of $c$ and equivalence of inertial frames) require a unified treatment of space and time. Particle histories are described by worldlines, making causal relations explicit.
+
+Lorentz transformations:
 $$
-x'^\mu = \Lambda^\mu_{\ \nu} x^\nu
+x'^{\mu} = \Lambda^{\mu}_{\ \nu} x^{\nu}
 $$
 
 ---
 
-# Block 2 — Minkowski space
+### Minkowski Space
 
 - Vector space $\mathbb{R}^4$ with indefinite metric  
-- Space-time interval:
 
+Interval:
 $$
-ds^2 = \eta_{\mu\nu} dx^\mu dx^\nu
+\dd s^2 = \eta_{\mu\nu} \dd x^{\mu} \dd x^{\nu}
 $$
 
-- Invariance:
+Invariance:
 $$
-ds'^2 = ds^2
+\dd s'^2 = \dd s^2
 $$
+
+The invariant interval replaces separate notions of spatial distance and time separation.
 
 ---
 
-# Block 3 — Euclidean geometry (reference)
+### Euclidean Comparison
 
 - Positive-definite inner product  
-- Norm:
+
 $$
 \|\mathbf{a}\|^2 = \mathbf{a}\cdot \mathbf{a}
 $$
 
-- Cauchy–Schwarz inequality:
+Inequalities:
 $$
-|\mathbf{a}\cdot \mathbf{b}| \le \|\mathbf{a}\|\|\mathbf{b}\|
-$$
-
-- Triangle inequality:
-$$
+|\mathbf{a}\cdot \mathbf{b}| \le \|\mathbf{a}\|\|\mathbf{b}\|, \quad
 \|\mathbf{a}+\mathbf{b}\| \le \|\mathbf{a}\| + \|\mathbf{b}\|
 $$
 
----
-
-# Block 4 — Contrast with Minkowski
-
-- Norm:
-$$
-A^\mu A_\mu = \eta_{\mu\nu} A^\mu A^\nu
-$$
-
-- Classification:
-  - $A^\mu A_\mu < 0$ → timelike  
-  - $A^\mu A_\mu > 0$ → spacelike  
-  - $A^\mu A_\mu = 0$ → null  
-
-- “Cauchy–Schwarz” (timelike, same time orientation):
-$$
-(A^\mu B_\mu)^2 \ge (A^\mu A_\mu)(B^\nu B_\nu)
-$$
-
-- Triangle inequality does not hold in general  
+These properties rely on positive definiteness and do not directly extend to Minkowski space.
 
 ---
 
-# Block 5 — Causal structure
+### Minkowski Geometry and Causality
 
-- Light cone:
+Norm:
+$$
+A^{\mu} A_{\mu} = \eta_{\mu\nu} A^{\mu} A^{\nu}
+$$
+
+Classification:
+
+- $A^{\mu} A_{\mu} < 0$ — timelike  
+- $A^{\mu} A_{\mu} > 0$ — spacelike  
+- $A^{\mu} A_{\mu} = 0$ — null  
+
+Light cone:
 $$
 ds^2 = 0
 $$
 
-- Regions:
-  - future: $x^0 > 0$, $ds^2 < 0$  
-  - past: $x^0 < 0$, $ds^2 < 0$  
-  - spacelike: $ds^2 > 0$  
+Regions:
+
+- future: $x^0 > 0$, $ds^2 < 0$  
+- past: $x^0 < 0$, $ds^2 < 0$  
+- spacelike: $ds^2 > 0$  
+
+Timelike separation allows causal influence; spacelike does not.
 
 ---
 
-# Block 6 — Proper time
+### Proper Time
 
-- Definition:
+Definition:
 $$
-d\tau^2 = - ds^2
+\dd\tau^2 = -\dd s^2
 $$
 
-- Worldline:
+Worldline:
 $$
-\tau = \int \sqrt{-\eta_{\mu\nu} dx^\mu dx^\nu}
+	au = \int \sqrt{-\eta_{\mu\nu} \dd x^{\mu} \dd x^{\nu}}
 $$
+
+Proper time is invariant and depends on the trajectory.
 
 ---
 
-# Block 7 — Lorentz transformations
+### Lorentz Transformations
 
-- Definition:
+Definition:
 $$
-x'^\mu = \Lambda^\mu_{\ \nu} x^\nu
-$$
-
-- Condition:
-$$
-\eta_{\alpha\beta}\Lambda^\alpha_{\ \mu}\Lambda^\beta_{\ \nu}
-= \eta_{\mu\nu}
+x'^{\mu} = \Lambda^{\mu}_{\ \nu} x^{\nu}
 $$
 
-- Boost in $x$:
+Constraint:
+$$
+\eta_{\alpha\beta}\Lambda^{\alpha}_{\ \mu}\Lambda^{\beta}_{\ \nu} = \eta_{\mu\nu}
+$$
+
+Boost (along $x$):
 $$
 \begin{aligned}
 t' &= \gamma (t - vx) \\
@@ -139,288 +154,282 @@ $$
 
 ---
 
-# Block 8 — Four-vectors
+### Four-Vectors
 
-- Position:
+Position:
 $$
-x^\mu = (t, x, y, z)
-$$
-
-- Four-velocity:
-$$
-u^\mu = \frac{dx^\mu}{d\tau}
+x^{\mu} = (t,x,y,z)
 $$
 
-- Normalization:
+Four-velocity:
 $$
-u^\mu u_\mu = -1
+u^{\mu} = \frac{dx^{\mu}}{d\tau}, \quad u^{\mu}u_{\mu} = -1
 $$
 
-- Momentum:
+Momentum:
 $$
-p^\mu = m u^\mu
+p^{\mu} = m u^{\mu}
 $$
 
 ---
 
-# Block 9 — Minkowski inner product
+### Minkowski Inner Product and Inequalities
 
-- Definition:
+Definition:
 $$
-A^\mu B_\mu = \eta_{\mu\nu} A^\mu B^\nu
+A^{\mu} B_{\mu} = \eta_{\mu\nu} A^{\mu} B^{\nu}
 $$
 
-- Lorentz invariant  
+Lorentz invariant.
+
+For timelike, same time orientation:
+$$
+(A^{\mu} B_{\mu})^2 \ge (A^{\mu} A_{\mu})(B^{\nu} B_{\nu})
+$$
+
+Inequalities require causal restrictions.
 
 ---
 
-# Block 10 — Inequalities in Minkowski
+## Tensor and Differential Structure
 
-- Depend on causal type  
+### Index Notation
 
-For timelike vectors:
+- Contravariant: $A^{\mu}$  
+- Covariant: $A_{\mu}$  
+
+Lowering:
 $$
-(A^\mu B_\mu)^2 \ge (A^\mu A_\mu)(B^\nu B_\nu)
-$$
-
----
-
-# Block 11 — Tensor notation
-
-- Contravariant: $A^\mu$  
-- Covariant: $A_\mu$  
-
-- Lowering:
-$$
-A_\mu = \eta_{\mu\nu} A^\nu
+A_{\mu} = \eta_{\mu\nu} A^{\nu}
 $$
 
-- Raising:
+Raising:
 $$
-A^\mu = \eta^{\mu\nu} A_\nu
+A^{\mu} = \eta^{\mu\nu} A_{\nu}
 $$
 
 ---
 
-# Block 12 — Vectors and covectors
+### Vectors and Covectors
 
-- Tangent space $V$  
-- Dual space $V^*$  
+- Tangent space: $V$  
+- Dual space: $V^*$  
 
-- Action:
+Pairing:
 $$
 \omega(v)
 $$
 
-- Gradient:
+Gradient:
 $$
-\partial_\mu
+\partial_{\mu}
+$$
+
+Covectors act linearly on vectors; $\partial_\mu$ is naturally covariant.
+
+---
+
+### Metric as Isomorphism
+
+Mapping:
+$$
+v^{\mu} \leftrightarrow v_{\mu}
+$$
+
+The metric identifies $V$ and $V^*$ and defines contractions.
+
+---
+
+### Tensors
+
+Transformation:
+$$
+T'^{\mu}_{\ \nu} = \Lambda^{\mu}_{\ \alpha} \Lambda^{\beta}_{\ \nu} T^{\alpha}_{\ \beta}
+$$
+
+Tensor equations with fully contracted indices are invariant.
+
+---
+
+### Differential Operators
+
+Four-gradient:
+$$
+\partial_{\mu}
+$$
+
+d'Alembertian:
+$$
+\Box = \partial_{\mu}\partial^{\mu}
+$$
+
+Lorentz-invariant wave operator.
+
+---
+
+## Differential Forms and Electrodynamics
+
+### Differential Forms
+
+Basis:
+$$
+\dd x^{\mu}
+$$
+
+1-form:
+$$
+\omega = \omega_{\mu} \dd x^{\mu}
+$$
+
+Exterior product:
+$$
+\dd x^{\mu} \wedge \dd x^{\nu} = -\dd x^{\nu} \wedge \dd x^{\mu}
 $$
 
 ---
 
-# Block 13 — Metric as isomorphism
+### Electromagnetic 2-Form
 
-- Map:
 $$
-v^\mu \mapsto v_\mu
+F = \frac{1}{2} F_{\mu\nu} \dd x^{\mu} \wedge \dd x^{\nu}
 $$
 
-- Depends on metric  
+Encodes electric and magnetic fields covariantly.
 
 ---
 
-# Block 14 — Tensors
+### Hodge Dual
 
-- Transformation:
-$$
-T'^{\mu}_{\ \nu} = \Lambda^\mu_{\ \alpha} \Lambda^\beta_{\ \nu} T^{\alpha}_{\ \beta}
-$$
-
----
-
-# Block 15 — Derivatives and operators
-
-- Four-gradient:
-$$
-\partial_\mu
-$$
-
-- d’Alembertian:
-$$
-\Box = \partial_\mu \partial^\mu
-$$
-
----
-
-# Block 16 — Differential forms
-
-- Dual basis:
-$$
-dx^\mu
-$$
-
-- 1-form:
-$$
-\omega = \omega_\mu dx^\mu
-$$
-
-- Exterior product:
-$$
-dx^\mu \wedge dx^\nu = - dx^\nu \wedge dx^\mu
-$$
-
----
-
-# Block 17 — 2-forms
-
-- Field:
-$$
-F = \frac{1}{2} F_{\mu\nu} dx^\mu \wedge dx^\nu
-$$
-
----
-
-# Block 18 — Hodge dual
-
-- Definition:
+Mapping:
 $$
 \star: \Omega^p \to \Omega^{4-p}
 $$
 
-- Property:
+Property:
 $$
 \star\star \omega = (-1)^{p(4-p)+1}\,\omega
 $$
 
-- Components:
+Components:
 $$
 (\star F)_{\mu\nu} = \frac{1}{2} \epsilon_{\mu\nu\alpha\beta} F^{\alpha\beta}
 $$
 
 ---
 
-# Block 19 — Integration and orientation
+### Integration and Orientation
 
 - Integration of $p$-forms  
 - Orientation  
-- Volume element:
+
+Volume element:
 $$
-d^4x
+\dd^4x
+$$
+
+Defines invariant integration measures.
+
+---
+
+### Stokes' Theorem
+
+$$
+\int_{\partial M} \omega = \int_M \dd\omega
+$$
+
+Unifies classical integral theorems.
+
+---
+
+### Covariant Electrodynamics
+
+Potential:
+$$
+A = A_{\mu} \dd x^{\mu}
+$$
+
+Field:
+$$
+F = \dd A
+$$
+
+Components:
+$$
+F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}
+$$
+
+Gauge symmetry:
+$$
+A \mapsto A + \dd\lambda
 $$
 
 ---
 
-# Block 20 — Stokes' theorem
-
-$$
-\int_{\partial M} \omega = \int_M d\omega
-$$
-
-Special cases:
-- Fundamental theorem of calculus  
-- Green’s theorem  
-- Stokes’ theorem  
-- Divergence theorem  
-
----
-
-# Block 21 — Covariant electrodynamics
-
-- Potential:
-$$
-A = A_\mu dx^\mu
-$$
-
-- Field:
-$$
-F = dA
-$$
-
-- Components:
-$$
-F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
-$$
-
----
-
-# Block 22 — Maxwell equations
+### Maxwell Equations
 
 Homogeneous:
 $$
-dF = 0
+\dd F = 0
 $$
 
 With sources:
 $$
-d \star F = J
+\dd \star F = J
 $$
 
 ---
 
-# Block 23 — Integral laws
+### Integral Laws
 
-## Gauss law
-
+Gauss:
 $$
-\int_V d\star F = \int_V J
-$$
-
-$$
-\Rightarrow \int_{\partial V} \star F = \int_V J
+\int_{\partial V} \star F = \int_V J
 $$
 
----
-
-## Faraday law
-
+Faraday:
 $$
-\int_S dF = 0
+\int_{\partial S} F = 0
 $$
 
+Ampère–Maxwell:
 $$
-\Rightarrow \int_{\partial S} F = 0
+\int_{\partial S} \star F = \int_S J
 $$
 
 ---
 
-## Ampère–Maxwell law
+### Charge Conservation
 
 $$
-\int_S d\star F = \int_S J
+\partial_{\mu} J^{\mu} = 0
 $$
 
+Follows from:
 $$
-\Rightarrow \int_{\partial S} \star F = \int_S J
-$$
-
----
-
-# Block 24 — Charge conservation
-
-$$
-\partial_\mu J^\mu = 0
+\dd(\dd\star F) = 0 \Rightarrow \dd J = 0
 $$
 
 ---
 
-# Block 25 — Conceptual structure
+## Structural Summary
 
-- Metric → inner product  
-- Inner product → duality  
-- Duality → Hodge  
-- Hodge + $d$ → Maxwell  
-- Stokes → integral laws  
+### Geometric Chain
 
----
-
-# Block 26 — Exercises
-
-1. Classify intervals  
-2. Verify invariance of $ds^2$  
-3. Compute $F_{\mu\nu}$  
-4. Show $dF=0$  
-5. Derive Gauss law  
-6. Compute $\star F$  
+- Metric $\rightarrow$ inner product  
+- Inner product $\rightarrow$ duality  
+- Duality $\rightarrow$ Hodge star  
+- $d$ and $\star$ $\rightarrow$ Maxwell equations  
+- Stokes $\rightarrow$ integral laws  
 
 ---
+
+## Exercises
+
+### Conceptual and Computational
+
+1. Classify intervals (timelike, spacelike, null) with explicit examples.  
+2. Verify invariance of $ds^2$ under a boost.  
+3. Compute $F_{\mu\nu}$ from a given $A_{\mu}$ and identify $\mathbf{E}$ and $\mathbf{B}$.  
+4. Show $dF=0$ in components and relate to Faraday’s law.  
+5. Derive Gauss’ law from $d\star F = J$.  
+6. Compute $\star F$ for a plane wave and interpret components.
