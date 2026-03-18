@@ -1,0 +1,426 @@
+---
+title: "Geometry Review for Electrodynamics"
+format: pdf
+---
+
+# Conventions
+
+- Signature: $(-,+,+,+)$  
+- Greek indices: $\mu,\nu = 0,1,2,3$  
+- Einstein summation implied  
+- $c = 1$  
+
+Metric:
+$$
+\eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)
+$$
+
+---
+
+# Block 1 — Motivation and structure
+
+- Postulates of special relativity  
+- Lorentz invariance  
+- Space-time as a unified geometric object  
+- Worldlines  
+
+Transformations:
+$$
+x'^\mu = \Lambda^\mu_{\ \nu} x^\nu
+$$
+
+---
+
+# Block 2 — Minkowski space
+
+- Vector space $\mathbb{R}^4$ with indefinite metric  
+- Space-time interval:
+
+$$
+ds^2 = \eta_{\mu\nu} dx^\mu dx^\nu
+$$
+
+- Invariance:
+$$
+ds'^2 = ds^2
+$$
+
+---
+
+# Block 3 — Euclidean geometry (reference)
+
+- Positive-definite inner product  
+- Norm:
+$$
+\|\mathbf{a}\|^2 = \mathbf{a}\cdot \mathbf{a}
+$$
+
+- Cauchy–Schwarz inequality:
+$$
+|\mathbf{a}\cdot \mathbf{b}| \le \|\mathbf{a}\|\|\mathbf{b}\|
+$$
+
+- Triangle inequality:
+$$
+\|\mathbf{a}+\mathbf{b}\| \le \|\mathbf{a}\| + \|\mathbf{b}\|
+$$
+
+---
+
+# Block 4 — Contrast with Minkowski
+
+- Norm:
+$$
+A^\mu A_\mu = \eta_{\mu\nu} A^\mu A^\nu
+$$
+
+- Classification:
+  - $A^\mu A_\mu < 0$ → timelike  
+  - $A^\mu A_\mu > 0$ → spacelike  
+  - $A^\mu A_\mu = 0$ → null  
+
+- “Cauchy–Schwarz” (timelike, same time orientation):
+$$
+(A^\mu B_\mu)^2 \ge (A^\mu A_\mu)(B^\nu B_\nu)
+$$
+
+- Triangle inequality does not hold in general  
+
+---
+
+# Block 5 — Causal structure
+
+- Light cone:
+$$
+ds^2 = 0
+$$
+
+- Regions:
+  - future: $x^0 > 0$, $ds^2 < 0$  
+  - past: $x^0 < 0$, $ds^2 < 0$  
+  - spacelike: $ds^2 > 0$  
+
+---
+
+# Block 6 — Proper time
+
+- Definition:
+$$
+d\tau^2 = - ds^2
+$$
+
+- Worldline:
+$$
+\tau = \int \sqrt{-\eta_{\mu\nu} dx^\mu dx^\nu}
+$$
+
+---
+
+# Block 7 — Lorentz transformations
+
+- Definition:
+$$
+x'^\mu = \Lambda^\mu_{\ \nu} x^\nu
+$$
+
+- Condition:
+$$
+\eta_{\alpha\beta}\Lambda^\alpha_{\ \mu}\Lambda^\beta_{\ \nu}
+= \eta_{\mu\nu}
+$$
+
+- Boost in $x$:
+$$
+\begin{aligned}
+t' &= \gamma (t - vx) \\
+x' &= \gamma (x - vt)
+\end{aligned}
+$$
+
+---
+
+# Block 8 — Four-vectors
+
+- Position:
+$$
+x^\mu = (t, x, y, z)
+$$
+
+- Four-velocity:
+$$
+u^\mu = \frac{dx^\mu}{d\tau}
+$$
+
+- Normalization:
+$$
+u^\mu u_\mu = -1
+$$
+
+- Momentum:
+$$
+p^\mu = m u^\mu
+$$
+
+---
+
+# Block 9 — Minkowski inner product
+
+- Definition:
+$$
+A^\mu B_\mu = \eta_{\mu\nu} A^\mu B^\nu
+$$
+
+- Lorentz invariant  
+
+---
+
+# Block 10 — Inequalities in Minkowski
+
+- Depend on causal type  
+
+For timelike vectors:
+$$
+(A^\mu B_\mu)^2 \ge (A^\mu A_\mu)(B^\nu B_\nu)
+$$
+
+---
+
+# Block 11 — Tensor notation
+
+- Contravariant: $A^\mu$  
+- Covariant: $A_\mu$  
+
+- Lowering:
+$$
+A_\mu = \eta_{\mu\nu} A^\nu
+$$
+
+- Raising:
+$$
+A^\mu = \eta^{\mu\nu} A_\nu
+$$
+
+---
+
+# Block 12 — Vectors and covectors
+
+- Tangent space $V$  
+- Dual space $V^*$  
+
+- Action:
+$$
+\omega(v)
+$$
+
+- Gradient:
+$$
+\partial_\mu
+$$
+
+---
+
+# Block 13 — Metric as isomorphism
+
+- Map:
+$$
+v^\mu \mapsto v_\mu
+$$
+
+- Depends on metric  
+
+---
+
+# Block 14 — Tensors
+
+- Transformation:
+$$
+T'^{\mu}_{\ \nu} = \Lambda^\mu_{\ \alpha} \Lambda^\beta_{\ \nu} T^{\alpha}_{\ \beta}
+$$
+
+---
+
+# Block 15 — Derivatives and operators
+
+- Four-gradient:
+$$
+\partial_\mu
+$$
+
+- d’Alembertian:
+$$
+\Box = \partial_\mu \partial^\mu
+$$
+
+---
+
+# Block 16 — Differential forms
+
+- Dual basis:
+$$
+dx^\mu
+$$
+
+- 1-form:
+$$
+\omega = \omega_\mu dx^\mu
+$$
+
+- Exterior product:
+$$
+dx^\mu \wedge dx^\nu = - dx^\nu \wedge dx^\mu
+$$
+
+---
+
+# Block 17 — 2-forms
+
+- Field:
+$$
+F = \frac{1}{2} F_{\mu\nu} dx^\mu \wedge dx^\nu
+$$
+
+---
+
+# Block 18 — Hodge dual
+
+- Definition:
+$$
+\star: \Omega^p \to \Omega^{4-p}
+$$
+
+- Property:
+$$
+\star\star \omega = (-1)^{p(4-p)+1}\,\omega
+$$
+
+- Components:
+$$
+(\star F)_{\mu\nu} = \frac{1}{2} \epsilon_{\mu\nu\alpha\beta} F^{\alpha\beta}
+$$
+
+---
+
+# Block 19 — Integration and orientation
+
+- Integration of $p$-forms  
+- Orientation  
+- Volume element:
+$$
+d^4x
+$$
+
+---
+
+# Block 20 — Stokes' theorem
+
+$$
+\int_{\partial M} \omega = \int_M d\omega
+$$
+
+Special cases:
+- Fundamental theorem of calculus  
+- Green’s theorem  
+- Stokes’ theorem  
+- Divergence theorem  
+
+---
+
+# Block 21 — Covariant electrodynamics
+
+- Potential:
+$$
+A = A_\mu dx^\mu
+$$
+
+- Field:
+$$
+F = dA
+$$
+
+- Components:
+$$
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+$$
+
+---
+
+# Block 22 — Maxwell equations
+
+Homogeneous:
+$$
+dF = 0
+$$
+
+With sources:
+$$
+d \star F = J
+$$
+
+---
+
+# Block 23 — Integral laws
+
+## Gauss law
+
+$$
+\int_V d\star F = \int_V J
+$$
+
+$$
+\Rightarrow \int_{\partial V} \star F = \int_V J
+$$
+
+---
+
+## Faraday law
+
+$$
+\int_S dF = 0
+$$
+
+$$
+\Rightarrow \int_{\partial S} F = 0
+$$
+
+---
+
+## Ampère–Maxwell law
+
+$$
+\int_S d\star F = \int_S J
+$$
+
+$$
+\Rightarrow \int_{\partial S} \star F = \int_S J
+$$
+
+---
+
+# Block 24 — Charge conservation
+
+$$
+\partial_\mu J^\mu = 0
+$$
+
+---
+
+# Block 25 — Conceptual structure
+
+- Metric → inner product  
+- Inner product → duality  
+- Duality → Hodge  
+- Hodge + $d$ → Maxwell  
+- Stokes → integral laws  
+
+---
+
+# Block 26 — Exercises
+
+1. Classify intervals  
+2. Verify invariance of $ds^2$  
+3. Compute $F_{\mu\nu}$  
+4. Show $dF=0$  
+5. Derive Gauss law  
+6. Compute $\star F$  
+
+---

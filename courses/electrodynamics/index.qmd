@@ -1,0 +1,17 @@
+```quarto
+---
+title: "Electrodynamics"
+format: html
+---
+
+# Electrodynamics
+
+These are the lecture notes and problem sets for the Electrodynamics course by Sandro Vitenti. The material is organized into short topic modules; the first entry provides a concise geometry review useful for covariant electrodynamics.
+
+## Course Outline
+
+- [Geometry Review for Electrodynamics](geometry-review.qmd)
+
+{{< include /_footer.qmd >}}
+
+```

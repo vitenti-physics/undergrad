@@ -60,6 +60,12 @@ website:
                 - text: "Spacetime Algebra"
                   href: courses/special-relativity/spacetime-algebra.qmd
 
+            - section: "Electrodynamics"
+              contents:
+                - text: "Overview"
+                  href: courses/electrodynamics/index.qmd
+                - text: "Geometry Review for Electrodynamics"
+                  href: courses/electrodynamics/geometry-review.qmd
 format:
   html:
     theme:
