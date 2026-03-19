@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Undergraduate Physics Lecture Notes"
+  title: "Physics Lecture Notes"
   navbar:
     right:
       - icon: github
@@ -18,7 +18,7 @@ website:
       style: "docked"
       collapse-level: 2
       contents:
-        - section: "Courses"
+        - section: "Undergraduate"
           contents:
             - section: "Introduction to Physics (portuguese)"
               contents:
@@ -58,6 +58,8 @@ website:
                   href: courses/special-relativity/galilean-relativity.qmd
                 - text: "Spacetime Algebra"
                   href: courses/special-relativity/spacetime-algebra.qmd
+        - section: "Graduate"
+          contents:
             - section: "Electrodynamics"
               contents:
                 - text: "Overview"
@@ -71,7 +73,7 @@ format:
       dark: darkly      
     toc: true
     page-layout: full
-    css: styles.css
+    css: style.css
     grid:
       body-width: 1200px
     fig-cap-location: margin
