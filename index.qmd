@@ -1,5 +1,6 @@
 ---
 title: "Undergraduate Physics Lecture Notes"
+format: html
 ---
 
 ## Welcome to Undergraduate Physics Lecture Notes

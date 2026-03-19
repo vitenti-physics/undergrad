@@ -74,13 +74,14 @@ format:
     css: styles.css
     grid:
       body-width: 1200px
+    fig-cap-location: margin
+    reference-location: margin
+    citation-location: margin
   pdf:
     geometry: margin=2.5cm
     documentclass: article
 format-links: [pdf]
 
-reference-location: margin
-citation-location: margin
 authors:
   - Sandro Vitenti
 jupyter: python3

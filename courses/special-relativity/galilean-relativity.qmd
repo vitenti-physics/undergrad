@@ -54,7 +54,6 @@ Below, we illustrate a vector $\vec{x}$ in $\mathbb{E}^2$, decomposed into its c
 # | code-fold: true
 # | label: fig-euclidean-2d
 # | fig-cap: In this diagram, $\vec{x}$ is shown along with its projections onto the $x^1$ and $x^2$ axes. The dashed lines and gray arrows indicate the coordinate decomposition that defines the Cartesian components.
-# | fig-cap-location: margin
 
 fig, ax = plt.subplots(figsize=(8, 4))
 
