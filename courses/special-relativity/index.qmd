@@ -5,7 +5,7 @@ format: html
 
 # Special Relativity
 
-Welcome to the Special Relativity course lecture notes by Sandro Vitenti.
+Welcome to the Special Relativity course lecture notes.
 
 ## Course Outline
 
