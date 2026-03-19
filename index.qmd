@@ -1,71 +1,71 @@
 ---
-title: "Undergraduate Physics Lecture Notes"
+title: "Physics Lecture Notes"
 format: html
 ---
 
-## Welcome to Undergraduate Physics Lecture Notes
+This site contains lecture notes for undergraduate and graduate physics courses. The material combines conceptual discussion with detailed derivations and worked examples, with an emphasis on clarity and internal consistency.
 
-This website hosts lecture notes for undergraduate physics courses taught by Sandro Vitenti. These notes are designed to support students in understanding key concepts in physics through clear explanations, mathematical derivations, and practical examples. The content is open source, and contributions from the community are encouraged.
+The content is open source and contributions are welcome.
 
-## Available Courses
+## Courses (Undergraduate)
 
-Explore the following courses, each with notes and exercises:
+* **[Introduction to Physics](courses/introduction-to-physics/)**: Introductory topics in mechanics, electromagnetism, and thermodynamics, with focus on basic principles and problem solving.
+* **[Mathematical Physics](courses/mathematical-physics/)**: Mathematical structures used in physics, including distributions, Green’s functions, operator methods, and differential equations.
+* **[Special Relativity](courses/special-relativity/)**: Kinematics and dynamics in Minkowski spacetime, Lorentz symmetry, and applications to classical and field-theoretic systems.
+* **[Vector Calculus](courses/vector-calculus/)**: Vector spaces, differential operators, integral theorems, and their role in physical theories.
 
-- **[Vector Calculus](courses/vector-calculus/)**: Covers vector spaces, inner products, vector products, and triple products, with applications to physics. 
-- **[Special Relativity](courses/special-relativity/)**: Introduces the principles of special relativity, including Lorentz transformations, spacetime, and relativistic kinematics.
+## Courses (Graduate)
 
-## About the Project
+* **[Electrodynamics](courses/electrodynamics/)**: Classical field theory of electromagnetism, including Maxwell’s equations, wave propagation, and relativistic formulations.
 
-These notes are developed as an open-source project to provide accessible, high-quality resources for physics students. The content is hosted on [GitHub](https://github.com/vitenti-physics/undergrad), where you can:
+## About
 
-- Access the source files (written in Quarto).
-- Report errors or ask questions.
-- Suggest improvements or new topics.
-- Contribute directly by submitting pull requests.
+This project provides a set of evolving lecture notes. The source is available on [GitHub](https://github.com/vitenti-physics/undergrad), where errors can be reported and improvements proposed.
 
-The notes are released under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/), allowing non-commercial use, remixing, and distribution with attribution to the original author by linking back to this site.
+The material is released under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## How to Contribute {#contribute}
+## Contributing {#contribute}
 
-We welcome feedback, questions, and contributions from students, educators, and physics enthusiasts. Whether you spot a typo, have a question, or want to add a new section, you can get involved through our [GitHub repository](https://github.com/vitenti-physics/undergrad). Below are quick tips to get started.
+Feedback is welcome and useful at different levels, from small corrections to structural suggestions.
 
-### Creating a GitHub Issue
+### Reporting Issues
 
-If you find an error, have a question, or want to suggest an improvement, create a GitHub issue:
+Use the issue tracker to report:
 
-1. **Go to the Repository**: Visit [github.com/vitenti-physics/undergrad](https://github.com/vitenti-physics/undergrad).
-2. **Navigate to Issues**: Click the "Issues" tab near the top of the page.
-3. **Create a New Issue**: Click the green "New issue" button.
-4. **Fill in Details**:
-   - **Title**: Write a clear, concise title (e.g., "Typo in Vector Product Equation").
-   - **Description**: Provide details, such as the section (e.g., [Vector Product](courses/vector-calculus/vector-spaces.html#sec-eprod)), the issue, and any suggestions. For questions, include context (e.g., "I don’t understand why the Levi-Civita symbol is antisymmetric").
-   - **Labels** (optional): Add labels like "bug," "question," or "enhancement" if prompted.
-5. **Submit**: Click "Submit new issue" to post it. You’ll be notified of responses.
+* Typos, unclear sentences, or formatting problems
+* Errors in derivations, equations, or definitions
+* Missing intermediate steps that make arguments hard to follow
+* Inconsistencies in notation or conventions across sections
+* Requests for clarification or additional examples
 
-### Suggesting Improvements or Contributing Content
+When possible, include:
 
-To propose changes (e.g., fixing equations, adding examples), you can submit a pull request:
+* A direct link to the relevant section
+* A short description of the issue
+* A suggested correction (if applicable)
 
-1. **Fork the Repository**: On the [GitHub repo](https://github.com/vitenti-physics/undergrad), click "Fork" to create a copy under your account.
-2. **Clone Your Fork**: Download your fork to your computer using:
+### Submitting Changes
 
-```bash
+For direct contributions:
+
+1. Fork the repository
+2. Clone your fork:
+
+   ```bash
    git clone https://github.com/your-username/undergrad.git
-```
+   ```
+3. Edit the relevant `.qmd` files
+4. Commit your changes:
 
-3. **Edit Files**: Modify the Quarto files (e.g., vector_calculus.qmd) using a text editor. 
-   - For example, fix a typo in [Vector Product](courses/vector-calculus/vector-spaces.html#sec-eprod).
-4. **Commit Changes**: Save your changes and commit:
+   ```bash
+   git add .
+   git commit -m "Describe change"
+   ```
+5. Push to your fork:
 
-```bash
-    git add .
-    git commit -m "Fix typo in vector product section"
+   ```bash
+   git push origin main
+   ```
+6. Open a pull request and describe the modification and its motivation
 
-    Push to GitHub: Upload your changes:
-    bash
-
-    git push origin main
-``` 
-
-5. **Create a Pull Request**: Go to your fork on GitHub, click "Contribute," and select "Open pull request." 
-   - Describe your changes and submit.
+Small, focused changes are preferred over large, unrelated edits.
